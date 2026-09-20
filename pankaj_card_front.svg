@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap');
     </style>
 
     <!-- Global High-Fidelity Logo Gradient -->
@@ -16,8 +16,8 @@
   <!-- CARD BASE (PURE MINIMALIST WHITE) -->
   <rect width="1050" height="600" fill="#ffffff"/>
 
-  <!-- ================= LOGO & BRAND IDENTITY (MATCHING MOCKUP) ================= -->
-  <g transform="translate(525, 175)">
+  <!-- ================= LOGO & BRAND IDENTITY ================= -->
+  <g transform="translate(525, 185)">
     <!-- THE EXACT P-CLOUD ICON -->
     <g transform="translate(-124, -80)">
       <!-- Outer Cloud Contour Outline -->
@@ -70,51 +70,37 @@
     </text>
   </g>
 
-  <!-- ================= MINIMALIST CONTACT DETAILS (LOWER THIRD) ================= -->
-  <g transform="translate(525, 440)">
-    <!-- Row 1: Email & Phone -->
-    <g transform="translate(0, 0)">
-      <!-- Email -->
-      <g transform="translate(-16, 0)">
-        <path d="M -180 -8 C -180 -9.5 -179 -10.5 -177.5 -10.5 L -159.5 -10.5 C -158 -10.5 -157 -9.5 -157 -8 L -157 5 C -157 6.5 -158 7.5 -159.5 7.5 L -177.5 7.5 C -179 7.5 -180 6.5 -180 5 Z M -178 -8 L -168.5 -0.5 L -159 -8 Z" fill="#0284c7"/>
-        <text x="-146" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">
-          contact@pixeltocloud.com
-        </text>
-      </g>
-
-      <!-- Clean Pipe Separator -->
-      <text x="116" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="300" fill="#cbd5e1" text-anchor="middle">|</text>
-
-      <!-- Phone -->
-      <g transform="translate(138, 0)">
-        <path d="M 0 -8 C 0 -9 1 -10 2 -10 L 4.5 -10 C 5.5 -10 6.5 -9 6.5 -8 L 7.5 -5 C 8 -4 7.5 -3 6.5 -2 L 6 -1 C 7 1 8.5 2.5 10.5 3.5 L 11.5 3 C 12.5 2 13.5 2.5 14.5 3 L 17.5 4.5 C 18.5 5 18.5 6 17.5 7 L 16.5 8 C 15.5 9 14.5 9 13.5 8 C 5.5 7 0.5 2 0 -6 Z" fill="#16a34a" transform="scale(0.9) translate(0, -2)"/>
-        <text x="24" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">
-          +91 82193 52124
-        </text>
-      </g>
+  <!-- ================= MINIMALIST CONTACT BAR (NO ADDRESS · ULTRA CLEAN) ================= -->
+  <g transform="translate(480, 470)">
+    <!-- Email -->
+    <g transform="translate(-360, 0)">
+      <path d="M 0 -8 C 0 -9.5 1 -10.5 2.5 -10.5 L 20.5 -10.5 C 22 -10.5 23 -9.5 23 -8 L 23 5 C 23 6.5 22 7.5 20.5 7.5 L 2.5 7.5 C 1 7.5 0 6.5 0 5 Z M 2 -8 L 11.5 -0.5 L 21 -8 Z" fill="#0284c7"/>
+      <text x="34" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">
+        contact@pixeltocloud.com
+      </text>
     </g>
 
-    <!-- Row 2: Website & Location -->
-    <g transform="translate(0, 44)">
-      <!-- Website -->
-      <g transform="translate(-16, 0)">
-        <circle cx="-168" cy="-1" r="8.5" stroke="#0284c7" stroke-width="1.5" fill="none"/>
-        <path d="M -176.5 -1 L -159.5 -1 M -168 -9.5 C -166 -6.5 -165 -3 -165 -1 C -165 1 -166 4.5 -168 7.5 M -168 -9.5 C -170 -6.5 -171 -3 -171 -1 C -171 1 -170 4.5 -168 7.5" stroke="#0284c7" stroke-width="1.3" fill="none"/>
-        <text x="-146" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#0284c7" text-anchor="start">
-          www.pixeltocloud.com
-        </text>
-      </g>
+    <!-- Clean Pipe Separator 1 -->
+    <text x="-65" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="300" fill="#cbd5e1" text-anchor="middle">|</text>
 
-      <!-- Clean Pipe Separator -->
-      <text x="116" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="300" fill="#cbd5e1" text-anchor="middle">|</text>
+    <!-- Phone -->
+    <g transform="translate(-35, 0)">
+      <path d="M 0 -8 C 0 -9 1 -10 2 -10 L 4.5 -10 C 5.5 -10 6.5 -9 6.5 -8 L 7.5 -5 C 8 -4 7.5 -3 6.5 -2 L 6 -1 C 7 1 8.5 2.5 10.5 3.5 L 11.5 3 C 12.5 2 13.5 2.5 14.5 3 L 17.5 4.5 C 18.5 5 18.5 6 17.5 7 L 16.5 8 C 15.5 9 14.5 9 13.5 8 C 5.5 7 0.5 2 0 -6 Z" fill="#16a34a" transform="scale(0.9) translate(0, -2)"/>
+      <text x="24" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">
+        +91 82193 52124
+      </text>
+    </g>
 
-      <!-- Location -->
-      <g transform="translate(138, 0)">
-        <path d="M 6 -9 C 3 -9 1 -7 1 -4 C 1 0 6 7 6 7 C 6 7 11 0 11 -4 C 11 -7 9 -9 6 -9 Z M 6 -2.5 C 5 -2.5 4.3 -3.2 4.3 -4 C 4.3 -4.8 5 -5.5 6 -5.5 C 7 -5.5 7.7 -4.8 7.7 -4 C 7.7 -3.2 7 -2.5 6 -2.5 Z" fill="#9333ea" transform="scale(1.05) translate(-2, 0)"/>
-        <text x="24" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="17" font-weight="600" fill="#475569" text-anchor="start">
-          Alwar, Rajasthan <tspan fill="#94a3b8" font-size="14">(Worldwide)</tspan>
-        </text>
-      </g>
+    <!-- Clean Pipe Separator 2 -->
+    <text x="175" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="300" fill="#cbd5e1" text-anchor="middle">|</text>
+
+    <!-- Website -->
+    <g transform="translate(205, 0)">
+      <circle cx="8.5" cy="-1" r="8.5" stroke="#0284c7" stroke-width="1.5" fill="none"/>
+      <path d="M 0 -1 L 17 -1 M 8.5 -9.5 C 10.5 -6.5 11.5 -3 11.5 -1 C 11.5 1 10.5 4.5 8.5 7.5 M 8.5 -9.5 C 6.5 -6.5 5.5 -3 5.5 -1 C 5.5 1 6.5 4.5 8.5 7.5" stroke="#0284c7" stroke-width="1.3" fill="none"/>
+      <text x="28" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#0284c7" text-anchor="start">
+        www.pixeltocloud.com
+      </text>
     </g>
   </g>
 </svg>
