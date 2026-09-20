@@ -1,117 +1,124 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Fira+Code:wght@500;600;700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap');
       * { box-sizing: border-box; }
     </style>
 
-    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0284c7" />
-      <stop offset="100%" stop-color="#0369a1" />
+    <linearGradient id="cloudStrokeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="45%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0ea5e9" />
     </linearGradient>
 
-    <linearGradient id="pixelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
+    <linearGradient id="pGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#1e40af" />
       <stop offset="100%" stop-color="#0284c7" />
     </linearGradient>
-
-    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.06"/>
-    </filter>
-
-    <filter id="cardShadow" x="-5%" y="-5%" width="115%" height="120%">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
-    </filter>
   </defs>
 
-  <!-- ================= CARD BASE (MINIMALIST STUDIO WHITE) ================= -->
+  <!-- ================= CARD BASE (PREMIUM MINIMALIST WHITE) ================= -->
   <rect width="1050" height="600" fill="#ffffff"/>
-  
-  <!-- Subtle top accent line (Apple style precision hairline) -->
-  <rect x="0" y="0" width="1050" height="4" fill="#0284c7"/>
 
-  <!-- Inset Border Guide for Print Precision -->
-  <rect x="30" y="30" width="990" height="540" rx="16" fill="none" stroke="#f1f5f9" stroke-width="1.5"/>
+  <!-- ================= CENTERED BRAND & P-CLOUD LOGO ================= -->
+  <g transform="translate(525, 145)">
+    <!-- Cloud Contour -->
+    <path d="M -45 50 
+             C -75 50, -95 30, -95 5 
+             C -95 -20, -75 -40, -50 -42 
+             C -38 -65, -12 -78, 15 -78 
+             C 42 -78, 68 -65, 80 -42 
+             C 105 -40, 125 -20, 125 5 
+             C 125 30, 105 50, 75 50 
+             L 0 50"
+          fill="none" 
+          stroke="url(#cloudStrokeGrad)" 
+          stroke-width="15" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
 
-  <!-- ================= BRAND HEADER ================= -->
-  <g transform="translate(70, 62)">
-    <!-- Minimalist Logo Mark -->
+    <!-- Base Left Accent -->
+    <path d="M -45 50 L -25 50" 
+          fill="none" 
+          stroke="url(#cloudStrokeGrad)" 
+          stroke-width="15" 
+          stroke-linecap="round" />
+
+    <!-- Letter P Monogram (Stem + Bowl) -->
+    <path d="M -10 50 L -10 -35 C -10 -35, 34 -35, 34 -6 C 34 22, -10 22, -10 22" 
+          fill="none" 
+          stroke="url(#pGrad)" 
+          stroke-width="15" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <!-- Company Name Typography -->
+    <text x="0" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="44" fill="#0f172a" text-anchor="middle" letter-spacing="-0.5">
+      PixelToCloud <tspan fill="#475569" font-weight="600">Solutions</tspan>
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="19" fill="#475569" text-anchor="middle" letter-spacing="0.2">
+      Custom Software · AI Automation · Cloud
+    </text>
+  </g>
+
+  <!-- ================= DIVIDER LINE ================= -->
+  <line x1="225" y1="365" x2="825" y2="365" stroke="#f1f5f9" stroke-width="1.5"/>
+
+  <!-- ================= CONTACT DETAILS SECTION ================= -->
+  <g transform="translate(525, 415)">
+    <!-- Row 1: Email & Phone -->
     <g transform="translate(0, 0)">
-      <rect width="72" height="72" rx="18" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" filter="url(#cardShadow)"/>
-      <g transform="translate(36, 44) scale(0.18)">
-        <circle cx="10" cy="-20" r="95" fill="#e0f2fe"/>
-        <path d="M -120 48 L 105 48 A 48 48 0 0 0 130 -32 A 62 62 0 0 0 20 -115 A 75 75 0 0 0 -105 -48 A 48 48 0 0 0 -120 48 Z" fill="url(#cloudGrad)"/>
-        <g transform="translate(68, -75) rotate(22)"><rect x="-20" y="-20" width="40" height="40" rx="6" fill="#f8fafc"/></g>
-        <g transform="translate(122, -112) rotate(22)"><rect x="-17" y="-17" width="34" height="34" rx="8" fill="url(#pixelGrad)" stroke="#ffffff" stroke-width="3"/></g>
+      <!-- Email -->
+      <g transform="translate(-16, 0)">
+        <path d="M -175 -8 C -175 -9 -174 -10 -173 -10 L -157 -10 C -156 -10 -155 -9 -155 -8 L -155 4 C -155 5 -156 6 -157 6 L -173 6 C -174 6 -175 5 -175 4 Z M -173 -8 L -165 -1 L -157 -8 Z" fill="#0284c7"/>
+        <text x="-145" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">
+          contact@pixeltocloud.com
+        </text>
+      </g>
+
+      <!-- Separator Pipe -->
+      <text x="120" y="-1" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="300" fill="#cbd5e1" text-anchor="middle">|</text>
+
+      <!-- Phone / WhatsApp -->
+      <g transform="translate(138, 0)">
+        <path d="M 0 -8 C 0 -9 1 -10 2 -10 L 4 -10 C 5 -10 6 -9 6 -8 L 7 -5 C 7.5 -4 7 -3 6 -2 L 5.5 -1 C 6.5 1 8 2.5 10 3.5 L 11 3 C 12 2 13 2.5 14 3 L 17 4.5 C 18 5 18 6 17 7 L 16 8 C 15 9 14 9 13 8 C 5 7 0 2 0 -6 Z" fill="#16a34a" transform="scale(0.85) translate(0, -2)"/>
+        <text x="24" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">
+          +91 82193 52124
+        </text>
       </g>
     </g>
 
-    <!-- Company Name -->
-    <text x="92" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="34" fill="#0f172a" letter-spacing="-0.5">
-      PixelTo<tspan fill="#0284c7">Cloud</tspan> <tspan fill="#64748b" font-size="28" font-weight="600">Solutions</tspan>
-    </text>
+    <!-- Row 2: Website & Location -->
+    <g transform="translate(0, 36)">
+      <!-- Website -->
+      <g transform="translate(-16, 0)">
+        <circle cx="-165" cy="-2" r="7.5" stroke="#0284c7" stroke-width="1.3" fill="none"/>
+        <path d="M -172.5 -2 L -157.5 -2 M -165 -9.5 C -163 -7 -162 -4 -162 -2 C -162 0 -163 3 -165 5.5 M -165 -9.5 C -167 -7 -168 -4 -168 -2 C -168 0 -167 3 -165 5.5" stroke="#0284c7" stroke-width="1.1" fill="none"/>
+        <text x="-145" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="17.5" font-weight="800" fill="#0284c7" text-anchor="start">
+          www.pixeltocloud.com
+        </text>
+      </g>
 
-    <!-- Refined Studio Subtitle -->
-    <g transform="translate(94, 50)">
-      <text x="0" y="14" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#0284c7" letter-spacing="1.5">
-        CUSTOM SOFTWARE  ·  AI AUTOMATION  ·  CLOUD
-      </text>
+      <!-- Separator Pipe -->
+      <text x="120" y="-1" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="300" fill="#cbd5e1" text-anchor="middle">|</text>
+
+      <!-- Location -->
+      <g transform="translate(138, 0)">
+        <path d="M 6 -9 C 3 -9 1 -7 1 -4 C 1 0 6 7 6 7 C 6 7 11 0 11 -4 C 11 -7 9 -9 6 -9 Z M 6 -2.5 C 5 -2.5 4.3 -3.2 4.3 -4 C 4.3 -4.8 5 -5.5 6 -5.5 C 7 -5.5 7.7 -4.8 7.7 -4 C 7.7 -3.2 7 -2.5 6 -2.5 Z" fill="#9333ea" transform="translate(-2, 0)"/>
+        <text x="24" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="17" font-weight="600" fill="#475569" text-anchor="start">
+          Alwar, Rajasthan <tspan fill="#94a3b8" font-size="14">(Worldwide)</tspan>
+        </text>
+      </g>
     </g>
   </g>
 
-  <!-- ================= EDITORIAL VALUE PROPOSITION ================= -->
-  <g transform="translate(70, 190)">
-    <line x1="0" y1="0" x2="910" y2="0" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="0" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="19" fill="#334155" letter-spacing="-0.2">
-      "Modern websites, custom software, and digital growth tools for forward-thinking businesses."
-    </text>
-  </g>
-
-  <!-- ================= CONTACT TILES GRID ================= -->
-  <g transform="translate(70, 275)">
-    <!-- Tile 1: Phone & WhatsApp -->
-    <g transform="translate(0, 0)">
-      <rect width="440" height="92" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
-      <circle cx="42" cy="46" r="22" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
-      <path d="M 36 38 L 41 38 C 42 38 43 39 43.5 40 L 45 44 C 45.5 45 45 46 44 47 L 43 48 C 44 50 46 52 48 53 L 49 52 C 50 51 51 50.5 52 51 L 56 52.5 C 57 53 57.5 54 57.5 55 L 57.5 59 C 57.5 60 56.5 61 55.5 61 C 43 61 34 52 34 39.5 C 34 38.5 35 37.5 36 38 Z" fill="#059669" transform="translate(-3, -3) scale(0.9)"/>
-      <text x="80" y="36" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#64748b" letter-spacing="1">CALL &amp; WHATSAPP (24/7)</text>
-      <text x="80" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="21" font-weight="800" fill="#0f172a">+91 82193 52124</text>
-    </g>
-
-    <!-- Tile 2: Business Email -->
-    <g transform="translate(470, 0)">
-      <rect width="440" height="92" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
-      <circle cx="42" cy="46" r="22" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
-      <path d="M 33 39 C 33 37.5 34.5 36 36 36 L 54 36 C 55.5 36 57 37.5 57 39 L 57 53 C 57 54.5 55.5 56 54 56 L 36 56 C 34.5 56 33 54.5 33 53 Z M 35 38 L 45 46 L 55 38 Z" fill="#0284c7" stroke="#0284c7" stroke-width="0.5"/>
-      <text x="80" y="36" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#64748b" letter-spacing="1">DIRECT BUSINESS EMAIL</text>
-      <text x="80" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="19.5" font-weight="700" fill="#0f172a">contact@pixeltocloud.com</text>
-    </g>
-
-    <!-- Tile 3: Website -->
-    <g transform="translate(0, 110)">
-      <rect width="440" height="92" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
-      <circle cx="42" cy="46" r="22" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1"/>
-      <circle cx="42" cy="46" r="11" stroke="#0284c7" stroke-width="1.6" fill="none"/>
-      <path d="M 31 46 L 53 46 M 42 35 C 45 39 46 43 46 46 C 46 49 45 53 42 57 M 42 35 C 39 39 38 43 38 46 C 38 49 39 53 42 57" stroke="#0284c7" stroke-width="1.4" fill="none"/>
-      <text x="80" y="36" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#64748b" letter-spacing="1">OFFICIAL WEBSITE</text>
-      <text x="80" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="20.5" font-weight="800" fill="#0284c7">www.pixeltocloud.com</text>
-    </g>
-
-    <!-- Tile 4: Location -->
-    <g transform="translate(470, 110)">
-      <rect width="440" height="92" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
-      <circle cx="42" cy="46" r="22" fill="#fdf4ff" stroke="#f5d0fe" stroke-width="1"/>
-      <path d="M 42 35 C 38 35 35 38 35 42 C 35 47 42 57 42 57 C 42 57 49 47 49 42 C 49 38 46 35 42 35 Z M 42 44 C 40.5 44 39.5 43 39.5 41.5 C 39.5 40 40.5 39 42 39 C 43.5 39 44.5 40 44.5 41.5 C 44.5 43 43.5 44 42 44 Z" fill="#9333ea"/>
-      <text x="80" y="36" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#64748b" letter-spacing="1">REGISTERED OFFICE</text>
-      <text x="80" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="19.5" font-weight="700" fill="#0f172a">Alwar, Rajasthan <tspan fill="#64748b" font-size="14.5" font-weight="500">(Serving Worldwide)</tspan></text>
-    </g>
-  </g>
-
-  <!-- ================= BOTTOM REFINED TRUST BAR ================= -->
-  <g transform="translate(70, 508)">
-    <rect width="910" height="42" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="455" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#334155" text-anchor="middle" letter-spacing="0.4">
-      <tspan fill="#059669">✓</tspan> Full Source-Code Ownership  ·  <tspan fill="#0284c7">✓</tspan> Quick Delivery in Days  ·  <tspan fill="#d97706">✓</tspan> Dedicated Ongoing Support
+  <!-- ================= BOTTOM SUBTLE TRUST STRIP ================= -->
+  <g transform="translate(525, 535)">
+    <rect x="-375" y="-18" width="750" height="36" rx="18" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="0" y="5" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle" letter-spacing="0.3">
+      <tspan fill="#059669">✓</tspan> Full Source-Code Ownership  ·  <tspan fill="#0284c7">✓</tspan> Quick Delivery in Days  ·  <tspan fill="#d97706">✓</tspan> Dedicated Long-Term Support
     </text>
   </g>
 </svg>
