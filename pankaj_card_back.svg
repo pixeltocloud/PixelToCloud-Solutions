@@ -1,150 +1,138 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
   <defs>
-    <!-- Dark Executive Obsidian Gradient -->
-    <linearGradient id="backBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#060910" />
-      <stop offset="50%" stop-color="#0a0f1d" />
-      <stop offset="100%" stop-color="#05070c" />
-    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Fira+Code:wght@500;600;700&amp;display=swap');
+      * { box-sizing: border-box; }
+    </style>
 
-    <linearGradient id="cyanMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="100%" stop-color="#0284c7" />
-    </linearGradient>
-
-    <linearGradient id="borderGradBack" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(0, 240, 255, 0.5)" />
-      <stop offset="100%" stop-color="rgba(16, 185, 129, 0.5)" />
-    </linearGradient>
+    <filter id="softCardShadow" x="-5%" y="-5%" width="115%" height="118%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
   </defs>
 
-  <!-- Card Base Outer Frame -->
-  <rect width="1050" height="600" rx="28" fill="url(#backBg)" stroke="url(#borderGradBack)" stroke-width="2"/>
+  <!-- ================= CARD BASE (MINIMALIST STUDIO WHITE) ================= -->
+  <rect width="1050" height="600" fill="#ffffff"/>
+  <rect x="0" y="0" width="1050" height="4" fill="#0284c7"/>
 
-  <!-- High-Precision Technical Corner Marks -->
-  <g stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" fill="none">
-    <path d="M 40 60 L 40 40 L 60 40" />
-    <path d="M 1010 60 L 1010 40 L 990 40" />
-    <path d="M 40 540 L 40 560 L 60 560" />
-    <path d="M 1010 540 L 1010 560 L 990 560" />
+  <!-- Inset Border Guide for Print Precision -->
+  <rect x="30" y="30" width="990" height="540" rx="16" fill="none" stroke="#f1f5f9" stroke-width="1.5"/>
+
+  <!-- ================= HEADER STRIP ================= -->
+  <g transform="translate(68, 44)">
+    <rect width="170" height="26" rx="8" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1"/>
+    <text x="85" y="17.5" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#0284c7" text-anchor="middle" letter-spacing="1">WHAT WE DO FOR YOU</text>
+    <text x="188" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-size="15.5" font-weight="700" fill="#475569">
+      Complete Software, Web &amp; Digital Solutions
+    </text>
   </g>
 
-  <!-- ================= TOP HEADER ================= -->
-  <g transform="translate(65, 42)">
-    <rect width="200" height="28" rx="8" fill="rgba(0, 240, 255, 0.12)" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1"/>
-    <text x="100" y="19" font-family="'Fira Code', monospace" font-size="12.5" font-weight="800" fill="#00f0ff" text-anchor="middle" letter-spacing="1.5">WHAT WE DO FOR YOU</text>
-    <text x="220" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="600" fill="#94a3b8">Complete Software, Web &amp; Digital Solutions</text>
-  </g>
-
-  <path d="M 65 84 L 985 84" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2"/>
-
-  <!-- ================= LEFT: 7 CORE SERVICES LIST ================= -->
-  <g transform="translate(65, 100)">
+  <!-- ================= LEFT: 7 SERVICES LIST ================= -->
+  <g transform="translate(68, 88)">
     <!-- Service 1 -->
     <g transform="translate(0, 0)">
-      <rect width="640" height="44" rx="10" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
-      <circle cx="22" cy="22" r="5" fill="#00f0ff"/>
-      <text x="40" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#ffffff">
-        Business Websites &amp; Online Stores <tspan fill="#94a3b8" font-size="13" font-weight="500">(Mobile Friendly &amp; Fast)</tspan>
+      <rect width="640" height="44" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#softCardShadow)"/>
+      <circle cx="22" cy="22" r="5" fill="#0284c7"/>
+      <text x="38" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">
+        Business Websites &amp; Online Stores <tspan fill="#64748b" font-weight="500" font-size="13">(Mobile Friendly &amp; Fast)</tspan>
       </text>
     </g>
 
     <!-- Service 2 -->
     <g transform="translate(0, 50)">
-      <rect width="640" height="44" rx="10" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
-      <circle cx="22" cy="22" r="5" fill="#38bdf8"/>
-      <text x="40" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#ffffff">
+      <rect width="640" height="44" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#softCardShadow)"/>
+      <circle cx="22" cy="22" r="5" fill="#0284c7"/>
+      <text x="38" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">
         Google Ads &amp; Local Customer Lead Generation
       </text>
     </g>
 
     <!-- Service 3 -->
     <g transform="translate(0, 100)">
-      <rect width="640" height="44" rx="10" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
-      <circle cx="22" cy="22" r="5" fill="#a855f7"/>
-      <text x="40" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#ffffff">
+      <rect width="640" height="44" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#softCardShadow)"/>
+      <circle cx="22" cy="22" r="5" fill="#7c3aed"/>
+      <text x="38" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">
         Online Subscription Software (SaaS) &amp; Startup MVPs
       </text>
     </g>
 
     <!-- Service 4 -->
     <g transform="translate(0, 150)">
-      <rect width="640" height="44" rx="10" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
-      <circle cx="22" cy="22" r="5" fill="#f59e0b"/>
-      <text x="40" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#ffffff">
+      <rect width="640" height="44" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#softCardShadow)"/>
+      <circle cx="22" cy="22" r="5" fill="#d97706"/>
+      <text x="38" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">
         Secure Billing, Records &amp; Database Systems
       </text>
     </g>
 
     <!-- Service 5 -->
     <g transform="translate(0, 200)">
-      <rect width="640" height="44" rx="10" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
-      <circle cx="22" cy="22" r="5" fill="#10b981"/>
-      <text x="40" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#ffffff">
+      <rect width="640" height="44" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#softCardShadow)"/>
+      <circle cx="22" cy="22" r="5" fill="#059669"/>
+      <text x="38" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">
         Website Speed &amp; Performance Optimization
       </text>
     </g>
 
     <!-- Service 6 -->
     <g transform="translate(0, 250)">
-      <rect width="640" height="44" rx="10" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
-      <circle cx="22" cy="22" r="5" fill="#25d366"/>
-      <text x="40" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#ffffff">
+      <rect width="640" height="44" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#softCardShadow)"/>
+      <circle cx="22" cy="22" r="5" fill="#16a34a"/>
+      <text x="38" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">
         24/7 Automated WhatsApp Booking &amp; Inquiry Bots
       </text>
     </g>
 
     <!-- Service 7 -->
     <g transform="translate(0, 300)">
-      <rect width="640" height="44" rx="10" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
-      <circle cx="22" cy="22" r="5" fill="#ec4899"/>
-      <text x="40" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#ffffff">
+      <rect width="640" height="44" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" filter="url(#softCardShadow)"/>
+      <circle cx="22" cy="22" r="5" fill="#db2777"/>
+      <text x="38" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="700" fill="#0f172a">
         Bill &amp; Document Data Extraction into Excel
       </text>
     </g>
   </g>
 
   <!-- ================= RIGHT: SCANNABLE QR CAPSULE ================= -->
-  <g transform="translate(735, 100)">
-    <rect width="250" height="344" rx="20" fill="rgba(11, 17, 30, 0.95)" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1.5"/>
+  <g transform="translate(735, 88)">
+    <rect width="245" height="344" rx="18" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" filter="url(#softCardShadow)"/>
 
     <!-- WhatsApp Badge -->
-    <rect x="30" y="16" width="190" height="28" rx="14" fill="rgba(37, 211, 102, 0.15)" stroke="rgba(37, 211, 102, 0.4)" stroke-width="1"/>
-    <text x="125" y="35" font-family="'Plus Jakarta Sans', sans-serif" font-size="12.5" font-weight="800" fill="#25d366" text-anchor="middle">💬 SCAN TO CHAT</text>
+    <rect x="28" y="16" width="190" height="28" rx="14" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="123" y="35" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#059669" text-anchor="middle">💬 SCAN TO CHAT</text>
 
     <!-- White QR Container Box -->
-    <g transform="translate(35, 56)">
-      <rect width="180" height="180" rx="14" fill="#ffffff" stroke="rgba(255, 255, 255, 0.3)" stroke-width="2"/>
+    <g transform="translate(32.5, 56)">
+      <rect width="180" height="180" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
       <g transform="translate(2.5, 2.5) scale(1.0)">
-        <path fill="#000000" d="M 0,0 l 7,0 0,7 -7,0 z M 7,0 l 7,0 0,7 -7,0 z M 14,0 l 7,0 0,7 -7,0 z M 21,0 l 7,0 0,7 -7,0 z M 28,0 l 7,0 0,7 -7,0 z M 35,0 l 7,0 0,7 -7,0 z M 42,0 l 7,0 0,7 -7,0 z M 70,0 l 7,0 0,7 -7,0 z M 84,0 l 7,0 0,7 -7,0 z M 98,0 l 7,0 0,7 -7,0 z M 112,0 l 7,0 0,7 -7,0 z M 126,0 l 7,0 0,7 -7,0 z M 133,0 l 7,0 0,7 -7,0 z M 140,0 l 7,0 0,7 -7,0 z M 147,0 l 7,0 0,7 -7,0 z M 154,0 l 7,0 0,7 -7,0 z M 161,0 l 7,0 0,7 -7,0 z M 168,0 l 7,0 0,7 -7,0 z M 0,7 l 7,0 0,7 -7,0 z M 42,7 l 7,0 0,7 -7,0 z M 56,7 l 7,0 0,7 -7,0 z M 70,7 l 7,0 0,7 -7,0 z M 91,7 l 7,0 0,7 -7,0 z M 105,7 l 7,0 0,7 -7,0 z M 126,7 l 7,0 0,7 -7,0 z M 168,7 l 7,0 0,7 -7,0 z M 0,14 l 7,0 0,7 -7,0 z M 14,14 l 7,0 0,7 -7,0 z M 21,14 l 7,0 0,7 -7,0 z M 28,14 l 7,0 0,7 -7,0 z M 42,14 l 7,0 0,7 -7,0 z M 84,14 l 7,0 0,7 -7,0 z M 91,14 l 7,0 0,7 -7,0 z M 112,14 l 7,0 0,7 -7,0 z M 126,14 l 7,0 0,7 -7,0 z M 140,14 l 7,0 0,7 -7,0 z M 147,14 l 7,0 0,7 -7,0 z M 154,14 l 7,0 0,7 -7,0 z M 168,14 l 7,0 0,7 -7,0 z M 0,21 l 7,0 0,7 -7,0 z M 14,21 l 7,0 0,7 -7,0 z M 21,21 l 7,0 0,7 -7,0 z M 28,21 l 7,0 0,7 -7,0 z M 42,21 l 7,0 0,7 -7,0 z M 56,21 l 7,0 0,7 -7,0 z M 63,21 l 7,0 0,7 -7,0 z M 70,21 l 7,0 0,7 -7,0 z M 84,21 l 7,0 0,7 -7,0 z M 98,21 l 7,0 0,7 -7,0 z M 105,21 l 7,0 0,7 -7,0 z M 126,21 l 7,0 0,7 -7,0 z M 140,21 l 7,0 0,7 -7,0 z M 147,21 l 7,0 0,7 -7,0 z M 154,21 l 7,0 0,7 -7,0 z M 168,21 l 7,0 0,7 -7,0 z M 0,28 l 7,0 0,7 -7,0 z M 14,28 l 7,0 0,7 -7,0 z M 21,28 l 7,0 0,7 -7,0 z M 28,28 l 7,0 0,7 -7,0 z M 42,28 l 7,0 0,7 -7,0 z M 63,28 l 7,0 0,7 -7,0 z M 105,28 l 7,0 0,7 -7,0 z M 126,28 l 7,0 0,7 -7,0 z M 140,28 l 7,0 0,7 -7,0 z M 147,28 l 7,0 0,7 -7,0 z M 154,28 l 7,0 0,7 -7,0 z M 168,28 l 7,0 0,7 -7,0 z M 0,35 l 7,0 0,7 -7,0 z M 42,35 l 7,0 0,7 -7,0 z M 56,35 l 7,0 0,7 -7,0 z M 63,35 l 7,0 0,7 -7,0 z M 77,35 l 7,0 0,7 -7,0 z M 84,35 l 7,0 0,7 -7,0 z M 91,35 l 7,0 0,7 -7,0 z M 98,35 l 7,0 0,7 -7,0 z M 105,35 l 7,0 0,7 -7,0 z M 126,35 l 7,0 0,7 -7,0 z M 168,35 l 7,0 0,7 -7,0 z M 0,42 l 7,0 0,7 -7,0 z M 7,42 l 7,0 0,7 -7,0 z M 14,42 l 7,0 0,7 -7,0 z M 21,42 l 7,0 0,7 -7,0 z M 28,42 l 7,0 0,7 -7,0 z M 35,42 l 7,0 0,7 -7,0 z M 42,42 l 7,0 0,7 -7,0 z M 56,42 l 7,0 0,7 -7,0 z M 70,42 l 7,0 0,7 -7,0 z M 84,42 l 7,0 0,7 -7,0 z M 98,42 l 7,0 0,7 -7,0 z M 112,42 l 7,0 0,7 -7,0 z M 126,42 l 7,0 0,7 -7,0 z M 133,42 l 7,0 0,7 -7,0 z M 140,42 l 7,0 0,7 -7,0 z M 147,42 l 7,0 0,7 -7,0 z M 154,42 l 7,0 0,7 -7,0 z M 161,42 l 7,0 0,7 -7,0 z M 168,42 l 7,0 0,7 -7,0 z M 63,49 l 7,0 0,7 -7,0 z M 70,49 l 7,0 0,7 -7,0 z M 77,49 l 7,0 0,7 -7,0 z M 91,49 l 7,0 0,7 -7,0 z M 0,56 l 7,0 0,7 -7,0 z M 7,56 l 7,0 0,7 -7,0 z M 14,56 l 7,0 0,7 -7,0 z M 21,56 l 7,0 0,7 -7,0 z M 28,56 l 7,0 0,7 -7,0 z M 42,56 l 7,0 0,7 -7,0 z M 49,56 l 7,0 0,7 -7,0 z M 56,56 l 7,0 0,7 -7,0 z M 63,56 l 7,0 0,7 -7,0 z M 77,56 l 7,0 0,7 -7,0 z M 98,56 l 7,0 0,7 -7,0 z M 105,56 l 7,0 0,7 -7,0 z M 119,56 l 7,0 0,7 -7,0 z M 133,56 l 7,0 0,7 -7,0 z M 147,56 l 7,0 0,7 -7,0 z M 161,56 l 7,0 0,7 -7,0 z M 0,63 l 7,0 0,7 -7,0 z M 14,63 l 7,0 0,7 -7,0 z M 28,63 l 7,0 0,7 -7,0 z M 35,63 l 7,0 0,7 -7,0 z M 56,63 l 7,0 0,7 -7,0 z M 70,63 l 7,0 0,7 -7,0 z M 84,63 l 7,0 0,7 -7,0 z M 91,63 l 7,0 0,7 -7,0 z M 98,63 l 7,0 0,7 -7,0 z M 112,63 l 7,0 0,7 -7,0 z M 133,63 l 7,0 0,7 -7,0 z M 161,63 l 7,0 0,7 -7,0 z M 0,70 l 7,0 0,7 -7,0 z M 14,70 l 7,0 0,7 -7,0 z M 21,70 l 7,0 0,7 -7,0 z M 28,70 l 7,0 0,7 -7,0 z M 42,70 l 7,0 0,7 -7,0 z M 70,70 l 7,0 0,7 -7,0 z M 91,70 l 7,0 0,7 -7,0 z M 105,70 l 7,0 0,7 -7,0 z M 112,70 l 7,0 0,7 -7,0 z M 126,70 l 7,0 0,7 -7,0 z M 133,70 l 7,0 0,7 -7,0 z M 140,70 l 7,0 0,7 -7,0 z M 147,70 l 7,0 0,7 -7,0 z M 161,70 l 7,0 0,7 -7,0 z M 168,70 l 7,0 0,7 -7,0 z M 21,77 l 7,0 0,7 -7,0 z M 35,77 l 7,0 0,7 -7,0 z M 84,77 l 7,0 0,7 -7,0 z M 91,77 l 7,0 0,7 -7,0 z M 105,77 l 7,0 0,7 -7,0 z M 112,77 l 7,0 0,7 -7,0 z M 119,77 l 7,0 0,7 -7,0 z M 126,77 l 7,0 0,7 -7,0 z M 133,77 l 7,0 0,7 -7,0 z M 168,77 l 7,0 0,7 -7,0 z M 7,84 l 7,0 0,7 -7,0 z M 21,84 l 7,0 0,7 -7,0 z M 42,84 l 7,0 0,7 -7,0 z M 49,84 l 7,0 0,7 -7,0 z M 56,84 l 7,0 0,7 -7,0 z M 63,84 l 7,0 0,7 -7,0 z M 70,84 l 7,0 0,7 -7,0 z M 84,84 l 7,0 0,7 -7,0 z M 98,84 l 7,0 0,7 -7,0 z M 126,84 l 7,0 0,7 -7,0 z M 133,84 l 7,0 0,7 -7,0 z M 140,84 l 7,0 0,7 -7,0 z M 154,84 l 7,0 0,7 -7,0 z M 161,84 l 7,0 0,7 -7,0 z M 168,84 l 7,0 0,7 -7,0 z M 0,91 l 7,0 0,7 -7,0 z M 28,91 l 7,0 0,7 -7,0 z M 35,91 l 7,0 0,7 -7,0 z M 49,91 l 7,0 0,7 -7,0 z M 56,91 l 7,0 0,7 -7,0 z M 63,91 l 7,0 0,7 -7,0 z M 105,91 l 7,0 0,7 -7,0 z M 133,91 l 7,0 0,7 -7,0 z M 147,91 l 7,0 0,7 -7,0 z M 161,91 l 7,0 0,7 -7,0 z M 0,98 l 7,0 0,7 -7,0 z M 28,98 l 7,0 0,7 -7,0 z M 35,98 l 7,0 0,7 -7,0 z M 42,98 l 7,0 0,7 -7,0 z M 49,98 l 7,0 0,7 -7,0 z M 77,98 l 7,0 0,7 -7,0 z M 84,98 l 7,0 0,7 -7,0 z M 105,98 l 7,0 0,7 -7,0 z M 119,98 l 7,0 0,7 -7,0 z M 133,98 l 7,0 0,7 -7,0 z M 140,98 l 7,0 0,7 -7,0 z M 147,98 l 7,0 0,7 -7,0 z M 161,98 l 7,0 0,7 -7,0 z M 168,98 l 7,0 0,7 -7,0 z M 0,105 l 7,0 0,7 -7,0 z M 21,105 l 7,0 0,7 -7,0 z M 49,105 l 7,0 0,7 -7,0 z M 77,105 l 7,0 0,7 -7,0 z M 105,105 l 7,0 0,7 -7,0 z M 133,105 l 7,0 0,7 -7,0 z M 140,105 l 7,0 0,7 -7,0 z M 168,105 l 7,0 0,7 -7,0 z M 0,112 l 7,0 0,7 -7,0 z M 21,112 l 7,0 0,7 -7,0 z M 28,112 l 7,0 0,7 -7,0 z M 42,112 l 7,0 0,7 -7,0 z M 49,112 l 7,0 0,7 -7,0 z M 70,112 l 7,0 0,7 -7,0 z M 77,112 l 7,0 0,7 -7,0 z M 91,112 l 7,0 0,7 -7,0 z M 105,112 l 7,0 0,7 -7,0 z M 112,112 l 7,0 0,7 -7,0 z M 119,112 l 7,0 0,7 -7,0 z M 126,112 l 7,0 0,7 -7,0 z M 133,112 l 7,0 0,7 -7,0 z M 140,112 l 7,0 0,7 -7,0 z M 154,112 l 7,0 0,7 -7,0 z M 56,119 l 7,0 0,7 -7,0 z M 63,119 l 7,0 0,7 -7,0 z M 84,119 l 7,0 0,7 -7,0 z M 91,119 l 7,0 0,7 -7,0 z M 98,119 l 7,0 0,7 -7,0 z M 105,119 l 7,0 0,7 -7,0 z M 112,119 l 7,0 0,7 -7,0 z M 140,119 l 7,0 0,7 -7,0 z M 147,119 l 7,0 0,7 -7,0 z M 0,126 l 7,0 0,7 -7,0 z M 7,126 l 7,0 0,7 -7,0 z M 14,126 l 7,0 0,7 -7,0 z M 21,126 l 7,0 0,7 -7,0 z M 28,126 l 7,0 0,7 -7,0 z M 35,126 l 7,0 0,7 -7,0 z M 42,126 l 7,0 0,7 -7,0 z M 56,126 l 7,0 0,7 -7,0 z M 63,126 l 7,0 0,7 -7,0 z M 91,126 l 7,0 0,7 -7,0 z M 98,126 l 7,0 0,7 -7,0 z M 112,126 l 7,0 0,7 -7,0 z M 126,126 l 7,0 0,7 -7,0 z M 140,126 l 7,0 0,7 -7,0 z M 154,126 l 7,0 0,7 -7,0 z M 161,126 l 7,0 0,7 -7,0 z M 168,126 l 7,0 0,7 -7,0 z M 0,133 l 7,0 0,7 -7,0 z M 42,133 l 7,0 0,7 -7,0 z M 70,133 l 7,0 0,7 -7,0 z M 84,133 l 7,0 0,7 -7,0 z M 105,133 l 7,0 0,7 -7,0 z M 112,133 l 7,0 0,7 -7,0 z M 140,133 l 7,0 0,7 -7,0 z M 147,133 l 7,0 0,7 -7,0 z M 161,133 l 7,0 0,7 -7,0 z M 168,133 l 7,0 0,7 -7,0 z M 0,140 l 7,0 0,7 -7,0 z M 14,140 l 7,0 0,7 -7,0 z M 21,140 l 7,0 0,7 -7,0 z M 28,140 l 7,0 0,7 -7,0 z M 42,140 l 7,0 0,7 -7,0 z M 56,140 l 7,0 0,7 -7,0 z M 70,140 l 7,0 0,7 -7,0 z M 84,140 l 7,0 0,7 -7,0 z M 105,140 l 7,0 0,7 -7,0 z M 112,140 l 7,0 0,7 -7,0 z M 119,140 l 7,0 0,7 -7,0 z M 126,140 l 7,0 0,7 -7,0 z M 133,140 l 7,0 0,7 -7,0 z M 140,140 l 7,0 0,7 -7,0 z M 154,140 l 7,0 0,7 -7,0 z M 161,140 l 7,0 0,7 -7,0 z M 0,147 l 7,0 0,7 -7,0 z M 14,147 l 7,0 0,7 -7,0 z M 21,147 l 7,0 0,7 -7,0 z M 28,147 l 7,0 0,7 -7,0 z M 42,147 l 7,0 0,7 -7,0 z M 56,147 l 7,0 0,7 -7,0 z M 119,147 l 7,0 0,7 -7,0 z M 126,147 l 7,0 0,7 -7,0 z M 140,147 l 7,0 0,7 -7,0 z M 147,147 l 7,0 0,7 -7,0 z M 154,147 l 7,0 0,7 -7,0 z M 168,147 l 7,0 0,7 -7,0 z M 0,154 l 7,0 0,7 -7,0 z M 14,154 l 7,0 0,7 -7,0 z M 21,154 l 7,0 0,7 -7,0 z M 28,154 l 7,0 0,7 -7,0 z M 42,154 l 7,0 0,7 -7,0 z M 56,154 l 7,0 0,7 -7,0 z M 77,154 l 7,0 0,7 -7,0 z M 84,154 l 7,0 0,7 -7,0 z M 147,154 l 7,0 0,7 -7,0 z M 154,154 l 7,0 0,7 -7,0 z M 168,154 l 7,0 0,7 -7,0 z M 0,161 l 7,0 0,7 -7,0 z M 42,161 l 7,0 0,7 -7,0 z M 56,161 l 7,0 0,7 -7,0 z M 77,161 l 7,0 0,7 -7,0 z M 105,161 l 7,0 0,7 -7,0 z M 112,161 l 7,0 0,7 -7,0 z M 119,161 l 7,0 0,7 -7,0 z M 133,161 l 7,0 0,7 -7,0 z M 140,161 l 7,0 0,7 -7,0 z M 147,161 l 7,0 0,7 -7,0 z M 168,161 l 7,0 0,7 -7,0 z M 0,168 l 7,0 0,7 -7,0 z M 7,168 l 7,0 0,7 -7,0 z M 14,168 l 7,0 0,7 -7,0 z M 21,168 l 7,0 0,7 -7,0 z M 28,168 l 7,0 0,7 -7,0 z M 35,168 l 7,0 0,7 -7,0 z M 42,168 l 7,0 0,7 -7,0 z M 56,168 l 7,0 0,7 -7,0 z M 77,168 l 7,0 0,7 -7,0 z M 84,168 l 7,0 0,7 -7,0 z M 119,168 l 7,0 0,7 -7,0 z M 126,168 l 7,0 0,7 -7,0 z M 133,168 l 7,0 0,7 -7,0 z M 140,168 l 7,0 0,7 -7,0 z M 147,168 l 7,0 0,7 -7,0 z M 154,168 l 7,0 0,7 -7,0 z M 161,168 l 7,0 0,7 -7,0 z M 168,168 l 7,0 0,7 -7,0 z "/>
+        <path fill="#0f172a" d="M 0,0 l 7,0 0,7 -7,0 z M 7,0 l 7,0 0,7 -7,0 z M 14,0 l 7,0 0,7 -7,0 z M 21,0 l 7,0 0,7 -7,0 z M 28,0 l 7,0 0,7 -7,0 z M 35,0 l 7,0 0,7 -7,0 z M 42,0 l 7,0 0,7 -7,0 z M 70,0 l 7,0 0,7 -7,0 z M 84,0 l 7,0 0,7 -7,0 z M 98,0 l 7,0 0,7 -7,0 z M 112,0 l 7,0 0,7 -7,0 z M 126,0 l 7,0 0,7 -7,0 z M 133,0 l 7,0 0,7 -7,0 z M 140,0 l 7,0 0,7 -7,0 z M 147,0 l 7,0 0,7 -7,0 z M 154,0 l 7,0 0,7 -7,0 z M 161,0 l 7,0 0,7 -7,0 z M 168,0 l 7,0 0,7 -7,0 z M 0,7 l 7,0 0,7 -7,0 z M 42,7 l 7,0 0,7 -7,0 z M 56,7 l 7,0 0,7 -7,0 z M 70,7 l 7,0 0,7 -7,0 z M 91,7 l 7,0 0,7 -7,0 z M 105,7 l 7,0 0,7 -7,0 z M 126,7 l 7,0 0,7 -7,0 z M 168,7 l 7,0 0,7 -7,0 z M 0,14 l 7,0 0,7 -7,0 z M 14,14 l 7,0 0,7 -7,0 z M 21,14 l 7,0 0,7 -7,0 z M 28,14 l 7,0 0,7 -7,0 z M 42,14 l 7,0 0,7 -7,0 z M 84,14 l 7,0 0,7 -7,0 z M 91,14 l 7,0 0,7 -7,0 z M 112,14 l 7,0 0,7 -7,0 z M 126,14 l 7,0 0,7 -7,0 z M 140,14 l 7,0 0,7 -7,0 z M 147,14 l 7,0 0,7 -7,0 z M 154,14 l 7,0 0,7 -7,0 z M 168,14 l 7,0 0,7 -7,0 z M 0,21 l 7,0 0,7 -7,0 z M 14,21 l 7,0 0,7 -7,0 z M 21,21 l 7,0 0,7 -7,0 z M 28,21 l 7,0 0,7 -7,0 z M 42,21 l 7,0 0,7 -7,0 z M 56,21 l 7,0 0,7 -7,0 z M 63,21 l 7,0 0,7 -7,0 z M 70,21 l 7,0 0,7 -7,0 z M 84,21 l 7,0 0,7 -7,0 z M 98,21 l 7,0 0,7 -7,0 z M 105,21 l 7,0 0,7 -7,0 z M 126,21 l 7,0 0,7 -7,0 z M 140,21 l 7,0 0,7 -7,0 z M 147,21 l 7,0 0,7 -7,0 z M 154,21 l 7,0 0,7 -7,0 z M 168,21 l 7,0 0,7 -7,0 z M 0,28 l 7,0 0,7 -7,0 z M 14,28 l 7,0 0,7 -7,0 z M 21,28 l 7,0 0,7 -7,0 z M 28,28 l 7,0 0,7 -7,0 z M 42,28 l 7,0 0,7 -7,0 z M 63,28 l 7,0 0,7 -7,0 z M 105,28 l 7,0 0,7 -7,0 z M 126,28 l 7,0 0,7 -7,0 z M 140,28 l 7,0 0,7 -7,0 z M 147,28 l 7,0 0,7 -7,0 z M 154,28 l 7,0 0,7 -7,0 z M 168,28 l 7,0 0,7 -7,0 z M 0,35 l 7,0 0,7 -7,0 z M 42,35 l 7,0 0,7 -7,0 z M 56,35 l 7,0 0,7 -7,0 z M 63,35 l 7,0 0,7 -7,0 z M 77,35 l 7,0 0,7 -7,0 z M 84,35 l 7,0 0,7 -7,0 z M 91,35 l 7,0 0,7 -7,0 z M 98,35 l 7,0 0,7 -7,0 z M 105,35 l 7,0 0,7 -7,0 z M 126,35 l 7,0 0,7 -7,0 z M 168,35 l 7,0 0,7 -7,0 z M 0,42 l 7,0 0,7 -7,0 z M 7,42 l 7,0 0,7 -7,0 z M 14,42 l 7,0 0,7 -7,0 z M 21,42 l 7,0 0,7 -7,0 z M 28,42 l 7,0 0,7 -7,0 z M 35,42 l 7,0 0,7 -7,0 z M 42,42 l 7,0 0,7 -7,0 z M 56,42 l 7,0 0,7 -7,0 z M 70,42 l 7,0 0,7 -7,0 z M 84,42 l 7,0 0,7 -7,0 z M 98,42 l 7,0 0,7 -7,0 z M 112,42 l 7,0 0,7 -7,0 z M 126,42 l 7,0 0,7 -7,0 z M 133,42 l 7,0 0,7 -7,0 z M 140,42 l 7,0 0,7 -7,0 z M 147,42 l 7,0 0,7 -7,0 z M 154,42 l 7,0 0,7 -7,0 z M 161,42 l 7,0 0,7 -7,0 z M 168,42 l 7,0 0,7 -7,0 z M 63,49 l 7,0 0,7 -7,0 z M 70,49 l 7,0 0,7 -7,0 z M 77,49 l 7,0 0,7 -7,0 z M 91,49 l 7,0 0,7 -7,0 z M 0,56 l 7,0 0,7 -7,0 z M 7,56 l 7,0 0,7 -7,0 z M 14,56 l 7,0 0,7 -7,0 z M 21,56 l 7,0 0,7 -7,0 z M 28,56 l 7,0 0,7 -7,0 z M 42,56 l 7,0 0,7 -7,0 z M 49,56 l 7,0 0,7 -7,0 z M 56,56 l 7,0 0,7 -7,0 z M 63,56 l 7,0 0,7 -7,0 z M 77,56 l 7,0 0,7 -7,0 z M 98,56 l 7,0 0,7 -7,0 z M 105,56 l 7,0 0,7 -7,0 z M 119,56 l 7,0 0,7 -7,0 z M 133,56 l 7,0 0,7 -7,0 z M 147,56 l 7,0 0,7 -7,0 z M 161,56 l 7,0 0,7 -7,0 z M 0,63 l 7,0 0,7 -7,0 z M 14,63 l 7,0 0,7 -7,0 z M 28,63 l 7,0 0,7 -7,0 z M 35,63 l 7,0 0,7 -7,0 z M 56,63 l 7,0 0,7 -7,0 z M 70,63 l 7,0 0,7 -7,0 z M 84,63 l 7,0 0,7 -7,0 z M 91,63 l 7,0 0,7 -7,0 z M 98,63 l 7,0 0,7 -7,0 z M 112,63 l 7,0 0,7 -7,0 z M 133,63 l 7,0 0,7 -7,0 z M 161,63 l 7,0 0,7 -7,0 z M 0,70 l 7,0 0,7 -7,0 z M 14,70 l 7,0 0,7 -7,0 z M 21,70 l 7,0 0,7 -7,0 z M 28,70 l 7,0 0,7 -7,0 z M 42,70 l 7,0 0,7 -7,0 z M 70,70 l 7,0 0,7 -7,0 z M 91,70 l 7,0 0,7 -7,0 z M 105,70 l 7,0 0,7 -7,0 z M 112,70 l 7,0 0,7 -7,0 z M 126,70 l 7,0 0,7 -7,0 z M 133,70 l 7,0 0,7 -7,0 z M 140,70 l 7,0 0,7 -7,0 z M 147,70 l 7,0 0,7 -7,0 z M 161,70 l 7,0 0,7 -7,0 z M 168,70 l 7,0 0,7 -7,0 z M 21,77 l 7,0 0,7 -7,0 z M 35,77 l 7,0 0,7 -7,0 z M 84,77 l 7,0 0,7 -7,0 z M 91,77 l 7,0 0,7 -7,0 z M 105,77 l 7,0 0,7 -7,0 z M 112,77 l 7,0 0,7 -7,0 z M 119,77 l 7,0 0,7 -7,0 z M 126,77 l 7,0 0,7 -7,0 z M 133,77 l 7,0 0,7 -7,0 z M 168,77 l 7,0 0,7 -7,0 z M 7,84 l 7,0 0,7 -7,0 z M 21,84 l 7,0 0,7 -7,0 z M 42,84 l 7,0 0,7 -7,0 z M 49,84 l 7,0 0,7 -7,0 z M 56,84 l 7,0 0,7 -7,0 z M 63,84 l 7,0 0,7 -7,0 z M 70,84 l 7,0 0,7 -7,0 z M 84,84 l 7,0 0,7 -7,0 z M 98,84 l 7,0 0,7 -7,0 z M 126,84 l 7,0 0,7 -7,0 z M 133,84 l 7,0 0,7 -7,0 z M 140,84 l 7,0 0,7 -7,0 z M 154,84 l 7,0 0,7 -7,0 z M 161,84 l 7,0 0,7 -7,0 z M 168,84 l 7,0 0,7 -7,0 z M 0,91 l 7,0 0,7 -7,0 z M 28,91 l 7,0 0,7 -7,0 z M 35,91 l 7,0 0,7 -7,0 z M 49,91 l 7,0 0,7 -7,0 z M 56,91 l 7,0 0,7 -7,0 z M 63,91 l 7,0 0,7 -7,0 z M 105,91 l 7,0 0,7 -7,0 z M 133,91 l 7,0 0,7 -7,0 z M 147,91 l 7,0 0,7 -7,0 z M 161,91 l 7,0 0,7 -7,0 z M 0,98 l 7,0 0,7 -7,0 z M 28,98 l 7,0 0,7 -7,0 z M 35,98 l 7,0 0,7 -7,0 z M 42,98 l 7,0 0,7 -7,0 z M 49,98 l 7,0 0,7 -7,0 z M 77,98 l 7,0 0,7 -7,0 z M 84,98 l 7,0 0,7 -7,0 z M 105,98 l 7,0 0,7 -7,0 z M 119,98 l 7,0 0,7 -7,0 z M 133,98 l 7,0 0,7 -7,0 z M 140,98 l 7,0 0,7 -7,0 z M 147,98 l 7,0 0,7 -7,0 z M 161,98 l 7,0 0,7 -7,0 z M 168,98 l 7,0 0,7 -7,0 z M 0,105 l 7,0 0,7 -7,0 z M 21,105 l 7,0 0,7 -7,0 z M 49,105 l 7,0 0,7 -7,0 z M 77,105 l 7,0 0,7 -7,0 z M 105,105 l 7,0 0,7 -7,0 z M 133,105 l 7,0 0,7 -7,0 z M 140,105 l 7,0 0,7 -7,0 z M 168,105 l 7,0 0,7 -7,0 z M 0,112 l 7,0 0,7 -7,0 z M 21,112 l 7,0 0,7 -7,0 z M 28,112 l 7,0 0,7 -7,0 z M 42,112 l 7,0 0,7 -7,0 z M 49,112 l 7,0 0,7 -7,0 z M 70,112 l 7,0 0,7 -7,0 z M 77,112 l 7,0 0,7 -7,0 z M 91,112 l 7,0 0,7 -7,0 z M 105,112 l 7,0 0,7 -7,0 z M 112,112 l 7,0 0,7 -7,0 z M 119,112 l 7,0 0,7 -7,0 z M 126,112 l 7,0 0,7 -7,0 z M 133,112 l 7,0 0,7 -7,0 z M 140,112 l 7,0 0,7 -7,0 z M 154,112 l 7,0 0,7 -7,0 z M 56,119 l 7,0 0,7 -7,0 z M 63,119 l 7,0 0,7 -7,0 z M 84,119 l 7,0 0,7 -7,0 z M 91,119 l 7,0 0,7 -7,0 z M 98,119 l 7,0 0,7 -7,0 z M 105,119 l 7,0 0,7 -7,0 z M 112,119 l 7,0 0,7 -7,0 z M 140,119 l 7,0 0,7 -7,0 z M 147,119 l 7,0 0,7 -7,0 z M 0,126 l 7,0 0,7 -7,0 z M 7,126 l 7,0 0,7 -7,0 z M 14,126 l 7,0 0,7 -7,0 z M 21,126 l 7,0 0,7 -7,0 z M 28,126 l 7,0 0,7 -7,0 z M 35,126 l 7,0 0,7 -7,0 z M 42,126 l 7,0 0,7 -7,0 z M 56,126 l 7,0 0,7 -7,0 z M 63,126 l 7,0 0,7 -7,0 z M 91,126 l 7,0 0,7 -7,0 z M 98,126 l 7,0 0,7 -7,0 z M 112,126 l 7,0 0,7 -7,0 z M 126,126 l 7,0 0,7 -7,0 z M 140,126 l 7,0 0,7 -7,0 z M 154,126 l 7,0 0,7 -7,0 z M 161,126 l 7,0 0,7 -7,0 z M 168,126 l 7,0 0,7 -7,0 z M 0,133 l 7,0 0,7 -7,0 z M 42,133 l 7,0 0,7 -7,0 z M 70,133 l 7,0 0,7 -7,0 z M 84,133 l 7,0 0,7 -7,0 z M 105,133 l 7,0 0,7 -7,0 z M 112,133 l 7,0 0,7 -7,0 z M 140,133 l 7,0 0,7 -7,0 z M 147,133 l 7,0 0,7 -7,0 z M 161,133 l 7,0 0,7 -7,0 z M 168,133 l 7,0 0,7 -7,0 z M 0,140 l 7,0 0,7 -7,0 z M 14,140 l 7,0 0,7 -7,0 z M 21,140 l 7,0 0,7 -7,0 z M 28,140 l 7,0 0,7 -7,0 z M 42,140 l 7,0 0,7 -7,0 z M 56,140 l 7,0 0,7 -7,0 z M 70,140 l 7,0 0,7 -7,0 z M 84,140 l 7,0 0,7 -7,0 z M 105,140 l 7,0 0,7 -7,0 z M 112,140 l 7,0 0,7 -7,0 z M 119,140 l 7,0 0,7 -7,0 z M 126,140 l 7,0 0,7 -7,0 z M 133,140 l 7,0 0,7 -7,0 z M 140,140 l 7,0 0,7 -7,0 z M 154,140 l 7,0 0,7 -7,0 z M 161,140 l 7,0 0,7 -7,0 z M 0,147 l 7,0 0,7 -7,0 z M 14,147 l 7,0 0,7 -7,0 z M 21,147 l 7,0 0,7 -7,0 z M 28,147 l 7,0 0,7 -7,0 z M 42,147 l 7,0 0,7 -7,0 z M 56,147 l 7,0 0,7 -7,0 z M 119,147 l 7,0 0,7 -7,0 z M 126,147 l 7,0 0,7 -7,0 z M 140,147 l 7,0 0,7 -7,0 z M 147,147 l 7,0 0,7 -7,0 z M 154,147 l 7,0 0,7 -7,0 z M 168,147 l 7,0 0,7 -7,0 z M 0,154 l 7,0 0,7 -7,0 z M 14,154 l 7,0 0,7 -7,0 z M 21,154 l 7,0 0,7 -7,0 z M 28,154 l 7,0 0,7 -7,0 z M 42,154 l 7,0 0,7 -7,0 z M 56,154 l 7,0 0,7 -7,0 z M 77,154 l 7,0 0,7 -7,0 z M 84,154 l 7,0 0,7 -7,0 z M 147,154 l 7,0 0,7 -7,0 z M 154,154 l 7,0 0,7 -7,0 z M 168,154 l 7,0 0,7 -7,0 z M 0,161 l 7,0 0,7 -7,0 z M 42,161 l 7,0 0,7 -7,0 z M 56,161 l 7,0 0,7 -7,0 z M 77,161 l 7,0 0,7 -7,0 z M 105,161 l 7,0 0,7 -7,0 z M 112,161 l 7,0 0,7 -7,0 z M 119,161 l 7,0 0,7 -7,0 z M 133,161 l 7,0 0,7 -7,0 z M 140,161 l 7,0 0,7 -7,0 z M 147,161 l 7,0 0,7 -7,0 z M 168,161 l 7,0 0,7 -7,0 z M 0,168 l 7,0 0,7 -7,0 z M 7,168 l 7,0 0,7 -7,0 z M 14,168 l 7,0 0,7 -7,0 z M 21,168 l 7,0 0,7 -7,0 z M 28,168 l 7,0 0,7 -7,0 z M 35,168 l 7,0 0,7 -7,0 z M 42,168 l 7,0 0,7 -7,0 z M 56,168 l 7,0 0,7 -7,0 z M 77,168 l 7,0 0,7 -7,0 z M 84,168 l 7,0 0,7 -7,0 z M 119,168 l 7,0 0,7 -7,0 z M 126,168 l 7,0 0,7 -7,0 z M 133,168 l 7,0 0,7 -7,0 z M 140,168 l 7,0 0,7 -7,0 z M 147,168 l 7,0 0,7 -7,0 z M 154,168 l 7,0 0,7 -7,0 z M 161,168 l 7,0 0,7 -7,0 z M 168,168 l 7,0 0,7 -7,0 z "/>
       </g>
     </g>
 
     <!-- Scan Text -->
-    <text x="125" y="264" font-family="'Plus Jakarta Sans', sans-serif" font-size="13.5" font-weight="800" fill="#ffffff" text-anchor="middle">WhatsApp Direct Support</text>
-    <text x="125" y="288" font-family="'Fira Code', monospace" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle">+91 82193 52124</text>
-    <text x="125" y="314" font-family="'Fira Code', monospace" font-size="11.5" font-weight="600" fill="#94a3b8" text-anchor="middle">www.pixeltocloud.com</text>
+    <text x="123" y="264" font-family="'Plus Jakarta Sans', sans-serif" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="middle">WhatsApp Direct Chat</text>
+    <text x="123" y="288" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#0284c7" text-anchor="middle">+91 82193 52124</text>
+    <text x="123" y="312" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="600" fill="#64748b" text-anchor="middle">www.pixeltocloud.com</text>
   </g>
 
   <!-- ================= BOTTOM: 3 KEY GUARANTEES ================= -->
-  <g transform="translate(65, 465)">
-    <rect width="920" height="85" rx="16" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1.2"/>
+  <g transform="translate(68, 456)">
+    <rect width="912" height="88" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" filter="url(#softCardShadow)"/>
 
-    <g transform="translate(28, 22)">
-      <text x="0" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#10b981">
-        ✓ <tspan fill="#ffffff">Full Source-Code Ownership</tspan> <tspan fill="#94a3b8" font-size="13.5" font-weight="400">&amp; 100% Data Control (Zero Lock-In)</tspan>
+    <g transform="translate(24, 24)">
+      <text x="0" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#059669">
+        ✓ <tspan fill="#0f172a">Full Source-Code Ownership</tspan> <tspan fill="#64748b" font-size="13" font-weight="500">&amp; 100% Data Control (Zero Lock-In)</tspan>
       </text>
-      <text x="0" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#00f0ff">
-        ✓ <tspan fill="#ffffff">Quick Delivery</tspan> <tspan fill="#94a3b8" font-size="13.5" font-weight="400">in Days, Not Months (With Milestone Reviews)</tspan>
+      <text x="0" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#0284c7">
+        ✓ <tspan fill="#0f172a">Quick Delivery</tspan> <tspan fill="#64748b" font-size="13" font-weight="500">in Days, Not Months (With Milestone Demos)</tspan>
       </text>
-      <text x="0" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#f59e0b">
-        ✓ <tspan fill="#ffffff">Affordable Fixed Pricing</tspan> <tspan fill="#94a3b8" font-size="13.5" font-weight="400">&amp; Dedicated Long-Term Ongoing Support</tspan>
+      <text x="0" y="50" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#d97706">
+        ✓ <tspan fill="#0f172a">Affordable Fixed Pricing</tspan> <tspan fill="#64748b" font-size="13" font-weight="500">&amp; Dedicated Long-Term Ongoing Support</tspan>
       </text>
     </g>
 
-    <g transform="translate(740, 24)">
-      <rect width="155" height="38" rx="10" fill="rgba(0, 240, 255, 0.12)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1.2"/>
-      <text x="77.5" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="13.5" font-weight="800" fill="#00f0ff" text-anchor="middle">Zero Lock-In</text>
+    <g transform="translate(732, 26)">
+      <rect width="150" height="36" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+      <text x="75" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#059669" text-anchor="middle">Zero Lock-In</text>
     </g>
   </g>
 </svg>

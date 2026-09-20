@@ -11,10 +11,10 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #060911;
-      color: #f1f5f9;
+      background: #f8fafc;
+      color: #0f172a;
       margin: 0;
-      padding: 24px 16px;
+      padding: 32px 16px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -26,7 +26,7 @@
       width: 100%;
       max-width: 680px;
       height: 388px;
-      margin: 24px auto;
+      margin: 28px auto;
     }
     .card-object {
       width: 100%;
@@ -34,8 +34,8 @@
       position: relative;
       transform-style: preserve-3d;
       transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border-radius: 20px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 240, 255, 0.15);
+      border-radius: 18px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.05);
       cursor: pointer;
     }
     .card-object.flipped {
@@ -47,10 +47,10 @@
       height: 100%;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
-      border-radius: 20px;
+      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(0, 240, 255, 0.35);
-      background: #070a12;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
     }
     .card-face img {
       width: 100%;
@@ -88,12 +88,12 @@
 </head>
 <body>
   <div class="text-center max-w-2xl mx-auto mb-2 no-print">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 font-mono text-xs mb-3">
-      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-      PRINT-READY VECTOR SPECIFICATION (300 DPI · 3.5" × 2.0")
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-700 font-mono text-xs mb-3">
+      <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+      MINIMALIST STUDIO SPECIFICATION (300 DPI · 3.5" × 2.0")
     </div>
-    <h1 class="text-3xl font-black text-white tracking-tight">PixelTo<span class="text-cyan-400">Cloud</span> Visiting Card</h1>
-    <p class="text-slate-400 text-sm mt-1">Click the card below to flip between Front and Back.</p>
+    <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">PixelTo<span class="text-sky-600">Cloud</span> Visiting Card</h1>
+    <p class="text-slate-500 text-sm mt-1">Click the card below to flip between Front and Back.</p>
   </div>
 
   <div class="card-scene no-print" onclick="toggleFlip()">
@@ -108,55 +108,55 @@
   </div>
 
   <div class="flex flex-wrap items-center justify-center gap-3 mt-1 no-print">
-    <button onclick="toggleFlip()" class="btn-action px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm border border-slate-700 shadow-lg flex items-center gap-2">
-      <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+    <button onclick="toggleFlip()" class="btn-action px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-md flex items-center gap-2">
+      <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
       <span id="flipLabel">Flip to Back Side</span>
     </button>
-    <a href="pankaj_card_front.png" download="PixelToCloud-Card-Front.png" class="btn-action px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-sm shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+    <a href="pankaj_card_front.png" download="PixelToCloud-Card-Front.png" class="btn-action px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm shadow-md shadow-sky-600/20 flex items-center gap-2">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
       Download Front PNG
     </a>
-    <a href="pankaj_card_back.png" download="PixelToCloud-Card-Back.png" class="btn-action px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm shadow-lg shadow-emerald-500/20 flex items-center gap-2">
+    <a href="pankaj_card_back.png" download="PixelToCloud-Card-Back.png" class="btn-action px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md shadow-emerald-600/20 flex items-center gap-2">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
       Download Back PNG
     </a>
-    <a href="pankaj_card_front.svg" download="PixelToCloud-Card-Front.svg" class="btn-action px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700 flex items-center gap-2">
+    <a href="pankaj_card_front.svg" download="PixelToCloud-Card-Front.svg" class="btn-action px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-medium text-xs border border-slate-300 shadow-sm flex items-center gap-2">
       Front SVG
     </a>
-    <a href="pankaj_card_back.svg" download="PixelToCloud-Card-Back.svg" class="btn-action px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-slate-700 flex items-center gap-2">
+    <a href="pankaj_card_back.svg" download="PixelToCloud-Card-Back.svg" class="btn-action px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-medium text-xs border border-slate-300 shadow-sm flex items-center gap-2">
       Back SVG
     </a>
-    <button onclick="window.print()" class="btn-action px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-lg shadow-purple-500/20 flex items-center gap-2">
+    <button onclick="window.print()" class="btn-action px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-md shadow-indigo-600/20 flex items-center gap-2">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
       Print / Save PDF
     </button>
   </div>
 
-  <div class="max-w-2xl w-full mx-auto mt-8 bg-slate-900/60 border border-slate-800 rounded-2xl p-5 text-xs text-slate-400 no-print">
-    <div class="font-bold text-slate-200 text-sm mb-2 flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+  <div class="max-w-2xl w-full mx-auto mt-8 bg-white border border-slate-200 shadow-sm rounded-2xl p-5 text-xs text-slate-600 no-print">
+    <div class="font-bold text-slate-900 text-sm mb-2 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
       Printer Specifications for Local Print Shop
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3">
-      <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
-        <div class="text-slate-500">Dimensions</div>
-        <div class="text-white font-mono font-bold text-sm">3.5" × 2.0"</div>
+      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+        <div class="text-slate-400">Dimensions</div>
+        <div class="text-slate-900 font-mono font-bold text-sm">3.5" × 2.0"</div>
         <div class="text-slate-500 text-[10px]">89mm × 51mm</div>
       </div>
-      <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
-        <div class="text-slate-500">Paper Stock</div>
-        <div class="text-white font-mono font-bold text-sm">350–400 GSM</div>
+      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+        <div class="text-slate-400">Paper Stock</div>
+        <div class="text-slate-900 font-mono font-bold text-sm">350–400 GSM</div>
         <div class="text-slate-500 text-[10px]">Matte Laminated</div>
       </div>
-      <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
-        <div class="text-slate-500">Resolution</div>
-        <div class="text-white font-mono font-bold text-sm">1050 × 600 px</div>
+      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+        <div class="text-slate-400">Resolution</div>
+        <div class="text-slate-900 font-mono font-bold text-sm">1050 × 600 px</div>
         <div class="text-slate-500 text-[10px]">300 DPI Vector</div>
       </div>
-      <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
-        <div class="text-slate-500">QR Code Action</div>
-        <div class="text-white font-mono font-bold text-sm">WhatsApp Chat</div>
-        <div class="text-slate-500 text-[10px]">+91 82193 52124</div>
+      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+        <div class="text-slate-400">Email &amp; QR</div>
+        <div class="text-slate-900 font-mono font-bold text-sm">WhatsApp Direct</div>
+        <div class="text-slate-500 text-[10px]">contact@pixeltocloud.com</div>
       </div>
     </div>
   </div>
