@@ -17,7 +17,7 @@
   <rect width="1050" height="600" fill="#ffffff"/>
 
   <!-- ================= LOGO & BRAND IDENTITY ================= -->
-  <g transform="translate(525, 185)">
+  <g transform="translate(525, 180)">
     <!-- THE EXACT P-CLOUD ICON -->
     <g transform="translate(-124, -80)">
       <!-- Outer Cloud Contour Outline -->
@@ -59,46 +59,45 @@
             stroke-linejoin="round"/>
     </g>
 
-    <!-- Company Name Typography -->
-    <text x="0" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="44" fill="#0f172a" text-anchor="middle" letter-spacing="-0.5">
-      PixelToCloud <tspan fill="#334155" font-weight="500">Solutions</tspan>
+    <!-- Company Name Typography (Bold PixelToCloud) -->
+    <text x="0" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="48" fill="#0f172a" text-anchor="middle" letter-spacing="-0.8">
+      PixelToCloud
     </text>
 
     <!-- Tagline Subtitle -->
-    <text x="0" y="146" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="18.5" fill="#64748b" text-anchor="middle" letter-spacing="0.4">
+    <text x="0" y="146" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="18.5" fill="#475569" text-anchor="middle" letter-spacing="0.4">
       Custom Software · AI Automation · Cloud
     </text>
   </g>
 
-  <!-- ================= MINIMALIST CONTACT BAR (NO ADDRESS · ULTRA CLEAN) ================= -->
-  <g transform="translate(480, 470)">
-    <!-- Email -->
-    <g transform="translate(-360, 0)">
-      <path d="M 0 -8 C 0 -9.5 1 -10.5 2.5 -10.5 L 20.5 -10.5 C 22 -10.5 23 -9.5 23 -8 L 23 5 C 23 6.5 22 7.5 20.5 7.5 L 2.5 7.5 C 1 7.5 0 6.5 0 5 Z M 2 -8 L 11.5 -0.5 L 21 -8 Z" fill="#0284c7"/>
-      <text x="34" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">
-        contact@pixeltocloud.com
-      </text>
+  <!-- ================= MINIMALIST 2-ROW CONTACT (NO ADDRESS · ULTRA CLEAN) ================= -->
+  <g transform="translate(525, 450)">
+    <!-- Row 1: Email & Phone -->
+    <g transform="translate(0, 0)">
+      <!-- Email -->
+      <g transform="translate(-275, 0)">
+        <path d="M 0 -8 C 0 -9.5 1 -10.5 2.5 -10.5 L 20.5 -10.5 C 22 -10.5 23 -9.5 23 -8 L 23 5 C 23 6.5 22 7.5 20.5 7.5 L 2.5 7.5 C 1 7.5 0 6.5 0 5 Z M 2 -8 L 11.5 -0.5 L 21 -8 Z" fill="#0f172a"/>
+        <text x="34" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">
+          contact@pixeltocloud.com
+        </text>
+      </g>
+
+      <!-- Pipe Separator -->
+      <text x="12" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="300" fill="#94a3b8" text-anchor="middle">|</text>
+
+      <!-- Phone -->
+      <g transform="translate(38, 0)">
+        <text x="0" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18.5" font-weight="800" fill="#0f172a" text-anchor="start">
+          +91 86290 08768
+        </text>
+      </g>
     </g>
 
-    <!-- Clean Pipe Separator 1 -->
-    <text x="-65" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="300" fill="#cbd5e1" text-anchor="middle">|</text>
-
-    <!-- Phone -->
-    <g transform="translate(-35, 0)">
-      <path d="M 0 -8 C 0 -9 1 -10 2 -10 L 4.5 -10 C 5.5 -10 6.5 -9 6.5 -8 L 7.5 -5 C 8 -4 7.5 -3 6.5 -2 L 6 -1 C 7 1 8.5 2.5 10.5 3.5 L 11.5 3 C 12.5 2 13.5 2.5 14.5 3 L 17.5 4.5 C 18.5 5 18.5 6 17.5 7 L 16.5 8 C 15.5 9 14.5 9 13.5 8 C 5.5 7 0.5 2 0 -6 Z" fill="#16a34a" transform="scale(0.9) translate(0, -2)"/>
-      <text x="24" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">
-        +91 82193 52124
-      </text>
-    </g>
-
-    <!-- Clean Pipe Separator 2 -->
-    <text x="175" y="0" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="300" fill="#cbd5e1" text-anchor="middle">|</text>
-
-    <!-- Website -->
-    <g transform="translate(205, 0)">
-      <circle cx="8.5" cy="-1" r="8.5" stroke="#0284c7" stroke-width="1.5" fill="none"/>
-      <path d="M 0 -1 L 17 -1 M 8.5 -9.5 C 10.5 -6.5 11.5 -3 11.5 -1 C 11.5 1 10.5 4.5 8.5 7.5 M 8.5 -9.5 C 6.5 -6.5 5.5 -3 5.5 -1 C 5.5 1 6.5 4.5 8.5 7.5" stroke="#0284c7" stroke-width="1.3" fill="none"/>
-      <text x="28" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#0284c7" text-anchor="start">
+    <!-- Row 2: Website Centered -->
+    <g transform="translate(0, 42)">
+      <circle cx="-118" cy="-1" r="8.5" stroke="#0f172a" stroke-width="1.5" fill="none"/>
+      <path d="M -126.5 -1 L -109.5 -1 M -118 -9.5 C -116 -6.5 -115 -3 -115 -1 C -115 1 -116 4.5 -118 7.5 M -118 -9.5 C -120 -6.5 -121 -3 -121 -1 C -121 1 -120 4.5 -118 7.5" stroke="#0f172a" stroke-width="1.3" fill="none"/>
+      <text x="-98" y="2" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" font-weight="800" fill="#0f172a" text-anchor="start">
         www.pixeltocloud.com
       </text>
     </g>
