@@ -30,7 +30,7 @@
 
 .benefit-row p {
   margin: 0;
-  max-width: 48ch;
+  max-width: 40rem;
   color: var(--text-secondary);
   font-size: 0.97rem;
   line-height: 1.55;

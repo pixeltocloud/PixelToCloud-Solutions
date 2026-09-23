@@ -2,8 +2,26 @@ import { Link, useParams } from 'react-router-dom'
 import { getCaseStudy } from '../data/caseStudies'
 import Button from '../components/ui/Button'
 import FinalCTA from '../components/sections/FinalCTA'
+import ProjectVisual from '../components/ui/ProjectVisual'
 import Seo from '../components/seo/Seo'
 import './WorkDetail.css'
+
+function Cover({ study }) {
+  const usePhoto = study.coverImage && !study.coverImage.endsWith('.svg')
+  if (usePhoto) {
+    return (
+      <img
+        src={study.coverImage}
+        alt={`${study.shortTitle} product preview`}
+        width="960"
+        height="640"
+        loading="eager"
+        decoding="async"
+      />
+    )
+  }
+  return <ProjectVisual study={study} />
+}
 
 export default function WorkDetail() {
   const { slug } = useParams()
@@ -92,14 +110,7 @@ export default function WorkDetail() {
             </article>
           </div>
           <div className="detail-cover">
-            <img
-              src={study.coverImage}
-              alt={`${study.shortTitle} product preview`}
-              width="960"
-              height="640"
-              loading="eager"
-              decoding="async"
-            />
+            <Cover study={study} />
           </div>
         </div>
       </section>

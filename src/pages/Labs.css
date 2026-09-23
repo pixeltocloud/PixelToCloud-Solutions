@@ -38,11 +38,13 @@
   color: var(--accent);
 }
 
-.lab-status.is-interactive {
+.lab-status.is-interactive,
+.lab-status.is-case-study {
   color: var(--accent-emerald);
 }
 
-.lab-status.is-prototype {
+.lab-status.is-prototype,
+.lab-status.is-capability {
   color: var(--text-muted);
 }
 

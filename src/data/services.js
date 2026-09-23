@@ -196,7 +196,7 @@ export const whyUs = [
   {
     title: 'Direct founder access',
     description:
-      'You work with Pankaj and Tushar—the engineers shipping the product—not a sales layer.',
+      'You work with Pankaj and Rusmeen—the engineers shipping the product—not a sales layer.',
   },
   {
     title: 'Rapid milestone delivery',

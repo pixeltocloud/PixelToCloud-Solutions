@@ -12,10 +12,10 @@ export default function Labs() {
       <section className="page-hero">
         <div className="container">
           <p className="page-kicker">Engineering Lab</p>
-          <h1>Interactive demos &amp; prototypes</h1>
+          <h1>Capabilities we apply on client work</h1>
           <p>
-            Sandboxes that show how we think about WebGL, deploys, and infrastructure—built by the same team shipping
-            client work.
+            R&amp;D themes behind our website and product engineering—linked to real case studies and services, not
+            vaporware demos.
           </p>
         </div>
       </section>
@@ -30,8 +30,8 @@ export default function Labs() {
               </div>
               <h2>{lab.title}</h2>
               <p>{lab.description}</p>
-              <Button to="/contact" variant="secondary" className="lab-cta">
-                Ask about this capability
+              <Button to={lab.href} variant="secondary" className="lab-cta">
+                {lab.cta}
               </Button>
             </Reveal>
           ))}

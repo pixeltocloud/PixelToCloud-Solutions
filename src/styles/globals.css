@@ -10,6 +10,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -38,6 +44,11 @@ body {
 .site-main {
   flex: 1;
   padding-top: var(--header-h);
+}
+
+.route-fallback {
+  padding: 2rem 0;
+  color: var(--text-muted);
 }
 
 h1,
@@ -160,12 +171,12 @@ textarea {
 .surface-ink .section-title,
 .surface-ink h2,
 .surface-ink h3 {
-  color: #f8fafc;
+  color: var(--text-on-ink);
 }
 
 .surface-ink .section-desc,
 .surface-ink p {
-  color: #94a3b8;
+  color: var(--text-on-ink-muted);
 }
 
 .surface-ink .section-tag {
@@ -179,11 +190,5 @@ textarea {
 
   .section {
     padding: 2.5rem 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
   }
 }

@@ -1,0 +1,133 @@
+.page-ink-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.5rem, 6vw, 4.25rem) 0 clamp(2rem, 4vw, 3rem);
+  background: var(--bg-ink);
+  color: var(--text-on-ink);
+}
+
+.page-ink-hero-glow {
+  position: absolute;
+  inset: -20% auto auto 55%;
+  width: min(520px, 70vw);
+  height: min(520px, 70vw);
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 28%, transparent), transparent 65%);
+  filter: blur(24px);
+  pointer-events: none;
+  animation: glow-breathe 7s ease-in-out infinite;
+}
+
+.page-ink-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2rem;
+}
+
+.page-ink-hero-copy h1 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.6vw, 3.15rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+  color: var(--text-on-ink);
+  max-width: none;
+  text-wrap: balance;
+}
+
+.page-ink-hero-copy p {
+  margin: 0 0 1.4rem;
+  max-width: 36rem;
+  color: var(--text-on-ink-muted);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.55;
+}
+
+.page-ink-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.page-ink-hero .btn.btn-primary {
+  color: #fff;
+  background: var(--cta);
+  border-color: transparent;
+}
+
+.page-ink-hero .btn.btn-secondary {
+  color: var(--text-on-ink);
+  border-color: color-mix(in srgb, var(--text-on-ink) 35%, transparent);
+  background: color-mix(in srgb, var(--text-on-ink) 6%, transparent);
+}
+
+.page-ink-hero .btn.btn-secondary:hover {
+  color: var(--text-on-ink);
+  border-color: var(--text-on-ink);
+  background: color-mix(in srgb, var(--text-on-ink) 12%, transparent);
+}
+
+.page-ink-hero-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.page-ink-hero-points li {
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--border-ink);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--text-on-ink) 4%, transparent);
+  backdrop-filter: blur(8px);
+  transition:
+    transform 280ms var(--ease-out),
+    border-color 220ms var(--ease),
+    background 220ms var(--ease);
+}
+
+.page-ink-hero-points li:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border-ink));
+  background: color-mix(in srgb, var(--text-on-ink) 8%, transparent);
+}
+
+.page-ink-hero-points strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: -0.025em;
+  color: var(--text-on-ink);
+}
+
+.page-ink-hero-points span {
+  color: var(--text-on-ink-muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 900px) {
+  .page-ink-hero-inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 1.75rem;
+    align-items: center;
+  }
+
+  .page-ink-hero-points {
+    gap: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-ink-hero-glow {
+    animation: none;
+  }
+
+  .page-ink-hero-points li {
+    transition: none;
+  }
+}

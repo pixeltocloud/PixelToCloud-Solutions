@@ -9,7 +9,6 @@ export default function WhyPixelToCloud() {
       <div className="container why-layout">
         <Reveal>
           <SectionHeading
-            tag="Why PixelToCloud"
             title="Zero lock-in. Complete freedom."
             description="Unlike agencies that hold your domain and code hostage, you own 100% of everything we build—and this live site is proof of the craft."
           />

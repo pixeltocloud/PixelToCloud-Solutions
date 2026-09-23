@@ -66,13 +66,13 @@ export default function Seo({ title, description, path, image, noindex = false }
       url: defaultSeo.siteUrl,
       logo: `${defaultSeo.siteUrl}/favicon.svg`,
       image: ogImage,
-      email: 'pixeltocloud@gmail.com',
+      email: 'contact@pixeltocloud.com',
       telephone: ['+918219352124', '+919928196424'],
       priceRange: '$$',
       areaServed: ['IN', 'US', 'GB', 'AE', 'CA', 'DE', 'FR'],
       founders: [
         { '@type': 'Person', name: 'Pankaj Gupta', jobTitle: 'Founder & Principal Systems Architect' },
-        { '@type': 'Person', name: 'Tushar Singhal', jobTitle: 'Co-Founder & Senior Software Developer' },
+        { '@type': 'Person', name: 'Rusmeen', jobTitle: 'Co-Founder & Senior Software Developer' },
       ],
     })
   }, [finalTitle, finalDescription, url, ogImage, noindex])

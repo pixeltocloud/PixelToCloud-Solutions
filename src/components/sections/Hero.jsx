@@ -1,92 +1,156 @@
+import { useEffect, useRef, useState } from 'react'
 import Button from '../ui/Button'
 import { contact, agencyStats } from '../../data/founders'
 import './Hero.css'
 
-const floating = [
-  { text: '10–14 day MVP', style: { top: '18%', right: '8%' } },
-  { text: '100% IP owned', style: { top: '42%', right: '4%' } },
-  { text: 'Founder-led', style: { bottom: '22%', right: '12%' } },
-]
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const sync = () => setReduced(mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+  return reduced
+}
+
+function CountUp({ value, active }) {
+  const numeric = parseFloat(String(value).replace(/[^\d.]/g, ''))
+  const suffix = String(value).replace(/[\d.\s]/g, '') || ''
+  const prefix = String(value).match(/^[^\d]*/)?.[0] || ''
+  const isRange = String(value).includes('–') || String(value).includes('-')
+  const [display, setDisplay] = useState(isRange ? value : `${prefix}0${suffix}`)
+
+  useEffect(() => {
+    if (!active || isRange || Number.isNaN(numeric)) {
+      setDisplay(value)
+      return undefined
+    }
+    let frame
+    const start = performance.now()
+    const duration = 1400
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration)
+      const eased = 1 - Math.pow(1 - t, 3)
+      const current = Math.round(numeric * eased)
+      setDisplay(`${prefix}${current}${suffix}`)
+      if (t < 1) frame = requestAnimationFrame(tick)
+    }
+    frame = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(frame)
+  }, [active, value, numeric, prefix, suffix, isRange])
+
+  return <>{display}</>
+}
 
 export default function Hero() {
+  const reducedMotion = usePrefersReducedMotion()
+  const sectionRef = useRef(null)
+  const mediaRef = useRef(null)
+  const contentRef = useRef(null)
+  const [ready, setReady] = useState(false)
+  const [statsActive, setStatsActive] = useState(false)
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setReady(true), reducedMotion ? 0 : 40)
+    return () => window.clearTimeout(id)
+  }, [reducedMotion])
+
+  useEffect(() => {
+    if (reducedMotion) {
+      setStatsActive(true)
+      return undefined
+    }
+
+    const onScroll = () => {
+      const section = sectionRef.current
+      if (!section) return
+      const rect = section.getBoundingClientRect()
+      const progress = Math.min(1, Math.max(0, -rect.top / Math.max(rect.height, 1)))
+      if (mediaRef.current) {
+        mediaRef.current.style.transform = `translate3d(0, ${progress * 18}%, 0) scale(${1.08 + progress * 0.06})`
+      }
+      if (contentRef.current) {
+        contentRef.current.style.opacity = String(1 - progress * 1.15)
+        contentRef.current.style.transform = `translate3d(0, ${progress * -48}px, 0)`
+      }
+      if (progress > 0.08) setStatsActive(true)
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [reducedMotion])
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setStatsActive(true), 1200)
+    return () => window.clearTimeout(timer)
+  }, [])
+
   return (
-    <section className="hero" id="home">
-      <div className="hero-glow" aria-hidden="true" />
-      <div className="hero-grid-bg" aria-hidden="true" />
+    <section ref={sectionRef} className={`hero ${ready ? 'is-ready' : ''}`} id="home">
+      <div className="hero-media" ref={mediaRef} aria-hidden="true">
+        <img
+          src="/image/hero-workspace.jpg"
+          alt=""
+          width="2000"
+          height="1425"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="hero-photo"
+        />
+        <div className="hero-veil" />
+        <div className="hero-grain" />
+        <div className="hero-orbit" />
+      </div>
 
-      <div className="container hero-layout">
-        <div className="hero-copy">
-          <div className="hero-status">
-            <span className="live-dot" aria-hidden="true" />
-            <span>Website development agency · Available for new projects</span>
-          </div>
+      <div className="container hero-content" ref={contentRef}>
+        <p className="hero-brand">
+          <span className="hero-brand-mark" />
+          PixelToCloud
+        </p>
 
-          <p className="hero-brand">PixelToCloud</p>
+        <h1>
+          <span className="hero-mask">
+            <span className="hero-mask-inner">Stunning websites, custom software &amp; AI</span>
+          </span>
+          <span className="hero-mask">
+            <span className="hero-mask-inner hero-accent shimmer-text">for modern businesses</span>
+          </span>
+        </h1>
 
-          <h1>
-            Stunning websites,
-            <span className="hero-line">custom software &amp; AI</span>
-            <span className="hero-accent shimmer-text">for modern businesses</span>
-          </h1>
+        <p className="hero-sub">
+          High-converting sites, operational software, and AI automations—with 100% source-code ownership and zero
+          vendor lock-in.
+        </p>
 
-          <p className="hero-sub">
-            We design high-converting web experiences, build operational software &amp; CRM portals, and deploy
-            intelligent automations—with 100% source-code ownership and zero vendor lock-in.
-          </p>
-
-          <div className="hero-cta">
-            <Button to="/contact">Start a project</Button>
-            <Button to="/work" variant="secondary">
-              View our work
-            </Button>
-            <Button href={contact.whatsappLink} target="_blank" rel="noreferrer" variant="ghost">
-              WhatsApp
-            </Button>
-          </div>
-
-          <ul className="hero-perks">
-            <li>10–14 day rapid MVP delivery</li>
-            <li>100% code &amp; asset ownership</li>
-            <li>Direct founder WhatsApp access</li>
-          </ul>
+        <div className="hero-cta">
+          <Button to="/contact" className="hero-btn-primary">
+            Start a project
+          </Button>
+          <Button to="/work" variant="secondary" className="hero-btn-secondary">
+            View our work
+          </Button>
+          <Button href={contact.whatsappLink} target="_blank" rel="noreferrer" variant="ghost" className="hero-btn-ghost">
+            WhatsApp
+          </Button>
         </div>
 
-        <div className="hero-stage" aria-hidden="true">
-          <div className="hero-frame">
-            <div className="hero-frame-bar">
-              <span />
-              <span />
-              <span />
-              <em>pixeltocloud.com</em>
-            </div>
-            <img
-              src="/image/hero-workspace.jpg"
-              alt=""
-              width="1200"
-              height="800"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-            />
-            <div className="hero-frame-caption">
-              <strong>This site is our proof of work</strong>
-              <span>Designed &amp; engineered by PixelToCloud</span>
-            </div>
-          </div>
-
-          {floating.map((item, i) => (
-            <div key={item.text} className={`float-label hero-chip chip-${i}`} style={item.style}>
-              {item.text}
-            </div>
-          ))}
-        </div>
+        <a className="hero-scroll" href="#selected-work">
+          <span>Scroll</span>
+          <i />
+        </a>
       </div>
 
       <div className="hero-stats">
         <div className="container hero-stats-row">
-          {agencyStats.map((stat) => (
-            <div key={stat.label}>
-              <strong>{stat.value}</strong>
+          {agencyStats.map((stat, index) => (
+            <div key={stat.label} className="hero-stat" style={{ '--stat-delay': `${index * 90}ms` }}>
+              <strong>
+                <CountUp value={stat.value} active={statsActive} />
+              </strong>
               <span>{stat.label}</span>
             </div>
           ))}

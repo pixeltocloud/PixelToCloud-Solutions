@@ -7,10 +7,9 @@ export default function Pillars() {
     <section className="section pillars surface-ink" id="pillars">
       <div className="container">
         <Reveal>
-          <p className="section-tag">Build · Grow · Automate</p>
-          <h2 className="section-title">The philosophy behind every engagement</h2>
+          <h2 className="section-title">How we structure every build</h2>
           <p className="section-desc">
-            Designed to move your business from first concept to a live system you fully own.
+            Clear pillars so your website, growth systems, and automation stay aligned from kickoff to handover.
           </p>
         </Reveal>
         <div className="pillars-grid">

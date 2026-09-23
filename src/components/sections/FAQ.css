@@ -7,8 +7,14 @@
   gap: 1.75rem;
 }
 
+.investment-aside {
+  display: flex;
+  flex-direction: column;
+}
+
 .investment-aside .section-title {
-  max-width: 12ch;
+  max-width: 22rem;
+  text-wrap: balance;
 }
 
 .investment-aside .section-desc {
@@ -19,6 +25,7 @@
   display: grid;
   gap: 0.75rem;
   margin-bottom: 1.35rem;
+  flex: 1;
 }
 
 .investment-tiers article {
@@ -36,6 +43,7 @@
 .investment-tiers h3 {
   margin: 0 0 0.25rem;
   font-size: 0.95rem;
+  color: var(--text);
 }
 
 .tier-range {
@@ -53,12 +61,27 @@
   font-size: 0.88rem;
 }
 
+.investment-aside .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.investment-faq {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
 .faq-panel {
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--bg-secondary);
   padding: 0.35rem;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
 }
 
 .faq-panel-title {
@@ -72,6 +95,8 @@
 .faq-list {
   display: grid;
   gap: 0.35rem;
+  flex: 1;
+  align-content: stretch;
 }
 
 .faq-item {
@@ -145,15 +170,81 @@
   line-height: 1.6;
 }
 
-@media (min-width: 980px) {
-  .investment-grid {
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 2.5rem;
+.investment-tiers.is-wide {
+  margin-top: 0.25rem;
+  margin-bottom: 1.35rem;
+  flex: none;
+}
+
+.investment-cta {
+  margin-top: 0.25rem;
+}
+
+.faq-section {
+  background: var(--bg-secondary);
+  border-block: 1px solid var(--border);
+}
+
+.faq-panel.is-wide {
+  width: 100%;
+  max-width: none;
+  padding: 0.5rem;
+}
+
+.faq-list.is-wide {
+  gap: 0.45rem;
+}
+
+@media (min-width: 800px) {
+  .investment-tiers.is-wide {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .faq-list.is-wide {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
     align-items: start;
   }
 
-  .investment-aside {
-    position: sticky;
-    top: calc(var(--header-h) + 1.25rem);
+  .faq-list.is-wide .faq-item {
+    border: 1px solid var(--border);
+    background: var(--bg-primary);
+    height: auto;
+    align-self: start;
+  }
+
+  .faq-list.is-wide .faq-item.is-open {
+    background: var(--bg-elevated);
+  }
+}
+
+@media (min-width: 980px) {
+  .investment-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .investment-grid > .reveal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .investment-aside,
+  .investment-faq {
+    height: 100%;
+  }
+
+  .investment-grid .faq-list:not(.is-wide) {
+    grid-auto-rows: 1fr;
+  }
+
+  .investment-grid .faq-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }

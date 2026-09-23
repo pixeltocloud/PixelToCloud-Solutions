@@ -9,7 +9,6 @@ export default function Process() {
       <div className="container">
         <Reveal>
           <SectionHeading
-            tag="Process"
             title="From concept to cloud launch"
             description="A clear 4-stage pipeline engineered for milestone transparency and 100% intellectual property ownership."
           />

@@ -10,7 +10,6 @@ export default function Founders() {
       <div className="container">
         <Reveal>
           <SectionHeading
-            tag="Team"
             title="Who you work with"
             description="A small senior team involved from first architecture decisions through launch and support."
           />
@@ -43,7 +42,7 @@ export default function Founders() {
                 <span>{person.label}</span>
                 {person.email ? (
                   <Button href={`mailto:${person.email}`} variant="ghost" className="founder-btn">
-                    Email Pankaj
+                    Email
                   </Button>
                 ) : (
                   <Button to="/contact" variant="ghost" className="founder-btn">

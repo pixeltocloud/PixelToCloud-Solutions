@@ -11,7 +11,7 @@
   inset: auto auto -40% 40%;
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba(255, 87, 34, 0.28), transparent 65%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--cta) 28%, transparent), transparent 65%);
   filter: blur(20px);
   animation: glow-breathe 5s ease-in-out infinite;
   pointer-events: none;
@@ -39,14 +39,15 @@
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   letter-spacing: -0.035em;
-  color: #fff;
-  max-width: 16ch;
+  color: var(--text-on-ink);
+  max-width: 22rem;
+  text-wrap: balance;
 }
 
 .final-cta p {
   margin: 0;
-  max-width: 42ch;
-  color: #94a3b8;
+  max-width: 36rem;
+  color: var(--text-on-ink-muted);
 }
 
 .final-cta-actions {
@@ -55,14 +56,40 @@
   gap: 0.65rem;
 }
 
-.final-cta .btn-primary {
+.final-cta .btn.btn-primary {
   background: var(--cta);
+  color: #fff;
+  border-color: transparent;
+}
+
+.final-cta .btn.btn-primary:hover {
+  background: var(--cta-hover);
   color: #fff;
 }
 
-.final-cta .btn-secondary {
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #fff;
+.final-cta .btn.btn-secondary {
+  color: var(--text-on-ink);
+  background: var(--bg-secondary);
+  border-color: var(--border-strong);
+}
+
+.final-cta .btn.btn-secondary:hover {
+  color: var(--text-on-ink);
+  background: var(--bg-elevated);
+  border-color: var(--text-on-ink);
+  transform: translateY(-3px);
+}
+
+[data-theme='dark'] .final-cta .btn.btn-secondary {
+  color: #0f172a;
+  background: #fff;
+  border-color: #fff;
+}
+
+[data-theme='dark'] .final-cta .btn.btn-secondary:hover {
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #fff;
 }
 
 @media (min-width: 800px) {

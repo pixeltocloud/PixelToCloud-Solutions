@@ -2,6 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('ptc-theme')
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          }
+          document.documentElement.setAttribute('data-theme', t)
+        } catch (e) {}
+      })()
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/logo-icon-512.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,11 +29,11 @@
       content="Stunning websites, custom software &amp; AI systems. Full ownership. Direct founder access. This site is our proof of work."
     />
     <meta property="og:url" content="https://pixeltocloud.com/" />
-    <meta property="og:image" content="https://pixeltocloud.com/pixeltocloud-logo.png" />
+    <meta property="og:image" content="https://pixeltocloud.com/image/hero-workspace.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PixelToCloud — Digital Engineering &amp; AI Studio" />
-    <meta name="twitter:description" content="Stunning Websites, Custom Software &amp; AI Systems for Modern Businesses." />
-    <meta name="twitter:image" content="https://pixeltocloud.com/pixeltocloud-logo.png" />
+    <meta name="twitter:title" content="PixelToCloud — Website Development Agency" />
+    <meta name="twitter:description" content="Stunning websites, custom software &amp; AI systems for modern businesses." />
+    <meta name="twitter:image" content="https://pixeltocloud.com/image/hero-workspace.jpg" />
     <link rel="canonical" href="https://pixeltocloud.com/" />
     <script type="application/ld+json">
       {
@@ -31,7 +42,7 @@
         "name": "PixelToCloud",
         "url": "https://pixeltocloud.com/",
         "logo": "https://pixeltocloud.com/logo-pixeltocloud.svg",
-        "image": "https://pixeltocloud.com/pixeltocloud-logo.png",
+        "image": "https://pixeltocloud.com/image/hero-workspace.jpg",
         "telephone": ["+918629008768", "+918219352124"],
         "email": "contact@pixeltocloud.com",
         "priceRange": "$$",
@@ -43,7 +54,7 @@
         },
         "founder": [
           { "@type": "Person", "name": "Pankaj Gupta", "jobTitle": "Founder & Principal Systems Architect" },
-          { "@type": "Person", "name": "Tushar Singhal", "jobTitle": "Co-Founder & Senior Software Developer" }
+          { "@type": "Person", "name": "Rusmeen", "jobTitle": "Co-Founder & Senior Software Developer" }
         ]
       }
     </script>

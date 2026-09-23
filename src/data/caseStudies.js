@@ -37,7 +37,7 @@ export const caseStudies = [
     },
     quote: {
       text: 'We treat our own site as client zero. If it does not feel like a website development agency—fast, clear, and intentional—we have no business shipping yours.',
-      author: 'Pankaj Gupta & Tushar Singhal',
+      author: 'Pankaj Gupta & Rusmeen',
       role: 'Founders, PixelToCloud',
     },
   },

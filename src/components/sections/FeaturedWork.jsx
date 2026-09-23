@@ -2,24 +2,50 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../ui/SectionHeading'
 import Button from '../ui/Button'
 import Reveal from '../ui/Reveal'
+import ProjectVisual from '../ui/ProjectVisual'
 import { caseStudies } from '../../data/caseStudies'
 import './FeaturedWork.css'
 
-export default function FeaturedWork({ featuredOnly = true, compact = false }) {
-  const items = featuredOnly ? caseStudies.filter((c) => c.slug !== 'nebula-3d').slice(0, 4) : caseStudies
+function Cover({ study }) {
+  const usePhoto = study.coverImage && !study.coverImage.endsWith('.svg')
+  return (
+    <div className="cover-media">
+      {usePhoto ? (
+        <img
+          src={study.coverImage}
+          alt={`${study.shortTitle} product preview`}
+          width="960"
+          height="640"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <ProjectVisual study={study} />
+      )}
+    </div>
+  )
+}
+
+export default function FeaturedWork({ featuredOnly = true, compact = false, home = false, hideHeading = false }) {
+  const items = home
+    ? caseStudies.filter((c) => c.featured || c.slug === 'easy-my-tax').slice(0, 2)
+    : featuredOnly
+      ? caseStudies.filter((c) => c.slug !== 'nebula-3d').slice(0, 4)
+      : caseStudies
   const [featured, ...rest] = items
 
   if (!compact) {
     return (
       <section className="section featured-work" id="selected-work">
         <div className="container">
-          <Reveal>
-            <SectionHeading
-              tag="Selected work"
-              title="Projects built for real operations"
-              description="Finance, healthcare, and commerce systems shaped around day-to-day workflows—not templates."
-            />
-          </Reveal>
+          {!hideHeading ? (
+            <Reveal>
+              <SectionHeading
+                title="Projects built for real operations"
+                description="Finance, healthcare, and commerce systems shaped around day-to-day workflows—not templates."
+              />
+            </Reveal>
+          ) : null}
           <div className="cs-list">
             {items.map((study, index) => (
               <Reveal key={study.slug} delay={index * 50} as="article" className="cs-card">
@@ -42,56 +68,53 @@ export default function FeaturedWork({ featuredOnly = true, compact = false }) {
                   </Link>
                 </div>
                 <div className="cs-media">
-                  <img
-                    src={study.coverImage}
-                    alt={`${study.shortTitle} product preview`}
-                    width="640"
-                    height="427"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <Cover study={study} />
                 </div>
               </Reveal>
             ))}
           </div>
-          {featuredOnly ? (
-            <div className="cs-more">
-              <Button to="/work" variant="secondary">
-                Browse all work
-              </Button>
-            </div>
-          ) : null}
         </div>
       </section>
     )
   }
 
   return (
-    <section className="section featured-work surface-alt" id="selected-work">
+    <section className={`section featured-work ${home ? 'surface-alt' : ''}`} id="selected-work">
       <div className="container">
-        <Reveal className="work-intro">
-          <SectionHeading
-            tag="Selected work"
-            title="Projects that look finished—and this site proves it"
-            description="Start with our own agency site, then explore client systems we designed, built, and handed over with full ownership."
-          />
-          <Button to="/work" variant="secondary">
-            Browse all work
-          </Button>
-        </Reveal>
+        {hideHeading ? (
+          <Reveal className="work-intro">
+            <div>
+              <h2 className="section-title">Selected case studies</h2>
+              <p className="section-desc">
+                Start with our own agency site, then explore client systems we designed, built, and handed over with full
+                ownership.
+              </p>
+            </div>
+            <p className="work-intro-meta">{items.length} projects · production proof</p>
+          </Reveal>
+        ) : (
+          <Reveal className="work-intro">
+            <SectionHeading
+              title={home ? 'Proof—starting with this site' : 'Projects that look finished—and this site proves it'}
+              description={
+                home
+                  ? 'pixeltocloud.com is our live agency proof. Browse more client systems when you are ready.'
+                  : 'Start with our own agency site, then explore client systems we designed, built, and handed over with full ownership.'
+              }
+            />
+            {home ? (
+              <Button to="/work" variant="secondary">
+                Browse all work
+              </Button>
+            ) : null}
+          </Reveal>
+        )}
 
         {featured ? (
           <Reveal as="article" className="work-feature">
             <Link to={`/work/${featured.slug}`} className="work-feature-link">
               <div className="work-feature-media">
-                <img
-                  src={featured.coverImage}
-                  alt={`${featured.shortTitle} interface`}
-                  width="960"
-                  height="640"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <Cover study={featured} />
               </div>
               <div className="work-feature-body">
                 <p className="work-meta">
@@ -106,32 +129,27 @@ export default function FeaturedWork({ featuredOnly = true, compact = false }) {
           </Reveal>
         ) : null}
 
-        <div className="work-secondary">
-          {rest.map((study, index) => (
-            <Reveal key={study.slug} delay={index * 60} as="article" className="work-secondary-card">
-              <Link to={`/work/${study.slug}`}>
-                <div className="work-secondary-media">
-                  <img
-                    src={study.coverImage}
-                    alt={`${study.shortTitle} interface`}
-                    width="640"
-                    height="427"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="work-secondary-body">
-                  <p className="work-meta">
-                    <span>{study.tag}</span>
-                    <span>{study.timeline}</span>
-                  </p>
-                  <h3>{study.shortTitle}</h3>
-                  <p>{study.outcome}</p>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        {!home && rest.length ? (
+          <div className="work-secondary">
+            {rest.map((study, index) => (
+              <Reveal key={study.slug} delay={index * 60} as="article" className="work-secondary-card hover-lift">
+                <Link to={`/work/${study.slug}`}>
+                  <div className="work-secondary-media">
+                    <Cover study={study} />
+                  </div>
+                  <div className="work-secondary-body">
+                    <p className="work-meta">
+                      <span>{study.tag}</span>
+                      <span>{study.timeline}</span>
+                    </p>
+                    <h3>{study.shortTitle}</h3>
+                    <p>{study.outcome}</p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   )

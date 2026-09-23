@@ -1,0 +1,7 @@
+.contact-page .contact {
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+.contact-page .contact .section-header {
+  display: none;
+}

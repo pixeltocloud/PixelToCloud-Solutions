@@ -48,7 +48,7 @@ export default function Footer() {
 
       <div className="container footer-bottom">
         <div>© {new Date().getFullYear()} PixelToCloud Solutions. All rights reserved.</div>
-        <div>Built by Pankaj Gupta & Tushar Singhal · This site is our proof of work</div>
+        <div>Built by Pankaj Gupta & Rusmeen · This site is our proof of work</div>
       </div>
     </footer>
   )

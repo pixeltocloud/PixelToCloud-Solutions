@@ -3,38 +3,38 @@ import WhyPixelToCloud from '../components/sections/WhyPixelToCloud'
 import Testimonials from '../components/sections/Testimonials'
 import Process from '../components/sections/Process'
 import FinalCTA from '../components/sections/FinalCTA'
-import Marquee from '../components/sections/Marquee'
+import PageInkHero from '../components/ui/PageInkHero'
 import Seo from '../components/seo/Seo'
-import './PageHero.css'
+import { contact } from '../data/founders'
+import './AboutPage.css'
 
 export default function About() {
   return (
-    <div className="page-enter">
+    <div className="page-enter about-page">
       <Seo />
-      <section className="page-hero">
-        <div className="container">
-          <p className="page-kicker">About Us</p>
-          <h1>A website development agency run by engineers</h1>
-          <p>
-            PixelToCloud Solutions is a high-performance studio co-founded by Pankaj Gupta and Tushar Singhal. We bridge
-            pixel-perfect frontend craft, custom software, and hardened cloud delivery—with full ownership for every
-            client.
-          </p>
-        </div>
-      </section>
-      <Marquee
-        labels={[
-          'Zero outsourcing',
-          'Founder-led delivery',
-          'Alwar · Worldwide',
-          '50+ shipped systems',
-          '30-day warranty',
-          'NDA ready',
+      <PageInkHero
+        title="A website development agency run by engineers"
+        description="PixelToCloud is co-founded by Pankaj Gupta and Rusmeen. We bridge conversion-focused frontend craft, custom software, and reliable cloud delivery—with full ownership for every client."
+        actions={[
+          { label: 'Start a project', to: '/contact' },
+          {
+            label: 'WhatsApp us',
+            href: contact.whatsappLink,
+            target: '_blank',
+            rel: 'noreferrer',
+            variant: 'secondary',
+          },
+        ]}
+        points={[
+          { label: 'Founder-led', detail: 'You talk to the builders' },
+          { label: '8+ / 5+ yrs', detail: 'Combined senior delivery' },
+          { label: '100% IP', detail: 'Code & credentials yours' },
+          { label: 'Alwar · World', detail: 'Remote-first, worldwide' },
         ]}
       />
       <Founders />
-      <Process />
       <WhyPixelToCloud />
+      <Process />
       <Testimonials />
       <FinalCTA />
     </div>

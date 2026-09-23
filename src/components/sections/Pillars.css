@@ -6,15 +6,15 @@
 
 .pillars .section-title,
 .pillars .section-tag {
-  color: #fff;
+  color: var(--text-on-ink);
 }
 
 .pillars .section-tag {
-  color: var(--accent-cyan);
+  color: var(--accent);
 }
 
 .pillars .section-desc {
-  color: #94a3b8;
+  color: var(--text-on-ink-muted);
 }
 
 .pillars-grid {
@@ -27,7 +27,16 @@
   padding: 1.35rem 1.25rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-ink);
-  background: rgba(255, 255, 255, 0.03);
+  background: color-mix(in srgb, var(--text-on-ink) 4%, transparent);
+  transition:
+    transform 280ms var(--ease-out),
+    border-color 220ms var(--ease),
+    background 220ms var(--ease);
+}
+
+.pillar-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border-ink));
+  background: color-mix(in srgb, var(--text-on-ink) 7%, transparent);
 }
 
 .pillar-label {
@@ -43,7 +52,7 @@
 .pillar-card h3 {
   margin: 0 0 0.85rem;
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--text-on-ink);
 }
 
 .pillar-card ul {
@@ -57,7 +66,7 @@
 .pillar-card li {
   position: relative;
   padding-left: 0.9rem;
-  color: #cbd5e1;
+  color: var(--text-on-ink-muted);
   font-size: 0.92rem;
 }
 
@@ -69,7 +78,7 @@
   width: 0.35rem;
   height: 0.35rem;
   border-radius: 50%;
-  background: var(--accent-cyan);
+  background: var(--accent);
 }
 
 @media (min-width: 800px) {

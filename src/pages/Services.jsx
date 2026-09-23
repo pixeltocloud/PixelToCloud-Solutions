@@ -3,30 +3,39 @@ import Process from '../components/sections/Process'
 import Pillars from '../components/sections/Pillars'
 import FAQ from '../components/sections/FAQ'
 import FinalCTA from '../components/sections/FinalCTA'
-import Marquee from '../components/sections/Marquee'
+import PageInkHero from '../components/ui/PageInkHero'
 import Seo from '../components/seo/Seo'
-import './PageHero.css'
+import { contact } from '../data/founders'
 
 export default function ServicesPage() {
   return (
-    <div className="page-enter">
+    <div className="page-enter services-page">
       <Seo />
-      <section className="page-hero">
-        <div className="container">
-          <p className="page-kicker">Services</p>
-          <h1>Engineering studio services for websites that work</h1>
-          <p>
-            Every project is an architectural engagement—bespoke software, growth systems, and automation with 100%
-            source-code ownership.
-          </p>
-        </div>
-      </section>
-      <Marquee />
+      <PageInkHero
+        title="Website & product engineering that owns the outcome"
+        description="High-converting sites, custom CRM portals, growth funnels, and AI automation—built with 100% source-code ownership, fixed-scope milestones, and founder-led delivery."
+        actions={[
+          { label: 'Start a project', to: '/contact' },
+          {
+            label: 'WhatsApp us',
+            href: contact.whatsappLink,
+            target: '_blank',
+            rel: 'noreferrer',
+            variant: 'secondary',
+          },
+        ]}
+        points={[
+          { label: '10–14 day', detail: 'MVP sprints for focused builds' },
+          { label: '100% IP', detail: 'Code, assets & credentials yours' },
+          { label: 'Founder-led', detail: 'Direct access—no sales layer' },
+          { label: 'Fixed scope', detail: 'Milestone payments only' },
+        ]}
+      />
       <Pillars />
-      <Services detailed />
+      <Services detailed hideHeading />
       <Process />
-      <FAQ />
       <FinalCTA />
+      <FAQ mode="faq" />
     </div>
   )
 }

@@ -65,7 +65,7 @@ export default function ContactSection({ compactHero = false }) {
   }
 
   return (
-    <section className="section contact" id="connect">
+    <section className="section contact" id="start-project">
       <div className="container">
         {!compactHero ? (
           <Reveal>

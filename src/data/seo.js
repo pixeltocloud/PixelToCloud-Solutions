@@ -3,7 +3,7 @@ export const defaultSeo = {
   title: 'PixelToCloud — Website Development Agency | Custom Software & AI',
   description:
     'Website development agency crafting high-converting sites, custom CRM portals, and AI automations. 100% source-code ownership. Alwar · Worldwide.',
-  image: 'https://pixeltocloud.com/pixeltocloud-logo.png',
+  image: 'https://pixeltocloud.com/image/hero-workspace.jpg',
 }
 
 export const routeSeo = {
@@ -29,7 +29,7 @@ export const routeSeo = {
     path: '/about',
     title: 'About the Founders | PixelToCloud',
     description:
-      'Meet Pankaj Gupta and Tushar Singhal—the engineers behind PixelToCloud’s website development agency.',
+      'Meet Pankaj Gupta and Rusmeen—the engineers behind PixelToCloud’s website development agency.',
   },
   '/contact': {
     path: '/contact',
@@ -39,7 +39,8 @@ export const routeSeo = {
   '/labs': {
     path: '/labs',
     title: 'Engineering Lab | PixelToCloud',
-    description: 'Interactive demos and prototypes: WebGL, deploy simulations, and infrastructure experiments.',
+    description:
+      'Capabilities we apply on client work—WebGL product viz, deploy patterns, performance budgets—linked to real cases and services.',
   },
   '/privacy': {
     path: '/privacy',

@@ -21,12 +21,12 @@
   font-size: clamp(1.55rem, 3.2vw, 2.2rem);
   letter-spacing: -0.03em;
   line-height: 1.15;
-  max-width: 22ch;
+  max-width: 36rem;
 }
 
 .lead {
   margin: 0 0 1.35rem;
-  max-width: 58ch;
+  max-width: 40rem;
   color: var(--text-secondary);
   font-size: 0.95rem;
 }
@@ -94,10 +94,16 @@
   box-shadow: var(--shadow-md);
 }
 
-.detail-cover img {
+.detail-cover img,
+.detail-cover .project-visual {
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+.detail-cover .project-visual {
+  min-height: 0;
+  height: auto;
 }
 
 .meta-panels {

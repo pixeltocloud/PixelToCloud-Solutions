@@ -20,16 +20,44 @@ const Privacy = lazy(() => import('./pages/Privacy'))
 const Terms = lazy(() => import('./pages/Terms'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
+function scrollToHash(hash, attempt = 0) {
+  const id = hash.replace('#', '')
+  if (!id) return
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    return
+  }
+  if (attempt < 12) {
+    window.setTimeout(() => scrollToHash(hash, attempt + 1), 50 + attempt * 25)
+  }
+}
+
+function SmoothAnchors() {
+  useEffect(() => {
+    const onClick = (event) => {
+      const link = event.target.closest('a[href^="#"]')
+      if (!link) return
+      const hash = link.getAttribute('href')
+      if (!hash || hash === '#') return
+      const el = document.getElementById(hash.slice(1))
+      if (!el) return
+      event.preventDefault()
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      history.pushState(null, '', hash)
+    }
+    document.addEventListener('click', onClick)
+    return () => document.removeEventListener('click', onClick)
+  }, [])
+  return null
+}
+
 function ScrollManager() {
   const location = useLocation()
 
   useEffect(() => {
     if (location.hash) {
-      const id = location.hash.replace('#', '')
-      requestAnimationFrame(() => {
-        const el = document.getElementById(id)
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      })
+      requestAnimationFrame(() => scrollToHash(location.hash))
       return
     }
     window.scrollTo(0, 0)
@@ -39,13 +67,18 @@ function ScrollManager() {
 }
 
 function RouteFallback() {
-  return <div className="container" style={{ padding: '2rem 0', color: 'var(--text-muted)' }}>Loading…</div>
+  return (
+    <div className="container route-fallback" role="status" aria-live="polite">
+      Loading…
+    </div>
+  )
 }
 
 function AppShell() {
   return (
     <div className="app-shell">
       <ScrollManager />
+      <SmoothAnchors />
       <Analytics />
       <Navbar />
       <main id="main-content" className="site-main">

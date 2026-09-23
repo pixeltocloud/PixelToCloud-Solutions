@@ -47,17 +47,42 @@ function ThemeIcon({ dark }) {
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [overHero, setOverHero] = useState(false)
   const { theme, toggleTheme } = useTheme()
   const location = useLocation()
   const drawerRef = useRef(null)
   const toggleRef = useRef(null)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8)
+    const onScroll = () => setScrolled(window.scrollY > 12)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      setOverHero(false)
+      return undefined
+    }
+
+    const hero = document.getElementById('home')
+    if (!hero) {
+      setOverHero(true)
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setOverHero(entry.isIntersecting && entry.intersectionRatio > 0),
+      {
+        // Keep light-on-dark nav while any of the hero remains under the header
+        rootMargin: '-56px 0px -40% 0px',
+        threshold: [0, 0.05, 0.2],
+      },
+    )
+    observer.observe(hero)
+    return () => observer.disconnect()
+  }, [location.pathname])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -105,7 +130,9 @@ export default function Navbar() {
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>
-      <header className={`navbar ${scrolled ? 'is-scrolled' : ''}`}>
+      <header
+        className={`navbar ${scrolled || !overHero ? 'is-scrolled' : ''} ${overHero && !open ? 'is-over-hero' : ''}`}
+      >
         <div className="navbar-inner container">
           <Link to="/" className="nav-brand" aria-label="PixelToCloud home" onClick={closeMenu}>
             <BrandMark />
