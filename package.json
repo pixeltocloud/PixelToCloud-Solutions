@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && cp dist/index.html dist/404.html",
+    "dev": "cp index.dev.html index.html && vite",
+    "build": "cp index.dev.html index.html && vite build && cp dist/index.html dist/404.html",
     "lint": "oxlint src",
     "preview": "vite preview --host 127.0.0.1 --port 4173",
-    "lighthouse": "npm run build && node scripts/lighthouse.mjs"
+    "lighthouse": "npm run build && node scripts/lighthouse.mjs",
+    "deploy:pages": "npm run build && cp dist/index.html dist/404.html ./ && rm -rf assets && cp -R dist/assets ./assets && cp dist/CNAME CNAME 2>/dev/null; touch .nojekyll && echo Built files copied to branch root for GitHub Pages"
   },
   "dependencies": {
     "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
