@@ -6,7 +6,7 @@ import { caseStudies } from '../../data/caseStudies'
 import './FeaturedWork.css'
 
 export default function FeaturedWork({ featuredOnly = true, compact = false }) {
-  const items = featuredOnly ? caseStudies.filter((c) => c.slug !== 'nebula-3d') : caseStudies
+  const items = featuredOnly ? caseStudies.filter((c) => c.slug !== 'nebula-3d').slice(0, 4) : caseStudies
   const [featured, ...rest] = items
 
   if (!compact) {
@@ -72,8 +72,8 @@ export default function FeaturedWork({ featuredOnly = true, compact = false }) {
         <Reveal className="work-intro">
           <SectionHeading
             tag="Selected work"
-            title="Projects that look finished and work in production"
-            description="A sample of systems we designed, built, and handed over with full ownership."
+            title="Projects that look finished—and this site proves it"
+            description="Start with our own agency site, then explore client systems we designed, built, and handed over with full ownership."
           />
           <Button to="/work" variant="secondary">
             Browse all work

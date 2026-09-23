@@ -1,5 +1,47 @@
 export const caseStudies = [
   {
+    slug: 'pixeltocloud-agency',
+    title: 'PixelToCloud.com — This website, built as our live agency proof',
+    shortTitle: 'PixelToCloud.com',
+    tag: 'Website Development Agency',
+    client: 'PixelToCloud Solutions',
+    organization: 'PixelToCloud',
+    industry: 'Digital Agency & Custom Software',
+    systemType: 'Marketing site, case studies, inquiry system & connect card',
+    timeline: 'In production',
+    liveUrl: 'https://pixeltocloud.com',
+    featured: true,
+    techStack: ['React', 'Vite', 'Motion design', 'FormSubmit', 'Edge hosting'],
+    features: [
+      'Agency homepage with conversion funnel',
+      'Case studies and service architecture',
+      'Inquiry form + WhatsApp connect',
+      'Smart digital card at /connect',
+    ],
+    challenge:
+      'A website agency needs its own site to prove craft—speed, clarity, motion, and conversion—not a generic template that undercuts the pitch.',
+    built:
+      'A production React SPA with animated agency storytelling, portfolio proof, multi-path contact (form, WhatsApp, QR connect card), and full source ownership of the stack we sell.',
+    outcome:
+      'pixeltocloud.com is the primary proof of work: the same team that designs and ships client websites built and runs this one.',
+    accent: '#0284c7',
+    coverImage: '/image/hero-workspace.jpg',
+    visual: { type: 'portal', primary: '#0284c7', secondary: '#ff5722' },
+    mockup: {
+      url: 'pixeltocloud.com',
+      kpis: [
+        { value: 'Live', label: 'Agency site in production', color: '#0284c7' },
+        { value: 'Owned', label: '100% source & hosting control', color: '#ff5722' },
+      ],
+      footer: 'Hero · Work · Services · Connect · /connect card',
+    },
+    quote: {
+      text: 'We treat our own site as client zero. If it does not feel like a website development agency—fast, clear, and intentional—we have no business shipping yours.',
+      author: 'Pankaj Gupta & Tushar Singhal',
+      role: 'Founders, PixelToCloud',
+    },
+  },
+  {
     slug: 'easy-my-tax',
     title: 'Easy My Tax — High-Security Client Portal & Tax Calculation System',
     shortTitle: 'Easy My Tax',
@@ -162,8 +204,9 @@ export const caseStudies = [
 ]
 
 export const trustClients = [
-  'Harish Renova Cancer Center',
+  'This website · PixelToCloud.com',
   'Easy My Tax',
+  'Harish Renova Cancer Center',
   'Saini Handicrafts',
   'Revital Physiocare Lab',
 ]

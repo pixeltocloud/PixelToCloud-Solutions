@@ -3,17 +3,20 @@
   gap: 1.5rem;
 }
 
-.why-grid {
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--border);
-}
-
 .why-grid article {
   display: grid;
   gap: 0.35rem;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.why-grid {
+  display: grid;
+  gap: 0;
+  border-top: none;
 }
 
 .why-grid span {

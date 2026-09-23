@@ -1,57 +1,72 @@
 .final-cta {
-  padding: 0 0 3.5rem;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.75rem, 5vw, 4rem) 0;
+  background: var(--bg-ink);
+  color: var(--text-on-ink);
+}
+
+.final-cta-glow {
+  position: absolute;
+  inset: auto auto -40% 40%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(255, 87, 34, 0.28), transparent 65%);
+  filter: blur(20px);
+  animation: glow-breathe 5s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .final-cta-inner {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--bg-ink);
-  color: #f3f5f7;
-  padding: clamp(1.75rem, 4vw, 2.5rem);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.35rem;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.final-cta-kicker {
+  margin: 0 0 0.45rem;
+  color: var(--cta);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .final-cta h2 {
-  margin: 0;
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-  color: #f3f5f7;
-  letter-spacing: -0.03em;
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -0.035em;
+  color: #fff;
+  max-width: 16ch;
 }
 
 .final-cta p {
-  margin: 0 0 1rem;
+  margin: 0;
   max-width: 42ch;
-  color: #c5d0dc;
-  font-size: 0.95rem;
-  line-height: 1.55;
+  color: #94a3b8;
+}
+
+.final-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
 }
 
 .final-cta .btn-primary {
-  background: #fff;
-  color: #0b1220;
+  background: var(--cta);
+  color: #fff;
 }
 
-.final-cta .btn-primary:hover {
-  background: #e8eef3;
+.final-cta .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
 }
 
 @media (min-width: 800px) {
   .final-cta-inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .final-cta p {
-    margin: 0.35rem 0 0;
-  }
-
-  .final-cta .btn {
-    flex-shrink: 0;
+    grid-template-columns: 1.4fr auto;
   }
 }

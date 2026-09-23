@@ -1,34 +1,26 @@
 export const pricingTiers = [
   {
-    id: 'sites-portals',
-    name: 'Websites & portals',
-    range: '₹25,000–₹50,000',
-    blurb: 'Business websites and client portals with clear ownership and fixed milestones.',
-    features: [
-      'Custom UI around your workflow',
-      'Responsive delivery',
-      'Contact / inquiry flows',
-      'Fixed-price milestones',
-      '30-day post-launch warranty',
-    ],
-    cta: 'Discuss a website',
+    id: 'starter',
+    name: 'Starter website',
+    range: '₹25k–₹50k',
+    blurb: 'Marketing site or simple portal with inquiry flows and launch handover.',
+    highlighted: false,
   },
   {
-    id: 'apps-3d',
-    name: 'Apps & advanced systems',
-    range: '₹75,000–₹2,50,000+',
-    blurb: 'Custom applications, SaaS platforms, and interactive product experiences.',
-    features: [
-      'Architecture & data model',
-      'Auth, APIs, and integrations',
-      'Staging reviews each sprint',
-      'Cloud deploy & handover',
-      'Optional maintenance plans',
-    ],
+    id: 'growth',
+    name: 'Custom platform',
+    range: '₹75k–₹2.5L+',
+    blurb: 'CRM-style portals, apps, automation, or interactive product experiences.',
     highlighted: true,
-    cta: 'Discuss an application',
+  },
+  {
+    id: 'enterprise',
+    name: 'Enterprise & 3D / cloud',
+    range: 'Scoped quote',
+    blurb: 'High-performance 3D, multi-tenant systems, or hardened infrastructure.',
+    highlighted: false,
   },
 ]
 
 export const pricingNote =
-  'Exact pricing depends on scope and integrations. We quote fixed-price milestones so the plan stays clear before work begins.'
+  'Fixed-scope milestones. Zero hidden retainers. You review working software before each payment release.'

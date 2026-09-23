@@ -4,12 +4,22 @@ import './FinalCTA.css'
 export default function FinalCTA() {
   return (
     <section className="final-cta">
+      <div className="final-cta-glow" aria-hidden="true" />
       <div className="container final-cta-inner">
         <div>
-          <h2>Ready to discuss your project?</h2>
-          <p>Share what you need. We’ll respond with a practical plan, timeline, and fixed-scope estimate.</p>
+          <p className="final-cta-kicker">Ready when you are</p>
+          <h2>Your next website should feel this intentional</h2>
+          <p>
+            Share what you need. We&apos;ll respond with a practical plan, timeline, and fixed-scope estimate—founder to
+            founder.
+          </p>
         </div>
-        <Button to="/contact">Start a project</Button>
+        <div className="final-cta-actions">
+          <Button to="/contact">Start a project</Button>
+          <Button to="/work" variant="secondary">
+            Browse work
+          </Button>
+        </div>
       </div>
     </section>
   )

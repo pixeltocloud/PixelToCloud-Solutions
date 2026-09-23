@@ -6,7 +6,7 @@ import { pricingTiers, pricingNote } from '../../data/pricing'
 import './FAQ.css'
 
 export default function FAQ({ showPricing = true }) {
-  const [openIndex, setOpenIndex] = useState(0)
+  const [openIndex, setOpenIndex] = useState(-1)
 
   return (
     <section className="section investment" id="pricing">
@@ -28,7 +28,7 @@ export default function FAQ({ showPricing = true }) {
             </div>
           ) : null}
 
-          <Button to="/contact">Discuss scope and timeline</Button>
+          <Button to="/contact">Start a project</Button>
         </Reveal>
 
         <Reveal className="investment-faq" delay={80}>

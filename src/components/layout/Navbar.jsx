@@ -1,17 +1,25 @@
-import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import Button from '../ui/Button'
 import { contact } from '../../data/founders'
 import { useTheme } from '../../context/useTheme'
 import './Navbar.css'
 
 const links = [
-  { to: '/work', label: 'Work' },
   { to: '/services', label: 'Services' },
-  { to: '/labs', label: 'Labs' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/work', label: 'Our Work', matchPrefix: true },
+  { to: '/about', label: 'About Us' },
+  { to: '/contact', label: 'Contact Us' },
 ]
+
+function BrandMark() {
+  return (
+    <>
+      <img src="/pixeltocloud-logo.svg" alt="" width="36" height="36" decoding="async" className="nav-mark" />
+      <span className="nav-wordmark">PixelToCloud</span>
+    </>
+  )
+}
 
 function ThemeIcon({ dark }) {
   return dark ? (
@@ -40,6 +48,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { theme, toggleTheme } = useTheme()
+  const location = useLocation()
+  const drawerRef = useRef(null)
+  const toggleRef = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -55,6 +66,38 @@ export default function Navbar() {
     }
   }, [open])
 
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname])
+
+  useEffect(() => {
+    if (!open) return undefined
+    const drawer = drawerRef.current
+    const focusable = drawer?.querySelectorAll('a, button')
+    focusable?.[0]?.focus()
+
+    const onKey = (event) => {
+      if (event.key === 'Escape') {
+        setOpen(false)
+        toggleRef.current?.focus()
+        return
+      }
+      if (event.key !== 'Tab' || !focusable?.length) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [open])
+
   const closeMenu = () => setOpen(false)
 
   return (
@@ -65,19 +108,17 @@ export default function Navbar() {
       <header className={`navbar ${scrolled ? 'is-scrolled' : ''}`}>
         <div className="navbar-inner container">
           <Link to="/" className="nav-brand" aria-label="PixelToCloud home" onClick={closeMenu}>
-            <img
-              src={theme === 'dark' ? '/logo-wordmark-dark.svg' : '/logo-wordmark.svg'}
-              alt="PixelToCloud"
-              width="168"
-              height="30"
-              decoding="async"
-              className="nav-logo"
-            />
+            <BrandMark />
           </Link>
 
           <nav className="nav-links" aria-label="Primary">
             {links.map((link) => (
-              <NavLink key={link.to} to={link.to} className={({ isActive }) => (isActive ? 'is-active' : undefined)}>
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+                end={!link.matchPrefix}
+              >
                 {link.label}
               </NavLink>
             ))}
@@ -96,6 +137,7 @@ export default function Navbar() {
               Start a project
             </Button>
             <button
+              ref={toggleRef}
               className={`nav-toggle ${open ? 'is-open' : ''}`}
               type="button"
               aria-label={open ? 'Close menu' : 'Open menu'}
@@ -111,20 +153,14 @@ export default function Navbar() {
 
       <div className={`mobile-overlay ${open ? 'is-open' : ''}`} onClick={closeMenu} />
       <aside
+        ref={drawerRef}
         className={`mobile-drawer ${open ? 'is-open' : ''}`}
         aria-hidden={!open}
         inert={!open ? true : undefined}
       >
         <div className="drawer-top">
           <Link to="/" className="nav-brand" onClick={closeMenu}>
-            <img
-              src={theme === 'dark' ? '/logo-wordmark-dark.svg' : '/logo-wordmark.svg'}
-              alt="PixelToCloud"
-              width="160"
-              height="28"
-              decoding="async"
-              className="nav-logo"
-            />
+            <BrandMark />
           </Link>
           <button type="button" className="drawer-close" onClick={closeMenu} aria-label="Close menu">
             Close
@@ -136,6 +172,9 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
+          <NavLink to="/labs" onClick={closeMenu}>
+            Labs
+          </NavLink>
         </nav>
         <div className="drawer-footer">
           <Button to="/contact" className="drawer-cta" onClick={closeMenu}>

@@ -1,7 +1,6 @@
 import Seo from '../components/seo/Seo'
 import Reveal from '../components/ui/Reveal'
 import Button from '../components/ui/Button'
-import FinalCTA from '../components/sections/FinalCTA'
 import { labs } from '../data/labs'
 import './PageHero.css'
 import './Labs.css'
@@ -12,43 +11,35 @@ export default function Labs() {
       <Seo />
       <section className="page-hero">
         <div className="container">
-          <p className="page-kicker">Labs</p>
-          <h1>Engineering prototypes</h1>
+          <p className="page-kicker">Engineering Lab</p>
+          <h1>Interactive demos &amp; prototypes</h1>
           <p>
-            Interactive sandboxes and demos that show how we think about WebGL, deployments, performance, and
-            infrastructure. Metrics inside prototypes are simulated.
+            Sandboxes that show how we think about WebGL, deploys, and infrastructure—built by the same team shipping
+            client work.
           </p>
         </div>
       </section>
 
       <section className="section">
-        <div className="container">
-          <h2 className="section-title" style={{ marginBottom: '1.25rem', textAlign: 'center' }}>
-            Featured sandboxes
-          </h2>
-          <div className="labs-grid">
-            {labs.map((lab, i) => (
-              <Reveal key={lab.id} delay={i * 80} as="article" className="lab-card interactive-card">
-                <div className="lab-accent" style={{ background: lab.accent }} />
-                <div className="lab-top">
-                  <span className="lab-tag">{lab.tag}</span>
-                  <span className={`lab-status is-${lab.status}`}>{lab.status}</span>
-                </div>
-                <h3>{lab.title}</h3>
-                <p>{lab.description}</p>
-                <div className="lab-visual" style={{ '--lab': lab.accent }} aria-hidden="true">
-                  <span className="lab-pulse" />
-                  <span className="lab-pulse delay" />
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-            <Button to="/contact">Build a production system with us</Button>
-          </div>
+        <div className="container labs-grid">
+          {labs.map((lab, index) => (
+            <Reveal key={lab.id} delay={index * 70} as="article" className="lab-card hover-lift">
+              <div className="lab-top">
+                <span className="lab-tag">{lab.tag}</span>
+                <span className={`lab-status is-${lab.status}`}>{lab.status}</span>
+              </div>
+              <h2>{lab.title}</h2>
+              <p>{lab.description}</p>
+              <Button to="/contact" variant="secondary" className="lab-cta">
+                Ask about this capability
+              </Button>
+            </Reveal>
+          ))}
+        </div>
+        <div className="container" style={{ marginTop: '1.5rem' }}>
+          <Button to="/work">See production case studies</Button>
         </div>
       </section>
-      <FinalCTA />
     </div>
   )
 }

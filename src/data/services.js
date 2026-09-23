@@ -1,133 +1,159 @@
 export const services = [
   {
     id: 'business-websites',
-    title: 'Business websites',
-    positioning: 'A clear, fast site that explains what you do and helps people take the next step.',
+    title: 'High-converting websites & stores',
+    positioning: 'Marketing sites and storefronts built to load fast and convert.',
     description:
-      'Professional marketing and service websites for clinics, practices, and growing businesses—designed around your offers, bookings, and inquiries.',
+      'Ultra-fast, mobile-perfect marketing websites and e-commerce storefronts. Tailored design, clean React code, and SEO architecture so customers find you and take action.',
     deliverables: [
-      'Clear service storytelling and calls to action',
-      'Mobile-first layouts that load quickly',
+      'Custom UI/UX and conversion-focused layouts',
+      'Technical SEO and Core Web Vitals',
       'Inquiry, booking, or WhatsApp flows',
+      'Sub-second mobile experience targets',
     ],
-    stack: ['React', 'Responsive CSS', 'SEO basics', 'Analytics', 'Hosting setup'],
+    stack: ['React', 'Responsive CSS', 'SEO', 'Analytics', 'Hosting'],
     outcomes: [
       'Visitors understand your offer quickly',
-      'Easier booking and inquiry conversion',
+      'Higher inquiry and booking conversion',
       'A site you own and can extend',
     ],
     process: [
       'Clarify offers, audiences, and conversion goals',
       'Design and build a focused site structure',
-      'Launch with tracking and handover',
+      'Launch with tracking and full handover',
     ],
     accent: 'cyan',
     cta: 'Discuss a website',
     priority: 'primary',
+    pillar: 'BUILD',
   },
   {
     id: 'custom-software',
-    title: 'Custom web applications',
-    positioning: 'Software designed around the way your organization actually works.',
+    title: 'Custom software, billing & CRM',
+    positioning: 'Software shaped around how your business actually operates.',
     description:
-      'Replace inflexible spreadsheets and bolted-on tools with client portals, internal workflows, and business applications you own.',
+      'Client portals, invoice generators, inventory trackers, and role-based dashboards—built so you stop wrestling Excel and SaaS seat fees.',
     deliverables: [
       'Client portals and secure document access',
-      'Operational dashboards and workflow automation',
+      'Operational dashboards and workflows',
       'Role-based access, APIs, and databases',
+      'Billing and CRM-style modules when needed',
     ],
-    stack: ['React', 'Node.js', 'PostgreSQL', 'REST/GraphQL', 'Auth & RBAC'],
+    stack: ['React', 'Node.js', 'PostgreSQL', 'REST/GraphQL', 'Auth'],
     outcomes: [
-      'Fewer manual hand-offs between teams and clients',
-      'Systems you own—no recurring seat lock-in',
-      'Clear audit trails for sensitive workflows',
+      'Fewer manual hand-offs',
+      'Systems you own—no seat lock-in',
+      'Clear audit trails for sensitive work',
     ],
     process: [
-      'Map the real operational workflow and data rules',
-      'Ship a fixed-scope architecture with milestones',
-      'Iterate in staging with working reviews',
+      'Map workflows and data rules',
+      'Ship fixed-scope milestones',
+      'Iterate in staging with live reviews',
     ],
     accent: 'cyan',
     cta: 'Discuss an application',
     priority: 'primary',
+    pillar: 'BUILD',
   },
   {
-    id: 'ecommerce',
-    title: 'E-commerce & product experiences',
-    positioning: 'Storefronts and product journeys built for how you sell.',
+    id: 'lead-growth',
+    title: 'Google Ads & lead funnels',
+    positioning: 'Landing pages and ads that turn spend into conversations.',
     description:
-      'Custom storefronts, multi-currency catalogs, and product storytelling for brands that need more than a generic theme.',
+      'Laser-targeted landing pages and search funnels with conversion tracking and copy that maximizes marketing spend.',
     deliverables: [
-      'Editorial product presentation',
-      'Inquiry and commission workflows',
-      'Multi-currency pricing where needed',
+      'High-intent landing pages',
+      'Keyword and campaign structure guidance',
+      'Conversion tracking setup',
+      'WhatsApp / form capture paths',
     ],
-    stack: ['Custom storefront', 'Media-heavy UX', 'Inquiry flows', 'Integrations'],
-    outcomes: [
-      'Stronger product storytelling',
-      'Clearer path from browse to inquiry or order',
-      'A storefront shaped around your brand',
-    ],
-    process: [
-      'Define catalog, pricing, and conversion goals',
-      'Design product presentation and flows',
-      'Launch, measure, and refine',
-    ],
-    accent: 'cyan',
-    cta: 'Discuss a storefront',
+    stack: ['Landing UX', 'GA4', 'Ads tracking', 'CRO copy'],
+    outcomes: ['More qualified inquiries', 'Clearer attribution', 'Faster payback on ad spend'],
+    process: ['Define offers and keywords', 'Build landing + tracking', 'Launch and iterate'],
+    accent: 'orange',
+    cta: 'Discuss lead growth',
     priority: 'primary',
+    pillar: 'GROW',
+  },
+  {
+    id: 'cloud-devops',
+    title: 'Speed, cloud & security',
+    positioning: 'Hosting that stays fast when traffic spikes.',
+    description:
+      'Hardened Linux servers, CDN caching, SSL, automated backups, and monitoring so launches stay stable.',
+    deliverables: [
+      'Hardened Linux / VPS setup',
+      'Docker deploys and reverse proxy',
+      'SSL, backups, and monitoring',
+      'Performance and security hardening',
+    ],
+    stack: ['Linux VPS', 'Docker', 'Nginx', 'CI/CD', 'Cloudflare'],
+    outcomes: ['Predictable deploys', 'Hardened access', 'Backups you can rely on'],
+    process: ['Audit hosting and failure modes', 'Containerize and wire SSL', 'Automate delivery and alerts'],
+    accent: 'cyan',
+    cta: 'Discuss infrastructure',
+    priority: 'primary',
+    pillar: 'GROW',
+  },
+  {
+    id: 'whatsapp-ai',
+    title: 'WhatsApp booking & AI support',
+    positioning: 'Turn WhatsApp into your hardest-working salesperson.',
+    description:
+      'Bots and flows that qualify leads, book appointments, send payment links, and trigger reminders on the channel your customers already use.',
+    deliverables: [
+      'WhatsApp chat and booking flows',
+      'Lead qualification scripts',
+      'Reminder and follow-up automation',
+      'Handoff to human chat when needed',
+    ],
+    stack: ['WhatsApp API', 'Automation', 'CRM hooks'],
+    outcomes: ['Fewer missed leads', '24/7 first response', 'Cleaner booking pipelines'],
+    process: ['Map conversation goals', 'Build and test flows', 'Launch with monitoring'],
+    accent: 'emerald',
+    cta: 'Discuss WhatsApp automation',
+    priority: 'advanced',
+    pillar: 'AUTOMATE',
+  },
+  {
+    id: 'ai-docs',
+    title: 'AI document & invoice extraction',
+    positioning: 'Pull structured data out of PDFs and paperwork.',
+    description:
+      'Intelligent parsers that extract financial data from PDFs, tax forms, receipts, and invoices into your systems.',
+    deliverables: [
+      'Document OCR and extraction pipelines',
+      'Structured exports to sheets/DB',
+      'Validation and review steps',
+      'Integration into existing tools',
+    ],
+    stack: ['OCR', 'LLM/RAG', 'APIs', 'PostgreSQL'],
+    outcomes: ['Less manual data entry', 'Faster back-office cycles', 'Fewer transcription errors'],
+    process: ['Sample documents and fields', 'Prototype accuracy', 'Production integration'],
+    accent: 'violet',
+    cta: 'Discuss document AI',
+    priority: 'advanced',
+    pillar: 'AUTOMATE',
   },
   {
     id: 'interactive-3d',
     title: 'Interactive 2D/3D experiences',
-    positioning: 'Immersive product tools that go beyond a standard website.',
+    positioning: 'Browser-based product tools beyond a static brochure.',
     description:
-      'Browser-based configurators and inspection tools so customers can explore complex products in real time.',
+      'WebGL/Three.js configurators and inspection tools so customers explore complex products in real time.',
     deliverables: [
-      'High-performance WebGL and Three.js rendering',
+      'High-performance WebGL rendering',
       'Interactive product configurators',
-      'Browser-based inspection and design tools',
+      'Touch-friendly controls',
+      'Performance budgets for mobile',
     ],
-    stack: ['Three.js', 'WebGL', 'Custom shaders', 'PBR materials', 'Touch controls'],
-    outcomes: [
-      'Higher engagement than static product pages',
-      'Fewer support questions about fit and finish',
-      'Works in-browser—no plugin installs',
-    ],
-    process: [
-      'Define interaction goals and asset constraints',
-      'Prototype performance budgets on target devices',
-      'Polish lighting, materials, and mobile gestures',
-    ],
-    accent: 'cyan',
+    stack: ['Three.js', 'WebGL', 'Custom shaders'],
+    outcomes: ['Higher engagement', 'Fewer fit/finish questions', 'Works in-browser'],
+    process: ['Define interaction goals', 'Prototype performance', 'Polish materials and gestures'],
+    accent: 'violet',
     cta: 'Discuss a 3D experience',
     priority: 'advanced',
-  },
-  {
-    id: 'cloud-devops',
-    title: 'Cloud infrastructure & DevOps',
-    positioning: 'Reliable hosting and delivery for the software we build.',
-    description:
-      'Hardened servers, containerized deployments, automated delivery, and ongoing maintenance so launches stay stable.',
-    deliverables: [
-      'Hardened Linux servers and access security',
-      'Docker deployments and automated delivery',
-      'SSL, backups, monitoring, and maintenance',
-    ],
-    stack: ['Linux VPS', 'Docker', 'Nginx', 'CI/CD', 'SSL & backups'],
-    outcomes: [
-      'Predictable deploys with less downtime risk',
-      'Hardened access and routine patching',
-      'Backups and monitoring you can rely on',
-    ],
-    process: [
-      'Audit hosting, secrets, and failure modes',
-      'Containerize and wire reverse proxy + SSL',
-      'Automate delivery, backups, and alerts',
-    ],
-    accent: 'cyan',
-    cta: 'Discuss infrastructure',
-    priority: 'advanced',
+    pillar: 'BUILD',
   },
 ]
 
@@ -136,49 +162,84 @@ export const homepageServices = services.filter((s) => s.priority === 'primary')
 export const processSteps = [
   {
     step: '01',
-    title: 'Discovery',
+    title: 'Discovery & blueprint',
+    days: 'Days 1–2',
     description:
-      'We learn how your business works today—offers, workflows, data, and pain points—before proposing a build plan.',
+      'Technical blueprint, data model outline, and milestone timeline—so scope and ownership are clear before build.',
   },
   {
     step: '02',
-    title: 'Fixed-scope plan',
-    description:
-      'You get a clear architecture outline, milestones, timeline, and fixed deliverables so pricing stays predictable.',
+    title: 'Prototype & design',
+    days: 'Days 3–5',
+    description: 'Clickable prototype and component system you can react to before full engineering spend.',
   },
   {
     step: '03',
     title: 'Build & review',
-    description:
-      'We ship in structured iterations. You review working software in staging at each milestone.',
+    days: 'Days 6–12',
+    description: 'Private staging URL with milestone demos. You review working software at every step.',
   },
   {
     step: '04',
-    title: 'Launch & support',
-    description:
-      'We deploy, harden, and hand over repositories and credentials. Optional maintenance covers the months after launch.',
+    title: 'Launch & handover',
+    days: 'Days 13–14+',
+    description: 'Production deploy, Git handover, credentials, and 30-day post-launch warranty.',
   },
 ]
 
 export const whyUs = [
   {
-    title: 'Built around real workflows',
+    title: '100% code & asset ownership',
     description:
-      'We shape the system around how your team and clients work—not a template or a stack of plugins.',
+      'You keep repositories, schemas, domains, and server credentials. No hostage clauses or seat lock-in.',
   },
   {
-    title: 'Full source-code & IP ownership',
+    title: 'Direct founder access',
     description:
-      'You retain your repository, documentation, and server credentials at handover. No vendor lock-in.',
+      'You work with Pankaj and Tushar—the engineers shipping the product—not a sales layer.',
   },
   {
-    title: 'Direct senior engineer access',
+    title: 'Rapid milestone delivery',
     description:
-      'You work with the engineers designing and maintaining the system—without a sales layer in between.',
+      '10–14 day MVP sprints for focused websites and portals, with fixed-scope pricing.',
   },
   {
-    title: 'Committed long-term support',
+    title: 'This site is the proof',
     description:
-      'After launch, we can maintain infrastructure, backups, security patches, and iterative improvements.',
+      'pixeltocloud.com is our live agency site—designed, engineered, and deployed by the same team that will build yours.',
   },
+]
+
+export const pillars = [
+  {
+    id: 'build',
+    label: 'BUILD',
+    title: 'Websites & custom software',
+    items: ['High-converting websites & stores', 'Custom CRM, billing & portals'],
+  },
+  {
+    id: 'grow',
+    label: 'GROW',
+    title: 'Leads, speed & reliability',
+    items: ['Google Ads & lead funnels', 'Cloud performance & security'],
+  },
+  {
+    id: 'automate',
+    label: 'AUTOMATE',
+    title: 'WhatsApp & AI workflows',
+    items: ['24/7 WhatsApp booking bots', 'AI document & invoice extraction'],
+  },
+]
+
+export const marqueeLabels = [
+  'Websites that convert',
+  'Full source-code ownership',
+  '10–14 day MVP sprints',
+  'WhatsApp booking flows',
+  'Custom CRM portals',
+  'Cloud & DevOps',
+  'Direct founder access',
+  'Fixed-scope milestones',
+  'Alwar · Worldwide',
+  'Zero vendor lock-in',
 ]

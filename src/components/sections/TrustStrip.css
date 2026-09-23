@@ -1,34 +1,47 @@
 .trust-strip {
+  padding: 1.75rem 0;
+  background: var(--bg-secondary);
   border-bottom: 1px solid var(--border);
-  background: var(--bg-primary);
-  padding: 1.5rem 0 1.65rem;
+}
+
+.trust-layout {
+  display: grid;
+  gap: 1.35rem;
 }
 
 .trust-signals {
   display: grid;
-  gap: 0.85rem;
-  margin-bottom: 1.25rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
+  gap: 0.75rem;
+  grid-template-columns: 1fr 1fr;
 }
 
-.trust-signals strong {
+.trust-signal {
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+}
+
+.trust-signal strong {
   display: block;
   font-family: var(--font-display);
   font-size: 0.92rem;
   letter-spacing: -0.02em;
+  margin-bottom: 0.15rem;
 }
 
-.trust-signals span {
+.trust-signal span {
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
 }
 
 .trust-clients p {
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.55rem;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 650;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .trust-clients ul {
@@ -37,37 +50,32 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem 1.5rem;
+  gap: 0.45rem;
 }
 
 .trust-clients li {
-  font-family: var(--font-display);
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  font-size: 0.8rem;
   font-weight: 600;
-  font-size: 0.9rem;
   color: var(--text-secondary);
-  letter-spacing: -0.02em;
+  transition: border-color 200ms var(--ease), transform 200ms var(--ease);
 }
 
-@media (min-width: 768px) {
-  .trust-signals {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
+.trust-clients li:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
-@media (min-width: 980px) {
-  .trust-strip .container {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 2.5rem;
+@media (min-width: 900px) {
+  .trust-layout {
+    grid-template-columns: 1.35fr 1fr;
     align-items: center;
   }
 
   .trust-signals {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-    border-right: 1px solid var(--border);
-    padding-right: 2rem;
+    grid-template-columns: repeat(4, 1fr);
   }
 }

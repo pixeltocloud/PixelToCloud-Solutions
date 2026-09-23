@@ -44,7 +44,7 @@ function RouteFallback() {
 
 function AppShell() {
   return (
-    <>
+    <div className="app-shell">
       <ScrollManager />
       <Analytics />
       <Navbar />
@@ -65,7 +65,7 @@ function AppShell() {
         </Suspense>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

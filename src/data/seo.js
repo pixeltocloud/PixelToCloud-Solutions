@@ -1,52 +1,50 @@
 export const defaultSeo = {
   siteUrl: 'https://pixeltocloud.com',
-  title: 'PixelToCloud — Websites & Custom Software Studio',
+  title: 'PixelToCloud — Website Development Agency | Custom Software & AI',
   description:
-    'PixelToCloud builds professional websites and custom software for startups and growing businesses—with full source-code ownership and direct engineer access.',
-  image: 'https://pixeltocloud.com/og-image.svg',
+    'Website development agency crafting high-converting sites, custom CRM portals, and AI automations. 100% source-code ownership. Alwar · Worldwide.',
+  image: 'https://pixeltocloud.com/pixeltocloud-logo.png',
 }
 
 export const routeSeo = {
   '/': {
     path: '/',
-    title: 'PixelToCloud — Websites & Custom Software Studio',
+    title: 'PixelToCloud — Website Development Agency',
     description:
-      'Professional websites, client portals, and custom applications built around how your business works. Full IP ownership.',
+      'Stunning websites, custom software & AI systems for modern businesses. Full ownership. Direct founder access. This site is our live proof of work.',
   },
   '/services': {
     path: '/services',
-    title: 'Services — Websites, Apps & Cloud | PixelToCloud',
+    title: 'Services — Websites, Apps, Growth & Automation | PixelToCloud',
     description:
-      'Business websites, custom web applications, e-commerce experiences, interactive 2D/3D tools, and cloud infrastructure.',
+      'BUILD · GROW · AUTOMATE — websites, CRM portals, lead funnels, cloud, WhatsApp bots, and AI document workflows.',
   },
   '/work': {
     path: '/work',
-    title: 'Work & Case Studies | PixelToCloud',
+    title: 'Work & Case Studies | PixelToCloud Agency',
     description:
-      'Selected case studies from finance, healthcare, commerce, and interactive 3D engineering by PixelToCloud.',
+      'Selected work including this website, Easy My Tax, Harish Renova, Saini Handicrafts, and WebGL experiments.',
   },
   '/about': {
     path: '/about',
-    title: 'About & Leadership | PixelToCloud',
+    title: 'About the Founders | PixelToCloud',
     description:
-      'Meet founders Pankaj Gupta and Tushar Singhal—senior engineers building custom software with direct client collaboration.',
+      'Meet Pankaj Gupta and Tushar Singhal—the engineers behind PixelToCloud’s website development agency.',
   },
   '/contact': {
     path: '/contact',
-    title: 'Contact — Start a Project | PixelToCloud',
-    description:
-      'Tell us what you need built. PixelToCloud will reply with a practical plan, timeline, and fixed-scope estimate.',
+    title: 'Start a Project | PixelToCloud',
+    description: 'Tell us what you need. Same-day founder response. Fixed-scope milestones.',
   },
   '/labs': {
     path: '/labs',
-    title: 'Engineering Lab & Prototypes | PixelToCloud',
-    description:
-      'Interactive demos and engineering prototypes: WebGL, deployment simulations, API benchmarks, and topology viewers.',
+    title: 'Engineering Lab | PixelToCloud',
+    description: 'Interactive demos and prototypes: WebGL, deploy simulations, and infrastructure experiments.',
   },
   '/privacy': {
     path: '/privacy',
     title: 'Privacy Policy | PixelToCloud',
-    description: 'How PixelToCloud collects, uses, and protects information submitted through our website.',
+    description: 'How PixelToCloud collects and protects information submitted through our website.',
   },
   '/terms': {
     path: '/terms',

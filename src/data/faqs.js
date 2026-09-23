@@ -1,33 +1,38 @@
 export const faqs = [
   {
-    question: 'How much does custom software development cost?',
+    question: 'Do I get 100% ownership of the code and servers?',
     answer:
-      'Project pricing depends on scope, architectural complexity, required integrations, and infrastructure specifications. Small bespoke business websites or portals typically start from ₹25,000–₹50,000, while custom web applications, SaaS platforms, and interactive 3D tools typically range from ₹75,000–₹2,50,000+. We provide fixed-price milestones so there are no surprises.',
+      'Yes. On launch you receive full intellectual property ownership, Git repositories, domain access, and server credentials. No proprietary locks or recurring seat licenses.',
   },
   {
-    question: 'How long does a typical software project take?',
+    question: 'How much does a project cost?',
     answer:
-      'Most business web applications and custom portals are delivered within 2 to 4 weeks. Complex enterprise SaaS platforms or comprehensive 3D WebGL applications typically require 4 to 8 weeks, structured in clear milestone sprints with working demo reviews at every step.',
+      'Business websites and portals typically start from ₹25,000–₹50,000. Custom web applications, SaaS platforms, and interactive 3D tools typically range from ₹75,000–₹2,50,000+. We quote fixed-price milestones so pricing stays predictable.',
   },
   {
-    question: 'Who owns the source code upon delivery?',
+    question: 'How long does delivery take?',
     answer:
-      'You retain full legal ownership of your source code, private git repositories, database schemas, and server configurations upon project sign-off. We do not enforce proprietary locks or recurring platform seat licenses.',
+      'Focused marketing websites and portals often ship in 10–14 day MVP sprints. Custom applications typically take 2–4 weeks. Complex SaaS or WebGL experiences usually take 4–8 weeks, with working demos at each milestone.',
   },
   {
-    question: 'Can you sign an NDA before we share our project details?',
+    question: 'How are payments structured?',
     answer:
-      'Yes, absolutely. We frequently execute mutual Non-Disclosure Agreements (NDAs) for healthcare, fintech, startup founders, and proprietary software concepts prior to any detailed technical discussion.',
+      'Transparent milestones—for example 30% architecture & wireframes, 40% core engineering & staging demo, 30% production handover. You review working software before releasing the next payment.',
   },
   {
-    question: 'Do you provide ongoing server hosting and maintenance?',
+    question: 'Can you sign an NDA before we share details?',
     answer:
-      'Yes. All deployments include 30 days of post-launch warranty support. We also provide ongoing cloud infrastructure maintenance packages covering Linux server security, automated off-site backups, SSL renewals, and priority bug fixes.',
+      'Yes. We routinely execute mutual NDAs for healthcare, fintech, startups, and proprietary concepts before detailed technical discussion.',
   },
   {
-    question: 'Can you work with or modernize an existing codebase?',
+    question: 'Do you offer hosting and maintenance?',
     answer:
-      'Yes. We regularly refactor existing web systems, improve database query performance, upgrade UI/UX, containerize existing applications into Docker, and fix performance bottlenecks.',
+      'Every launch includes 30 days of post-launch warranty. Optional maintenance covers Linux security, backups, SSL renewals, monitoring, and priority fixes.',
+  },
+  {
+    question: 'Can you modernize an existing site or codebase?',
+    answer:
+      'Yes. We refactor existing systems, improve performance, upgrade UI/UX, containerize apps, and fix bottlenecks while preserving what already works.',
   },
 ]
 

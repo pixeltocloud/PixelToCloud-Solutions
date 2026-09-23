@@ -10,13 +10,13 @@ export default function WhyPixelToCloud() {
         <Reveal>
           <SectionHeading
             tag="Why PixelToCloud"
-            title="A small studio with clear accountability"
-            description="You know who is building, how delivery works, and what you own when the project ships."
+            title="Zero lock-in. Complete freedom."
+            description="Unlike agencies that hold your domain and code hostage, you own 100% of everything we build—and this live site is proof of the craft."
           />
         </Reveal>
         <div className="why-grid">
           {whyUs.map((item, index) => (
-            <Reveal key={item.title} delay={index * 50} as="article">
+            <Reveal key={item.title} delay={index * 60} as="article" className="why-card hover-lift">
               <span>{String(index + 1).padStart(2, '0')}</span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>

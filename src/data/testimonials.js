@@ -1,26 +1,26 @@
 export const testimonials = [
   {
-    quote:
-      'PixelToCloud engineered our detailed CA servicing website with automated tax calculators, GST compliance modules, and secure client document lockers. Our clients love the clean speed and professionalism of Easy My Tax. Highly recommended!',
-    author: 'CA Pradeep Agarwal',
+    name: 'CA Pradeep Agarwal',
     role: 'Founder, Easy My Tax',
+    text: 'Automated tax calculators, GST modules, and secure client lockers—delivered with clean speed. Our clients notice the professionalism immediately.',
+    project: 'Easy My Tax',
   },
   {
-    quote:
-      'PixelToCloud built a specialized, highly responsive oncology website for Harish Renova Cancer Center. Patient consultation bookings, emergency contact routing, and medical information are presented seamlessly with sub-second mobile loading speed. Truly exceptional work!',
-    author: 'Dr. Neeraj Kumar Rathee',
+    name: 'Dr. Neeraj Kumar Rathee',
     role: 'Oncologist, Harish Renova Cancer Center',
+    text: 'Consultation bookings and emergency routing work seamlessly with sub-second mobile loading. Exactly what a clinical site needs.',
+    project: 'Harish Renova',
   },
   {
-    quote:
-      'PixelToCloud created a detailed, high-converting shopping website for Saini Handicrafts. Their creative visual ideas, custom product showcases, and crafting storytelling perfectly captured our artisanal brand. The smooth checkout experience has significantly boosted our sales!',
-    author: 'Jyoti Saini',
+    name: 'Jyoti Saini',
     role: 'Founder, Saini Handicrafts',
+    text: 'Product storytelling and custom showcases finally match our brand. Commission inquiries from overseas jumped after launch.',
+    project: 'Saini Handicrafts',
   },
   {
-    quote:
-      'PixelToCloud designed a detailed physio servicing and rehabilitation website for Revital Physiocare Lab. The online appointment scheduler, exercise guidance integrations, and direct WhatsApp booking work flawlessly with 100% reliability.',
-    author: 'Dr. Archit Joshi',
-    role: 'Founder, Revital Physiocare Lab',
+    name: 'Dr. Archit Joshi',
+    role: 'Revital Physiocare Lab',
+    text: 'Appointment scheduling and WhatsApp booking run reliably—patients get through without friction.',
+    project: 'Revital Physiocare',
   },
 ]

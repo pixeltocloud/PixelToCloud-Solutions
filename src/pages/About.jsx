@@ -1,12 +1,11 @@
 import Founders from '../components/sections/Founders'
 import WhyPixelToCloud from '../components/sections/WhyPixelToCloud'
 import Testimonials from '../components/sections/Testimonials'
+import Process from '../components/sections/Process'
 import FinalCTA from '../components/sections/FinalCTA'
+import Marquee from '../components/sections/Marquee'
 import Seo from '../components/seo/Seo'
-import Reveal from '../components/ui/Reveal'
-import { studioTimeline } from '../data/founders'
 import './PageHero.css'
-import './About.css'
 
 export default function About() {
   return (
@@ -14,32 +13,27 @@ export default function About() {
       <Seo />
       <section className="page-hero">
         <div className="container">
-          <p className="page-kicker">About</p>
-          <h1>PixelToCloud</h1>
+          <p className="page-kicker">About Us</p>
+          <h1>A website development agency run by engineers</h1>
           <p>
-            A senior engineering studio building websites and custom software around real business workflows—with full
-            source-code ownership and direct access to the founders.
+            PixelToCloud Solutions is a high-performance studio co-founded by Pankaj Gupta and Tushar Singhal. We bridge
+            pixel-perfect frontend craft, custom software, and hardened cloud delivery—with full ownership for every
+            client.
           </p>
         </div>
       </section>
+      <Marquee
+        labels={[
+          'Zero outsourcing',
+          'Founder-led delivery',
+          'Alwar · Worldwide',
+          '50+ shipped systems',
+          '30-day warranty',
+          'NDA ready',
+        ]}
+      />
       <Founders />
-      <section className="section">
-        <div className="container">
-          <Reveal>
-            <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-              How engagements typically run
-            </h2>
-          </Reveal>
-          <div className="about-timeline">
-            {studioTimeline.map((item, i) => (
-              <Reveal key={item.year} delay={i * 70} className="about-timeline-item">
-                <strong>{item.year}</strong>
-                <p>{item.text}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Process />
       <WhyPixelToCloud />
       <Testimonials />
       <FinalCTA />

@@ -12,17 +12,17 @@ export default function Testimonials() {
         <Reveal>
           <SectionHeading
             tag="Client feedback"
-            title="What partners say"
-            description="Quotes from people running the systems we built."
+            title="Trusted by clinics, CAs & founders"
+            description="Real feedback from professionals whose digital footprint we transformed."
           />
         </Reveal>
 
         <div className="testimonials-layout">
           {featured ? (
-            <Reveal as="blockquote" className="testimonial-featured">
-              <p>“{featured.quote}”</p>
+            <Reveal as="blockquote" className="testimonial-featured hover-lift">
+              <p>“{featured.text}”</p>
               <footer>
-                <strong>{featured.author}</strong>
+                <strong>{featured.name}</strong>
                 <span>{featured.role}</span>
               </footer>
             </Reveal>
@@ -30,10 +30,10 @@ export default function Testimonials() {
 
           <div className="testimonials-grid">
             {rest.map((item, index) => (
-              <Reveal key={item.author} delay={index * 50} as="blockquote">
-                <p>“{item.quote}”</p>
+              <Reveal key={item.name} delay={index * 50} as="blockquote" className="hover-lift">
+                <p>“{item.text}”</p>
                 <footer>
-                  <strong>{item.author}</strong>
+                  <strong>{item.name}</strong>
                   <span>{item.role}</span>
                 </footer>
               </Reveal>

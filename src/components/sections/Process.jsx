@@ -10,15 +10,16 @@ export default function Process() {
         <Reveal>
           <SectionHeading
             tag="Process"
-            title="How a project typically moves"
-            description="From the first conversation to a live system you own—without vague timelines or surprise scope."
+            title="From concept to cloud launch"
+            description="A clear 4-stage pipeline engineered for milestone transparency and 100% intellectual property ownership."
           />
         </Reveal>
         <ol className="process-list">
           {processSteps.map((step, index) => (
-            <Reveal key={step.step} delay={index * 50} as="li" className="process-step">
+            <Reveal key={step.step} delay={index * 60} as="li" className="process-step hover-lift">
               <span className="process-num">{step.step}</span>
               <div>
+                <p className="process-days">{step.days}</p>
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </div>

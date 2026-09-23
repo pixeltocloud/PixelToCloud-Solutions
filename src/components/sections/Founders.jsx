@@ -19,17 +19,14 @@ export default function Founders() {
           {founders.map((person, index) => (
             <Reveal key={person.name} delay={index * 60} as="article" className="founder-card">
               <div className="founder-top">
-                <picture>
-                  <source srcSet={person.image} type="image/webp" />
-                  <img
-                    src={person.imageFallback || person.image}
-                    alt={`${person.name}, ${person.role}`}
-                    width="112"
-                    height="112"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  src={person.imageFallback || person.image}
+                  alt={`${person.name}, ${person.role}`}
+                  width="112"
+                  height="112"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <span>{person.experience}</span>
               </div>
               <h3>{person.name}</h3>
