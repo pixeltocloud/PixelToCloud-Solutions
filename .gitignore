@@ -5,3 +5,5 @@ node_modules/
 .vscode/
 .idea/
 dist/
+# Built site for local/preview only; published copies live in docs/ (master) or main branch
+/assets/
