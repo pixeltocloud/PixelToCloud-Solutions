@@ -1,0 +1,238 @@
+.work-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.work-intro .section-header {
+  margin-bottom: 0;
+}
+
+.work-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0 0 0.55rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.work-meta span:first-child {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.work-feature {
+  margin-bottom: 1.15rem;
+}
+
+.work-feature-link {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  color: inherit;
+  transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease);
+}
+
+.work-feature-link:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.work-feature-media {
+  background: var(--bg-elevated);
+  overflow: hidden;
+}
+
+.work-feature-media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 420ms var(--ease);
+}
+
+.work-feature-link:hover .work-feature-media img {
+  transform: scale(1.02);
+}
+
+.work-feature-body {
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+
+.work-feature-body h3 {
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+}
+
+.work-feature-body > p {
+  margin: 0 0 1rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+.work-secondary {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.work-secondary-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease);
+}
+
+.work-secondary-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.work-secondary-card a {
+  display: grid;
+  color: inherit;
+  height: 100%;
+}
+
+.work-secondary-media img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--bg-elevated);
+}
+
+.work-secondary-body {
+  padding: 1.1rem 1.15rem 1.25rem;
+}
+
+.work-secondary-body h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+}
+
+.work-secondary-body > p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.cs-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cs-card {
+  display: grid;
+  gap: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  padding: 1.15rem;
+}
+
+.cs-media {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.cs-media img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.cs-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.9rem;
+  margin-bottom: 0.55rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.cs-meta span:first-child {
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.cs-copy h3 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+}
+
+.cs-label {
+  margin: 0.65rem 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--text-muted);
+}
+
+.cs-copy p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+}
+
+.cs-outcome {
+  margin: 0.85rem 0;
+  padding: 0.75rem 0.85rem;
+  border-left: 3px solid var(--accent-emerald);
+  background: rgba(15, 118, 110, 0.05);
+}
+
+.cs-outcome strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--accent-emerald);
+  font-size: 0.8rem;
+}
+
+.cs-more {
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .work-feature-link {
+    grid-template-columns: 1.35fr 0.95fr;
+    align-items: stretch;
+  }
+
+  .work-feature-media img {
+    height: 100%;
+    min-height: 320px;
+  }
+
+  .work-feature-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 2.1rem;
+  }
+
+  .work-secondary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cs-card {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    padding: 1.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-feature-media img {
+    transition: none;
+  }
+}

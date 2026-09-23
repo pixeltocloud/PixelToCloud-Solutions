@@ -1,0 +1,203 @@
+.project-visual {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--viz-a) 12%, var(--bg-secondary)), var(--bg-secondary));
+}
+
+.viz-chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-elevated) 80%, transparent);
+}
+
+.viz-chrome span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+.viz-chrome em {
+  margin-left: 0.4rem;
+  font-style: normal;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viz-body {
+  position: relative;
+  min-height: 150px;
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.viz-portal {
+  grid-template-columns: 56px 1fr;
+}
+
+.viz-sidebar {
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--viz-a) 18%, transparent);
+}
+
+.viz-main {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.viz-kpi {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.viz-bar {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.viz-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.viz-rows span {
+  display: block;
+  height: 10px;
+  margin-top: 0.35rem;
+  border-radius: 4px;
+  background: var(--border);
+}
+
+.viz-rows span:nth-child(2) {
+  width: 78%;
+}
+.viz-rows span:nth-child(3) {
+  width: 62%;
+}
+
+.viz-calendar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+}
+
+.viz-calendar b {
+  display: block;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+.viz-calendar b.is-active {
+  background: color-mix(in srgb, var(--viz-a) 22%, white);
+  border-color: var(--viz-a);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--viz-a) 20%, transparent);
+}
+
+.viz-chip {
+  justify-self: start;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #166534 !important;
+  background: rgba(22, 101, 52, 0.12) !important;
+}
+
+.viz-product {
+  height: 88px;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--viz-a) 45%, white), transparent 45%),
+    linear-gradient(135deg, color-mix(in srgb, var(--viz-a) 25%, white), color-mix(in srgb, var(--viz-b) 20%, white));
+  border: 1px solid var(--border);
+}
+
+.viz-tags {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.viz-tags span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.viz-orb {
+  width: 84px;
+  height: 84px;
+  margin: 0.4rem auto 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff, var(--viz-a) 45%, var(--viz-b));
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--viz-a) 35%, transparent);
+  animation: orbFloat 4s ease-in-out infinite;
+}
+
+.viz-ring {
+  position: absolute;
+  inset: 28% 22%;
+  border: 1px dashed color-mix(in srgb, var(--viz-a) 55%, transparent);
+  border-radius: 50%;
+  animation: spinSlow 12s linear infinite;
+}
+
+.viz-fps {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 2.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--viz-a);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+}
+
+.viz-caption {
+  margin: 0;
+  padding: 0.55rem 0.85rem 0.75rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+@keyframes orbFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viz-orb,
+  .viz-ring {
+    animation: none;
+  }
+}
