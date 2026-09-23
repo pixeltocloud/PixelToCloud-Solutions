@@ -17,75 +17,32 @@
   background: rgba(11, 18, 32, 0.92);
 }
 
-.navbar.is-over-hero {
-  background: rgba(5, 8, 15, 0.42);
-  backdrop-filter: blur(16px) saturate(1.15);
-  border-bottom-color: rgba(255, 255, 255, 0.08);
-  box-shadow: none;
-}
-
-.navbar.is-over-hero.is-scrolled {
-  background: rgba(5, 8, 15, 0.55);
-}
-
-.navbar.is-over-hero .nav-wordmark,
-.navbar.is-over-hero .nav-links a,
-.navbar.is-over-hero .theme-toggle {
-  color: rgba(248, 250, 252, 0.94);
-}
-
-/* When not over hero, always use theme text tokens (light = dark text, dark = light text) */
-.navbar:not(.is-over-hero) .nav-wordmark {
+.navbar .nav-wordmark {
   color: var(--text);
 }
 
-.navbar:not(.is-over-hero) .nav-links a {
+.navbar .nav-links a {
   color: var(--text-secondary);
 }
 
-.navbar:not(.is-over-hero) .nav-links a:hover,
-.navbar:not(.is-over-hero) .nav-links a.is-active {
+.navbar .nav-links a:hover,
+.navbar .nav-links a.is-active {
   color: var(--text);
 }
 
-.navbar:not(.is-over-hero) .theme-toggle {
+.navbar .theme-toggle {
   color: var(--text-secondary);
   border-color: var(--border);
   background: var(--bg-secondary);
 }
 
-.navbar:not(.is-over-hero) .nav-toggle {
+.navbar .nav-toggle {
   border-color: var(--border);
   background: var(--bg-secondary);
 }
 
-.navbar:not(.is-over-hero) .nav-toggle span {
+.navbar .nav-toggle span {
   background: var(--text);
-}
-
-.navbar.is-over-hero .nav-links a:hover,
-.navbar.is-over-hero .nav-links a.is-active {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.navbar.is-over-hero .nav-links a.is-active::after {
-  background: var(--cta);
-}
-
-.navbar.is-over-hero .theme-toggle,
-.navbar.is-over-hero .nav-toggle {
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-.navbar.is-over-hero .nav-toggle span {
-  background: #fff;
-}
-
-.navbar.is-over-hero .nav-cta {
-  box-shadow: 0 8px 24px rgba(255, 87, 34, 0.28);
 }
 
 .navbar.is-scrolled {
