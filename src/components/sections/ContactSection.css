@@ -1,0 +1,262 @@
+.contact {
+  background: var(--bg-primary);
+}
+
+.connect-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.connect-panel-title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  grid-column: 1 / -1;
+}
+
+.inquiry-form {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  padding: 1.15rem;
+  height: 100%;
+}
+
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.inquiry-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.inquiry-form label {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.inquiry-form label.full {
+  grid-column: 1 / -1;
+}
+
+.inquiry-form span {
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.inquiry-form em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  color: var(--text);
+  padding: 0.7rem 0.8rem;
+  font-size: 0.9375rem;
+  min-height: 44px;
+}
+
+.inquiry-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.inquiry-form input:focus,
+.inquiry-form select:focus,
+.inquiry-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.submit-btn {
+  width: 100%;
+}
+
+.trust-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.form-feedback {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.88rem;
+}
+
+.form-feedback.is-success {
+  background: rgba(5, 150, 105, 0.1);
+  color: #047857;
+}
+
+[data-theme='dark'] .form-feedback.is-success {
+  color: #34d399;
+}
+
+.form-feedback.is-error {
+  background: rgba(220, 38, 38, 0.08);
+  color: #b91c1c;
+}
+
+[data-theme='dark'] .form-feedback.is-error {
+  color: #fca5a5;
+}
+
+.connect-side {
+  display: grid;
+  gap: 1rem;
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: 1fr 1fr;
+}
+
+.connect-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 0;
+  height: 100%;
+}
+
+.connect-qr {
+  align-items: center;
+  text-align: center;
+}
+
+.connect-qr .connect-panel-title,
+.connect-qr .connect-card-copy {
+  text-align: center;
+  width: 100%;
+}
+
+.qr-image {
+  width: min(100%, 160px);
+  height: auto;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  padding: 0.55rem;
+  border: 1px solid var(--border);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.connect-card-copy {
+  margin: 0.7rem 0 0.9rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 28rem;
+}
+
+.connect-side-btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.connect-mail {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.connect-mail:hover {
+  color: var(--accent);
+}
+
+.connect-phones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0.85rem 0 0;
+  width: 100%;
+}
+
+.connect-phones a {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.connect-phones a:hover {
+  color: var(--accent);
+}
+
+@media (min-width: 720px) {
+  .inquiry-form {
+    grid-template-columns: 1fr 1fr;
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 980px) {
+  .connect-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.15rem;
+    align-items: stretch;
+  }
+
+  .connect-layout > .reveal,
+  .connect-layout > .connect-side {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .connect-layout > .reveal {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .connect-side > .reveal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .inquiry-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inquiry-form label.full:has(textarea) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inquiry-form label.full:has(textarea) textarea {
+    flex: 1;
+    min-height: 140px;
+  }
+}
