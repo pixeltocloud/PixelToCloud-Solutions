@@ -1,1123 +1,1054 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <!-- PixelToCloud Solutions: Systems & Custom Software Engineering Studio -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PixelToCloud engineers custom software, operational tools, data systems, and cloud infrastructure for businesses with complex workflows. Full source-code ownership with direct senior architect support.">
-  <meta name="keywords" content="custom software development, business web applications, 2D 3D WebGL development, cloud devops, Three.js engineering, healthcare software, CA financial portals, PixelToCloud">
-  <meta name="author" content="PixelToCloud Solutions by Pankaj Gupta & Tushar Singhal">
-  <meta name="theme-color" content="#070a12">
+  <title>PixelToCloud — Stunning Websites, Custom Software & AI Systems</title>
+  <meta name="description" content="PixelToCloud is a modern digital engineering studio crafting high-converting websites, custom CRM portals, and intelligent AI automations for growing businesses. 100% source-code ownership.">
+  <meta name="keywords" content="web development studio, custom software, CRM development, AI automation, WhatsApp bots, Google Ads, PixelToCloud, Pankaj Gupta">
+  <meta name="author" content="PixelToCloud Solutions">
+  <meta name="theme-color" content="#ffffff">
 
   <!-- OpenGraph / Social Meta -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="PixelToCloud — Systems & Custom Software Studio">
-  <meta property="og:description" content="Software for the parts of your business that don't fit in a template. Custom portals, operational tools, and cloud infrastructure for teams with complex workflows.">
+  <meta property="og:title" content="PixelToCloud — Stunning Websites, Custom Software & AI Systems">
+  <meta property="og:description" content="Expert web engineering, custom CRM & business software, and intelligent AI automation. 100% full source-code ownership.">
   <meta property="og:url" content="https://pixeltocloud.com/">
-  <meta property="og:image" content="https://pixeltocloud.com/image/pankaj-profile.jpg">
+  <meta property="og:image" content="https://pixeltocloud.com/pixeltocloud-logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PixelToCloud — Systems & Custom Software Studio">
-  <meta name="twitter:description" content="Software for the parts of your business that don't fit in a template. Full source-code ownership with direct engineering support.">
-  <meta name="twitter:image" content="https://pixeltocloud.com/image/pankaj-profile.jpg">
+  <meta name="twitter:title" content="PixelToCloud — Digital Engineering & AI Studio">
+  <meta name="twitter:description" content="Stunning Websites, Custom Software & AI Systems for Modern Businesses.">
+  <meta name="twitter:image" content="https://pixeltocloud.com/pixeltocloud-logo.png">
 
   <link rel="canonical" href="https://pixeltocloud.com/">
-  <title>PixelToCloud — Software for Businesses with Complex Workflows</title>
 
-  <!-- Google JSON-LD Structured Data Schema -->
+  <!-- Google Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://pixeltocloud.com/#organization",
-    "name": "PixelToCloud Solutions",
+    "name": "PixelToCloud",
     "url": "https://pixeltocloud.com/",
-    "image": "https://pixeltocloud.com/image/pankaj-profile.jpg",
-    "logo": "https://pixeltocloud.com/favicon.svg",
-    "telephone": ["+918219352124", "+919928196424"],
-    "email": "pixeltocloud@gmail.com",
+    "logo": "https://pixeltocloud.com/logo-pixeltocloud.svg",
+    "image": "https://pixeltocloud.com/pixeltocloud-logo.png",
+    "telephone": "+918629008768",
+    "email": "contact@pixeltocloud.com",
     "priceRange": "$$",
-    "founders": [
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "founder": [
       {
         "@type": "Person",
         "name": "Pankaj Gupta",
-        "jobTitle": "Founder & Principal Systems Architect"
-      },
-      {
-        "@type": "Person",
-        "name": "Tushar Singhal",
-        "jobTitle": "Co-Founder & Senior Software Developer"
+        "jobTitle": "Founder & Technical Lead"
       }
     ],
-    "areaServed": ["IN", "US", "GB", "AE", "CA", "DE", "FR"]
+    "sameAs": [
+      "https://pixeltocloud.com/connect"
+    ]
   }
   </script>
 
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.svg">
 
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="css/main.css?v=43.0">
-  <link rel="stylesheet" href="css/animations.css?v=43.0">
-  <link rel="stylesheet" href="css/components.css?v=43.0">
-  <link rel="stylesheet" href="css/light-theme.css?v=43.0">
-  <link rel="stylesheet" href="css/mobile-responsive.css?v=43.0">
+  <!-- Studio Stylesheet -->
+  <link rel="stylesheet" href="css/studio.css?v=5.0">
 </head>
 <body>
-  <a href="#main-content" class="sr-only" id="skip-to-content" style="position: absolute; left: -9999px; top: 10px; z-index: 9999; background: #00d2ff; color: #000; padding: 8px 16px; border-radius: 4px; font-weight: 700;">Skip to main content</a>
 
-  <!-- ===================================================================
-       HEADER & FLOATING NAVBAR
-       =================================================================== -->
-  <header class="navbar" id="navbar">
-    <a href="./" class="nav-brand" aria-label="PixelToCloud Solutions Home">
-      <div class="nav-logo-icon" aria-label="PixelToCloud Logo"><img src="logo-icon.svg" alt="PixelToCloud" style="width: 26px; height: 26px; object-fit: contain;"></div>
-      <span>PixelTo<span style="color: var(--accent-cyan);">Cloud</span></span>
-    </a>
+  <!-- Background Decorative Canvas Elements -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+  <div class="ambient-glow-top" aria-hidden="true"></div>
 
-    <nav class="nav-links" aria-label="Primary Navigation">
-      <a href="#selected-work" class="nav-link">Selected Work</a>
-      <div class="nav-item-dropdown" id="services-nav-dropdown">
-        <a href="#capabilities" class="nav-link nav-link-dropdown" aria-expanded="false" aria-haspopup="true">
-          <span>Capabilities</span>
-          <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </a>
-        <div class="nav-mega-menu" role="menu" aria-label="Services Submenu" style="display: none;">
-          <div class="mega-menu-grid">
-            <a href="services/artificial-intelligence.html" class="mega-menu-card" role="menuitem">
-              <div class="mega-menu-header">
-                <div class="mega-menu-icon"><i class="fa-solid fa-brain"></i></div>
-                <span class="mega-menu-title">Artificial Intelligence</span>
-              </div>
-              <p class="mega-menu-desc">Turning AI potential into real business impact</p>
-            </a>
-            <a href="services/digital-products.html" class="mega-menu-card" role="menuitem">
-              <div class="mega-menu-header">
-                <div class="mega-menu-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <span class="mega-menu-title">Digital Products &amp; Software</span>
-              </div>
-              <p class="mega-menu-desc">Building scalable digital products from idea to launch</p>
-            </a>
-            <a href="services/erp-solutions.html" class="mega-menu-card" role="menuitem">
-              <div class="mega-menu-header">
-                <div class="mega-menu-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                <span class="mega-menu-title">ERP Solutions</span>
-              </div>
-              <p class="mega-menu-desc">Modern platforms that simplify and scale operations</p>
-            </a>
-            <a href="services/interactive-3d-spatial.html" class="mega-menu-card" role="menuitem">
-              <div class="mega-menu-header">
-                <div class="mega-menu-icon"><i class="fa-solid fa-cube"></i></div>
-                <span class="mega-menu-title">Interactive 2D/3D &amp; Spatial</span>
-              </div>
-              <p class="mega-menu-desc">Hardware-accelerated 60 FPS graphics and digital twins</p>
-            </a>
-            <a href="services/user-experience-design.html" class="mega-menu-card" role="menuitem">
-              <div class="mega-menu-header">
-                <div class="mega-menu-icon"><i class="fa-solid fa-bezier-curve"></i></div>
-                <span class="mega-menu-title">User Experience &amp; Design</span>
-              </div>
-              <p class="mega-menu-desc">Human-centred design that's intuitive and effective</p>
-            </a>
-            <a href="services/cloud-devops.html" class="mega-menu-card" role="menuitem">
-              <div class="mega-menu-header">
-                <div class="mega-menu-icon"><i class="fa-solid fa-cloud"></i></div>
-                <span class="mega-menu-title">Cloud &amp; DevOps</span>
-              </div>
-              <p class="mega-menu-desc">Secure, scalable cloud foundations for faster delivery</p>
-            </a>
-          </div>
-        </div>
-      </div>
-      <a href="#process" class="nav-link">Approach</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="labs.html" class="nav-link"><i class="fa-solid fa-flask" style="font-size: 0.8rem; margin-right: 4px; color: #a855f7;"></i>Labs</a>
-      <a href="#contact-section" class="nav-link">Contact</a>
-    </nav>
-
-    <div class="nav-actions">
-      <a href="#contact-section" class="btn-magnetic btn-primary nav-cta-btn">
-        <span>Start a Conversation</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <!-- ================= FLOATING PILL NAVBAR ================= -->
+  <div class="nav-wrap">
+    <header class="navbar" id="navbar">
+      <a href="./" class="nav-brand" aria-label="PixelToCloud Home">
+        <!-- Official Master P-Cloud Icon Mark -->
+        <svg class="nav-logo-svg" viewBox="0 0 252 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="navPCloudGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1e3a8a" />
+              <stop offset="25%" stop-color="#1d4ed8" />
+              <stop offset="60%" stop-color="#0284c7" />
+              <stop offset="100%" stop-color="#38bdf8" />
+            </linearGradient>
+          </defs>
+          <path d="M 72 145 L 42 145 C 16 145, -2 122, -2 92 C -2 64, 18 42, 46 40 C 58 10, 88 -8, 124 -8 C 160 -8, 190 10, 202 40 C 230 42, 250 64, 250 92 C 250 122, 230 145, 198 145 L 128 145" fill="none" stroke="url(#navPCloudGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 66 44 C 78 22, 98 12, 124 12 C 150 12, 168 22, 180 44" fill="none" stroke="url(#navPCloudGrad)" stroke-width="13" stroke-linecap="round"/>
+          <path d="M 102 145 L 102 44 L 118 44 C 144 44, 154 56, 154 74 C 154 92, 142 104, 118 104 L 102 104" fill="none" stroke="url(#navPCloudGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav-title">PixelTo<span>Cloud</span></span>
       </a>
 
-      <button class="nav-mobile-toggle" id="mobile-menu-btn" aria-label="Open Navigation Menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
-  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
-    <div class="drawer-header">
-      <a href="./" class="nav-brand">
-        <div class="nav-logo-icon"><img src="logo-icon.svg" alt="PixelToCloud" style="width: 26px; height: 26px;"></div>
-        <span>PixelToCloud</span>
-      </a>
-      <button class="drawer-close-btn" id="mobile-drawer-close" aria-label="Close Navigation Menu">✕</button>
-    </div>
-    <div class="drawer-body">
-      <nav class="drawer-links">
-        <a href="#selected-work" class="drawer-link"><i class="fa-solid fa-briefcase"></i><span>Selected Work</span></a>
-        <a href="#capabilities" class="drawer-link"><i class="fa-solid fa-cubes"></i><span>Capabilities</span></a>
-        <a href="#process" class="drawer-link"><i class="fa-solid fa-diagram-project"></i><span>Our Approach</span></a>
-        <a href="about.html" class="drawer-link"><i class="fa-solid fa-user-gear"></i><span>About &amp; Leadership</span></a>
-        <a href="labs.html" class="drawer-link"><i class="fa-solid fa-flask"></i><span>Engineering Labs</span></a>
-        <a href="#contact-section" class="drawer-link"><i class="fa-solid fa-paper-plane"></i><span>Start a Project</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#solutions" class="nav-link">Capabilities</a></li>
+          <li><a href="#work" class="nav-link">Selected Work</a></li>
+          <li><a href="#pillars" class="nav-link">3 Pillars</a></li>
+          <li><a href="#guarantees" class="nav-link">Why Us</a></li>
+          <li><a href="connect" class="nav-link" style="color: var(--brand-blue); display: inline-flex; align-items: center; gap: 4px;">Smart Card <span style="font-size: 0.65rem; background: #e0f2fe; padding: 2px 6px; border-radius: 9999px;">Live</span></a></li>
+        </ul>
       </nav>
-    </div>
-    <div class="drawer-footer">
-      <a href="https://wa.me/918219352124?text=Hello%20Pankaj%20Gupta,%20I%20would%20like%20to%20discuss%20a%20software%20project." target="_blank" class="btn-magnetic btn-primary" style="width: 100%; justify-content: center; padding: 12px;">
-        <span><i class="fa-brands fa-whatsapp" style="margin-right: 6px;"></i>Discuss on WhatsApp</span>
-      </a>
-    </div>
-  </aside>
 
-  <main id="main-content">
-    <!-- ===================================================================
-         SECTION 1 — HERO (OUTCOME-LED, PUNCHY)
-         =================================================================== -->
-    <section class="hero-section" id="home" style="padding-top: 140px; padding-bottom: 60px;">
-      <canvas id="hero-canvas" class="hero-canvas" style="opacity: 0.6;" aria-hidden="true"></canvas>
+      <div class="nav-actions">
+        <!-- Direct WhatsApp Chat Launcher -->
+        <a href="https://wa.me/918629008768?text=Hi%20Pankaj%2C%20I%20visited%20pixeltocloud.com%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-icon" title="Chat on WhatsApp (+91 86290 08768)" aria-label="Chat on WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
 
-      <div class="container hero-container text-center">
-        <div class="hero-badge reveal active">
-          <span class="pulse-dot"></span>
-          <span>Systems &amp; Custom Software Studio</span>
+        <!-- Webyansh-Inspired High-Conversion Pill Button -->
+        <a href="#contact" class="btn-cta-pill">
+          <span>Book an Intro Call</span>
+          <i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="nav-mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero-section">
+    <div class="container">
+      
+      <!-- Trust & Review Pill -->
+      <div class="trust-badge-pill">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </span>
+        <span><strong>4.9 / 5.0 Rating</strong> &nbsp;·&nbsp; Trusted by 30+ Modern Businesses & Founders</span>
+      </div>
+
+      <!-- Main Studio Headline -->
+      <h1 class="hero-headline">
+        Stunning Websites, Custom Software &amp; AI Systems for <span class="text-gradient">Modern Businesses</span>
+      </h1>
+
+      <!-- Plain-English Value Proposition -->
+      <p class="hero-subtitle">
+        We design high-converting web experiences, build tailor-made operational software &amp; CRM portals, and deploy intelligent AI automations. 100% full source-code ownership with zero vendor lock-in.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="hero-actions">
+        <a href="#contact" class="btn-hero-primary">
+          <span>Book an Intro Call</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#work" class="btn-hero-secondary">
+          <span>View Selected Work</span>
+          <i class="fa-solid fa-arrow-down" style="font-size: 0.85rem;"></i>
+        </a>
+      </div>
+
+      <!-- Key Assurance Perks -->
+      <div class="hero-perks-row">
+        <div class="hero-perk-item">
+          <i class="fa-solid fa-bolt"></i>
+          <span>10–14 Day Rapid MVP Delivery</span>
+        </div>
+        <div class="hero-perk-item">
+          <i class="fa-solid fa-lock"></i>
+          <span>100% Code &amp; Asset Ownership</span>
+        </div>
+        <div class="hero-perk-item">
+          <i class="fa-solid fa-comments"></i>
+          <span>Direct Founder Access &amp; WhatsApp Support</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 3-DEVICE PHYSICAL SHOWCASE ================= -->
+  <section class="device-showcase-section">
+    <div class="container-wide">
+      <div class="device-showcase-grid">
+
+        <!-- Left: Handheld Smartphone (Mobile Experience & Booking) -->
+        <div class="device-phone-container">
+          <div class="mockup-phone">
+            <div class="phone-screen">
+              <div class="phone-island-bar">
+                <span style="font-size: 0.65rem; font-weight: 700; color: #0f172a;">9:41</span>
+                <div class="dynamic-island"></div>
+                <div style="font-size: 0.65rem; color: #0f172a; display: flex; gap: 4px;">
+                  <i class="fa-solid fa-signal"></i>
+                  <i class="fa-solid fa-wifi"></i>
+                  <i class="fa-solid fa-battery-full"></i>
+                </div>
+              </div>
+
+              <div class="phone-content">
+                <div class="phone-header-hero">
+                  <div style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; opacity: 0.85;">Patient Care Portal</div>
+                  <div style="font-size: 1.05rem; font-weight: 800; margin-top: 4px;">Dr. Harish Renova Dental</div>
+                  <div style="font-size: 0.72rem; opacity: 0.9; margin-top: 2px;">Instant Appointment &amp; Triage</div>
+                </div>
+
+                <div class="phone-action-card">
+                  <div class="phone-action-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                  <div>
+                    <div style="font-size: 0.8rem; font-weight: 700; color: #0f172a;">Confirmed Slot</div>
+                    <div style="font-size: 0.7rem; color: #64748b;">Today · 4:30 PM with Dr. Harish</div>
+                  </div>
+                </div>
+
+                <div class="phone-action-card">
+                  <div class="phone-action-icon" style="background: #e0f2fe; color: #0284c7;"><i class="fa-solid fa-bell"></i></div>
+                  <div>
+                    <div style="font-size: 0.8rem; font-weight: 700; color: #0f172a;">WhatsApp Alert Sent</div>
+                    <div style="font-size: 0.7rem; color: #64748b;">SMS &amp; Location Map Delivered</div>
+                  </div>
+                </div>
+
+                <div class="phone-booking-btn">
+                  <i class="fa-brands fa-whatsapp" style="margin-right: 6px;"></i> One-Tap WhatsApp Sync
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <h1 class="hero-title reveal active reveal-delay-1" style="font-size: clamp(2.3rem, 5.2vw, 4.1rem); max-width: 980px; margin: 0 auto 24px auto; line-height: 1.15; letter-spacing: -0.025em;">
-          Software for the parts of your business that <span class="highlight-text">don’t fit in a template</span>
-        </h1>
+        <!-- Center: Laptop (MacBook Pro SaaS & Custom Business Portal) -->
+        <div class="device-laptop-container">
+          <div class="floating-badge badge-left">
+            <span style="color: #10b981;"><i class="fa-solid fa-circle-check"></i></span>
+            <span>99.8% Client Retention</span>
+          </div>
+          <div class="floating-badge badge-right">
+            <span style="color: #0284c7;"><i class="fa-solid fa-gauge-high"></i></span>
+            <span>&lt; 0.8s Global CDN Load</span>
+          </div>
 
-        <p class="hero-subtitle reveal active reveal-delay-2" style="max-width: 780px; margin: 0 auto 36px auto; font-size: 1.18rem; line-height: 1.7; color: #94a3b8;">
-          We design and engineer custom portals, operational tools, data systems, and cloud infrastructure for teams with complex workflows.
+          <div class="mockup-laptop">
+            <div class="laptop-screen-content">
+              <!-- Browser Header -->
+              <div class="laptop-browser-bar">
+                <div class="browser-dots">
+                  <div class="browser-dot dot-red"></div>
+                  <div class="browser-dot dot-yellow"></div>
+                  <div class="browser-dot dot-green"></div>
+                </div>
+                <div class="browser-url-pill">
+                  <i class="fa-solid fa-lock" style="font-size: 0.65rem; color: #10b981;"></i>
+                  <span>pixeltocloud.com</span>/portal/operations-overview
+                </div>
+              </div>
+
+              <!-- Inside Dashboard Mockup -->
+              <div class="laptop-app-body">
+                <div class="app-header-strip">
+                  <div>
+                    <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a;">Executive Operations Hub</div>
+                    <div style="font-size: 0.72rem; color: #64748b;">Custom Billing, Client CRM &amp; Automation Engine</div>
+                  </div>
+                  <span style="background: #ecfdf5; color: #059669; font-size: 0.7rem; font-weight: 700; padding: 3px 8px; border-radius: 9999px;">
+                    ● Live Synchronized
+                  </span>
+                </div>
+
+                <div class="app-metrics-grid">
+                  <div class="app-metric-box">
+                    <div class="label">Total Filings Handled</div>
+                    <div class="val">10,480+</div>
+                    <div class="trend">↑ +38% this quarter</div>
+                  </div>
+                  <div class="app-metric-box">
+                    <div class="label">Avg Response Time</div>
+                    <div class="val">1.2 sec</div>
+                    <div class="trend">⚡ 24/7 AI Automated</div>
+                  </div>
+                  <div class="app-metric-box">
+                    <div class="label">Zero Lock-In</div>
+                    <div class="val">100%</div>
+                    <div class="trend" style="color: #0284c7;">Direct Code Ownership</div>
+                  </div>
+                </div>
+
+                <div class="app-chart-preview">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.72rem; font-weight: 700; color: #0f172a;">Platform Activity &amp; Conversion Velocity</span>
+                    <span style="font-size: 0.65rem; color: #64748b;">Real-time Telemetry</span>
+                  </div>
+                  <div class="chart-bars-wrap">
+                    <div class="chart-bar" style="height: 45%;"></div>
+                    <div class="chart-bar" style="height: 65%;"></div>
+                    <div class="chart-bar" style="height: 55%;"></div>
+                    <div class="chart-bar" style="height: 85%;"></div>
+                    <div class="chart-bar" style="height: 70%;"></div>
+                    <div class="chart-bar" style="height: 95%;"></div>
+                    <div class="chart-bar" style="height: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-laptop-base">
+            <div class="mockup-laptop-notch"></div>
+          </div>
+        </div>
+
+        <!-- Right: Tablet (iPad Pro Analytics & Workflow Automation) -->
+        <div class="device-tablet-container">
+          <div class="mockup-tablet">
+            <div class="tablet-screen">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px;">
+                <span style="font-size: 0.8rem; font-weight: 800; color: #0f172a;">Automation Pipeline</span>
+                <span style="font-size: 0.68rem; color: #64748b;">Active Flow</span>
+              </div>
+
+              <div class="tablet-flow-card">
+                <div style="font-size: 0.75rem; font-weight: 700; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-envelope-open-text"></i> Step 1: Web Lead Captured
+                </div>
+                <div style="font-size: 0.68rem; color: #64748b; margin-top: 2px;">Instant validation &amp; database sync</div>
+              </div>
+
+              <div class="tablet-flow-card">
+                <div style="font-size: 0.75rem; font-weight: 700; color: #7c3aed; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-robot"></i> Step 2: AI Lead Scoring
+                </div>
+                <div style="font-size: 0.68rem; color: #64748b; margin-top: 2px;">Categorized by budget &amp; requirements</div>
+              </div>
+
+              <div class="tablet-flow-card">
+                <div style="font-size: 0.75rem; font-weight: 700; color: #10b981; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-brands fa-whatsapp"></i> Step 3: Auto WhatsApp Dispatch
+                </div>
+                <div style="font-size: 0.68rem; color: #64748b; margin-top: 2px;">Custom personalized reply in &lt; 3s</div>
+              </div>
+
+              <div style="margin-top: auto; background: #e0f2fe; border-radius: 8px; padding: 10px; text-align: center;">
+                <div style="font-size: 0.72rem; font-weight: 700; color: #0284c7;">42.8% Faster Lead-to-Call Conversion</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUSTED BY & METRICS MARQUEE ================= -->
+  <section class="marquee-section">
+    <div class="container">
+      <h3 class="marquee-heading">Trusted by Founders, Clinics, CAs &amp; Growing Enterprises</h3>
+    </div>
+
+    <div class="marquee-track-wrap">
+      <div class="marquee-track">
+        <!-- Client Stat 1 -->
+        <div class="client-stat-card">
+          <i class="fa-solid fa-file-invoice-dollar" style="color: #0284c7; font-size: 1.1rem;"></i>
+          <span class="client-name">Easy My Tax</span>
+          <span class="client-metric">10,000+ Filings Processed</span>
+        </div>
+
+        <!-- Client Stat 2 -->
+        <div class="client-stat-card">
+          <i class="fa-solid fa-tooth" style="color: #10b981; font-size: 1.1rem;"></i>
+          <span class="client-name">Harish Renova Dental</span>
+          <span class="client-metric">40% Faster Patient Triage</span>
+        </div>
+
+        <!-- Client Stat 3 -->
+        <div class="client-stat-card">
+          <i class="fa-solid fa-gem" style="color: #ea580c; font-size: 1.1rem;"></i>
+          <span class="client-name">Saini Handicrafts</span>
+          <span class="client-metric">2.4× Direct Online Conversions</span>
+        </div>
+
+        <!-- Client Stat 4 -->
+        <div class="client-stat-card">
+          <i class="fa-solid fa-cube" style="color: #8b5cf6; font-size: 1.1rem;"></i>
+          <span class="client-name">Nebula3D Studio</span>
+          <span class="client-metric">WebGL Product Configurator</span>
+        </div>
+
+        <!-- Client Stat 5 -->
+        <div class="client-stat-card">
+          <i class="fa-solid fa-heart-pulse" style="color: #ef4444; font-size: 1.1rem;"></i>
+          <span class="client-name">Apex Healthcare</span>
+          <span class="client-metric">24/7 Automated WhatsApp Booking</span>
+        </div>
+
+        <!-- Interactive Next Story CTA Card -->
+        <a href="#contact" class="client-stat-card add-story">
+          <i class="fa-solid fa-plus-circle" style="color: var(--brand-orange); font-size: 1.1rem;"></i>
+          <span class="client-name">+ Your Next Growth Story</span>
+          <span class="client-metric" style="background: #ffedd5; color: #c2410c;">Let's Build It →</span>
+        </a>
+
+        <!-- Duplicate for Continuous Loop -->
+        <div class="client-stat-card">
+          <i class="fa-solid fa-file-invoice-dollar" style="color: #0284c7; font-size: 1.1rem;"></i>
+          <span class="client-name">Easy My Tax</span>
+          <span class="client-metric">10,000+ Filings Processed</span>
+        </div>
+        <div class="client-stat-card">
+          <i class="fa-solid fa-tooth" style="color: #10b981; font-size: 1.1rem;"></i>
+          <span class="client-name">Harish Renova Dental</span>
+          <span class="client-metric">40% Faster Patient Triage</span>
+        </div>
+        <div class="client-stat-card">
+          <i class="fa-solid fa-gem" style="color: #ea580c; font-size: 1.1rem;"></i>
+          <span class="client-name">Saini Handicrafts</span>
+          <span class="client-metric">2.4× Direct Online Conversions</span>
+        </div>
+        <div class="client-stat-card">
+          <i class="fa-solid fa-cube" style="color: #8b5cf6; font-size: 1.1rem;"></i>
+          <span class="client-name">Nebula3D Studio</span>
+          <span class="client-metric">WebGL Product Configurator</span>
+        </div>
+        <div class="client-stat-card">
+          <i class="fa-solid fa-heart-pulse" style="color: #ef4444; font-size: 1.1rem;"></i>
+          <span class="client-name">Apex Healthcare</span>
+          <span class="client-metric">24/7 Automated WhatsApp Booking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOLUTIONS & CAPABILITIES (6 CREATIVE CARDS) ================= -->
+  <section class="solutions-section" id="solutions">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-pill-tag">✦ Studio Capabilities</div>
+        <h2 class="section-title">Our Solutions for your Digital Growth</h2>
+        <p class="section-subtitle">
+          We combine cutting-edge design, bespoke software engineering, and intelligent AI automation to solve real operational bottlenecks and accelerate revenue.
         </p>
-
-        <!-- Primary & Secondary CTAs -->
-        <div class="hero-cta-group reveal active reveal-delay-3" style="margin-bottom: 32px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-          <a href="#contact-section" class="btn-magnetic btn-primary" style="padding: 15px 34px; font-size: 1.02rem;">
-            <span>Tell Us What Is Difficult →</span>
-          </a>
-          <a href="#selected-work" class="btn-magnetic btn-secondary" style="padding: 15px 30px; font-size: 1.02rem;">
-            <span>See Selected Work ↓</span>
-          </a>
-        </div>
-
-        <!-- Trust Reassurance Line -->
-        <div class="hero-trust-line reveal active reveal-delay-4" style="font-size: 0.88rem; color: #64748b; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;">
-          <span><i class="fa-solid fa-check" style="color: var(--accent-cyan); margin-right: 6px;"></i>Built around your operation</span>
-          <span style="opacity: 0.3;">•</span>
-          <span><i class="fa-solid fa-key" style="color: var(--accent-emerald); margin-right: 6px;"></i>100% source-code ownership</span>
-          <span style="opacity: 0.3;">•</span>
-          <span><i class="fa-solid fa-user-check" style="color: var(--accent-purple); margin-right: 6px;"></i>Direct senior architect access</span>
-        </div>
       </div>
-    </section>
 
-    <!-- ===================================================================
-         SECTION 2 — COMPACT PROOF STRIP
-         =================================================================== -->
-    <section class="proof-strip-section" id="proof-strip">
-      <div class="container">
-        <div class="proof-strip-grid">
-          <div class="proof-strip-item reveal">
-            <div class="proof-strip-val">04</div>
-            <div class="proof-strip-label">
-              <strong>Core Industries</strong>
-              Healthcare, Tax/CA, E-Commerce, 3D
-            </div>
+      <div class="solutions-grid">
+
+        <!-- Card 1: Websites & Online Stores -->
+        <div class="solution-card">
+          <div class="solution-icon-wrap">
+            <i class="fa-solid fa-laptop-code"></i>
           </div>
-
-          <div class="proof-strip-item reveal">
-            <div class="proof-strip-val">11</div>
-            <div class="proof-strip-label">
-              <strong>Disciplines</strong>
-              From WebGL to Bare-Metal Linux
-            </div>
-          </div>
-
-          <div class="proof-strip-item reveal">
-            <div class="proof-strip-val">100%</div>
-            <div class="proof-strip-label">
-              <strong>Source-Code Ownership</strong>
-              Private Git Repo &amp; No Lock-In
-            </div>
-          </div>
-
-          <div class="proof-strip-item reveal">
-            <div class="proof-strip-val">Direct</div>
-            <div class="proof-strip-label">
-              <strong>Architect Access</strong>
-              Pankaj &amp; Tushar on Every Build
-            </div>
+          <h3 class="solution-title">High-Converting Websites &amp; Online Stores</h3>
+          <p class="solution-desc">
+            Ultra-fast, mobile-perfect marketing websites and e-commerce storefronts. Tailored design in Figma, clean code in Next.js, and rock-solid SEO architecture to dominate Google search results.
+          </p>
+          <div class="solution-tags">
+            <span class="solution-tag">Custom UI/UX</span>
+            <span class="solution-tag">Next.js &amp; React</span>
+            <span class="solution-tag">Technical SEO</span>
+            <span class="solution-tag">&lt; 1s Load Speed</span>
           </div>
         </div>
+
+        <!-- Card 2: Custom Software & CRM -->
+        <div class="solution-card card-orange">
+          <div class="solution-icon-wrap" style="color: var(--brand-orange);">
+            <i class="fa-solid fa-cubes"></i>
+          </div>
+          <h3 class="solution-title">Custom Software, Billing &amp; CRM Portals</h3>
+          <p class="solution-desc">
+            Software built exactly for the unique way your business operates. Client management dashboards, custom invoice generators, inventory trackers, and role-based permissions with zero monthly subscription penalties.
+          </p>
+          <div class="solution-tags">
+            <span class="solution-tag">Custom CRM</span>
+            <span class="solution-tag">Automated Invoicing</span>
+            <span class="solution-tag">Role-Based Access</span>
+            <span class="solution-tag">API Integrations</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Google Ads & Lead Generation -->
+        <div class="solution-card">
+          <div class="solution-icon-wrap">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="solution-title">Google Ads &amp; High-ROI Lead Funnels</h3>
+          <p class="solution-desc">
+            Laser-targeted landing pages and search advertising funnels that convert visitors into paying clients. Precise keyword targeting, conversion tracking, and high-converting copy that maximizes your marketing spend.
+          </p>
+          <div class="solution-tags">
+            <span class="solution-tag">Conversion Rate Opt</span>
+            <span class="solution-tag">Google Ads</span>
+            <span class="solution-tag">Landing Page CRO</span>
+            <span class="solution-tag">Lead Qualification</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Cloud Infrastructure & Speed -->
+        <div class="solution-card">
+          <div class="solution-icon-wrap">
+            <i class="fa-solid fa-cloud-bolt"></i>
+          </div>
+          <h3 class="solution-title">Speed, Cloud Performance &amp; Security</h3>
+          <p class="solution-desc">
+            Enterprise cloud architecture deployed on AWS and Cloudflare. Automated backups, bank-grade SSL encryption, global CDN caching, and 99.99% uptime so your business never goes down during high-traffic surges.
+          </p>
+          <div class="solution-tags">
+            <span class="solution-tag">AWS Cloud</span>
+            <span class="solution-tag">Cloudflare CDN</span>
+            <span class="solution-tag">99.99% SLA Uptime</span>
+            <span class="solution-tag">SSL &amp; DDoS Shield</span>
+          </div>
+        </div>
+
+        <!-- Card 5: WhatsApp AI Booking & Bots -->
+        <div class="solution-card card-orange">
+          <div class="solution-icon-wrap" style="color: #10b981;">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h3 class="solution-title">24/7 WhatsApp AI Booking &amp; Support</h3>
+          <p class="solution-desc">
+            Turn WhatsApp into your hardest working salesperson. Automated intelligent bots that qualify leads, book appointments, send payment links, and trigger automated reminders directly on the world's most popular messaging app.
+          </p>
+          <div class="solution-tags">
+            <span class="solution-tag">WhatsApp API</span>
+            <span class="solution-tag">Auto-Scheduler</span>
+            <span class="solution-tag">Lead Nurturing</span>
+            <span class="solution-tag">Instant Replies</span>
+          </div>
+        </div>
+
+        <!-- Card 6: AI Document Extraction -->
+        <div class="solution-card">
+          <div class="solution-icon-wrap">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3 class="solution-title">AI Document &amp; Invoice Data Extraction</h3>
+          <p class="solution-desc">
+            Eliminate tedious manual data entry. Our intelligent document parsers extract structured financial data from PDFs, tax forms, receipts, and invoices directly into your accounting software and databases with 99.9% accuracy.
+          </p>
+          <div class="solution-tags">
+            <span class="solution-tag">AI OCR &amp; Vision</span>
+            <span class="solution-tag">PDF Data Parsing</span>
+            <span class="solution-tag">Accounting Sync</span>
+            <span class="solution-tag">Zero Human Error</span>
+          </div>
+        </div>
+
       </div>
-    </section>
 
-    <!-- ===================================================================
-         SECTION 3 — SELECTED WORK (PROOF FIRST!)
-         =================================================================== -->
-    <section class="section" id="selected-work" style="padding-top: 80px; padding-bottom: 80px;">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag"><i class="fa-solid fa-briefcase" style="color: var(--accent-cyan); margin-right: 6px;"></i>Selected Work</div>
-          <h2 class="section-title">Software Engineered for Real Operations</h2>
-          <p class="section-desc">We replace spreadsheet-heavy friction with custom software teams can actually run. Here is how our platforms perform in production.</p>
+    </div>
+  </section>
+
+  <!-- ================= 3-PILLAR SYNCHRONIZER (BUILD · GROW · AUTOMATE) ================= -->
+  <section class="pillars-bridge-section" id="pillars">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-pill-tag">✦ The 3 Brand Pillars</div>
+        <h2 class="section-title">Build · Grow · Automate</h2>
+        <p class="section-subtitle">
+          The foundational philosophy behind every project we deliver at PixelToCloud. Designed to move your business from initial concept to market dominance.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+
+        <!-- Pillar 1: BUILD -->
+        <div class="pillar-box pillar-build">
+          <div class="pillar-badge-accent">Pillar 01</div>
+          <h3 class="pillar-name">BUILD</h3>
+          <p class="pillar-summary">
+            Rock-solid digital foundations crafted with precision engineering and clean architecture.
+          </p>
+          <ul class="pillar-bullets">
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> High-Converting Brand Websites</li>
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> Custom Web Apps &amp; SaaS MVPs</li>
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> Clean, Documented Source Code</li>
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> 100% Client Code Ownership</li>
+          </ul>
         </div>
 
-        <div class="work-showcase-grid">
-          <!-- 1. Easy My Tax -->
-          <div class="work-showcase-card reveal" style="--card-accent: #00d2ff;">
-            <div>
-              <div class="work-card-header">
-                <span class="work-category-chip"><i class="fa-solid fa-calculator"></i>CA &amp; Tax Operations</span>
-                <span style="font-size: 0.8rem; font-family: var(--font-mono); color: #64748b;">Fintech</span>
-              </div>
-              <h3 class="work-client-name">Easy My Tax</h3>
-              <p class="work-card-desc">
-                High-volume Chartered Accountant servicing portal that automates client tax filing, GST workflows, and encrypted document management.
-              </p>
-
-              <div class="work-features-list">
-                <div class="work-feature-item">
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Problem:</strong> Fragmented WhatsApp document collections and manual tax filing delays.</span>
-                </div>
-                <div class="work-feature-item">
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Built:</strong> Automated calculation engine, client document vaults, and team task assignment.</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="work-card-metric-strip">
-              <div class="work-metric-box">
-                <span class="work-metric-num" style="color: #00d2ff;">10,000+</span>
-                <span class="work-metric-sub">Filings Processed</span>
-              </div>
-              <div class="work-metric-box">
-                <span class="work-metric-num" style="color: #10b981;">&lt; 2.1s</span>
-                <span class="work-metric-sub">Average Load Time</span>
-              </div>
-              <div>
-                <a href="work/easy-my-tax.html" class="srv-learn-more" style="color: #00d2ff;">
-                  <span>Case Study</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2. Harish Renova -->
-          <div class="work-showcase-card reveal" style="--card-accent: #10b981;">
-            <div>
-              <div class="work-card-header">
-                <span class="work-category-chip" style="color: #10b981;"><i class="fa-solid fa-square-plus"></i>Clinical Healthcare</span>
-                <span style="font-size: 0.8rem; font-family: var(--font-mono); color: #64748b;">Oncology</span>
-              </div>
-              <h3 class="work-client-name">Harish Renova Cancer Center</h3>
-              <p class="work-card-desc">
-                Patient-first oncology experience platform providing clear consultation scheduling, emergency doctor routing, and accessible medical guidance.
-              </p>
-
-              <div class="work-features-list">
-                <div class="work-feature-item">
-                  <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
-                  <span><strong>Problem:</strong> Overwhelmed patients struggled to find specialists and access urgent cancer care.</span>
-                </div>
-                <div class="work-feature-item">
-                  <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
-                  <span><strong>Built:</strong> Direct oncology triage routing, emergency helpline integrations, and high-speed mobile accessibility.</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="work-card-metric-strip">
-              <div class="work-metric-box">
-                <span class="work-metric-num" style="color: #10b981;">40% Faster</span>
-                <span class="work-metric-sub">Patient Triage</span>
-              </div>
-              <div class="work-metric-box">
-                <span class="work-metric-num" style="color: #00d2ff;">100%</span>
-                <span class="work-metric-sub">Mobile Uptime</span>
-              </div>
-              <div>
-                <a href="work/harish-renova.html" class="srv-learn-more" style="color: #10b981;">
-                  <span>Case Study</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. Saini Handicrafts -->
-          <div class="work-showcase-card reveal" style="--card-accent: #f59e0b;">
-            <div>
-              <div class="work-card-header">
-                <span class="work-category-chip" style="color: #f59e0b;"><i class="fa-solid fa-gem"></i>Luxury Craft Commerce</span>
-                <span style="font-size: 0.8rem; font-family: var(--font-mono); color: #64748b;">Global Trade</span>
-              </div>
-              <h3 class="work-client-name">Saini Handicrafts</h3>
-              <p class="work-card-desc">
-                High-converting digital commerce platform showcasing artisanal marble and brass crafts with cultural storytelling and cross-border checkout.
-              </p>
-
-              <div class="work-features-list">
-                <div class="work-feature-item">
-                  <i class="fa-solid fa-circle-check" style="color: #f59e0b;"></i>
-                  <span><strong>Problem:</strong> Cookie-cutter marketplace listings failed to convey craft value to international buyers.</span>
-                </div>
-                <div class="work-feature-item">
-                  <i class="fa-solid fa-circle-check" style="color: #f59e0b;"></i>
-                  <span><strong>Built:</strong> Custom artisanal product showcases, high-definition zoom galleries, and frictionless checkout.</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="work-card-metric-strip">
-              <div class="work-metric-box">
-                <span class="work-metric-num" style="color: #f59e0b;">2.4x</span>
-                <span class="work-metric-sub">Checkout Conversion</span>
-              </div>
-              <div class="work-metric-box">
-                <span class="work-metric-num" style="color: #10b981;">0</span>
-                <span class="work-metric-sub">Plugin Bloat</span>
-              </div>
-              <div>
-                <a href="work/saini-handicrafts.html" class="srv-learn-more" style="color: #f59e0b;">
-                  <span>Case Study</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. Nebula3D -->
-          <div class="work-showcase-card reveal" style="--card-accent: #ec4899;">
-            <div>
-              <div class="work-card-header">
-                <span class="work-category-chip" style="color: #ec4899;"><i class="fa-solid fa-cube"></i>Interactive 3D &amp; Spatial</span>
-                <span style="font-size: 0.8rem; font-family: var(--font-mono); color: #64748b;">WebGL Engine</span>
-              </div>
-              <h3 class="work-client-name">Nebula3D Engine</h3>
-              <p class="work-card-desc">
-                Hardware-accelerated browser WebGL engine powering real-time 3D spatial model inspection, lighting simulation, and digital twin interaction.
-              </p>
-
-              <div class="work-features-list">
-                <div class="work-feature-item">
-                  <i class="fa-solid fa-circle-check" style="color: #ec4899;"></i>
-                  <span><strong>Problem:</strong> Complex 3D CAD models caused high memory overhead and browser crashes on client devices.</span>
-                </div>
-                <div class="work-feature-item">
-                  <i class="fa-solid fa-circle-check" style="color: #ec4899;"></i>
-                  <span><strong>Built:</strong> Three.js pipeline with GLTF Draco compression, custom shaders, and responsive camera controls.</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="work-card-metric-strip">
-              <div class="work-metric-box">
-                <span class="work-metric-num" style="color: #ec4899;">60 FPS</span>
-                <span class="work-metric-sub">Locked Render Speed</span>
-              </div>
-              <div class="work-metric-box">
-                <span class="work-metric-num" style="color: #00d2ff;">&lt; 3.5MB</span>
-                <span class="work-metric-sub">Initial Mesh Payload</span>
-              </div>
-              <div>
-                <a href="work/nebula-3d.html" class="srv-learn-more" style="color: #ec4899;">
-                  <span>Case Study</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+        <!-- Pillar 2: GROW -->
+        <div class="pillar-box pillar-grow">
+          <div class="pillar-badge-accent">Pillar 02</div>
+          <h3 class="pillar-name">GROW</h3>
+          <p class="pillar-summary">
+            Targeted customer acquisition and visibility funnels engineered to convert browsers into revenue.
+          </p>
+          <ul class="pillar-bullets">
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> High-Intent Google Ads Setup</li>
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> Technical &amp; Local Business SEO</li>
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> High-Conversion Landing Pages</li>
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> Conversion Tracking &amp; ROI Analytics</li>
+          </ul>
         </div>
 
-        <div style="text-align: center; margin-top: 44px;">
-          <a href="portfolio.html" class="btn-magnetic btn-primary" style="padding: 14px 32px; font-size: 0.98rem;">
-            <span>Explore All Client Case Studies &rarr;</span>
+        <!-- Pillar 3: AUTOMATE -->
+        <div class="pillar-box pillar-auto">
+          <div class="pillar-badge-accent">Pillar 03</div>
+          <h3 class="pillar-name">AUTOMATE</h3>
+          <p class="pillar-summary">
+            Intelligent bots and automated cloud pipelines that free up dozens of hours every single week.
+          </p>
+          <ul class="pillar-bullets">
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> 24/7 WhatsApp AI Chatbots</li>
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> Automated Billing &amp; Invoicing</li>
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> AI Document &amp; PDF Data Extraction</li>
+            <li class="pillar-bullet-item"><i class="fa-solid fa-check"></i> Multi-App Zapier / Webhook Flows</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Live Smart Card Callout Banner -->
+      <div class="smart-card-bridge-banner">
+        <div class="smart-card-info">
+          <h3>Meet Pankaj on the Smart Digital Profile</h3>
+          <p>
+            Scan the verified visiting card QR code or tap below to access our live smart card profile with one-tap WhatsApp chat, vCard address book download, and direct scheduling.
+          </p>
+        </div>
+        <div class="smart-card-action-wrap">
+          <div class="mini-qr-box" title="Scan to open pixeltocloud.com/connect">
+            <img src="qr-code/qr-pixeltocloud-connect.svg" alt="PixelToCloud Smart Card QR Code">
+          </div>
+          <a href="connect" class="btn-open-connect">
+            <span>Open Live Smart Profile</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.85rem; margin-left: 6px;"></i>
           </a>
         </div>
       </div>
-    </section>
 
-    <!-- ===================================================================
-         SECTION 4 — COMPACT CAPABILITY MATRIX (REPLACES 6 IDENTICAL BLOCKS)
-         =================================================================== -->
-    <section class="section" id="capabilities" style="background: rgba(255, 255, 255, 0.01); padding-top: 80px; padding-bottom: 80px;">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag"><i class="fa-solid fa-cubes" style="color: var(--accent-cyan); margin-right: 6px;"></i>Engineering Capabilities</div>
-          <h2 class="section-title">The Systems We Engineer</h2>
-          <p class="section-desc">Select a capability below to inspect deliverables, architecture principles, and production tech stacks.</p>
-        </div>
+    </div>
+  </section>
 
-        <div class="capability-matrix-container reveal">
-          <!-- Left: Tab Buttons -->
-          <div class="matrix-nav-menu" role="tablist">
-            <button class="matrix-nav-tab active" data-tab="ai" role="tab" aria-selected="true">
-              <div class="matrix-tab-icon"><i class="fa-solid fa-brain"></i></div>
-              <div>
-                <div style="color: #ffffff; font-weight: 700;">Artificial Intelligence</div>
-                <div style="font-size: 0.78rem; color: #64748b; font-weight: 400;">LLM Systems &amp; Workflows</div>
-              </div>
-            </button>
+  <!-- ================= ZERO LOCK-IN & WHY PIXELTOCLOUD ================= -->
+  <section class="guarantee-section" id="guarantees">
+    <div class="container">
 
-            <button class="matrix-nav-tab" data-tab="digital" role="tab" aria-selected="false">
-              <div class="matrix-tab-icon" style="color: #38bdf8;"><i class="fa-solid fa-laptop-code"></i></div>
-              <div>
-                <div style="color: #ffffff; font-weight: 700;">Digital Products &amp; Software</div>
-                <div style="font-size: 0.78rem; color: #64748b; font-weight: 400;">Full-Stack Web &amp; Mobile</div>
-              </div>
-            </button>
-
-            <button class="matrix-nav-tab" data-tab="erp" role="tab" aria-selected="false">
-              <div class="matrix-tab-icon" style="color: #fbbf24;"><i class="fa-solid fa-boxes-stacked"></i></div>
-              <div>
-                <div style="color: #ffffff; font-weight: 700;">ERP &amp; Operational Portals</div>
-                <div style="font-size: 0.78rem; color: #64748b; font-weight: 400;">Business Process Systems</div>
-              </div>
-            </button>
-
-            <button class="matrix-nav-tab" data-tab="spatial" role="tab" aria-selected="false">
-              <div class="matrix-tab-icon" style="color: #ec4899;"><i class="fa-solid fa-cube"></i></div>
-              <div>
-                <div style="color: #ffffff; font-weight: 700;">Interactive 2D/3D &amp; Spatial</div>
-                <div style="font-size: 0.78rem; color: #64748b; font-weight: 400;">WebGL &amp; Digital Twins</div>
-              </div>
-            </button>
-
-            <button class="matrix-nav-tab" data-tab="design" role="tab" aria-selected="false">
-              <div class="matrix-tab-icon" style="color: #34d399;"><i class="fa-solid fa-bezier-curve"></i></div>
-              <div>
-                <div style="color: #ffffff; font-weight: 700;">User Experience &amp; Design</div>
-                <div style="font-size: 0.78rem; color: #64748b; font-weight: 400;">Design Systems &amp; Tokens</div>
-              </div>
-            </button>
-
-            <button class="matrix-nav-tab" data-tab="cloud" role="tab" aria-selected="false">
-              <div class="matrix-tab-icon" style="color: #06b6d4;"><i class="fa-solid fa-cloud"></i></div>
-              <div>
-                <div style="color: #ffffff; font-weight: 700;">Cloud &amp; Linux DevOps</div>
-                <div style="font-size: 0.78rem; color: #64748b; font-weight: 400;">Zero Downtime &amp; FinOps</div>
-              </div>
-            </button>
-          </div>
-
-          <!-- Right: Dynamic Content Pane -->
-          <div class="matrix-content-pane" id="matrix-pane">
-            <div>
-              <div class="matrix-pane-header">
-                <div class="matrix-pane-badge" id="pane-badge">AI WORKFLOWS &amp; LLMS</div>
-                <h3 class="matrix-pane-title" id="pane-title">Automate Document Decisions &amp; Repetitive Operations</h3>
-                <p class="matrix-pane-problem" id="pane-problem">
-                  We build deterministic, private AI systems that parse messy invoices, cross-reference compliance forms, and automate document-heavy team workflows without hallucination risk.
-                </p>
-              </div>
-
-              <div class="matrix-deliverables-grid" id="pane-deliverables">
-                <div class="matrix-deliv-card">
-                  <h5>Private Document RAG</h5>
-                  <p>Semantic vector search over private client records and internal PDFs with strict data privacy.</p>
-                </div>
-                <div class="matrix-deliv-card">
-                  <h5>Document Extraction</h5>
-                  <p>Automated OCR and parsing pipelines converting scanned documents into validated JSON payloads.</p>
-                </div>
-                <div class="matrix-deliv-card">
-                  <h5>Zero Hallucination Rules</h5>
-                  <p>Deterministic checks and confidence scoring before any AI response is presented to human operators.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="matrix-pane-footer">
-              <div class="matrix-tech-chips" id="pane-chips">
-                <span class="matrix-tech-chip">Python</span>
-                <span class="matrix-tech-chip">LangChain</span>
-                <span class="matrix-tech-chip">Llama 3 / Mistral</span>
-                <span class="matrix-tech-chip">ChromaDB</span>
-                <span class="matrix-tech-chip">FastAPI</span>
-              </div>
-              <a href="services/artificial-intelligence.html" class="btn-magnetic btn-primary" id="pane-link" style="padding: 10px 22px; font-size: 0.88rem;">
-                <span>Explore AI Architecture &rarr;</span>
-              </a>
-            </div>
-          </div>
-        </div>
+      <div class="section-header">
+        <div class="section-pill-tag">✦ The Studio Difference</div>
+        <h2 class="section-title">Zero Lock-In. Complete Freedom.</h2>
+        <p class="section-subtitle">
+          Unlike legacy agencies that hold your domain, hosting, and code hostage, we believe you should own 100% of everything we build for you.
+        </p>
       </div>
-    </section>
 
-    <!-- ===================================================================
-         SECTION 5 — HOW WE WORK (HORIZONTAL TIMELINE)
-         =================================================================== -->
-    <section class="section" id="process" style="padding-top: 80px; padding-bottom: 80px;">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag"><i class="fa-solid fa-list-check" style="color: var(--accent-cyan); margin-right: 6px;"></i>Transparent Process</div>
-          <h2 class="section-title">How We Work</h2>
-          <p class="section-desc">A structured, low-risk engineering methodology built around client confidence and visible milestones.</p>
+      <div class="guarantee-grid">
+
+        <div class="guarantee-card">
+          <div class="icon-box"><i class="fa-solid fa-key"></i></div>
+          <h4>100% Code Ownership</h4>
+          <p>You own all GitHub repositories, production code, database schemas, and media assets. No hostage clauses.</p>
         </div>
 
-        <div class="process-timeline-horizontal">
-          <!-- Step 1 -->
-          <div class="process-timeline-node reveal">
-            <div class="process-node-header">
-              <div class="process-node-num">01</div>
-              <i class="fa-solid fa-magnifying-glass" style="color: #64748b;"></i>
-            </div>
-            <h4 class="process-node-title">Understand the Operation</h4>
-            <p class="process-node-desc">
-              We audit your operational friction, data flows, and team bottlenecks before writing code. We define exact business outcomes first.
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="process-timeline-node reveal">
-            <div class="process-node-header">
-              <div class="process-node-num" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">02</div>
-              <i class="fa-solid fa-compass-drafting" style="color: #64748b;"></i>
-            </div>
-            <h4 class="process-node-title">Design the Smallest System</h4>
-            <p class="process-node-desc">
-              You receive a concrete architecture plan, database schema, and fixed-price roadmap. Zero scope ambiguity or hidden surprises.
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="process-timeline-node reveal">
-            <div class="process-node-header">
-              <div class="process-node-num" style="color: #a855f7; border-color: rgba(168, 85, 247, 0.4);">03</div>
-              <i class="fa-solid fa-code-branch" style="color: #64748b;"></i>
-            </div>
-            <h4 class="process-node-title">Visible Sprint Milestones</h4>
-            <p class="process-node-desc">
-              We build in weekly iterations. You test working software in private staging environments at every step, keeping you in complete control.
-            </p>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="process-timeline-node reveal">
-            <div class="process-node-header">
-              <div class="process-node-num" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4);">04</div>
-              <i class="fa-solid fa-rocket" style="color: #64748b;"></i>
-            </div>
-            <h4 class="process-node-title">Launch &amp; Dedicated Support</h4>
-            <p class="process-node-desc">
-              We deploy with zero downtime, harden servers, and hand over 100% of repositories. We back every project with ongoing engineering maintenance.
-            </p>
-          </div>
+        <div class="guarantee-card">
+          <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
+          <h4>Senior Architect Access</h4>
+          <p>You collaborate directly with founders Pankaj &amp; Tushar. No rookie account managers or broken telephone calls.</p>
         </div>
+
+        <div class="guarantee-card">
+          <div class="icon-box"><i class="fa-solid fa-gauge-simple-high"></i></div>
+          <h4>10–14 Day MVP Sprints</h4>
+          <p>We work in rapid, weekly milestone releases so you test working software early and launch ahead of schedule.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
+          <h4>Transparent Fixed Pricing</h4>
+          <p>Clear, scope-locked milestones with milestone payments. Zero hidden monthly retainers or surprise hourly bills.</p>
+        </div>
+
       </div>
-    </section>
 
-    <!-- ===================================================================
-         SECTION 6 — 3 CORE DIFFERENTIATORS
-         =================================================================== -->
-    <section class="section" id="differentiators" style="background: rgba(255, 255, 255, 0.01); padding-top: 80px; padding-bottom: 80px;">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag"><i class="fa-solid fa-award" style="color: var(--accent-cyan); margin-right: 6px;"></i>Why Build With Us</div>
-          <h2 class="section-title">Engineered Different by Design</h2>
-          <p class="section-desc">We combine senior engineering depth with transparent, direct business communication.</p>
-        </div>
+    </div>
+  </section>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; margin-top: 40px;">
-          <!-- 1 -->
-          <div class="glass-card reveal" style="padding: 32px 26px; border-radius: 20px;">
-            <div style="font-size: 1.8rem; color: var(--accent-cyan); margin-bottom: 16px;"><i class="fa-solid fa-compass-drafting"></i></div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 10px;">Built Around Your Operation</h3>
-            <p style="font-size: 0.92rem; color: #94a3b8; line-height: 1.65; margin: 0;">
-              We never force your business into inflexible third-party plugins or bloated templates. Every database table, screen, and API is engineered around how your team and clients actually work.
+  <!-- ================= SELECTED WORK SHOWCASE ================= -->
+  <section class="work-section" id="work">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-pill-tag">✦ Proven Case Studies</div>
+        <h2 class="section-title">Selected Work with Tangible Impact</h2>
+        <p class="section-subtitle">
+          Real business outcomes engineered for clients across healthcare, finance, global e-commerce, and high-tech 3D design.
+        </p>
+      </div>
+
+      <div class="work-grid">
+
+        <!-- Case 1: Easy My Tax -->
+        <div class="work-card">
+          <div class="work-card-media">
+            <div class="work-media-inner">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.8rem; font-weight: 800; color: #0f172a;">Easy My Tax · CA Portal</span>
+                <span style="background: #e0f2fe; color: #0284c7; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px;">Financial Software</span>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 6px;">
+                <div style="font-size: 0.72rem; color: #64748b;">Automated Tax Return Pipelines</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a;">10,480+ Client Filings</div>
+              </div>
+              <div style="display: flex; gap: 6px; margin-top: auto;">
+                <span style="font-size: 0.65rem; background: #ecfdf5; color: #059669; padding: 2px 8px; border-radius: 4px; font-weight: 600;">99.99% Uptime</span>
+                <span style="font-size: 0.65rem; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Bank-Grade Encrypted</span>
+              </div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <div class="work-tag-row">
+              <span class="work-category-badge">Custom Web Platform</span>
+              <span class="work-category-badge">Document AI</span>
+            </div>
+            <h3 class="work-title">Easy My Tax</h3>
+            <p class="work-desc">
+              Full-stack digital tax preparation portal for Chartered Accountants and taxpayers, handling automated document intake, calculations, and secure client communication.
             </p>
+            <div class="work-impact-box">
+              <i class="fa-solid fa-arrow-trend-up" style="color: var(--brand-orange); margin-right: 6px;"></i>
+              Over 10,000+ tax filings processed with zero data loss or downtime.
+            </div>
           </div>
+        </div>
 
-          <!-- 2 -->
-          <div class="glass-card reveal" style="padding: 32px 26px; border-radius: 20px;">
-            <div style="font-size: 1.8rem; color: var(--accent-emerald); margin-bottom: 16px;"><i class="fa-solid fa-key"></i></div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 10px;">100% Source-Code &amp; IP Ownership</h3>
-            <p style="font-size: 0.92rem; color: #94a3b8; line-height: 1.65; margin: 0;">
-              Upon project delivery, you retain complete legal ownership of private Git repositories, schemas, and cloud credentials. Zero platform lock-in, zero recurring seat fees, zero proprietary traps.
+        <!-- Case 2: Harish Renova Dental -->
+        <div class="work-card">
+          <div class="work-card-media">
+            <div class="work-media-inner">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.8rem; font-weight: 800; color: #0f172a;">Harish Renova Dental Clinic</span>
+                <span style="background: #f0fdf4; color: #10b981; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px;">Healthcare Platform</span>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 6px;">
+                <div style="font-size: 0.72rem; color: #64748b;">Automated Appointment Triage</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a;">40% Faster Scheduling</div>
+              </div>
+              <div style="display: flex; gap: 6px; margin-top: auto;">
+                <span style="font-size: 0.65rem; background: #ecfdf5; color: #059669; padding: 2px 8px; border-radius: 4px; font-weight: 600;">WhatsApp Bot Active</span>
+                <span style="font-size: 0.65rem; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 4px; font-weight: 600;">SMS Reminders</span>
+              </div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <div class="work-tag-row">
+              <span class="work-category-badge">Clinic Management</span>
+              <span class="work-category-badge">WhatsApp API</span>
+            </div>
+            <h3 class="work-title">Harish Renova Dental</h3>
+            <p class="work-desc">
+              Patient scheduling, digital records management, and automated WhatsApp appointment reminders designed to eliminate receptionist bottlenecks and no-shows.
             </p>
+            <div class="work-impact-box">
+              <i class="fa-solid fa-arrow-trend-up" style="color: var(--brand-orange); margin-right: 6px;"></i>
+              40% reduction in patient wait time and near-zero missed appointments.
+            </div>
           </div>
+        </div>
 
-          <!-- 3 -->
-          <div class="glass-card reveal" style="padding: 32px 26px; border-radius: 20px;">
-            <div style="font-size: 1.8rem; color: var(--accent-purple); margin-bottom: 16px;"><i class="fa-solid fa-user-gear"></i></div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 10px;">Senior Systems Architects Involved</h3>
-            <p style="font-size: 0.92rem; color: #94a3b8; line-height: 1.65; margin: 0;">
-              You speak and build directly with principal engineers who architect your software. No junior account reps, no outsourcing games, and no translation layers.
+        <!-- Case 3: Saini Handicrafts -->
+        <div class="work-card">
+          <div class="work-card-media">
+            <div class="work-media-inner">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.8rem; font-weight: 800; color: #0f172a;">Saini Handicrafts Export</span>
+                <span style="background: #fff7ed; color: #ea580c; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px;">E-Commerce &amp; Export</span>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 6px;">
+                <div style="font-size: 0.72rem; color: #64748b;">Global Catalog &amp; Direct Ordering</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a;">2.4× Direct Revenue</div>
+              </div>
+              <div style="display: flex; gap: 6px; margin-top: auto;">
+                <span style="font-size: 0.65rem; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 4px; font-weight: 600;">International Currency</span>
+                <span style="font-size: 0.65rem; background: #ecfdf5; color: #059669; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Razorpay &amp; Stripe</span>
+              </div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <div class="work-tag-row">
+              <span class="work-category-badge">E-Commerce Architecture</span>
+              <span class="work-category-badge">Performance SEO</span>
+            </div>
+            <h3 class="work-title">Saini Handicrafts</h3>
+            <p class="work-desc">
+              High-speed global catalog and digital inquiry engine for hand-carved heritage crafts, allowing domestic and international B2B buyers to request quotes seamlessly.
             </p>
+            <div class="work-impact-box">
+              <i class="fa-solid fa-arrow-trend-up" style="color: var(--brand-orange); margin-right: 6px;"></i>
+              2.4× increase in verified international trade inquiries within 90 days.
+            </div>
           </div>
         </div>
+
+        <!-- Case 4: Nebula3D Studio -->
+        <div class="work-card">
+          <div class="work-card-media">
+            <div class="work-media-inner">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.8rem; font-weight: 800; color: #0f172a;">Nebula3D Studio</span>
+                <span style="background: #ede9fe; color: #7c3aed; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px;">WebGL / Three.js</span>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 6px;">
+                <div style="font-size: 0.72rem; color: #64748b;">Interactive 3D Product Customizer</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a;">60 FPS Spatial Rendering</div>
+              </div>
+              <div style="display: flex; gap: 6px; margin-top: auto;">
+                <span style="font-size: 0.65rem; background: #ecfdf5; color: #059669; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Zero Plugins Needed</span>
+                <span style="font-size: 0.65rem; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Mobile Accelerated</span>
+              </div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <div class="work-tag-row">
+              <span class="work-category-badge">Interactive 3D Web</span>
+              <span class="work-category-badge">Three.js &amp; GLTF</span>
+            </div>
+            <h3 class="work-title">Nebula3D Configurator</h3>
+            <p class="work-desc">
+              Photorealistic in-browser 3D model viewer enabling customers to customize finishes, textures, and dimensions on any smartphone without installing apps.
+            </p>
+            <div class="work-impact-box">
+              <i class="fa-solid fa-arrow-trend-up" style="color: var(--brand-orange); margin-right: 6px;"></i>
+              Tripled on-page engagement time with fluid 60 FPS mobile rendering.
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
 
-    <!-- ===================================================================
-         SECTION 7 — FOUNDER SPOTLIGHT
-         =================================================================== -->
-    <section class="section" id="team" style="padding-top: 80px; padding-bottom: 80px;">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag"><i class="fa-solid fa-users" style="color: var(--accent-cyan); margin-right: 6px;"></i>Technical Leadership</div>
-          <h2 class="section-title">The Engineers Behind Your Software</h2>
-          <p class="section-desc">Hands-on founders who take personal responsibility for every deployment.</p>
-        </div>
+    </div>
+  </section>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; max-width: 920px; margin: 40px auto 0 auto;">
-          <!-- Pankaj Gupta -->
-          <div class="founder-card reveal">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
-                <div style="width: 80px; height: 80px; border-radius: var(--radius-md); overflow: hidden; border: 2px solid var(--accent-cyan);">
-                  <img src="image/pankaj-profile.jpg" alt="Pankaj Gupta - Principal Systems Architect" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <span class="badge badge-cyan">8+ Years Experience</span>
+  <!-- ================= HIGH-CONVERSION CONTACT & BOOKING ================= -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-split">
+
+        <!-- Left: Direct Founder Info & WhatsApp Link -->
+        <div class="contact-left">
+          <div class="section-pill-tag">✦ Start a Project</div>
+          <h2>Let's build something remarkable together.</h2>
+          <p>
+            Have a new product idea, need custom software, or want to automate manual bottlenecks? Speak directly with our technical team today.
+          </p>
+
+          <div class="contact-direct-list">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/918629008768?text=Hi%20Pankaj%2C%20I%20visited%20pixeltocloud.com%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="contact-direct-item">
+              <i class="fa-brands fa-whatsapp" style="color: #10b981;"></i>
+              <div>
+                <div class="title">WhatsApp Quick Chat</div>
+                <div class="val">+91 86290 08768 (Instant Reply)</div>
               </div>
-              <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">Pankaj Gupta</h3>
-              <div style="color: var(--accent-cyan); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; margin-bottom: 14px;">Founder &amp; Principal Systems Architect</div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 18px;">
-                Over 8 years of systems architecture and full-stack engineering experience. Specializes in complex business workflows, 2D/3D WebGL systems, and hardened Linux infrastructure.
-              </p>
-            </div>
-            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 0.82rem; color: var(--text-muted);"><i class="fa-solid fa-check-circle" style="color: var(--accent-emerald); margin-right: 4px;"></i>Systems Lead</span>
-              <a href="mailto:pixeltocloud@gmail.com" class="btn-outline" style="padding: 6px 14px; font-size: 0.82rem;">Email Pankaj</a>
-            </div>
-          </div>
+            </a>
 
-          <!-- Tushar Singhal -->
-          <div class="founder-card reveal">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
-                <div style="width: 80px; height: 80px; border-radius: var(--radius-md); overflow: hidden; border: 2px solid var(--accent-purple);">
-                  <img src="image/tushar-profile.jpg" alt="Tushar Singhal - Senior Software Developer" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <span class="badge badge-purple">5+ Years Experience</span>
+            <!-- Phone Call -->
+            <a href="tel:+918629008768" class="contact-direct-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <div class="title">Direct Phone Line</div>
+                <div class="val">+91 86290 08768 / +91 82193 52124</div>
               </div>
-              <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">Tushar Singhal</h3>
-              <div style="color: var(--accent-purple); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; margin-bottom: 14px;">Co-Founder &amp; Senior Software Developer</div>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 18px;">
-                Over 5 years of full-stack software development experience. Specializes in backend API integrations, responsive client interfaces, and database query optimization.
-              </p>
-            </div>
-            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 0.82rem; color: var(--text-muted);"><i class="fa-solid fa-code" style="color: var(--accent-purple); margin-right: 4px;"></i>Engineering Lead</span>
-              <a href="#contact-section" class="btn-outline" style="padding: 6px 14px; font-size: 0.82rem; border-color: rgba(168, 85, 247, 0.4); color: var(--accent-purple);">Connect</a>
-            </div>
-          </div>
-        </div>
+            </a>
 
-        <div style="text-align: center; margin-top: 36px;">
-          <a href="about.html" class="srv-learn-more" style="color: #cbd5e1; font-size: 0.92rem;">
-            <span>Learn More About Our Philosophy &amp; Leadership on About Page</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================================================================
-         SECTION 8 — CURATED TESTIMONIALS (2 HIGH-PROOF STORIES)
-         =================================================================== -->
-    <section class="section" id="testimonials" style="background: rgba(255, 255, 255, 0.01); padding-top: 80px; padding-bottom: 80px;">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag"><i class="fa-solid fa-comments" style="color: var(--accent-cyan); margin-right: 6px;"></i>Client Proof</div>
-          <h2 class="section-title">Trusted by Real Organizations</h2>
-          <p class="section-desc">Authentic feedback from practitioners whose operations we modernized.</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; max-width: 960px; margin: 40px auto 0 auto;">
-          <!-- 1. Dr. Rathee -->
-          <div class="glass-card testimonial-card reveal" style="border-radius: 20px; padding: 32px;">
-            <div>
-              <div class="testimonial-stars" style="color: #f59e0b; margin-bottom: 12px;">★★★★★</div>
-              <p class="testimonial-text" style="font-size: 0.96rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 24px;">
-                "PixelToCloud built a specialized, highly responsive oncology website for Harish Renova Cancer Center. Patient consultation bookings, emergency contact routing, and medical information are presented seamlessly with fast mobile loading speed."
-              </p>
-            </div>
-            <div class="testimonial-author-box">
-              <div class="author-avatar" style="background: linear-gradient(135deg, #00d2ff, #0284c7);">NR</div>
-              <div class="author-info">
-                <span class="author-name" style="color: #ffffff; font-weight: 700;">Dr. Neeraj Kumar Rathee</span>
-                <span class="author-role" style="color: #94a3b8; font-size: 0.82rem;">Oncologist, Harish Renova Cancer Center</span>
+            <!-- Email -->
+            <a href="mailto:contact@pixeltocloud.com" class="contact-direct-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <div class="title">Official Email</div>
+                <div class="val">contact@pixeltocloud.com</div>
               </div>
-            </div>
-          </div>
+            </a>
 
-          <!-- 2. CA Pradeep Agarwal -->
-          <div class="glass-card testimonial-card reveal" style="border-radius: 20px; padding: 32px;">
-            <div>
-              <div class="testimonial-stars" style="color: #f59e0b; margin-bottom: 12px;">★★★★★</div>
-              <p class="testimonial-text" style="font-size: 0.96rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 24px;">
-                "PixelToCloud engineered our detailed CA servicing website with automated tax calculators, GST compliance modules, and secure client document lockers. Our clients love the clean speed and professionalism of Easy My Tax."
-              </p>
-            </div>
-            <div class="testimonial-author-box">
-              <div class="author-avatar" style="background: linear-gradient(135deg, #10b981, #06b6d4);">PA</div>
-              <div class="author-info">
-                <span class="author-name" style="color: #ffffff; font-weight: 700;">CA Pradeep Agarwal</span>
-                <span class="author-role" style="color: #94a3b8; font-size: 0.82rem;">Founder, Easy My Tax</span>
+            <!-- Smart Profile Link -->
+            <a href="connect" class="contact-direct-item">
+              <i class="fa-solid fa-id-card" style="color: var(--brand-blue);"></i>
+              <div>
+                <div class="title">Digital Visiting Card</div>
+                <div class="val">pixeltocloud.com/connect</div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 36px;">
-          <a href="portfolio.html" class="srv-learn-more" style="color: #cbd5e1; font-size: 0.92rem;">
-            <span>Read All Client Reviews on Portfolio Page</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================================================================
-         SECTION 9 — STREAMLINED FAQ (DIRECTLY ABOVE INQUIRY)
-         =================================================================== -->
-    <section class="section" id="faq" style="padding-top: 80px; padding-bottom: 80px;">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag"><i class="fa-solid fa-circle-question" style="color: var(--accent-cyan); margin-right: 6px;"></i>Clear Answers</div>
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-desc">Straightforward answers regarding engagement, delivery, and ownership.</p>
-        </div>
-
-        <div class="faq-container" style="max-width: 820px; margin: 36px auto 0 auto;">
-          <div class="faq-item reveal">
-            <button class="faq-question">
-              <span>How much does custom software development cost?</span>
-              <i class="fa-solid fa-chevron-down faq-chevron"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Project pricing depends on scope, architectural complexity, and integrations. Small bespoke business websites or portals typically start from ₹25,000–₹50,000, while custom web applications, SaaS platforms, and interactive 3D tools typically range from ₹75,000–₹2,50,000+. We provide fixed-price milestones so there are zero budget surprises.</p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-question">
-              <span>How long does a typical software project take to build?</span>
-              <i class="fa-solid fa-chevron-down faq-chevron"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Most business web applications and custom portals are delivered within 2 to 4 weeks. Complex enterprise SaaS platforms or 3D WebGL tools typically require 4 to 8 weeks, structured in transparent sprints with testable demo reviews at every stage.</p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-question">
-              <span>Who owns the source code and infrastructure upon delivery?</span>
-              <i class="fa-solid fa-chevron-down faq-chevron"></i>
-            </button>
-            <div class="faq-answer">
-              <p>You retain 100% legal ownership of your source code, private Git repositories, database schemas, and server configurations upon project sign-off. We never enforce proprietary locks or recurring platform seat licenses.</p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-question">
-              <span>Can you sign an NDA before we share our project details?</span>
-              <i class="fa-solid fa-chevron-down faq-chevron"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Yes, absolutely. We frequently sign mutual Non-Disclosure Agreements (NDAs) for healthcare, fintech, startup founders, and proprietary software concepts prior to any detailed technical discussion.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================================================================
-         SECTION 10 — CONTACT (QUALIFICATION FLOW)
-         =================================================================== -->
-    <section class="section" id="contact-section" style="background: rgba(255, 255, 255, 0.01); padding-top: 80px; padding-bottom: 90px;">
-      <div class="container">
-        <div class="section-header text-center reveal">
-          <div class="section-tag"><i class="fa-solid fa-paper-plane" style="color: var(--accent-cyan); margin-right: 6px;"></i>Start a Conversation</div>
-          <h2 class="section-title">Tell Us What Is Difficult</h2>
-          <p class="section-desc">Describe what you are trying to improve. Lead Systems Architect Pankaj Gupta will review your requirements and provide an honest technical assessment within 24 hours.</p>
-        </div>
-
-        <div class="inquiry-form-card reveal" style="max-width: 760px; margin: 36px auto 0 auto;">
-          <form id="project-inquiry-form" onsubmit="event.preventDefault(); window.handleProjectInquiry(this);">
-            <div class="inquiry-form-grid">
-              <!-- System Category -->
-              <div class="inquiry-form-group full-width">
-                <label class="inquiry-label" for="inq-project-type">
-                  <i class="fa-solid fa-cubes" style="color: var(--accent-cyan);"></i>
-                  What type of system are you building? *
-                </label>
-                <select id="inq-project-type" name="projectType" class="inquiry-select" required>
-                  <option value="" disabled selected>Select system category...</option>
-                  <option value="Custom Business Web Application">Custom Business Web Application / Portal</option>
-                  <option value="Client Document Portal">Client Document Portal / Financial Vault</option>
-                  <option value="SaaS Platform">SaaS Platform / Multi-Tenant System</option>
-                  <option value="Interactive 2D/3D WebGL">Interactive 2D/3D WebGL Experience / Tool</option>
-                  <option value="Healthcare Platform">Healthcare / Clinical Telehealth Platform</option>
-                  <option value="Cloud & DevOps Infrastructure">Cloud Infrastructure &amp; Linux DevOps</option>
-                  <option value="Other Custom Software">Other Custom Software Project</option>
-                </select>
-              </div>
-
-              <!-- Problem Description -->
-              <div class="inquiry-form-group full-width">
-                <label class="inquiry-label" for="inq-details">
-                  <i class="fa-solid fa-align-left" style="color: var(--accent-purple);"></i>
-                  What are you trying to improve &amp; what currently makes it difficult? *
-                </label>
-                <textarea id="inq-details" name="details" class="inquiry-textarea" placeholder="Tell us about your team's workflow, spreadsheet friction, or the specific tool you need engineered..." required></textarea>
-              </div>
-
-              <!-- Name -->
-              <div class="inquiry-form-group">
-                <label class="inquiry-label" for="inq-name">
-                  <i class="fa-solid fa-user" style="color: var(--accent-cyan);"></i>
-                  Your Name *
-                </label>
-                <input type="text" id="inq-name" name="name" class="inquiry-input" placeholder="e.g. Rahul Sharma" required>
-              </div>
-
-              <!-- Email -->
-              <div class="inquiry-form-group">
-                <label class="inquiry-label" for="inq-email">
-                  <i class="fa-solid fa-envelope" style="color: var(--accent-cyan);"></i>
-                  Email Address *
-                </label>
-                <input type="email" id="inq-email" name="email" class="inquiry-input" placeholder="e.g. rahul@company.com" required>
-              </div>
-
-              <!-- Phone / WhatsApp -->
-              <div class="inquiry-form-group full-width">
-                <label class="inquiry-label" for="inq-phone">
-                  <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
-                  Phone / WhatsApp <span style="font-weight: 400; color: #64748b;">(Optional — for quicker discussion)</span>
-                </label>
-                <input type="tel" id="inq-phone" name="phone" class="inquiry-input" placeholder="e.g. +91 98765 43210">
-              </div>
-
-              <!-- Submit Button -->
-              <div class="inquiry-form-group full-width" style="margin-top: 10px;">
-                <button type="submit" class="btn-magnetic btn-primary" id="inquiry-submit-btn" style="width: 100%; justify-content: center; padding: 15px; font-size: 1.02rem;">
-                  <span>Submit Technical Inquiry &rarr;</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="inquiry-trust-note">
-              <i class="fa-solid fa-lock" style="color: var(--accent-emerald); margin-right: 4px;"></i>
-              Strictly confidential. We respect your intellectual property and can execute a mutual NDA prior to technical discussion.
-            </div>
-
-            <div id="inquiry-feedback-msg" style="display: none; margin-top: 18px; padding: 14px; border-radius: var(--radius-sm); text-align: center; font-size: 0.95rem;"></div>
-          </form>
-
-          <!-- Discreet WhatsApp Direct Chat -->
-          <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-subtle); text-align: center;">
-            <span style="font-size: 0.88rem; color: var(--text-muted); margin-right: 8px;">Prefer immediate chat?</span>
-            <a href="https://wa.me/918219352124?text=Hello%20Pankaj%20Gupta,%20I%20would%20like%20to%20discuss%20a%20software%20project." target="_blank" style="font-size: 0.88rem; font-weight: 600; color: #25d366; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-              <i class="fa-brands fa-whatsapp"></i>
-              <span>Chat directly on WhatsApp &rarr;</span>
             </a>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <!-- ===================================================================
-       FOOTER
-       =================================================================== -->
-  <footer class="site-footer">
-    <div class="container footer-content-grid">
-      <div>
-        <div class="footer-brand">PixelTo<span style="color: var(--accent-cyan);">Cloud</span></div>
-        <p class="footer-desc">Custom software, interactive 2D/3D systems, and cloud infrastructure engineered around your business operations.</p>
-        <div style="font-size: 0.85rem; color: #64748b; margin-top: 14px;">
-          Direct Senior Architect Access · 100% IP Ownership
-        </div>
-      </div>
+        <!-- Right: Inquiry Form -->
+        <div class="contact-form-card">
+          <h3 style="font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-bottom: 8px;">Book an Intro Call</h3>
+          <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 24px;">Share your goals and we'll reply with a roadmap and ballpark estimate within 24 hours.</p>
 
-      <div>
-        <h4 class="footer-col-title">Core Capabilities</h4>
-        <div class="footer-links-list">
-          <a href="services/artificial-intelligence.html">Artificial Intelligence</a>
-          <a href="services/digital-products.html">Digital Products &amp; Software</a>
-          <a href="services/erp-solutions.html">ERP Solutions</a>
-          <a href="services/interactive-3d-spatial.html">Interactive 2D/3D &amp; Spatial</a>
-          <a href="services/user-experience-design.html">User Experience &amp; Design</a>
-          <a href="services/cloud-devops.html">Cloud &amp; DevOps</a>
-        </div>
-      </div>
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="userName" class="form-label">Your Name</label>
+              <input type="text" id="userName" class="form-input" placeholder="e.g. Rahul Sharma" required>
+            </div>
 
-      <div>
-        <h4 class="footer-col-title">Selected Work</h4>
-        <div class="footer-links-list">
-          <a href="work/easy-my-tax.html">Easy My Tax (Fintech/CA)</a>
-          <a href="work/harish-renova.html">Harish Renova (Healthcare)</a>
-          <a href="work/saini-handicrafts.html">Saini Handicrafts (Commerce)</a>
-          <a href="work/nebula-3d.html">Nebula3D (WebGL Engine)</a>
-          <a href="portfolio.html">All Case Studies &rarr;</a>
-        </div>
-      </div>
+            <div class="form-group">
+              <label for="userContact" class="form-label">Email or WhatsApp Number</label>
+              <input type="text" id="userContact" class="form-input" placeholder="e.g. rahul@company.com or +91 98765 43210" required>
+            </div>
 
-      <div>
-        <h4 class="footer-col-title">Company</h4>
-        <div class="footer-links-list">
-          <a href="about.html">About &amp; Leadership</a>
-          <a href="labs.html">Engineering Labs</a>
-          <a href="#contact-section">Start a Conversation</a>
-          <a href="mailto:pixeltocloud@gmail.com">pixeltocloud@gmail.com</a>
+            <div class="form-group">
+              <label for="projectType" class="form-label">What do you want to build?</label>
+              <select id="projectType" class="form-select">
+                <option value="Custom Website or Online Store">High-Converting Website or E-Commerce</option>
+                <option value="Custom Software or CRM Portal">Custom Software, CRM or Billing Portal</option>
+                <option value="WhatsApp AI Automation">24/7 WhatsApp AI Bot &amp; Automation</option>
+                <option value="Google Ads & Lead Funnel">Google Ads &amp; Lead Generation Funnel</option>
+                <option value="Other Growth Project">Other Growth / Cloud Engineering Project</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="userMessage" class="form-label">Brief Project Summary</label>
+              <textarea id="userMessage" class="form-textarea" placeholder="Tell us a little about your business, timeline, and current bottlenecks..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-form-submit">
+              <span>Send Project Inquiry</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
         </div>
+
       </div>
     </div>
+  </section>
 
-    <div class="container footer-bottom-strip">
-      <div>&copy; 2026 PixelToCloud Solutions. All rights reserved.</div>
-      <div style="color: #64748b; font-size: 0.85rem;">Engineered by Pankaj Gupta &amp; Tushar Singhal</div>
+  <!-- ================= CLEAN STUDIO FOOTER ================= -->
+  <footer class="studio-footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <svg style="width: 32px; height: 32px;" viewBox="0 0 252 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="footerPCloudGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#1e3a8a" />
+                  <stop offset="25%" stop-color="#1d4ed8" />
+                  <stop offset="60%" stop-color="#0284c7" />
+                  <stop offset="100%" stop-color="#38bdf8" />
+                </linearGradient>
+              </defs>
+              <path d="M 72 145 L 42 145 C 16 145, -2 122, -2 92 C -2 64, 18 42, 46 40 C 58 10, 88 -8, 124 -8 C 160 -8, 190 10, 202 40 C 230 42, 250 64, 250 92 C 250 122, 230 145, 198 145 L 128 145" fill="none" stroke="url(#footerPCloudGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 66 44 C 78 22, 98 12, 124 12 C 150 12, 168 22, 180 44" fill="none" stroke="url(#footerPCloudGrad)" stroke-width="13" stroke-linecap="round"/>
+              <path d="M 102 145 L 102 44 L 118 44 C 144 44, 154 56, 154 74 C 154 92, 142 104, 118 104 L 102 104" fill="none" stroke="url(#footerPCloudGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span style="font-size: 1.25rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">PixelTo<span style="color: #38bdf8;">Cloud</span></span>
+          </div>
+          <p>
+            Modern digital engineering studio crafting bespoke websites, custom business software, and intelligent AI automation. 100% source-code ownership.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div class="footer-col">
+          <h5>Capabilities</h5>
+          <ul>
+            <li><a href="#solutions">High-Converting Websites</a></li>
+            <li><a href="#solutions">Custom Software &amp; CRM</a></li>
+            <li><a href="#solutions">Google Ads &amp; Lead Funnels</a></li>
+            <li><a href="#solutions">Cloud Infrastructure</a></li>
+            <li><a href="#solutions">WhatsApp AI Automations</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Company & Direct -->
+        <div class="footer-col">
+          <h5>Direct Contact</h5>
+          <ul>
+            <li><a href="https://wa.me/918629008768" target="_blank" rel="noopener noreferrer">WhatsApp: +91 86290 08768</a></li>
+            <li><a href="tel:+918629008768">Call: +91 86290 08768</a></li>
+            <li><a href="mailto:contact@pixeltocloud.com">contact@pixeltocloud.com</a></li>
+            <li><a href="connect">Smart Digital Card (/connect)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Studio Pillars -->
+        <div class="footer-col">
+          <h5>Core Pillars</h5>
+          <ul>
+            <li><a href="#pillars"><strong>BUILD</strong> · Web &amp; Apps</a></li>
+            <li><a href="#pillars"><strong>GROW</strong> · SEO &amp; Ads</a></li>
+            <li><a href="#pillars"><strong>AUTOMATE</strong> · AI &amp; Bots</a></li>
+            <li><a href="#guarantees">Zero Lock-In Guarantee</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 PixelToCloud. All rights reserved. Registered under PixelToCloud Solutions.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="connect">Smart Card Profile</a>
+          <a href="brand-assets.html">Brand Assets</a>
+          <a href="#contact">Book Call</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/canvas-hero.js?v=43.0" defer></script>
-  <script src="js/magnetic-cards.js?v=43.0" defer></script>
-  <script src="js/app.js?v=43.0" defer></script>
-
-  <!-- Capability Matrix Interactive Script -->
+  <!-- ================= SCRIPTS ================= -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const tabs = document.querySelectorAll('.matrix-nav-tab');
-      const badge = document.getElementById('pane-badge');
-      const title = document.getElementById('pane-title');
-      const problem = document.getElementById('pane-problem');
-      const deliverables = document.getElementById('pane-deliverables');
-      const chips = document.getElementById('pane-chips');
-      const link = document.getElementById('pane-link');
-
-      const data = {
-        ai: {
-          badge: 'AI WORKFLOWS & LLMS',
-          title: 'Automate Document Decisions & Repetitive Operations',
-          problem: 'We build deterministic, private AI systems that parse messy invoices, cross-reference compliance forms, and automate document-heavy team workflows without hallucination risk.',
-          deliv: [
-            { h: 'Private Document RAG', p: 'Semantic vector search over private client records and internal PDFs with strict data privacy.' },
-            { h: 'Document Extraction', p: 'Automated OCR and parsing pipelines converting scanned documents into validated JSON payloads.' },
-            { h: 'Zero Hallucination Rules', p: 'Deterministic checks and confidence scoring before any AI response is presented to human operators.' }
-          ],
-          chips: ['Python', 'LangChain', 'Llama 3 / Mistral', 'ChromaDB', 'FastAPI'],
-          url: 'services/artificial-intelligence.html',
-          btnText: 'Explore AI Architecture →'
-        },
-        digital: {
-          badge: 'FULL-STACK SOFTWARE',
-          title: 'Replace Spreadsheets with High-Performance Software',
-          problem: 'Off-the-shelf SaaS apps are either bloated with features you don\'t need or inflexible where your business is unique. We build fast, tailored web applications engineered around your exact team workflow.',
-          deliv: [
-            { h: 'React 19 Client Portals', p: 'Sub-second server-rendered interfaces with < 180ms TTFB and 100/100 Core Web Vitals.' },
-            { h: 'High-Concurrency APIs', p: 'Modular Node.js and Go microservices handling high traffic and background queue jobs.' },
-            { h: 'Field Mobile Apps', p: 'Responsive cross-platform web and mobile apps for field staff and remote operational teams.' }
-          ],
-          chips: ['React 19', 'Next.js', 'Node.js', 'Go', 'PostgreSQL', 'Tailwind'],
-          url: 'services/digital-products.html',
-          btnText: 'Explore Software Engineering →'
-        },
-        erp: {
-          badge: 'OPERATIONAL PORTALS',
-          title: 'Unified Portals That Scale With Your Operations',
-          problem: 'Disjointed tools lead to communication black holes, lost client records, and audit nightmares. We build centralized operational platforms with granular role permissions and automated compliance.',
-          deliv: [
-            { h: 'CA & Tax Suites', p: 'Automated client tax filing workflows, GST validation pipelines, and secure financial lockers.' },
-            { h: 'Clinical Telehealth', p: 'Doctor scheduling, patient electronic health records, and automated consultation routing.' },
-            { h: 'Immutable Audit Logs', p: 'Strict role-based access control (RBAC), activity audit trails, and automated backups.' }
-          ],
-          chips: ['TypeScript', 'Prisma', 'PostgreSQL', 'Redis', 'Docker', 'REST API'],
-          url: 'services/erp-solutions.html',
-          btnText: 'Explore ERP Solutions →'
-        },
-        spatial: {
-          badge: 'WEBGL & 3D SPATIAL',
-          title: '60 FPS Hardware-Accelerated Web Graphics',
-          problem: 'Static images fail to convey complex industrial products, luxury crafts, and architectural spaces. We engineer ultra-optimized WebGL systems that run smoothly even on mobile devices.',
-          deliv: [
-            { h: 'Three.js 3D Viewers', p: 'Real-time 3D model configurators with interactive materials, lighting, and camera rotation.' },
-            { h: 'Ultra-Compressed GLTF', p: 'Optimized 3D geometry payloads under 3.5MB for instantaneous browser loading.' },
-            { h: 'Digital Twin Simulators', p: 'Real-time spatial visualization models for industrial operations and interactive product launches.' }
-          ],
-          chips: ['Three.js', 'WebGL 2.0', 'GLSL Shaders', 'WebGPU', 'Blender', 'Canvas'],
-          url: 'services/interactive-3d-spatial.html',
-          btnText: 'Explore 3D Spatial Systems →'
-        },
-        design: {
-          badge: 'UX & DESIGN SYSTEMS',
-          title: 'Human-Centred Interfaces That Prevent Operator Errors',
-          problem: 'Enterprise software is notoriously frustrating and error-prone. We design crisp, high-density interfaces that clarify complex data hierarchies and speed up task completion.',
-          deliv: [
-            { h: 'Interactive Prototypes', p: 'High-fidelity Figma user flows tested against real end-users before writing frontend code.' },
-            { h: 'Design Token Systems', p: 'Unified typography, spacing, and color variables ensuring 100% brand consistency.' },
-            { h: 'WCAG 2.2 AA Compliance', p: 'High-contrast accessible color palettes and keyboard navigable interfaces.' }
-          ],
-          chips: ['Figma', 'Design Tokens', 'WCAG 2.2 AA', 'Storybook', 'Tailwind', 'CSS Grid'],
-          url: 'services/user-experience-design.html',
-          btnText: 'Explore UX & Design →'
-        },
-        cloud: {
-          badge: 'INFRASTRUCTURE & DEVOPS',
-          title: 'High-Performance Linux Infrastructure Without Cloud Lock-In',
-          problem: 'Most businesses overpay 3x to 5x on proprietary AWS/GCP managed services. We architect fast, cost-efficient infrastructure on dedicated bare-metal servers and containerized clusters.',
-          deliv: [
-            { h: 'Bare-Metal Hardening', p: 'Custom Linux kernel tuning, automated SSH key enforcement, UFW firewalls, and fail2ban.' },
-            { h: 'Docker CI/CD Delivery', p: 'GitHub Actions pipelines with zero-downtime blue/green rolling deployments.' },
-            { h: 'Prometheus Telemetry', p: 'Full-stack observability with real-time alerts monitoring CPU, memory, and network I/O.' }
-          ],
-          chips: ['Debian/Ubuntu', 'Docker', 'Kubernetes', 'Prometheus', 'WireGuard', 'FinOps'],
-          url: 'services/cloud-devops.html',
-          btnText: 'Explore Cloud & DevOps →'
-        }
-      };
-
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          tabs.forEach(t => {
-            t.classList.remove('active');
-            t.setAttribute('aria-selected', 'false');
-          });
-          tab.classList.add('active');
-          tab.setAttribute('aria-selected', 'true');
-
-          const key = tab.getAttribute('data-tab');
-          const d = data[key];
-          if (!d) return;
-
-          badge.textContent = d.badge;
-          title.textContent = d.title;
-          problem.textContent = d.problem;
-          link.href = d.url;
-          link.querySelector('span').textContent = d.btnText;
-
-          deliverables.innerHTML = d.deliv.map(item => `
-            <div class="matrix-deliv-card">
-              <h5>${item.h}</h5>
-              <p>${item.p}</p>
-            </div>
-          `).join('');
-
-          chips.innerHTML = d.chips.map(chip => `
-            <span class="matrix-tech-chip">${chip}</span>
-          `).join('');
-        });
-      });
+    // Smooth navbar scroll elevation
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     });
+
+    // Mobile nav toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks.style.display === 'flex') {
+          navLinks.style.display = 'none';
+        } else {
+          navLinks.style.display = 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '70px';
+          navLinks.style.left = '20px';
+          navLinks.style.right = '20px';
+          navLinks.style.background = '#ffffff';
+          navLinks.style.padding = '20px';
+          navLinks.style.borderRadius = '16px';
+          navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+          navLinks.style.border = '1px solid rgba(15, 23, 42, 0.1)';
+        }
+      });
+    }
+
+    // Direct WhatsApp Form Dispatcher
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('userName').value.trim();
+      const contact = document.getElementById('userContact').value.trim();
+      const projectType = document.getElementById('projectType').value;
+      const message = document.getElementById('userMessage').value.trim();
+
+      const text = `Hi Pankaj, I am *${name}* (${contact}).%0A%0A*Project Type:* ${projectType}%0A*Details:* ${encodeURIComponent(message || 'Looking to discuss a new project.')}%0A%0A_Sent via pixeltocloud.com intro booking form_`;
+      
+      const whatsappUrl = `https://wa.me/918629008768?text=${text}`;
+      window.open(whatsappUrl, '_blank');
+    }
   </script>
+
 </body>
 </html>
