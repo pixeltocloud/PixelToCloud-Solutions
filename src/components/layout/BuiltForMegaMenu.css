@@ -1,0 +1,191 @@
+/* Built For Mega Menu Panel Styles - Aligned with Services Layout */
+.built-for-mega-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: min(1220px, calc(100vw - 32px));
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 220ms;
+  z-index: 1001;
+}
+
+.built-for-mega-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Invisible hover bridge */
+.built-for-mega-panel::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 22px;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.built-for-dot {
+  background: #0284c7 !important;
+  box-shadow: 0 0 8px #0284c7 !important;
+}
+
+/* Top Perspective Toggle Switcher */
+.built-for-toggle-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.toggle-label {
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.toggle-switch-btns {
+  display: inline-flex;
+  padding: 3px;
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  gap: 3px;
+}
+
+[data-theme='dark'] .toggle-switch-btns {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.toggle-btn:hover {
+  color: var(--text);
+}
+
+.toggle-btn.is-active {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.35);
+}
+
+.toggle-btn .btn-icon {
+  font-size: 0.78rem;
+}
+
+/* Pillar Specific Accents for Built For */
+.pillar-saas-ai .pillar-num {
+  background: rgba(2, 132, 199, 0.1);
+  color: #0284c7;
+}
+
+[data-theme='dark'] .pillar-saas-ai .pillar-num {
+  background: rgba(56, 189, 248, 0.16);
+  color: #38bdf8;
+}
+
+.pillar-commerce-growth .pillar-num {
+  background: rgba(234, 88, 12, 0.1);
+  color: #ea580c;
+}
+
+[data-theme='dark'] .pillar-commerce-growth .pillar-num {
+  background: rgba(251, 146, 60, 0.16);
+  color: #fb923c;
+}
+
+.pillar-cloud-compliance .pillar-num {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+[data-theme='dark'] .pillar-cloud-compliance .pillar-num {
+  background: rgba(52, 211, 153, 0.16);
+  color: #34d399;
+}
+
+/* Card Item Title Row with Metric Pill */
+.built-for-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  margin-bottom: 0.15rem;
+}
+
+.built-for-metric-pill {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 0.1rem 0.38rem;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+[data-theme='dark'] .built-for-metric-pill {
+  background: rgba(16, 185, 129, 0.16);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Right Command Showcase Theme Variations */
+.command-inner-card.is-enterprises {
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+[data-theme='dark'] .command-inner-card.is-enterprises {
+  background: linear-gradient(175deg, rgba(16, 185, 129, 0.14) 0%, rgba(10, 16, 30, 0.98) 55%);
+  border-color: rgba(52, 211, 153, 0.28);
+}
+
+.command-inner-card.is-enterprises .command-badge {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+[data-theme='dark'] .command-inner-card.is-enterprises .command-badge {
+  background: rgba(52, 211, 153, 0.18);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+.command-inner-card.is-enterprises .badge-glow-dot {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.command-inner-card.is-enterprises .status-live-pulse {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}

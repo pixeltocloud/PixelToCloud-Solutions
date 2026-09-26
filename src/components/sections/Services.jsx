@@ -93,7 +93,10 @@ export default function Services({ limit, detailed = false, homepage = false, hi
                         <p className="service-label">How we deliver</p>
                         <ol className="service-process">
                           {service.process.map((step) => (
-                            <li key={step}>{step}</li>
+                            <li key={step.title || step}>
+                              {step.title ? <strong>{step.title}: </strong> : null}
+                              {step.desc || step}
+                            </li>
                           ))}
                         </ol>
                         <p className="service-label">Outcomes</p>
@@ -102,12 +105,17 @@ export default function Services({ limit, detailed = false, homepage = false, hi
                             <li key={item}>{item}</li>
                           ))}
                         </ul>
+                        <div style={{ marginTop: '1.25rem' }}>
+                          <Link to={`/services/${service.slug}`} className="btn btn-secondary" style={{ fontSize: '0.85rem', padding: '0.45rem 0.9rem' }}>
+                            View Dedicated Page →
+                          </Link>
+                        </div>
                       </div>
                     ) : null}
                   </>
                 ) : (
-                  <Link to={`/services#${service.id}`} className="text-link">
-                    {service.cta}
+                  <Link to={`/services/${service.slug}`} className="text-link">
+                    Explore {service.title} →
                   </Link>
                 )}
               </Reveal>

@@ -11,6 +11,7 @@ import './styles/components.css'
 import './styles/animations.css'
 
 const Services = lazy(() => import('./pages/Services'))
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
 const Work = lazy(() => import('./pages/Work'))
 const WorkDetail = lazy(() => import('./pages/WorkDetail'))
 const About = lazy(() => import('./pages/About'))
@@ -86,6 +87,7 @@ function AppShell() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/:slug" element={<WorkDetail />} />
             <Route path="/about" element={<About />} />

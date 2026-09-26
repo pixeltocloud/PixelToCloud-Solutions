@@ -1,7 +1,7 @@
 import Hero from '../components/sections/Hero'
-import TrustStrip from '../components/sections/TrustStrip'
-import FeaturedWork from '../components/sections/FeaturedWork'
-import Services from '../components/sections/Services'
+import HeroShowcase from '../components/sections/HeroShowcase'
+import SolutionsGrid from '../components/sections/SolutionsGrid'
+import PillarsStory from '../components/sections/PillarsStory'
 import ContactSection from '../components/sections/ContactSection'
 import FAQ from '../components/sections/FAQ'
 import FinalCTA from '../components/sections/FinalCTA'
@@ -12,9 +12,9 @@ export default function Home() {
     <div className="page-enter">
       <Seo />
       <Hero />
-      <TrustStrip />
-      <FeaturedWork compact home />
-      <Services homepage limit={3} />
+      <HeroShowcase />
+      <SolutionsGrid />
+      <PillarsStory />
       <ContactSection />
       <FAQ home mode="investment" />
       <FinalCTA />

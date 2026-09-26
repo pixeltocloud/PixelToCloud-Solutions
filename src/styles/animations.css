@@ -124,12 +124,12 @@
   display: inline-flex;
   gap: 2rem;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 18s linear infinite;
 }
 
 .marquee.is-reverse .marquee-track {
   animation-name: marquee-reverse;
-  animation-duration: 36s;
+  animation-duration: 22s;
 }
 
 .marquee:hover .marquee-track {
