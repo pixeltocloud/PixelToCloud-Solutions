@@ -1,0 +1,130 @@
+.closer-kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.closer h2 {
+  margin: 0 0 0.7rem;
+  max-width: 18ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.closer-intro {
+  margin: 0 0 1.6rem;
+  max-width: 42rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.closer-chapters {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.closer-chapters li {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.closer-chapters span {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-strong);
+  padding-top: 0.2rem;
+}
+
+.closer-chapters h3,
+.closer-split h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.closer-chapters p,
+.closer-scenes p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.closer-split {
+  display: grid;
+  gap: 1rem;
+}
+
+.closer-scenes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.closer-scenes li,
+.closer-leave {
+  padding: 1rem 1.05rem;
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+.closer-scenes strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.closer-leave {
+  background: var(--bg-ink);
+  color: var(--text-on-ink);
+  border-color: transparent;
+}
+
+.closer-leave h3 {
+  color: var(--text-on-ink);
+}
+
+.closer-leave ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+  color: var(--text-on-ink-muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .closer-chapters li {
+    grid-template-columns: 1fr;
+  }
+
+  .stage.is-compact,
+  .closer .stage.is-compact {
+    width: 100%;
+  }
+}
+
+@media (min-width: 860px) {
+  .closer-split {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+  }
+}

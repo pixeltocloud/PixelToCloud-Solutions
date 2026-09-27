@@ -1,0 +1,137 @@
+.who-serve-head {
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.who-kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.who-serve-head h2 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.who-serve-head p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.who-group + .who-group {
+  margin-top: 1.75rem;
+}
+
+.who-group-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.who-group-label h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+}
+
+.who-group-label p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.who-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.who-card {
+  position: relative;
+  display: block;
+  min-height: 240px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  color: #f8fafc;
+  isolation: isolate;
+}
+
+.who-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+  transition: transform 700ms var(--ease-out);
+}
+
+.who-card-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.05) 10%, rgba(9, 13, 22, 0.78) 100%);
+}
+
+.who-card-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 240px;
+  padding: 1.1rem 1.15rem 1.15rem;
+}
+
+.who-card-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.who-card-copy strong {
+  margin-top: 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.who-card-line {
+  margin-top: 0.35rem;
+  max-width: 28rem;
+  color: rgba(248, 250, 252, 0.88);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.who-card:hover img,
+.who-card:focus-visible img {
+  transform: scale(1.1);
+}
+
+@media (min-width: 720px) {
+  .who-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .who-card,
+  .who-card-copy {
+    min-height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .who-card img {
+    transition: none;
+  }
+}

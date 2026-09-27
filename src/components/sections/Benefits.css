@@ -1,0 +1,51 @@
+.benefits {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.benefits .section-header {
+  margin-bottom: 1.25rem;
+}
+
+.benefits-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.benefit-row {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.benefit-row h3 {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.25;
+}
+
+.benefit-row p {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--text-secondary);
+  font-size: 0.97rem;
+  line-height: 1.55;
+  font-weight: 450;
+}
+
+@media (min-width: 800px) {
+  .benefit-row {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 1.75rem;
+    align-items: baseline;
+    padding: 1.25rem 0;
+  }
+
+  .benefit-row h3 {
+    padding-right: 1rem;
+  }
+}
