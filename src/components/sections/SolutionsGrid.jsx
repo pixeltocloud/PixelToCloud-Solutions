@@ -4,22 +4,22 @@ import Reveal from '../ui/Reveal'
 import './SolutionsGrid.css'
 
 const categories = [
-  { id: 'all', label: 'All Capabilities', count: 6, icon: '✦' },
-  { id: 'web', label: 'Web Platforms & Apps', count: 2, icon: '💻' },
-  { id: 'ai', label: 'AI & Automation', count: 2, icon: '🤖' },
-  { id: 'cloud', label: 'Cloud & Infrastructure', count: 2, icon: '☁️' },
+  { id: 'all', label: 'All', count: 6 },
+  { id: 'web', label: 'Websites & apps', count: 2 },
+  { id: 'ai', label: 'Helpers', count: 2 },
+  { id: 'cloud', label: 'Hosting & pages', count: 2 },
 ]
 
 const capabilities = [
   {
     id: 'custom-software',
     category: 'web',
-    categoryLabel: 'Web Platforms & Apps',
+    categoryLabel: 'Websites & apps',
     accent: '#0284c7',
-    title: 'Bespoke Web Apps & Client Portals',
-    subtitle: 'Full-Stack SaaS · Custom Dashboards · Stripe Billing',
-    description:
-      'Tailored operational portals, high-security client dashboards, and billing engines built specifically for your business workflows. Zero template builders, full Git repository handover.',
+    image: '/image/showcase/mockup-macbook-saas.jpg',
+    title: 'Apps and client portals',
+    subtitle: 'Logins, dashboards, and bills',
+    description: 'Software shaped around the way your team already works. You keep the code.',
     techStack: ['React', 'TypeScript', 'Node.js', 'Stripe', 'PostgreSQL'],
     metricBadge: '100% IP Code Handover',
     slaBadge: 'Sub-Second Latency · Zero Seat Tax',
@@ -34,12 +34,12 @@ const capabilities = [
   {
     id: 'web-platforms',
     category: 'web',
-    categoryLabel: 'Web Platforms & Apps',
+    categoryLabel: 'Websites & apps',
     accent: '#0ea5e9',
-    title: 'High-Converting Websites & E-Commerce',
-    subtitle: 'Sub-Second Speed · Core Web Vitals · Headless',
-    description:
-      'High-converting web platforms and headless digital storefronts engineered with modern React. Zero-bloat code that turns high-intent visitors into paying clients.',
+    image: '/image/showcase/mockup-storefront.jpg',
+    title: 'Websites and online shops',
+    subtitle: 'Clear pages and a simple checkout',
+    description: 'A site that opens fast on a phone and makes the next step obvious.',
     techStack: ['React 19', 'Vite', 'Tailwind', 'Next-Gen SPA', 'SEO Schema'],
     metricBadge: '< 0.4s Global LCP',
     slaBadge: '95+ PageSpeed · 100% SEO Retention',
@@ -55,12 +55,12 @@ const capabilities = [
   {
     id: 'whatsapp-agents',
     category: 'ai',
-    categoryLabel: 'AI & Automation',
+    categoryLabel: 'Helpers',
     accent: '#8b5cf6',
-    title: '24/7 WhatsApp AI Agents & Chatbots',
-    subtitle: 'Autonomous Qualification · Real-Time Booking · 24/7',
-    description:
-      'Intelligent conversational bots deployed directly onto the official WhatsApp Cloud API. Automatically qualifies inbound leads, answers client questions, and syncs appointments.',
+    image: '/image/showcase/mockup-ai-automation.jpg',
+    title: 'WhatsApp that replies for you',
+    subtitle: 'Answers, bookings, and a person when needed',
+    description: 'Common questions get a reply. A person steps in when the helper is unsure.',
     techStack: ['WhatsApp Cloud API', 'ChatGPT / Claude', 'Webhooks', 'CRM Sync'],
     metricBadge: 'Instant < 2s Response',
     slaBadge: '24/7/365 Autonomous Qualification',
@@ -74,12 +74,12 @@ const capabilities = [
   {
     id: 'document-ocr',
     category: 'ai',
-    categoryLabel: 'AI & Automation',
+    categoryLabel: 'Helpers',
     accent: '#a855f7',
-    title: 'Intelligent Document OCR & Data Extraction',
-    subtitle: 'Invoice OCR · Contract Parsing · Automated DB Sync',
-    description:
-      'Eliminate manual data entry and human error. Automatically parse incoming vendor invoices, financial receipts, and legal PDFs straight into your database with structured validation.',
+    image: '/image/hero-workspace.jpg',
+    title: 'Invoices read for you',
+    subtitle: 'PDFs turned into details you can check',
+    description: 'Bills and forms become fields, instead of another folder nobody opens.',
     techStack: ['Computer Vision OCR', 'Python', 'LLM Parsing', 'REST Webhooks'],
     metricBadge: '100k+ Documents / Mo',
     slaBadge: '99.2% Accuracy · Zero Human Latency',
@@ -97,12 +97,12 @@ const capabilities = [
   {
     id: 'cloud-devops',
     category: 'cloud',
-    categoryLabel: 'Cloud & Infrastructure',
+    categoryLabel: 'Hosting & pages',
     accent: '#10b981',
-    title: 'Hardened Cloud VPS, Docker & CI/CD',
-    subtitle: 'Private Linux VPS · Containerization · Zero-Downtime',
-    description:
-      'Graduate from fragile shared hosting to hardened dedicated cloud servers. Dockerized microservices, automated daily backups, and seamless push-to-deploy CI/CD pipelines.',
+    image: '/image/showcase/mockup-tablet-cyber.jpg',
+    title: 'Hosting you can trust',
+    subtitle: 'A server, a backup, and safe updates',
+    description: 'Move off fragile hosting. Updates can be undone if something looks wrong.',
     techStack: ['Docker', 'Ubuntu Linux', 'Nginx', 'GitHub Actions', 'SSL / DDoS'],
     metricBadge: '99.99% Uptime SLA',
     slaBadge: 'Automated Failover · Encrypted Backups',
@@ -119,12 +119,12 @@ const capabilities = [
   {
     id: 'growth-funnels',
     category: 'cloud',
-    categoryLabel: 'Cloud & Infrastructure',
+    categoryLabel: 'Hosting & pages',
     accent: '#ea580c',
-    title: 'Conversion Rate (CRO) & High-Intent Funnels',
-    subtitle: 'Friction Audits · Precision Ad Landing Pages · ROAS Tracking',
-    description:
-      'Stop wasting traffic on leaky funnels. We conduct deep UX friction audits, build targeted conversion-focused campaign flows, and set up end-to-end attribution tracking.',
+    image: '/image/showcase/mockup-campaign.jpg',
+    title: 'Pages for your ads',
+    subtitle: 'One offer, one short form',
+    description: 'The page says the same thing as the ad, and you can see which one brought the call.',
     techStack: ['GA4 Telemetry', 'Hotjar Heatmaps', 'Meta CAPI', 'A/B Testing'],
     metricBadge: '+38% Conversion Lift',
     slaBadge: 'Full Event Attribution · Friction-Free Flows',
@@ -153,12 +153,11 @@ export default function SolutionsGrid() {
         <Reveal className="solutions-intro">
           <span className="solutions-badge">
             <span className="solutions-badge-sparkle">✦</span>
-            FULL-STACK ARCHITECTURE &amp; DELIVERABLES
+            Start here
           </span>
-          <h2 className="section-title">Engineered Capabilities. Zero Fluff.</h2>
+          <h2 className="section-title">Pick the job. We’ll show you the page.</h2>
           <p className="section-desc">
-            Explore our specialized technical solutions with real architecture stacks, measurable performance SLAs,
-            and direct code ownership.
+            Six things we build often. Open a card to see what’s included.
           </p>
 
           {/* Interactive Category Filter Pills */}
@@ -174,7 +173,6 @@ export default function SolutionsGrid() {
                   className={`solutions-filter-pill ${isActive ? 'is-active' : ''}`}
                   onClick={() => setActiveCategory(cat.id)}
                 >
-                  <span className="filter-pill-icon">{cat.icon}</span>
                   <span className="filter-pill-label">{cat.label}</span>
                   <span className="filter-pill-count">{cat.count}</span>
                 </button>
@@ -191,44 +189,21 @@ export default function SolutionsGrid() {
               className={`capability-card category-${cap.category}`}
               style={{ '--cap-accent': cap.accent }}
             >
-              {/* Top Header Row */}
-              <div className="cap-card-top">
-                <div className="cap-icon-box">{cap.icon}</div>
-                <div className="cap-badges-row">
-                  <span className="cap-category-pill">{cap.categoryLabel}</span>
-                  <span className="cap-metric-pill">{cap.metricBadge}</span>
-                </div>
-              </div>
+              <Link to={cap.link} className="cap-media" tabIndex={-1} aria-hidden="true">
+                <img src={cap.image} alt="" width="800" height="500" loading="lazy" decoding="async" />
+              </Link>
 
-              {/* Title & Subtitle */}
-              <div className="cap-card-header">
+              <div className="cap-copy">
+                <span className="cap-category-pill">{cap.categoryLabel}</span>
                 <h3 className="cap-title">
                   <Link to={cap.link} className="cap-title-link">
                     <span>{cap.title}</span>
                     <span className="cap-arrow-glyph" aria-hidden="true">→</span>
                   </Link>
                 </h3>
-                <span className="cap-subtitle">{cap.subtitle}</span>
-              </div>
-
-              {/* Description */}
-              <p className="cap-desc">{cap.description}</p>
-
-              {/* Tech Stack Pills */}
-              <div className="cap-tech-row" aria-label="Technology Stack">
-                {cap.techStack.map((tech) => (
-                  <span key={tech} className="cap-tech-token">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {/* Bottom SLA Bar */}
-              <div className="cap-sla-bar">
-                <span className="cap-sla-dot" aria-hidden="true" />
-                <span className="cap-sla-text">{cap.slaBadge}</span>
+                <p className="cap-desc">{cap.description}</p>
                 <Link to={cap.link} className="cap-action-link">
-                  Specs <span>→</span>
+                  See what’s included <span>→</span>
                 </Link>
               </div>
             </div>
@@ -240,12 +215,12 @@ export default function SolutionsGrid() {
           <div className="banner-left-info">
             <span className="banner-pulse-dot" aria-hidden="true" />
             <div className="banner-text-block">
-              <h4 className="banner-headline">Need a Custom Technical Architecture?</h4>
-              <p className="banner-sub">Direct 1-on-1 sprint review with Pankaj &amp; Rusmeen. No junior account managers.</p>
+              <h4 className="banner-headline">Not sure which one fits?</h4>
+              <p className="banner-sub">Talk with Pankaj and Rusmeen. You speak with the people who build it.</p>
             </div>
           </div>
           <Link to="/contact" className="banner-action-button">
-            <span>Book Technical Architecture Call</span>
+            <span>Book a short call</span>
             <span className="banner-arrow">→</span>
           </Link>
         </div>

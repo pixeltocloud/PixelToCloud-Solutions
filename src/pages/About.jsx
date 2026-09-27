@@ -1,4 +1,5 @@
 import Founders from '../components/sections/Founders'
+import PillarsStory from '../components/sections/PillarsStory'
 import WhyPixelToCloud from '../components/sections/WhyPixelToCloud'
 import Testimonials from '../components/sections/Testimonials'
 import Process from '../components/sections/Process'
@@ -14,7 +15,7 @@ export default function About() {
       <Seo />
       <PageInkHero
         title="A website development agency run by engineers"
-        description="PixelToCloud is co-founded by Pankaj Gupta and Rusmeen. We bridge conversion-focused frontend craft, custom software, and reliable cloud delivery—with full ownership for every client."
+        description="PixelToCloud is run by Pankaj Gupta and Rusmeen. We build websites, custom software, and simple automations — and the code is yours."
         actions={[
           { label: 'Start a project', to: '/contact' },
           {
@@ -33,6 +34,7 @@ export default function About() {
         ]}
       />
       <Founders />
+      <PillarsStory />
       <WhyPixelToCloud />
       <Process />
       <Testimonials />

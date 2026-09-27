@@ -5,9 +5,13 @@
 }
 
 .service-hero {
-  padding: 2.5rem 0 4rem;
+  padding: 2.5rem 0 2.5rem;
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
+}
+
+.service-hero .service-guarantees-grid {
+  margin-top: 1.5rem;
 }
 
 .service-breadcrumbs {

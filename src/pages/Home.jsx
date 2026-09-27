@@ -1,7 +1,7 @@
 import Hero from '../components/sections/Hero'
 import HeroShowcase from '../components/sections/HeroShowcase'
+import WhoWeServe from '../components/sections/WhoWeServe'
 import SolutionsGrid from '../components/sections/SolutionsGrid'
-import PillarsStory from '../components/sections/PillarsStory'
 import ContactSection from '../components/sections/ContactSection'
 import FAQ from '../components/sections/FAQ'
 import FinalCTA from '../components/sections/FinalCTA'
@@ -13,8 +13,8 @@ export default function Home() {
       <Seo />
       <Hero />
       <HeroShowcase />
+      <WhoWeServe />
       <SolutionsGrid />
-      <PillarsStory />
       <ContactSection />
       <FAQ home mode="investment" />
       <FinalCTA />

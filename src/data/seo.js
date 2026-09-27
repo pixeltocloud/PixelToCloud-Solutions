@@ -13,6 +13,12 @@ export const routeSeo = {
     description:
       'Stunning websites, custom software & AI systems for modern businesses. Full ownership. Direct founder access. This site is our live proof of work.',
   },
+  '/serve': {
+    path: '/serve',
+    title: 'Who we serve | PixelToCloud',
+    description:
+      'SaaS, commerce, property, fintech, healthcare, and cloud — a page for each kind of work PixelToCloud builds.',
+  },
   '/services': {
     path: '/services',
     title: 'Services — Websites, Apps, Growth & Automation | PixelToCloud',

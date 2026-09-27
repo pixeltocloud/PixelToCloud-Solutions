@@ -241,31 +241,31 @@ const chapters = [
     index: '01',
     pillar: 'BUILD',
     accent: '#0284c7',
-    tagline: 'Core Platforms & Code',
-    badgeText: 'Stage 1: Core Foundation',
+    tagline: 'Websites and software',
+    badgeText: 'Step 1: Build it',
     title: (
       <>
         Websites &amp; Software, <br />
-        <span className="story-title-accent is-build">Built On Code You Own.</span>
+        <span className="story-title-accent is-build">And you keep the code.</span>
       </>
     ),
     summary:
-      'We design and engineer bespoke web platforms, custom CRM portals, and scalable storefronts. No template builders, no monthly seat taxes—everything is built on clean, modern code you own 100%.',
+      'Websites, client portals, and online shops — built for your business, not from a locked template. You get the code.',
     points: [
       {
-        title: 'Ultra-fast React & Next-gen SPAs',
-        desc: 'Sub-second mobile loading built for high conversions and Google Core Web Vitals.',
+        title: 'Fast websites on phones',
+        desc: 'Pages that open quickly and are easy to use on a small screen.',
       },
       {
-        title: 'Bespoke CRM, Portals & Billing',
-        desc: 'Operational software shaped exactly around how your business functions.',
+        title: 'Portals and billing',
+        desc: 'Software that follows how your team already works.',
       },
       {
-        title: '100% Complete Source Ownership',
-        desc: 'All repositories, schemas, documentation, and credentials handed over directly.',
+        title: 'You own everything',
+        desc: 'The code, the logins, and the notes are handed to you.',
       },
     ],
-    ctaText: 'Explore Engineering Services',
+    ctaText: 'See what we build',
     ctaLink: '/services',
     renderVisual: () => <BuildVisual />,
   },
@@ -274,31 +274,31 @@ const chapters = [
     index: '02',
     pillar: 'GROW',
     accent: '#ea580c',
-    tagline: 'Traffic & Scaled DevOps',
-    badgeText: 'Stage 2: Traction & Scale',
+    tagline: 'Visitors and hosting',
+    badgeText: 'Step 2: Grow it',
     title: (
       <>
-        Leads, Speed &amp; DevOps, <br />
-        <span className="story-title-accent is-grow">Engineered To Convert.</span>
+        More of the right visitors, <br />
+        <span className="story-title-accent is-grow">and a site that stays up.</span>
       </>
     ),
     summary:
-      'A beautiful website is only half the battle. We build laser-focused search funnels, hardened cloud infrastructure, and conversion tracking that turns traffic into paying inquiries.',
+      'A good-looking site still needs the right page for each ad, and a home on the internet that does not fall over.',
     points: [
       {
-        title: 'High-Intent Search & Ad Funnels',
-        desc: 'Landing pages and campaign structures with rigorous conversion tracking.',
+        title: 'Pages made for one offer',
+        desc: 'The page says the same thing as the ad that brought the visitor.',
       },
       {
-        title: 'Hardened Cloud & Zero-Downtime DevOps',
-        desc: 'Fast VPS hosting, Docker containers, SSL certificates, and automated backup pipelines.',
+        title: 'Hosting you can rely on',
+        desc: 'A proper server, a lock on the site, and backups that actually run.',
       },
       {
-        title: 'SEO Architecture Built-In',
-        desc: 'Semantic structured schema so search engines index and rank your offer effortlessly.',
+        title: 'Easy for Google to read',
+        desc: 'Clear pages and titles so search can understand what you sell.',
       },
     ],
-    ctaText: 'View Growth Capabilities',
+    ctaText: 'See growth work',
     ctaLink: '/services',
     renderVisual: () => <GrowVisual />,
   },
@@ -307,31 +307,31 @@ const chapters = [
     index: '03',
     pillar: 'AUTOMATE',
     accent: '#059669',
-    tagline: 'AI Agents & Integration',
-    badgeText: 'Stage 3: Hands-Free Ops',
+    tagline: 'Helpers and busywork',
+    badgeText: 'Step 3: Let it run',
     title: (
       <>
-        WhatsApp &amp; AI Agents, <br />
-        <span className="story-title-accent is-automate">Running 24/7 For You.</span>
+        WhatsApp replies and paperwork, <br />
+        <span className="story-title-accent is-automate">handled while you sleep.</span>
       </>
     ),
     summary:
-      'Turn repetitive manual tasks into high-velocity 24/7 automated pipelines. From WhatsApp qualification bots to intelligent document parsing, we free your team to focus on closing deals.',
+      'The same questions, bookings, and invoices should not need a person every time. We set that up, and a person still steps in when it matters.',
     points: [
       {
-        title: '24/7 WhatsApp Booking & Chatbots',
-        desc: 'Qualify prospects, take bookings, and send payment reminders on WhatsApp.',
+        title: 'WhatsApp that can book',
+        desc: 'Answer common questions, take a time, and remind people to pay.',
       },
       {
-        title: 'AI Document & Invoice OCR Extraction',
-        desc: 'Automatically pull structured data out of PDFs, receipts, and invoices into your DB.',
+        title: 'Invoices read for you',
+        desc: 'Pull the useful details out of PDFs and receipts.',
       },
       {
-        title: 'End-to-End Business Integration',
-        desc: 'Seamless webhooks connecting your site, CRM, and accounting without human latency.',
+        title: 'Your tools talking to each other',
+        desc: 'The website, your customer list, and your accounts stay in step.',
       },
     ],
-    ctaText: 'Discuss Automation',
+    ctaText: 'Talk about automation',
     ctaLink: '/contact',
     renderVisual: () => <AutomateVisual />,
   },
@@ -386,8 +386,7 @@ export default function PillarsStory() {
           <span className="story-eyebrow">✦ HOW WE WORK WITH YOU</span>
           <h2 className="section-title">The 3-Stage Growth Journey</h2>
           <p className="section-desc">
-            Instead of fragmented freelancers, you get an engineering partner that takes your technology from first
-            code commit to continuous growth and back-office automation.
+            First we build it. Then we help people find it. Then we take the repeat work off your team.
           </p>
         </Reveal>
 

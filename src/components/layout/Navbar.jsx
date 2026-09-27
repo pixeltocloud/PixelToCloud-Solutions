@@ -4,6 +4,7 @@ import Button from '../ui/Button'
 import { contact } from '../../data/founders'
 import { useTheme } from '../../context/useTheme'
 import BuiltForMegaMenu from './BuiltForMegaMenu'
+import { serviceVisuals } from '../../data/serviceVisuals'
 import { domainData } from '../../data/domains'
 import './Navbar.css'
 
@@ -385,9 +386,9 @@ export default function Navbar() {
                   <div className="mega-top-ribbon">
                     <div className="mega-top-left">
                       <span className="mega-status-dot" aria-hidden="true" />
-                      <span className="mega-ribbon-tag">CAPABILITY ARCHITECTURE</span>
+                      <span className="mega-ribbon-tag">SERVICES</span>
                       <span className="mega-ribbon-sep">/</span>
-                      <span className="mega-ribbon-sub">11 Specialized Services Across 3 Core Pillars</span>
+                      <span className="mega-ribbon-sub">Design systems, product engineering, and automation.</span>
                     </div>
                     <Link to="/services" className="mega-top-link" onClick={closeAll}>
                       View Complete Services Matrix <span className="arrow-glyph">→</span>
@@ -416,9 +417,13 @@ export default function Navbar() {
                                 className="mega-card-item"
                                 onClick={closeAll}
                               >
-                                <div className="mega-card-icon">
-                                  <ServiceIcon type={item.icon} />
-                                </div>
+                                <img
+                                  className="mega-card-thumb"
+                                  src={serviceVisuals[item.slug]?.image}
+                                  alt=""
+                                  width="72"
+                                  height="72"
+                                />
                                 <div className="mega-card-body">
                                   <div className="mega-card-title">{item.title}</div>
                                   <p className="mega-card-desc">{item.desc}</p>
@@ -694,7 +699,7 @@ export default function Navbar() {
                       className="drawer-sublink"
                     >
                       <div className="drawer-domain-row">
-                        <span className="drawer-domain-name">{d.name}</span>
+                        <span className="drawer-domain-name">{d.title}</span>
                         <span className="drawer-domain-metric">{spec.metric}</span>
                       </div>
                       <span className="drawer-domain-desc">{spec.desc}</span>

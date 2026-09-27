@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { contact } from '../../data/founders'
+import { sectors } from '../../data/sectors'
 import './Footer.css'
 
 export default function Footer() {
@@ -26,6 +27,17 @@ export default function Footer() {
             <Link to="/about">About Us</Link>
             <Link to="/labs">Engineering Lab</Link>
             <Link to="/contact">Contact Us</Link>
+          </div>
+        </div>
+
+        <div>
+          <p className="footer-col-title">Who we serve</p>
+          <div className="footer-links">
+            {sectors.map((sector) => (
+              <Link key={sector.id} to={`/serve/${sector.id}`}>
+                {sector.title}
+              </Link>
+            ))}
           </div>
         </div>
 

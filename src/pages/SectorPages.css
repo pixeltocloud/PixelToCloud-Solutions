@@ -1,0 +1,271 @@
+.sector-index,
+.sector-page {
+  padding-top: calc(var(--header-h) + 1.25rem);
+}
+
+.sector-hero {
+  padding: 1.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.sector-kicker {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.sector-hero h1,
+.sector-index h1 {
+  margin: 0 0 0.8rem;
+  max-width: 18ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.4vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.sector-lede {
+  margin: 0;
+  max-width: 38rem;
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.sector-hero-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.sector-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+.sector-ideas {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.sector-idea {
+  padding: 1.15rem 1.15rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+}
+
+.sector-idea span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-strong);
+}
+
+.sector-idea h3 {
+  margin: 0.35rem 0 0.4rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.sector-idea p,
+.sector-beats p,
+.sector-audiences p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.sector-beats-wrap {
+  background: var(--bg-wash);
+}
+
+.sector-beats {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sector-beats li {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+.sector-beats strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sector-audiences {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.sector-audiences article {
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  background: var(--bg-ink);
+  color: var(--text-on-ink);
+}
+
+.sector-audiences h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+}
+
+.sector-audiences p {
+  color: var(--text-on-ink-muted);
+}
+
+.sector-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.sector-services a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-secondary);
+  font-weight: 600;
+}
+
+.sector-services a:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.sector-note {
+  margin: 1rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.sector-pager {
+  display: grid;
+  gap: 0.75rem;
+  padding-bottom: 2rem;
+}
+
+.sector-pager a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.sector-pager span {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.serve-index-grid,
+.sector-index-groups {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.who-group-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.who-group-label h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.who-group-label p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.serve-index-card {
+  position: relative;
+  display: block;
+  min-height: 180px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  color: #fff;
+}
+
+.serve-index-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.serve-index-card span {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 180px;
+  padding: 1rem;
+  background: linear-gradient(180deg, transparent, rgba(9, 13, 22, 0.78));
+}
+
+.serve-index-card em {
+  font-style: normal;
+  opacity: 0.85;
+  font-size: 0.85rem;
+}
+
+.service-hero-layout {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .sector-hero-grid,
+  .service-hero-layout {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .sector-ideas,
+  .sector-beats,
+  .sector-audiences,
+  .serve-index-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sector-audiences {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sector-pager {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sector-pager a:last-child {
+    text-align: right;
+    align-items: flex-end;
+  }
+}

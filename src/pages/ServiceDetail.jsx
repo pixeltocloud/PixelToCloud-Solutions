@@ -1,10 +1,16 @@
 import { Link, useParams, Navigate } from 'react-router-dom'
 import { services } from '../data/services'
+import { serviceVisuals } from '../data/serviceVisuals'
+import { sectors } from '../data/sectors'
 import { contact } from '../data/founders'
 import Button from '../components/ui/Button'
+import Stage from '../components/ui/Stage'
 import Seo from '../components/seo/Seo'
 import FinalCTA from '../components/sections/FinalCTA'
+import CloserLook from '../components/sections/CloserLook'
+import { getServiceLook } from '../data/closerLooks'
 import './ServiceDetail.css'
+import './SectorPages.css'
 
 export default function ServiceDetail() {
   const { slug } = useParams()
@@ -13,6 +19,12 @@ export default function ServiceDetail() {
   if (!service) {
     return <Navigate to="/services" replace />
   }
+
+  const visual = serviceVisuals[service.slug]
+  const look = getServiceLook(service.slug)
+  const relatedSectors = sectors.filter((sector) =>
+    sector.services.some((item) => item.slug === service.slug),
+  )
 
   return (
     <div className="page-enter service-detail-page">
@@ -23,7 +35,8 @@ export default function ServiceDetail() {
 
       {/* Hero Section */}
       <section className="service-hero">
-        <div className="container">
+        <div className="container service-hero-layout">
+          <div>
           <nav className="service-breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <span className="crumb-sep">/</span>
@@ -54,7 +67,19 @@ export default function ServiceDetail() {
               WhatsApp Us Directly
             </Button>
           </div>
-
+          </div>
+          {visual ? (
+            <Stage
+              image={visual.image}
+              imageAlt={visual.imageAlt}
+              scene={visual.scene}
+              accent={visual.accent}
+              caption={visual.caption}
+              priority
+            />
+          ) : null}
+        </div>
+        <div className="container">
           <div className="service-guarantees-grid">
             <div className="service-guarantee-card">
               <span className="guarantee-val">10–14 Days</span>
@@ -75,6 +100,13 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      <CloserLook
+        look={look}
+        image={visual?.image}
+        imageAlt={visual?.imageAlt}
+        accent={visual?.accent || service.accent}
+      />
 
       {/* Scope of Deliverables */}
       <section className="section service-deliverables">
@@ -187,7 +219,24 @@ export default function ServiceDetail() {
         </section>
       )}
 
-      {/* Final Action CTA */}
+      {relatedSectors.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <div className="section-head">
+              <h2 className="section-title">Where this usually shows up</h2>
+            </div>
+            <div className="sector-services">
+              {relatedSectors.map((sector) => (
+                <Link key={sector.id} to={`/serve/${sector.id}`}>
+                  {sector.title}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <FinalCTA />
     </div>
   )
