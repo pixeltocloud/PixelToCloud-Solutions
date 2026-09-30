@@ -27,11 +27,12 @@ function Cover({ study }) {
 }
 
 export default function FeaturedWork({ featuredOnly = true, compact = false, home = false, hideHeading = false }) {
+  const listed = caseStudies.filter((c) => c.listed !== false)
   const items = home
-    ? caseStudies.filter((c) => c.featured || c.slug === 'easy-my-tax').slice(0, 2)
+    ? listed.filter((c) => c.featured).slice(0, 3)
     : featuredOnly
-      ? caseStudies.filter((c) => c.slug !== 'nebula-3d').slice(0, 4)
-      : caseStudies
+      ? listed.filter((c) => c.featured).slice(0, 4)
+      : listed
   const [featured, ...rest] = items
 
   if (!compact) {
@@ -86,8 +87,7 @@ export default function FeaturedWork({ featuredOnly = true, compact = false, hom
             <div>
               <h2 className="section-title">Selected case studies</h2>
               <p className="section-desc">
-                Start with our own agency site, then explore client systems we designed, built, and handed over with full
-                ownership.
+                Premium brand sites, clinic sites, a CA practice, local businesses, and tools. Website addresses are not listed.
               </p>
             </div>
             <p className="work-intro-meta">{items.length} projects · production proof</p>

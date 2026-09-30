@@ -5,8 +5,8 @@ export const ThemeContext = createContext(null)
 function getInitialTheme() {
   if (typeof window === 'undefined') return 'light'
   const saved = localStorage.getItem('ptc-theme')
-  if (saved === 'light' || saved === 'dark') return saved
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  if (saved === 'dark') return 'dark'
+  return 'light'
 }
 
 export function ThemeProvider({ children }) {

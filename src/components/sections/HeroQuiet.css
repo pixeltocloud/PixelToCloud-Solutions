@@ -1,0 +1,79 @@
+.hero-quiet {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.hero-quiet-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-quiet h1 {
+  margin: 0 0 0.75rem;
+  max-width: 14ch;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.hero-quiet-lead {
+  margin: 0;
+  max-width: 38rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.hero-quiet-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.35rem;
+}
+
+.hero-quiet-stack {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.hero-quiet-card {
+  display: grid;
+  grid-template-columns: 8px 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.95rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-quiet-card span {
+  width: 8px;
+  height: 100%;
+  min-height: 2.2rem;
+  border-radius: 99px;
+}
+
+.hero-quiet-card strong {
+  display: block;
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+.hero-quiet-card small {
+  color: var(--text-muted);
+}
+
+.hero-quiet-card:hover {
+  border-color: var(--cta);
+}
+
+@media (min-width: 900px) {
+  .hero-quiet {
+    padding: 3.5rem 0 1rem;
+  }
+
+  .hero-quiet-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}

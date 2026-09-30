@@ -1,4 +1,6 @@
-export const caseStudies = [
+import { portfolioStudies } from './portfolioStudies'
+
+const legacyStudies = [
   {
     slug: 'pixeltocloud-agency',
     title: 'PixelToCloud.com — This website, built as our live agency proof',
@@ -51,7 +53,7 @@ export const caseStudies = [
     industry: 'Chartered Accountancy & FinTech',
     systemType: 'Client Document Vault & Automated Tax Calculation Platform',
     timeline: '3–4 weeks',
-    liveUrl: 'https://easymytax.com',
+    liveUrl: null,
     techStack: ['React', 'Node.js', 'PostgreSQL', 'AES encryption', 'REST APIs'],
     features: [
       'Automated ITR & GST calculation engine',
@@ -69,7 +71,7 @@ export const caseStudies = [
     coverImage: '/image/work/easy-my-tax.svg',
     visual: { type: 'portal', primary: '#0369a1', secondary: '#047857' },
     mockup: {
-      url: 'portal.easymytax.com/client-vault',
+      url: 'Practice site',
       kpis: [
         { value: 'Automated', label: 'ITR & GST Calculation Engine', color: '#0369a1' },
         { value: 'Encrypted', label: 'Role-Based Client File Vault', color: '#047857' },
@@ -92,7 +94,7 @@ export const caseStudies = [
     industry: 'Healthcare',
     systemType: 'Clinical Scheduling & Patient Guidance Platforms',
     timeline: '2–4 weeks',
-    liveUrl: 'https://harishrenovacancer.com',
+    liveUrl: null,
     techStack: ['React', 'Calendar sync', 'WhatsApp API', 'Cloudflare', 'Responsive CSS'],
     features: [
       'One-tap appointment booking',
@@ -110,7 +112,7 @@ export const caseStudies = [
     coverImage: '/image/work/harish-renova.svg',
     visual: { type: 'clinical', primary: '#047857', secondary: '#15803d' },
     mockup: {
-      url: 'harishrenovacancer.com/consultation',
+      url: 'Clinic site',
       kpis: [
         { value: '1-Tap Slot', label: 'Real-Time Calendar Sync', color: '#047857' },
         { value: 'Instant', label: 'WhatsApp Confirmation Dispatch', color: '#15803d' },
@@ -133,7 +135,7 @@ export const caseStudies = [
     industry: 'Artisanal Retail',
     systemType: 'Bespoke Multi-Currency Storefront',
     timeline: '3–5 weeks',
-    liveUrl: 'https://sainihandicrafts.com',
+    liveUrl: null,
     techStack: ['Custom storefront', 'Multi-currency', 'High-res media', 'Inquiry workflows'],
     features: [
       'Editorial product storytelling',
@@ -151,7 +153,7 @@ export const caseStudies = [
     coverImage: '/image/work/saini-handicrafts.svg',
     visual: { type: 'commerce', primary: '#b45309', secondary: '#0369a1' },
     mockup: {
-      url: 'sainihandicrafts.com/bespoke',
+      url: 'Shop site',
       kpis: [
         { value: '360° Zoom', label: 'High-Res Canvas Inspector', color: '#b45309' },
         { value: 'Multi-Currency', label: 'USD · INR · EUR · GBP Localized', color: '#0369a1' },
@@ -192,7 +194,7 @@ export const caseStudies = [
     coverImage: '/image/work/nebula-3d.svg',
     visual: { type: 'webgl', primary: '#4338ca', secondary: '#0369a1' },
     mockup: {
-      url: 'lab.pixeltocloud.com/nebula3d',
+      url: 'Lab demo',
       kpis: [
         { value: '60 FPS', label: 'Hardware-Accelerated WebGL', color: '#4338ca' },
         { value: 'PBR', label: 'Real-Time Material Shaders', color: '#0369a1' },
@@ -203,14 +205,25 @@ export const caseStudies = [
   },
 ]
 
+const hiddenLegacy = new Set(['harish-renova', 'saini-handicrafts', 'nebula-3d', 'easy-my-tax'])
+
+export const caseStudies = [
+  ...portfolioStudies,
+  ...legacyStudies.map((study) => ({
+    ...study,
+    listed: !hiddenLegacy.has(study.slug),
+  })),
+]
+
 export const trustClients = [
-  'This website · PixelToCloud.com',
-  'Easy My Tax',
-  'Harish Renova Cancer Center',
-  'Saini Handicrafts',
-  'Revital Physiocare Lab',
+  'Dr. Archit Joshi',
+  'Dr. Janki Choudhary',
+  'Dr. Neeraj Rathee',
+  'Easy My Taxes',
+  'AKNS CCTV Hub',
+  'Makhan Carpenter',
 ]
 
 export function getCaseStudy(slug) {
-  return caseStudies.find((study) => study.slug === slug)
+  return caseStudies.find((study) => study.slug === slug && study.listed !== false)
 }

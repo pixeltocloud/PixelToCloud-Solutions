@@ -9,17 +9,17 @@ export default function Work() {
     <div className="page-enter work-page">
       <Seo />
       <PageInkHero
-        title="Proof from production—including this site"
-        description="Case studies from finance, healthcare, commerce, and interactive 3D. pixeltocloud.com is our own agency proof of craft."
+        title="Selected work"
+        description="Premium brand sites, clinic sites, a CA practice, a security shop, and tools we shipped. Addresses are not listed."
         actions={[
           { label: 'Start a project', to: '/contact' },
           { label: 'Browse services', to: '/services', variant: 'secondary' },
         ]}
         points={[
-          { label: 'Live agency site', detail: 'This site is client zero' },
-          { label: 'Finance & CA', detail: 'Portals with real ownership' },
-          { label: 'Healthcare', detail: 'Booking that converts patients' },
-          { label: 'Commerce & 3D', detail: 'Storefronts to WebGL tools' },
+          { label: 'Clinics', detail: 'Doctor and physiotherapy sites' },
+          { label: 'Practices', detail: 'Tax and local businesses' },
+          { label: 'Tools', detail: 'Trackers and private apps' },
+          { label: 'Ownership', detail: 'You keep the code' },
         ]}
       />
       <FeaturedWork featuredOnly={false} compact hideHeading />

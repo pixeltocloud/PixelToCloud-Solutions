@@ -89,7 +89,7 @@ export default function WorkDetail() {
                     Visit site
                   </a>
                 ) : (
-                  <Link to={study.liveUrl || '/labs'}>View in Labs</Link>
+                  <span>Address not listed</span>
                 )}
               </dd>
             </div>
