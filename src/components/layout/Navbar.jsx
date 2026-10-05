@@ -16,10 +16,24 @@ const otherLinks = [
 
 function BrandMark() {
   return (
-    <>
-      <img src="/pixeltocloud-logo.svg" alt="PixelToCloud" width="52" height="52" decoding="async" className="nav-mark" />
-      <span className="nav-wordmark">PixelToCloud</span>
-    </>
+    <span className="nav-brand-logo-wrap">
+      <img
+        src="/pixeltocloud-logo.svg"
+        alt="PixelToCloud"
+        width="210"
+        height="30"
+        decoding="async"
+        className="nav-logo-light"
+      />
+      <img
+        src="/pixeltocloud-logo-dark.svg"
+        alt="PixelToCloud"
+        width="210"
+        height="30"
+        decoding="async"
+        className="nav-logo-dark"
+      />
+    </span>
   )
 }
 

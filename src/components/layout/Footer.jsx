@@ -9,8 +9,22 @@ export default function Footer() {
       <div className="container footer-grid">
         <div>
           <Link to="/" className="footer-brand" aria-label="PixelToCloud home">
-            <img src="/pixeltocloud-logo.svg" alt="PixelToCloud" width="50" height="50" decoding="async" />
-            <span>PixelToCloud</span>
+            <img
+              src="/pixeltocloud-logo.svg"
+              alt="PixelToCloud"
+              width="210"
+              height="30"
+              decoding="async"
+              className="footer-logo-light"
+            />
+            <img
+              src="/pixeltocloud-logo-dark.svg"
+              alt="PixelToCloud"
+              width="210"
+              height="30"
+              decoding="async"
+              className="footer-logo-dark"
+            />
           </Link>
           <p className="footer-desc">
             Website development agency crafting high-converting sites, custom business software, and AI
