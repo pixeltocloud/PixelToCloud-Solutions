@@ -64,9 +64,21 @@ export default function FeaturedWork({ featuredOnly = true, compact = false, hom
                     <strong>Outcome</strong>
                     <p>{study.outcome}</p>
                   </div>
-                  <Link to={`/work/${study.slug}`} className="text-link">
-                    Read case study
-                  </Link>
+                  <div className="cs-actions">
+                    <Link to={`/work/${study.slug}`} className="text-link">
+                      Read case study
+                    </Link>
+                    {study.liveUrl ? (
+                      <a
+                        href={study.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="work-action-live"
+                      >
+                        Visit live site ↗
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
                 <div className="cs-media">
                   <Cover study={study} />
@@ -87,7 +99,7 @@ export default function FeaturedWork({ featuredOnly = true, compact = false, hom
             <div>
               <h2 className="section-title">Selected case studies</h2>
               <p className="section-desc">
-                Premium brand sites, clinic sites, a CA practice, local businesses, and tools. Website addresses are not listed.
+                Production client websites, specialized platforms, and custom software—designed, built, and deployed live.
               </p>
             </div>
             <p className="work-intro-meta">{items.length} projects · production proof</p>
@@ -119,7 +131,13 @@ export default function FeaturedWork({ featuredOnly = true, compact = false, hom
               <div className="work-feature-body">
                 <p className="work-meta">
                   <span>{featured.tag}</span>
-                  <span>{featured.timeline}</span>
+                  {featured.liveUrl ? (
+                    <span className="live-meta-badge">
+                      <span className="live-dot" /> Live site
+                    </span>
+                  ) : (
+                    <span>{featured.timeline}</span>
+                  )}
                 </p>
                 <h3>{featured.shortTitle}</h3>
                 <p>{featured.outcome}</p>
@@ -140,7 +158,13 @@ export default function FeaturedWork({ featuredOnly = true, compact = false, hom
                   <div className="work-secondary-body">
                     <p className="work-meta">
                       <span>{study.tag}</span>
-                      <span>{study.timeline}</span>
+                      {study.liveUrl ? (
+                        <span className="live-meta-badge">
+                          <span className="live-dot" /> Live site
+                        </span>
+                      ) : (
+                        <span>{study.timeline}</span>
+                      )}
                     </p>
                     <h3>{study.shortTitle}</h3>
                     <p>{study.outcome}</p>

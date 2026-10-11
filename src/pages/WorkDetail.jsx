@@ -82,18 +82,38 @@ export default function WorkDetail() {
               <dd>{study.timeline}</dd>
             </div>
             <div>
-              <dt>Live</dt>
+              <dt>Live status</dt>
               <dd>
                 {study.liveUrl?.startsWith('http') ? (
-                  <a href={study.liveUrl} target="_blank" rel="noreferrer">
-                    Visit site
+                  <a
+                    href={study.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="spec-live-link"
+                  >
+                    <span className="live-dot" />
+                    <span>{study.liveUrl.replace(/^https?:\/\/(www\.)?/, '')} ↗</span>
                   </a>
                 ) : (
-                  <span>Address not listed</span>
+                  <span className="spec-internal-status">
+                    <span className="live-dot" /> Live in production
+                  </span>
                 )}
               </dd>
             </div>
           </dl>
+          {study.liveUrl?.startsWith('http') ? (
+            <div className="work-detail-cta-bar">
+              <a
+                href={study.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary work-detail-launch-btn"
+              >
+                <span className="live-dot" /> Visit live website: {study.liveUrl.replace(/^https?:\/\/(www\.)?/, '')} ↗
+              </a>
+            </div>
+          ) : null}
         </div>
       </section>
 

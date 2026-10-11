@@ -10,7 +10,10 @@ function Card({ study }) {
           <span />
           <span />
           <span />
-          <small>Client work</small>
+          <small className="live-status-pill">
+            <span className="live-dot" />
+            {study.liveUrl ? 'Live site' : 'Live system'}
+          </small>
         </div>
         <div className="live-work-screen">
           <strong>{study.shortTitle}</strong>
@@ -21,7 +24,17 @@ function Card({ study }) {
         <h3>{study.shortTitle}</h3>
         <p>{study.outcome}</p>
         <div className="live-work-actions">
-          <Link to={`/work/${study.slug}`}>Read the note</Link>
+          <Link to={`/work/${study.slug}`}>Case study</Link>
+          {study.liveUrl ? (
+            <a
+              href={study.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="work-action-live"
+            >
+              Visit live site ↗
+            </a>
+          ) : null}
         </div>
       </div>
     </article>
@@ -39,7 +52,7 @@ export default function LiveWork() {
             <p className="section-tag">Selected work</p>
             <h2 className="section-title">Sites and tools we shipped</h2>
             <p className="section-desc">
-              Names and what we built. Client website addresses are not shown.
+              Production client websites, specialized platforms, and custom software—verified live.
             </p>
           </div>
           <Link to="/work" className="text-link">

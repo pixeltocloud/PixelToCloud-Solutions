@@ -10,16 +10,16 @@ export default function Work() {
       <Seo />
       <PageInkHero
         title="Selected work"
-        description="Premium brand sites, clinic sites, a CA practice, a security shop, and tools we shipped. Addresses are not listed."
+        description="Production client websites, specialized clinical portals, e-commerce stores, and custom software we designed, engineered, and shipped live."
         actions={[
           { label: 'Start a project', to: '/contact' },
           { label: 'Browse services', to: '/services', variant: 'secondary' },
         ]}
         points={[
+          { label: 'Art & Commerce', detail: 'Interactive luxury craft e-commerce' },
           { label: 'Clinics', detail: 'Doctor and physiotherapy sites' },
           { label: 'Practices', detail: 'Tax and local businesses' },
-          { label: 'Tools', detail: 'Trackers and private apps' },
-          { label: 'Ownership', detail: 'You keep the code' },
+          { label: 'Ownership', detail: 'You keep 100% of the code' },
         ]}
       />
       <FeaturedWork featuredOnly={false} compact hideHeading />

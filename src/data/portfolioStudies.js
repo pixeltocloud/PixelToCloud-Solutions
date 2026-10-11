@@ -1,6 +1,42 @@
 /** Live client work. Copy stays factual — no invented metrics. */
 export const portfolioStudies = [
   {
+    slug: 'shridaa-arts',
+    title: 'Shridaa Arts — Handcrafted Lippan Art & Mud-Mirror Decor',
+    shortTitle: 'Shridaa Arts',
+    tag: 'Artisanal Brand & E-Commerce',
+    client: 'Ashima Goyal (Founder & Artist)',
+    organization: 'Shridaa Arts',
+    industry: 'Handcrafted Art & Home Decor',
+    systemType: 'Interactive brand store & custom commission showcase',
+    timeline: 'Live in production',
+    liveUrl: 'https://www.shridaaarts.com',
+    listed: true,
+    featured: true,
+    techStack: ['Interactive Wall Visualizer', 'Collector Shortlist Drawer', 'WhatsApp Inquiries', 'Mobile-First UI'],
+    features: [
+      'Interactive room paint and wall visualizer',
+      'Live collector shortlist & inquiry basket',
+      'Direct WhatsApp consultation',
+      'Mobile sticky inquiry action bar',
+    ],
+    challenge:
+      'Bespoke Lippan art requires collectors to envision mirror work and mud textures on their own walls before commissioning a custom piece.',
+    built:
+      'A luxury artisanal website for Shridaa Arts featuring an interactive room & wall paint previewer, live collector shortlist drawer, curated artwork collections, and direct WhatsApp ordering.',
+    outcome:
+      'Live in production at shridaaarts.com. Collectors can preview artworks against custom wall colors and inquire instantly via WhatsApp.',
+    accent: '#c59a4e',
+    coverImage: '/image/work/portal.svg',
+    visual: { type: 'commerce', primary: '#c59a4e', secondary: '#1e392a' },
+    mockup: { url: 'shridaaarts.com', kpis: [{ value: 'Live', label: 'shridaaarts.com', color: '#c59a4e' }, { value: 'Visualizer', label: 'Room Paint Previewer', color: '#1e392a' }], footer: 'Live at www.shridaaarts.com' },
+    quote: {
+      text: 'PixelToCloud transformed our traditional Lippan art into an interactive luxury brand online. Collectors love the wall visualizer and shortlist drawer!',
+      author: 'Ashima Goyal',
+      role: 'Founder, Shridaa Arts',
+    },
+  },
+  {
     slug: 'aura-apex-capital',
     title: 'Aura & Apex Capital — private real-estate desk',
     shortTitle: 'Aura & Apex Capital',
@@ -129,8 +165,8 @@ export const portfolioStudies = [
     organization: 'Easy My Taxes',
     industry: 'Chartered accountancy',
     systemType: 'Practice website',
-    timeline: 'Live',
-    liveUrl: null,
+    timeline: 'Live in production',
+    liveUrl: 'https://easymytax.com',
     listed: true,
     featured: true,
     techStack: ['Practice website', 'Service pages', 'Consultation request'],
@@ -268,6 +304,7 @@ export const portfolioStudies = [
 ]
 
 export const clientStrip = [
+  { name: 'Shridaa Arts' },
   { name: 'Aura & Apex Capital' },
   { name: 'Lumina' },
   { name: 'Dr. Archit Joshi' },

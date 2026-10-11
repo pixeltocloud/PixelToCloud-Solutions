@@ -216,6 +216,7 @@ export const caseStudies = [
 ]
 
 export const trustClients = [
+  'Shridaa Arts',
   'Dr. Archit Joshi',
   'Dr. Janki Choudhary',
   'Dr. Neeraj Rathee',
