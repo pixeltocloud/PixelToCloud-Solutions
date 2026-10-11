@@ -133,7 +133,9 @@ export default function ContactSection({ compactHero = false }) {
                 </Button>
               </div>
 
-              <p className="trust-note">NDA available before detailed technical discussion. Milestone payments only.</p>
+              <p className="trust-note">
+                GST Registered (GSTIN: {contact.gstin}) · Invoices eligible for 18% ITC. Milestone payments only.
+              </p>
 
               {message ? (
                 <p className={`form-feedback is-${status}`} role="status" aria-live="polite">
@@ -179,6 +181,10 @@ export default function ContactSection({ compactHero = false }) {
                   </a>
                 ))}
               </p>
+              <div className="connect-office">
+                <small>Office & Registered Address:</small>
+                <span>{contact.registeredAddress}</span>
+              </div>
             </Reveal>
           </div>
         </div>

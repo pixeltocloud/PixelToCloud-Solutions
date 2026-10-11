@@ -67,7 +67,17 @@ export default function Seo({ title, description, path, image, noindex = false }
       logo: `${defaultSeo.siteUrl}/favicon.svg`,
       image: ogImage,
       email: 'contact@pixeltocloud.com',
-      telephone: ['+918219352124', '+919928196424'],
+      telephone: ['+918219352124', '+918629008768', '+919928196424'],
+      vatID: '08CSRPA1400M1ZS',
+      taxID: '08CSRPA1400M1ZS',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Ram Mandir, 30 Beegha, Shalimar',
+        addressLocality: 'Alwar',
+        addressRegion: 'Rajasthan',
+        postalCode: '301001',
+        addressCountry: 'IN',
+      },
       priceRange: '$$',
       areaServed: ['IN', 'US', 'GB', 'AE', 'CA', 'DE', 'FR'],
       founders: [

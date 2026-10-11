@@ -36,9 +36,15 @@ export default function Terms() {
           The website is provided “as is.” To the fullest extent permitted by law, PixelToCloud is not liable for
           damages arising from use of the site. Project delivery terms are governed by separate written agreements.
         </p>
+        <h2>Entity & Jurisdiction</h2>
+        <p>
+          PixelToCloud Solutions is a registered business enterprise in Alwar, Rajasthan, India (GSTIN: 08CSRPA1400M1ZS).
+          Registered Address: Ram Mandir, 30 Beegha, Shalimar, Alwar, Rajasthan 301001. Project agreements and tax invoices are issued
+          under Indian jurisdiction.
+        </p>
         <h2>Contact</h2>
         <p>
-          <a href="mailto:pixeltocloud@gmail.com">pixeltocloud@gmail.com</a>
+          Email: <a href="mailto:contact@pixeltocloud.com">contact@pixeltocloud.com</a> or <a href="mailto:pixeltocloud@gmail.com">pixeltocloud@gmail.com</a>
         </p>
       </div>
     </article>

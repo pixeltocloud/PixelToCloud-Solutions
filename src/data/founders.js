@@ -41,6 +41,8 @@ export const contact = {
   siteUrl: 'https://pixeltocloud.com',
   connectUrl: 'https://pixeltocloud.com/connect',
   location: 'Alwar, Rajasthan (Worldwide)',
+  registeredAddress: 'Ram Mandir, 30 Beegha, Shalimar, Alwar, Rajasthan 301001',
+  gstin: '08CSRPA1400M1ZS',
 }
 
 export const studioTimeline = [

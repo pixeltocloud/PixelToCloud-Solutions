@@ -30,7 +30,9 @@ export default function Footer() {
             Website development agency crafting high-converting sites, custom business software, and AI
             automation—with 100% source-code ownership. {contact.location}.
           </p>
-          <p className="footer-note">Registered under PixelToCloud Solutions.</p>
+          <p className="footer-note">
+            Registered entity: PixelToCloud Solutions · GSTIN: {contact.gstin}
+          </p>
         </div>
 
         <div>
