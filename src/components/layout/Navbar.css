@@ -78,18 +78,18 @@
 
 .nav-brand-logo-wrap .nav-logo-light {
   display: block;
-  height: 32px;
+  height: 38px;
   width: auto;
-  max-width: 220px;
+  max-width: 270px;
   object-fit: contain;
   transition: opacity 0.2s ease;
 }
 
 .nav-brand-logo-wrap .nav-logo-dark {
   display: none !important;
-  height: 32px;
+  height: 38px;
   width: auto;
-  max-width: 220px;
+  max-width: 270px;
   object-fit: contain;
   transition: opacity 0.2s ease;
 }
@@ -130,8 +130,8 @@
 
   .nav-brand-logo-wrap .nav-logo-light,
   [data-theme='dark'] .nav-brand-logo-wrap .nav-logo-dark {
-    height: 26px;
-    max-width: 175px;
+    height: 30px;
+    max-width: 210px;
   }
 
   .nav-mark {

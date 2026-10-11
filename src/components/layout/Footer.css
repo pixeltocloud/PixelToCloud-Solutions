@@ -20,17 +20,17 @@
 
 .footer-brand .footer-logo-light {
   display: block;
-  height: 32px;
+  height: 38px;
   width: auto;
-  max-width: 220px;
+  max-width: 270px;
   object-fit: contain;
 }
 
 .footer-brand .footer-logo-dark {
   display: none !important;
-  height: 32px;
+  height: 38px;
   width: auto;
-  max-width: 220px;
+  max-width: 270px;
   object-fit: contain;
 }
 

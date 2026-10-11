@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PixelToCloud — local newspaper, front and back</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@560;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f4efe4;
+        --ink: #1b1612;
+        --muted: #5e564c;
+        --rule: #cfc4b2;
+        --saffron: #e25c12;
+        --navy: #17324c;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        background: #d9d3c8;
+        color: var(--ink);
+        font-family: "Noto Sans Devanagari", "Source Sans 3", sans-serif;
+      }
+
+      .hint {
+        max-width: 210mm;
+        margin: 18px auto 8px;
+        padding: 0 4px;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 14px;
+        line-height: 1.45;
+        color: #3c3832;
+      }
+      .hint strong { font-weight: 700; }
+      .hint button {
+        margin-top: 8px;
+        border: 0;
+        background: var(--ink);
+        color: #f4efe4;
+        font: 600 14px "Source Sans 3", sans-serif;
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+
+      .sheet {
+        width: 210mm;
+        height: 297mm;
+        margin: 14px auto 22px;
+        background: var(--paper);
+        color: var(--ink);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(40, 30, 16, 0.16);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .pad {
+        height: 100%;
+        padding: 11mm 12mm 10mm;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .kicker {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--navy);
+      }
+      .kicker span:last-child { color: var(--saffron); letter-spacing: 0.12em; }
+
+      .rule { border: 0; border-top: 1px solid var(--ink); margin: 7px 0 0; }
+      .rule.heavy { border-top-width: 2.5px; }
+      .rule.soft { border-top-color: var(--rule); }
+
+      .mast {
+        font-family: "Newsreader", "Noto Serif Devanagari", serif;
+        font-weight: 650;
+        font-size: 54px;
+        line-height: 0.9;
+        letter-spacing: -0.03em;
+        margin: 8px 0 0;
+      }
+      .mast-sub {
+        margin: 4px 0 0;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      h1 {
+        font-family: "Noto Serif Devanagari", serif;
+        font-weight: 700;
+        font-size: 46px;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        margin: 14px 0 0;
+      }
+      .deck {
+        margin: 10px 0 0;
+        max-width: 42ch;
+        font-size: 16.5px;
+        line-height: 1.45;
+        color: #3a342c;
+      }
+      .deck em {
+        font-style: normal;
+        font-family: "Source Sans 3", sans-serif;
+        display: block;
+        margin-top: 4px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      .who {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .who article {
+        border-top: 2px solid var(--saffron);
+        background: rgba(255, 255, 255, 0.45);
+        padding: 10px 10px 12px;
+        min-height: 108px;
+      }
+      .who small {
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--saffron);
+      }
+      .who strong {
+        display: block;
+        margin-top: 4px;
+        font-family: "Noto Serif Devanagari", serif;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .who p {
+        margin: 4px 0 0;
+        font-size: 13.5px;
+        line-height: 1.4;
+        color: #3f382f;
+      }
+
+      .local {
+        margin-top: 18px;
+      }
+      .local .label {
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--navy);
+      }
+      .local h2 {
+        margin: 4px 0 0;
+        font-family: "Noto Serif Devanagari", serif;
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .names {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .names span {
+        border: 1px solid var(--rule);
+        background: rgba(255, 255, 255, 0.55);
+        padding: 8px 10px;
+        font-size: 14.5px;
+        line-height: 1.3;
+      }
+      .local .note {
+        margin: 12px 0 0;
+        max-width: 46ch;
+        font-size: 15px;
+        line-height: 1.45;
+        color: #3a342c;
+      }
+
+      .call {
+        margin-top: auto;
+        background: var(--navy);
+        color: #f6f1e6;
+        padding: 14px 16px 13px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px 18px;
+        align-items: end;
+      }
+      .call .label {
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #f0a06a;
+      }
+      .call h2 {
+        margin: 2px 0 0;
+        font-family: "Noto Serif Devanagari", serif;
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .phone {
+        font-family: "Newsreader", serif;
+        font-weight: 650;
+        font-size: 34px;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        text-align: right;
+      }
+      .call .fine {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        border-top: 1px solid rgba(246, 241, 230, 0.28);
+        padding-top: 8px;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 13px;
+      }
+
+      .back-title {
+        font-size: 34px;
+        margin: 10px 0 0;
+      }
+      .back-deck {
+        margin: 4px 0 2px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      ol.jobs {
+        list-style: none;
+        margin: 8px 0 0;
+        padding: 0;
+        flex: 1;
+      }
+      ol.jobs li {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 8px;
+        padding: 7px 0 6px;
+        border-top: 1px solid var(--rule);
+      }
+      ol.jobs li:first-child { border-top: 2px solid var(--ink); }
+      .num {
+        font-family: "Newsreader", serif;
+        font-weight: 650;
+        font-size: 22px;
+        color: var(--saffron);
+        line-height: 1;
+        padding-top: 2px;
+      }
+      .job h3 {
+        margin: 0;
+        font-family: "Noto Serif Devanagari", serif;
+        font-size: 16.5px;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+      .job p {
+        margin: 1px 0 0;
+        font-size: 12.5px;
+        line-height: 1.35;
+        color: #3f382f;
+      }
+      .job p.en {
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .own {
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        background: var(--navy);
+        color: #f6f1e6;
+        padding: 12px 14px;
+      }
+      .own strong {
+        display: block;
+        font-family: "Noto Serif Devanagari", serif;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .own span {
+        display: block;
+        margin-top: 2px;
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 13px;
+        color: #e7dccb;
+      }
+      .own .phone {
+        font-size: 26px;
+        white-space: nowrap;
+      }
+
+      @page { size: A4 portrait; margin: 0; }
+      @media print {
+        body { background: white; }
+        .hint { display: none; }
+        .sheet {
+          margin: 0;
+          box-shadow: none;
+          break-after: page;
+          page-break-after: always;
+        }
+        .sheet:last-child { break-after: auto; page-break-after: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hint">
+      <strong>Local newspaper — front, then back.</strong>
+      Print on A4, both sides, at 100% scale. Do not fit-to-page. Give this file to the press as the front page and the back page.
+      <br />
+      <button type="button" onclick="window.print()">Print front and back</button>
+    </div>
+
+    <article class="sheet" aria-label="Front page">
+      <div class="pad">
+        <div class="kicker">
+          <span>Alwar · Local</span>
+          <span>Front page</span>
+        </div>
+        <hr class="rule heavy" />
+        <p class="mast">PixelToCloud</p>
+        <p class="mast-sub">Websites · Software · Alwar</p>
+        <hr class="rule" />
+
+        <h1>दुकान, क्लिनिक<br />और ऑफिस की<br />वेबसाइट।</h1>
+        <p class="deck">
+          फोन पर खुले। ग्राहक को तुरंत समझ आए कि आप क्या करते हैं, और वह कॉल या व्हाट्सऐप कर सके।
+          <em>A simple website for your shop, clinic, or office. Clear on a phone. You talk to us directly.</em>
+        </p>
+
+        <div class="who">
+          <article>
+            <small>01 · Clinic</small>
+            <strong>क्लिनिक</strong>
+            <p>समय, पता, और अपॉइंटमेंट की जगह। मरीज कॉल से पहले पढ़ ले।</p>
+          </article>
+          <article>
+            <small>02 · CA office</small>
+            <strong>CA ऑफिस</strong>
+            <p>टैक्स और GST का काम साफ लिखा हो। बात करने का तरीका भी।</p>
+          </article>
+          <article>
+            <small>03 · Shop</small>
+            <strong>दुकान</strong>
+            <p>काम की फोटो और फोन नंबर। ग्राहक चैट में नंबर ढूँढे नहीं।</p>
+          </article>
+        </div>
+
+        <div class="local">
+          <div class="label">Work nearby</div>
+          <h2>अलवर, गुरुग्राम और भरतपुर में काम।</h2>
+          <div class="names">
+            <span>डॉ. अर्चित जोशी</span>
+            <span>डॉ. जानकी चौधरी</span>
+            <span>डॉ. नीरज राठी</span>
+            <span>Easy My Taxes</span>
+            <span>AKNS CCTV, भरतपुर</span>
+            <span>मखान कारपेंटर</span>
+          </div>
+          <p class="note">ये नाम इसलिए हैं ताकि पता चले — वेबसाइट क्लिनिक, CA ऑफिस और दुकान के लिए बन चुकी है।</p>
+        </div>
+
+        <div class="call">
+          <div>
+            <div class="label">Call or WhatsApp</div>
+            <h2>अभी बात करें</h2>
+          </div>
+          <div class="phone">+91 82193 52124</div>
+          <div class="fine">
+            <span>pixeltocloud.com</span>
+            <span>contact@pixeltocloud.com</span>
+            <span>Alwar, Rajasthan</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="sheet" aria-label="Back page">
+      <div class="pad">
+        <div class="kicker">
+          <span>PixelToCloud · Alwar</span>
+          <span>Back page</span>
+        </div>
+        <hr class="rule heavy" />
+        <h1 class="back-title">ये सात काम हम करते हैं।</h1>
+        <p class="back-deck">आसान भाषा में। हर काम का एक मतलब।</p>
+
+        <ol class="jobs">
+          <li>
+            <span class="num">1</span>
+            <div class="job">
+              <h3>दुकान और क्लिनिक की वेबसाइट</h3>
+              <p>मोबाइल पर साफ पेज। सेवा, समय, और कॉल का बटन।</p>
+              <p class="en">A business website or online shop. Fast on a phone.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <div class="job">
+              <h3>गूगल पर आस-पास के ग्राहक</h3>
+              <p>जो लोग आपको खोज रहे हैं, वे आपके पेज पर आएँ।</p>
+              <p class="en">Google Ads and local leads.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <div class="job">
+              <h3>अपना छोटा सॉफ्टवेयर</h3>
+              <p>रजिस्टर या एक्सेल में अटका रोज का काम, एक ऐप में।</p>
+              <p class="en">A small app or startup MVP for the job you repeat.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">4</span>
+            <div class="job">
+              <h3>बिलिंग और सुरक्षित रिकॉर्ड</h3>
+              <p>हिसाब और फाइलें एक जगह। जिसको देखना है, वही देखे।</p>
+              <p class="en">Billing and private record systems.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">5</span>
+            <div class="job">
+              <h3>धीमी वेबसाइट को तेज़</h3>
+              <p>जो पेज देर से खुलता है, उसे हल्का करना।</p>
+              <p class="en">Speed up a website that feels slow.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">6</span>
+            <div class="job">
+              <h3>व्हाट्सऐप पर बुकिंग</h3>
+              <p>पूछताछ का जवाब और समय बुक। दुकान बंद हो तब भी।</p>
+              <p class="en">WhatsApp booking and inquiry replies.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">7</span>
+            <div class="job">
+              <h3>बिल से एक्सेल</h3>
+              <p>बिल की फोटो या पीडीएफ से विवरण एक्सेल में।</p>
+              <p class="en">Bills and documents turned into Excel.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="own">
+          <div>
+            <strong>वेबसाइट आपकी रहेगी। कोड भी आपका।</strong>
+            <span>You keep the website and the code. Talk to us in Alwar.</span>
+          </div>
+          <div class="phone">+91 82193 52124</div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>
