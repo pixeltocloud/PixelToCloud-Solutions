@@ -37,7 +37,7 @@
 .btn-primary:hover {
   background: var(--cta-hover);
   color: #fff;
-  box-shadow: 0 14px 34px rgba(255, 87, 34, 0.32);
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.28);
 }
 
 .btn-secondary {

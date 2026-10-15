@@ -3,7 +3,7 @@ export const founders = [
     name: 'Pankaj Gupta',
     role: 'Founder & Principal Systems Architect',
     experience: '8+ Years Experience',
-    bio: 'Over 8 years building enterprise web applications, high-load APIs, WebGL engines, and Linux VPS infrastructure. Leads system design, security hardening, and performance SLAs end to end.',
+    bio: 'Over 8 years building enterprise web applications, high-load APIs, WebGL engines, and Linux VPS infrastructure. Leads system design, security, and performance, drawing on engineering roles at large product companies and ecommerce businesses.',
     focusAreas: ['Systems architecture', 'Security & DevOps', 'WebGL / Three.js', 'Database design'],
     image: '/image/pankaj-profile.jpg',
     imageFallback: '/image/pankaj-profile.jpg',
@@ -14,10 +14,10 @@ export const founders = [
   },
   {
     name: 'Rusmeen',
-    role: 'Co-Founder & Senior Software Developer',
-    experience: '5+ Years Experience',
-    bio: '5+ years in full-stack development with a focus on API integrations, responsive interfaces, automated workflows, and database performance for production products.',
-    focusAreas: ['Full-stack delivery', 'API integrations', 'Responsive UI', 'Query performance'],
+    role: 'Co-Founder & Full-Stack Engineer',
+    experience: '6+ Years Experience',
+    bio: 'Leads full-stack delivery across cloud infrastructure, DevOps, AI, React frontends, and production databases. Six years of experience, including engineering roles at large product companies and ecommerce businesses.',
+    focusAreas: ['Cloud infrastructure', 'DevOps', 'AI', 'Frontend', 'Databases', 'React'],
     image: '/image/rusmeen-profile.jpg',
     imageFallback: '/image/rusmeen-profile.jpg',
     accent: 'violet',
@@ -40,9 +40,7 @@ export const contact = {
   phones: ['+918629008768', '+918219352124', '+919928196424'],
   siteUrl: 'https://pixeltocloud.com',
   connectUrl: 'https://pixeltocloud.com/connect',
-  location: 'Alwar, Rajasthan (Worldwide)',
-  registeredAddress: 'Ram Mandir, 30 Beegha, Shalimar, Alwar, Rajasthan 301001',
-  gstin: '08CSRPA1400M1ZS',
+  location: 'Gurugram, Haryana & Alwar, Rajasthan',
 }
 
 export const studioTimeline = [
@@ -54,7 +52,7 @@ export const studioTimeline = [
 
 export const agencyStats = [
   { value: '50+', label: 'Shipped systems' },
-  { value: '10–14', label: 'Day MVP sprints' },
+  { value: '7 days', label: 'Or 100% money back' },
   { value: '100%', label: 'IP ownership' },
   { value: '30-day', label: 'Launch warranty' },
 ]

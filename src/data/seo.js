@@ -1,17 +1,17 @@
 export const defaultSeo = {
   siteUrl: 'https://pixeltocloud.com',
-  title: 'PixelToCloud — Website Development Agency | Custom Software & AI',
+  title: 'PixelToCloud — Websites, software, and automation',
   description:
-    'Website development agency crafting high-converting sites, custom CRM portals, and AI automations. 100% source-code ownership. Alwar · Worldwide.',
+    'We build digital products that move businesses forward. Websites, applications, and automation from Gurugram and Alwar. You keep the code.',
   image: 'https://pixeltocloud.com/image/hero-workspace.jpg',
 }
 
 export const routeSeo = {
   '/': {
     path: '/',
-    title: 'PixelToCloud — Website Development Agency',
+    title: 'PixelToCloud — Websites and software',
     description:
-      'Stunning websites, custom software & AI systems for modern businesses. Full ownership. Direct founder access. This site is our live proof of work.',
+      'We build digital products that move businesses forward. A focused website can launch within 7 days. You keep the code.',
   },
   '/serve': {
     path: '/serve',
@@ -35,12 +35,17 @@ export const routeSeo = {
     path: '/about',
     title: 'About the Founders | PixelToCloud',
     description:
-      'Meet Pankaj Gupta and Rusmeen—the engineers behind PixelToCloud’s website development agency.',
+      'School friends Pankaj Gupta and Rusmeen help small businesses get online, be found, scale, and convert. Launch within 7 days, or your money back. Offices in Gurugram and Alwar.',
   },
   '/contact': {
     path: '/contact',
     title: 'Start a Project | PixelToCloud',
     description: 'Tell us what you need. Same-day founder response. Fixed-scope milestones.',
+  },
+  '/login': {
+    path: '/login',
+    title: 'Sign in | PixelToCloud',
+    description: 'Sign in with Google or a phone code.',
   },
   '/labs': {
     path: '/labs',

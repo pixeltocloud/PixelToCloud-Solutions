@@ -17,11 +17,12 @@
 
 .work-detail-hero h1 {
   margin: 0 0 0.65rem;
+  max-width: 16ch;
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  max-width: 36rem;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 560;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
 }
 
 .lead {
@@ -43,10 +44,10 @@
 }
 
 .spec-grid dt {
-  font-size: 0.72rem;
+  font-size: 0.92rem;
   font-weight: 650;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--text-muted);
   margin-bottom: 0.2rem;
 }
@@ -90,12 +91,14 @@
   gap: 0.85rem;
 }
 
-.narrative-grid article {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 1.1rem;
-  background: var(--bg-secondary);
-  box-shadow: var(--shadow-sm);
+.narrative-grid article,
+.meta-panels article {
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  padding: 1.15rem 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .narrative-grid h2 {
@@ -116,10 +119,8 @@
 }
 
 .detail-cover {
-  border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
+  border-top: 1px solid var(--border);
 }
 
 .detail-cover img,
@@ -139,17 +140,11 @@
   gap: 0.85rem;
 }
 
-.meta-panels article {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 1.1rem;
-  background: var(--bg-secondary);
-}
-
 .meta-panels h2 {
   margin: 0 0 0.65rem;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.35rem;
+  font-weight: 560;
 }
 
 .meta-panels ul {
@@ -168,12 +163,13 @@
 }
 
 .chip-row span {
-  font-size: 0.75rem;
-  font-weight: 650;
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--bg-elevated);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-secondary);
 }
 
 .quote-section blockquote {

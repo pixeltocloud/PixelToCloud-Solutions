@@ -1,5 +1,5 @@
-import('@fontsource-variable/plus-jakarta-sans/wght.css')
-import('@fontsource-variable/space-grotesk/wght.css')
+import '@fontsource-variable/plus-jakarta-sans/wght.css'
+import '@fontsource-variable/space-grotesk/wght.css'
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'

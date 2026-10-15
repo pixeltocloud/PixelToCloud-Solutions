@@ -3,25 +3,50 @@ import { lazy, Suspense, useEffect } from 'react'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import OfferPopup from './components/offers/OfferPopup'
+import RequireAuth from './components/auth/RequireAuth'
 import Seo from './components/seo/Seo'
 import Analytics from './components/seo/Analytics'
 import Home from './pages/Home'
+import { AuthProvider } from './context/AuthContext'
 import './styles/globals.css'
 import './styles/components.css'
 import './styles/animations.css'
+import './styles/agency.css'
 
 const Services = lazy(() => import('./pages/Services'))
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
-const ServeIndex = lazy(() => import('./pages/ServeIndex'))
-const SectorDetail = lazy(() => import('./pages/SectorDetail'))
 const Work = lazy(() => import('./pages/Work'))
 const WorkDetail = lazy(() => import('./pages/WorkDetail'))
 const About = lazy(() => import('./pages/About'))
+const Process = lazy(() => import('./pages/Process'))
+const Industries = lazy(() => import('./pages/Industries'))
+const IndustryDetail = lazy(() => import('./pages/IndustryDetail'))
+const Insights = lazy(() => import('./pages/Insights'))
+const InsightArticle = lazy(() => import('./pages/InsightArticle'))
 const Contact = lazy(() => import('./pages/Contact'))
+const StartProject = lazy(() => import('./pages/StartProject'))
+const FaqPage = lazy(() => import('./pages/FaqPage'))
 const Labs = lazy(() => import('./pages/Labs'))
 const Privacy = lazy(() => import('./pages/Privacy'))
 const Terms = lazy(() => import('./pages/Terms'))
+const Cookies = lazy(() => import('./pages/Cookies'))
 const NotFound = lazy(() => import('./pages/NotFound'))
+const SignInRedirect = lazy(() => import('./pages/Login').then((mod) => ({ default: mod.LegacyAuthRedirect })))
+const Login = lazy(() => import('./pages/Login'))
+const AuthCallback = lazy(() => import('./pages/AuthCallback'))
+const AuthError = lazy(() => import('./pages/AuthError'))
+const Dashboard = lazy(() => import('./pages/Dashboard'))
+const DashboardProfile = lazy(() => import('./pages/DashboardProfile'))
+const DashboardProjects = lazy(() => import('./pages/DashboardProjects'))
+const DashboardEnquiries = lazy(() => import('./pages/DashboardEnquiries'))
+const DashboardSettings = lazy(() => import('./pages/DashboardSettings'))
+const Proposals = lazy(() => import('./pages/portal').then((mod) => ({ default: mod.Proposals })))
+const ProposalDetail = lazy(() => import('./pages/portal').then((mod) => ({ default: mod.ProposalDetail })))
+const Invoices = lazy(() => import('./pages/portal').then((mod) => ({ default: mod.Invoices })))
+const Messages = lazy(() => import('./pages/portal').then((mod) => ({ default: mod.Messages })))
+const Files = lazy(() => import('./pages/portal').then((mod) => ({ default: mod.Files })))
+const ProjectDetail = lazy(() => import('./pages/portal').then((mod) => ({ default: mod.ProjectDetail })))
 
 function scrollToHash(hash, attempt = 0) {
   const id = hash.replace('#', '')
@@ -78,32 +103,60 @@ function RouteFallback() {
 }
 
 function AppShell() {
+  const location = useLocation()
+  const quiet = location.pathname === '/login' || location.pathname.startsWith('/auth/')
+  const portal = location.pathname.startsWith('/dashboard') || location.pathname === '/account'
+
   return (
     <div className="app-shell">
       <ScrollManager />
       <SmoothAnchors />
       <Analytics />
-      <Navbar />
-      <main id="main-content" className="site-main">
+      {quiet ? null : <Navbar />}
+      {quiet || portal ? null : <OfferPopup />}
+      <main id="main-content" className={`site-main${quiet ? ' is-quiet' : ''}`}>
         <Suspense fallback={<RouteFallback />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
-            <Route path="/serve" element={<ServeIndex />} />
-            <Route path="/serve/:id" element={<SectorDetail />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/:slug" element={<WorkDetail />} />
             <Route path="/about" element={<About />} />
+            <Route path="/process" element={<Process />} />
+            <Route path="/industries" element={<Industries />} />
+            <Route path="/industries/:slug" element={<IndustryDetail />} />
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/insights/:slug" element={<InsightArticle />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/start-project" element={<StartProject />} />
+            <Route path="/faq" element={<FaqPage />} />
             <Route path="/labs" element={<Labs />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/cookies" element={<Cookies />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/sign-in" element={<SignInRedirect />} />
+            <Route path="/register" element={<SignInRedirect />} />
+            <Route path="/auth/callback" element={<AuthCallback />} />
+            <Route path="/auth/error" element={<AuthError />} />
+            <Route path="/account" element={<RequireAuth><DashboardProfile /></RequireAuth>} />
+            <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
+            <Route path="/dashboard/profile" element={<RequireAuth><DashboardProfile /></RequireAuth>} />
+            <Route path="/dashboard/projects" element={<RequireAuth><DashboardProjects /></RequireAuth>} />
+            <Route path="/dashboard/projects/:id" element={<RequireAuth><ProjectDetail /></RequireAuth>} />
+            <Route path="/dashboard/proposals" element={<RequireAuth><Proposals /></RequireAuth>} />
+            <Route path="/dashboard/proposals/:id" element={<RequireAuth><ProposalDetail /></RequireAuth>} />
+            <Route path="/dashboard/invoices" element={<RequireAuth><Invoices /></RequireAuth>} />
+            <Route path="/dashboard/messages" element={<RequireAuth><Messages /></RequireAuth>} />
+            <Route path="/dashboard/files" element={<RequireAuth><Files /></RequireAuth>} />
+            <Route path="/dashboard/enquiries" element={<RequireAuth><DashboardEnquiries /></RequireAuth>} />
+            <Route path="/dashboard/settings" element={<RequireAuth><DashboardSettings /></RequireAuth>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
-      <Footer />
+      {quiet || portal ? null : <Footer />}
     </div>
   )
 }
@@ -112,8 +165,10 @@ export default function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <Seo />
-        <AppShell />
+        <AuthProvider>
+          <Seo />
+          <AppShell />
+        </AuthProvider>
       </BrowserRouter>
     </ThemeProvider>
   )

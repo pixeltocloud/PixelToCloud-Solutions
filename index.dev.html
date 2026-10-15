@@ -6,20 +6,20 @@
       (function () {
         try {
           var t = localStorage.getItem('ptc-theme')
-          if (t !== 'dark') t = 'light'
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          }
           document.documentElement.setAttribute('data-theme', t)
         } catch (e) {}
       })()
     </script>
-    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/logo-icon.png" />
     <link rel="apple-touch-icon" href="/logo-icon-512.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PixelToCloud — Website Development Agency | Custom Software &amp; AI</title>
     <meta
       name="description"
-      content="Website development agency crafting high-converting sites, custom CRM portals, and AI automations. 100% source-code ownership. Alwar · Worldwide."
+      content="Website development agency crafting high-converting sites, custom CRM portals, and AI automations. Budget-friendly delivery. Offices in Gurugram and Alwar."
     />
     <meta name="theme-color" content="#090d16" />
     <meta property="og:type" content="website" />
@@ -41,24 +41,28 @@
         "@type": "ProfessionalService",
         "name": "PixelToCloud",
         "url": "https://pixeltocloud.com/",
-        "logo": "https://pixeltocloud.com/pixeltocloud-logo.png",
+        "logo": "https://pixeltocloud.com/logo-pixeltocloud.svg",
         "image": "https://pixeltocloud.com/image/hero-workspace.jpg",
         "telephone": ["+918629008768", "+918219352124"],
         "email": "contact@pixeltocloud.com",
-        "vatID": "08CSRPA1400M1ZS",
-        "taxID": "08CSRPA1400M1ZS",
         "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Ram Mandir, 30 Beegha, Shalimar",
-          "addressLocality": "Alwar",
-          "addressRegion": "Rajasthan",
-          "postalCode": "301001",
-          "addressCountry": "IN"
-        },
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Gurugram",
+            "addressRegion": "Haryana",
+            "addressCountry": "IN"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Alwar",
+            "addressRegion": "Rajasthan",
+            "addressCountry": "IN"
+          }
+        ],
         "founder": [
           { "@type": "Person", "name": "Pankaj Gupta", "jobTitle": "Founder & Principal Systems Architect" },
-          { "@type": "Person", "name": "Rusmeen", "jobTitle": "Co-Founder & Senior Software Developer" }
+          { "@type": "Person", "name": "Rusmeen", "jobTitle": "Co-Founder & Full-Stack Engineer" }
         ]
       }
     </script>

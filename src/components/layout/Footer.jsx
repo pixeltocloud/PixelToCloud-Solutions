@@ -1,37 +1,21 @@
 import { Link } from 'react-router-dom'
 import { contact } from '../../data/founders'
-import { sectors } from '../../data/sectors'
+import { useTheme } from '../../context/useTheme'
 import './Footer.css'
 
 export default function Footer() {
+  const { theme, toggleTheme } = useTheme()
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
           <Link to="/" className="footer-brand" aria-label="PixelToCloud home">
-            <img
-              src="/pixeltocloud-logo.svg"
-              alt="PixelToCloud"
-              width="210"
-              height="30"
-              decoding="async"
-              className="footer-logo-light"
-            />
-            <img
-              src="/pixeltocloud-logo-dark.svg"
-              alt="PixelToCloud"
-              width="210"
-              height="30"
-              decoding="async"
-              className="footer-logo-dark"
-            />
+            <img src="/pixeltocloud-logo.svg" alt="" width="36" height="36" decoding="async" />
+            <span>PixelToCloud</span>
           </Link>
           <p className="footer-desc">
-            Website development agency crafting high-converting sites, custom business software, and AI
-            automation—with 100% source-code ownership. {contact.location}.
-          </p>
-          <p className="footer-note">
-            Registered entity: PixelToCloud Solutions · GSTIN: {contact.gstin}
+            Websites, custom software, and automation, handed over with the code.
+            Offices in {contact.location}.
           </p>
         </div>
 
@@ -39,44 +23,32 @@ export default function Footer() {
           <p className="footer-col-title">Explore</p>
           <div className="footer-links">
             <Link to="/services">Services</Link>
-            <Link to="/work">Our Work</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/labs">Engineering Lab</Link>
-            <Link to="/contact">Contact Us</Link>
-          </div>
-        </div>
-
-        <div>
-          <p className="footer-col-title">Who we serve</p>
-          <div className="footer-links">
-            {sectors.map((sector) => (
-              <Link key={sector.id} to={`/serve/${sector.id}`}>
-                {sector.title}
-              </Link>
-            ))}
+            <Link to="/work">Work</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
 
         <div>
           <p className="footer-col-title">Connect</p>
           <div className="footer-links">
-            <a href={contact.whatsappLink} target="_blank" rel="noreferrer">
-              WhatsApp
-            </a>
-            <a href={contact.appointmentLink} target="_blank" rel="noreferrer">
-              Request a 15-min call
-            </a>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            <a href={contact.connectUrl}>Smart connect card</a>
-            <Link to="/privacy">Privacy</Link>
-            <Link to="/terms">Terms</Link>
+            <a href={contact.whatsappLink} target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href={contact.appointmentLink} target="_blank" rel="noreferrer">Book an intro call</a>
           </div>
         </div>
       </div>
 
       <div className="container footer-bottom">
         <div>© {new Date().getFullYear()} PixelToCloud Solutions. All rights reserved.</div>
-        <div>Built by Pankaj Gupta & Rusmeen · This site is our proof of work</div>
+        <div className="footer-legal">
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/terms">Terms</Link>
+          <Link to="/cookies">Cookies</Link>
+          <button type="button" className="footer-theme" onClick={toggleTheme}>
+            {theme === 'dark' ? 'Light theme' : 'Dark theme'}
+          </button>
+        </div>
       </div>
     </footer>
   )

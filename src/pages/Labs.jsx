@@ -1,45 +1,35 @@
+import { Link } from 'react-router-dom'
 import Seo from '../components/seo/Seo'
-import Reveal from '../components/ui/Reveal'
-import Button from '../components/ui/Button'
+import { CtaBand } from '../components/site/blocks'
+import { brand } from '../config/brand'
 import { labs } from '../data/labs'
-import './PageHero.css'
-import './Labs.css'
 
 export default function Labs() {
   return (
-    <div className="page-enter">
-      <Seo />
-      <section className="page-hero">
-        <div className="container">
-          <p className="page-kicker">Engineering Lab</p>
+    <div className="ag ag-page">
+      <Seo title={`Labs | ${brand.name}`} description="Capabilities the studio applies on client work, plus one labeled lab project." path="/labs" />
+      <section className="ag-hero">
+        <div className="ag-wrap">
+          <p className="ag-eye">LAB</p>
           <h1>Capabilities we apply on client work</h1>
-          <p>
-            R&amp;D themes behind our website and product engineering—linked to real case studies and services, not
-            vaporware demos.
-          </p>
+          <p className="ag-lead">Nebula3D is a lab project, not a client engagement. The other notes describe how we deliver.</p>
         </div>
       </section>
-
-      <section className="section">
-        <div className="container labs-grid">
-          {labs.map((lab, index) => (
-            <Reveal key={lab.id} delay={index * 70} as="article" className="lab-card hover-lift">
-              <div className="lab-top">
-                <span className="lab-tag">{lab.tag}</span>
-                <span className={`lab-status is-${lab.status}`}>{lab.status}</span>
-              </div>
-              <h2>{lab.title}</h2>
-              <p>{lab.description}</p>
-              <Button to={lab.href} variant="secondary" className="lab-cta">
-                {lab.cta}
-              </Button>
-            </Reveal>
-          ))}
-        </div>
-        <div className="container" style={{ marginTop: '1.5rem' }}>
-          <Button to="/work">See production case studies</Button>
+      <section className="ag-sheet">
+        <div className="ag-wrap">
+          <ul className="ag-list">
+            {labs.map((lab) => (
+              <li key={lab.id}>
+                <Link to={lab.href}>
+                  <strong>{lab.title}</strong>
+                  <span>{lab.tag}. {lab.description}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
+      <CtaBand />
     </div>
   )
 }

@@ -1,27 +1,10 @@
 import { Link, useParams } from 'react-router-dom'
-import { getCaseStudy } from '../data/caseStudies'
-import Button from '../components/ui/Button'
-import FinalCTA from '../components/sections/FinalCTA'
-import ProjectVisual from '../components/ui/ProjectVisual'
 import Seo from '../components/seo/Seo'
-import './WorkDetail.css'
-
-function Cover({ study }) {
-  const usePhoto = study.coverImage && !study.coverImage.endsWith('.svg')
-  if (usePhoto) {
-    return (
-      <img
-        src={study.coverImage}
-        alt={`${study.shortTitle} product preview`}
-        width="960"
-        height="640"
-        loading="eager"
-        decoding="async"
-      />
-    )
-  }
-  return <ProjectVisual study={study} />
-}
+import { CtaBand } from '../components/site/blocks'
+import { WorkFrame, frameKind } from '../components/site/Stage'
+import { brand } from '../config/brand'
+import { caseStudies, getCaseStudy } from '../data/caseStudies'
+import { lessons, workMeta } from '../data/catalog'
 
 export default function WorkDetail() {
   const { slug } = useParams()
@@ -29,148 +12,93 @@ export default function WorkDetail() {
 
   if (!study) {
     return (
-      <section className="section page-enter">
-        <Seo title="Case study not found | PixelToCloud" noindex />
-        <div className="container">
-          <h1>Case study not found</h1>
-          <Button to="/work" variant="secondary">
-            Back to Work
-          </Button>
+      <section className="ag-sheet">
+        <div className="ag-wrap">
+          <Seo title={`Case study not found | ${brand.name}`} noindex />
+          <h1 className="ag-ink">Case study not found</h1>
+          <Link className="ag-btn ag-btn-line" to="/work">Back to work</Link>
         </div>
       </section>
     )
   }
 
+  const related = caseStudies.filter((item) => item.slug !== study.slug).slice(0, 3)
+  const meta = workMeta[study.slug]
+
   return (
-    <div className="page-enter">
-      <Seo
-        title={`${study.shortTitle} Case Study | PixelToCloud`}
-        description={study.outcome}
-        path={`/work/${study.slug}`}
-      />
-      <section className="work-detail-hero">
-        <div className="container">
-          <nav className="crumbs" aria-label="Breadcrumb">
-            <Link to="/">Home</Link>
-            <span>/</span>
+    <div className="ag ag-page">
+      <Seo title={`${study.shortTitle} | ${brand.name}`} description={study.outcome} path={`/work/${study.slug}`} />
+      <section className="ag-hero-light">
+        <div className="ag-wrap">
+          <nav className="ag-crumbs" aria-label="Breadcrumb">
             <Link to="/work">Work</Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <span>{study.shortTitle}</span>
           </nav>
-          <p className="page-kicker">{study.tag}</p>
-          <h1>{study.title}</h1>
-          <p className="lead">{study.outcome}</p>
-          <dl className="spec-grid">
-            <div>
-              <dt>Client</dt>
-              <dd>{study.client}</dd>
-            </div>
-            <div>
-              <dt>Organization</dt>
-              <dd>{study.organization}</dd>
-            </div>
-            <div>
-              <dt>Industry</dt>
-              <dd>{study.industry}</dd>
-            </div>
-            <div>
-              <dt>System Type</dt>
-              <dd>{study.systemType}</dd>
-            </div>
-            <div>
-              <dt>Timeline</dt>
-              <dd>{study.timeline}</dd>
-            </div>
-            <div>
-              <dt>Live status</dt>
-              <dd>
-                {study.liveUrl?.startsWith('http') ? (
-                  <a
-                    href={study.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="spec-live-link"
-                  >
-                    <span className="live-dot" />
-                    <span>{study.liveUrl.replace(/^https?:\/\/(www\.)?/, '')} ↗</span>
-                  </a>
-                ) : (
-                  <span className="spec-internal-status">
-                    <span className="live-dot" /> Live in production
-                  </span>
-                )}
-              </dd>
-            </div>
+          <p className="ag-eye">{meta?.badge || 'Case study'}</p>
+          <h1 className="ag-ink">{study.shortTitle}</h1>
+          <p className="ag-lead">{study.outcome}</p>
+          <dl className="ag-specs">
+            <div><dt>Client</dt><dd>{study.client}</dd></div>
+            <div><dt>Organization</dt><dd>{study.organization}</dd></div>
+            <div><dt>Industry</dt><dd>{study.industry}</dd></div>
+            <div><dt>Services</dt><dd>{study.systemType}</dd></div>
+            <div><dt>Timeline</dt><dd>{study.timeline}</dd></div>
+            <div><dt>Live</dt><dd>{study.liveUrl ? <a href={study.liveUrl}>Visit site</a> : 'Not public'}</dd></div>
           </dl>
-          {study.liveUrl?.startsWith('http') ? (
-            <div className="work-detail-cta-bar">
-              <a
-                href={study.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary work-detail-launch-btn"
-              >
-                <span className="live-dot" /> Visit live website: {study.liveUrl.replace(/^https?:\/\/(www\.)?/, '')} ↗
-              </a>
-            </div>
+        </div>
+      </section>
+      <section className="ag-sheet">
+        <div className="ag-wrap study-cover">
+          <WorkFrame kind={frameKind(study.slug)} />
+          <p className="study-note">Composed interface study for this project. It is not a screenshot of the live product.</p>
+        </div>
+        <div className="ag-wrap ag-split">
+          <div className="ag-prose">
+            <h2>The challenge</h2>
+            <p>{study.challenge}</p>
+            <h2>What we built</h2>
+            <p>{study.built}</p>
+          </div>
+          <div>
+            <h2>Key features</h2>
+            <ul>{study.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
+            <h2>Stack</h2>
+            <p>{study.techStack.join(', ')}</p>
+          </div>
+        </div>
+      </section>
+      <section className="ag-sheet alt">
+        <div className="ag-wrap ag-prose">
+          <h2>What changed</h2>
+          <p>{study.outcome}</p>
+          {lessons[study.slug] ? (
+            <>
+              <h2>What we would repeat</h2>
+              <p>{lessons[study.slug]}</p>
+            </>
+          ) : null}
+          {study.quote ? (
+            <blockquote>
+              <p>“{study.quote.text}”</p>
+              <footer>{study.quote.author}, {study.quote.role}</footer>
+            </blockquote>
           ) : null}
         </div>
       </section>
-
-      <section className="section">
-        <div className="container detail-layout">
-          <div className="narrative-grid">
-            <article>
-              <h2>The Challenge</h2>
-              <p>{study.challenge}</p>
-            </article>
-            <article>
-              <h2>What PixelToCloud Built</h2>
-              <p>{study.built}</p>
-            </article>
-          </div>
-          <div className="detail-cover">
-            <Cover study={study} />
-          </div>
+      <section className="ag-sheet">
+        <div className="ag-wrap">
+          <h2>Related projects</h2>
+          <ul className="ag-list">
+            {related.map((item) => (
+              <li key={item.slug}>
+                <Link to={`/work/${item.slug}`}><strong>{item.shortTitle}</strong><span>{item.timeline}</span></Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
-
-      <section className="section">
-        <div className="container meta-panels">
-          <article>
-            <h2>Tech stack</h2>
-            <div className="chip-row">
-              {study.techStack.map((tech) => (
-                <span key={tech}>{tech}</span>
-              ))}
-            </div>
-          </article>
-          <article>
-            <h2>Key features</h2>
-            <ul>
-              {study.features.map((f) => (
-                <li key={f}>{f}</li>
-              ))}
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      {study.quote ? (
-        <section className="section quote-section">
-          <div className="container">
-            <blockquote>
-              <p>“{study.quote.text}”</p>
-              <footer>
-                <strong>{study.quote.author}</strong>
-                <span>{study.quote.role}</span>
-              </footer>
-            </blockquote>
-          </div>
-        </section>
-      ) : null}
-
-      <FinalCTA />
+      <CtaBand />
     </div>
   )
 }

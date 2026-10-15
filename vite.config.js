@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
   resolve: {
     alias: {
       react: 'preact/compat',
@@ -19,6 +20,8 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules/preact')) return 'preact'
+          if (id.includes('node_modules/@supabase')) return 'supabase'
+          if (id.includes('node_modules/libphonenumber')) return 'phone'
           if (id.includes('node_modules/react-router')) return 'router'
         },
       },

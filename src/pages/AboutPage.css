@@ -1,27 +1,328 @@
-.about-page .why.surface-alt {
-  background: var(--bg-wash);
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+  background:
+    radial-gradient(520px 280px at 82% 20%, rgba(79, 70, 229, 0.32), transparent 68%),
+    linear-gradient(180deg, #0b1224 0%, #070d18 100%);
+  color: #f8fafc;
 }
 
-.about-page .testimonials.surface-alt {
-  background: var(--bg-secondary);
-  border-block: 1px solid var(--border);
+.about-hero-glow {
+  position: absolute;
+  right: -8%;
+  bottom: -30%;
+  width: min(420px, 60vw);
+  height: min(420px, 60vw);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.22), transparent 68%);
+  pointer-events: none;
 }
 
-.about-page .founder-card {
-  transition:
-    transform 280ms var(--ease-out),
-    border-color 220ms var(--ease),
-    box-shadow 280ms var(--ease-out);
+.about-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 44rem;
 }
 
-.about-page .founder-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+.about-kicker {
+  margin: 0 0 0.9rem;
+  color: #a5b4fc;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .about-page .founder-card {
-    transition: none;
+.about-hero h1,
+.about-journey h2,
+.about-principles h2,
+.about-team h2,
+.about-close h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.about-hero h1 {
+  max-width: 11em;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  color: #f8fafc;
+}
+
+.about-hero-inner > p {
+  max-width: 38rem;
+  margin: 1.1rem 0 0;
+  color: #c5d0e4;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
+.about-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.8rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.about-btn:focus-visible {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+.about-btn-primary {
+  background: #5b5cf6;
+  color: #fff;
+}
+
+.about-btn-primary:hover {
+  background: #6d6ef8;
+  color: #fff;
+}
+
+.about-btn-secondary {
+  background: transparent;
+  border-color: rgba(248, 250, 252, 0.35);
+  color: #f8fafc;
+}
+
+.about-btn-secondary:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.about-journey {
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  background: #f6f7fb;
+}
+
+.about-journey-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-journey h2,
+.about-team h2 {
+  color: #121826;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+}
+
+.about-journey p,
+.about-principles p,
+.about-team p,
+.about-founder-role {
+  color: #3c4a60;
+  line-height: 1.6;
+}
+
+.about-journey p {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-facts li {
+  padding: 1rem 0;
+  border-top: 1px solid #e1e6f2;
+  background: transparent;
+  color: #121826;
+}
+
+.about-facts strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #121826;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 560;
+  letter-spacing: -0.03em;
+}
+
+.about-facts span {
+  color: #3c4a60;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.about-principles {
+  padding: 0 0 clamp(3.5rem, 7vw, 5.5rem);
+  background: #f6f7fb;
+}
+
+.about-principles-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.about-principles article {
+  padding: 1.25rem 0;
+  border-top: 1px solid #e1e6f2;
+  background: transparent;
+}
+
+.about-principles h2 {
+  color: #121826;
+  font-size: 1.45rem;
+  font-weight: 560;
+}
+
+.about-principles p {
+  margin: 0.7rem 0 0;
+}
+
+.about-principles article:last-child {
+  background: transparent;
+  border-color: #e1e6f2;
+}
+
+.about-principles article:last-child h2 {
+  color: #121826;
+}
+
+.about-principles article:last-child p {
+  color: #3c4a60;
+}
+
+.about-team {
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  background: #fff;
+}
+
+.about-team-lead {
+  max-width: 32rem;
+  margin: 0.75rem 0 0;
+}
+
+.about-founders {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.about-founders article {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 1.1rem;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-top: 1px solid #e1e6f2;
+  background: transparent;
+}
+
+.about-founders img {
+  width: 88px;
+  height: 88px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.about-founder-exp {
+  margin: 0;
+  color: #3730a3;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.about-founders h3 {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  color: #121826;
+}
+
+.about-founder-role {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+}
+
+.about-founders article p:last-child {
+  margin: 0.55rem 0 0;
+}
+
+.about-close {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
+  background: #070d18;
+  color: #f8fafc;
+}
+
+.about-close-glow {
+  position: absolute;
+  left: 10%;
+  top: -40%;
+  width: 420px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(91, 92, 246, 0.35), transparent 70%);
+  pointer-events: none;
+}
+
+.about-close-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.about-close h2 {
+  max-width: 12em;
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  color: #f8fafc;
+}
+
+.about-close p {
+  max-width: 32rem;
+  margin: 0.7rem 0 0;
+  color: #c5d0e4;
+  line-height: 1.55;
+}
+
+@media (min-width: 800px) {
+  .about-journey-grid {
+    grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.8fr);
+    gap: 3rem;
+  }
+
+  .about-founders {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-facts,
+  .about-founders article {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-actions .about-btn,
+  .about-close .about-btn {
+    width: 100%;
   }
 }

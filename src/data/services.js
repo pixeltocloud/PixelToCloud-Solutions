@@ -423,20 +423,21 @@ export const processSteps = [
   {
     step: '02',
     title: 'Prototype & design',
-    days: 'Days 3–5',
+    days: 'Days 3–4',
     description: 'Clickable prototype and component system you can react to before full engineering spend.',
   },
   {
     step: '03',
     title: 'Build & review',
-    days: 'Days 6–12',
+    days: 'Days 5–6',
     description: 'Private staging URL with milestone demos. You review working software at every step.',
   },
   {
     step: '04',
     title: 'Launch & handover',
-    days: 'Days 13–14+',
-    description: 'Production deploy, Git handover, credentials, and 30-day post-launch warranty.',
+    days: 'Day 7',
+    description:
+      'Production deploy, Git handover, credentials, and a 30-day post-launch warranty. Miss day 7 and the payment is returned in full.',
   },
 ]
 
@@ -454,7 +455,7 @@ export const whyUs = [
   {
     title: 'Rapid milestone delivery',
     description:
-      '10–14 day MVP sprints for focused websites and portals, with fixed-scope pricing.',
+      'Focused builds launch within 7 days. Miss that timeline and the payment is returned in full.',
   },
   {
     title: 'This site is the proof',
@@ -487,13 +488,13 @@ export const pillars = [
 export const marqueeLabels = [
   'Websites that convert',
   'Full source-code ownership',
-  '10–14 day MVP sprints',
+  '7-day launch, or your money back',
   'WhatsApp booking flows',
   'Custom CRM portals',
   'Cloud & DevOps',
   'Direct founder access',
   'Fixed-scope milestones',
-  'Alwar · Worldwide',
+  'Gurugram & Alwar',
   'Zero vendor lock-in',
 ]
 

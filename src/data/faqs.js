@@ -7,12 +7,12 @@ export const faqs = [
   {
     question: 'How much does a project cost?',
     answer:
-      'Business websites and portals typically start from ₹25,000–₹50,000. Custom web applications, SaaS platforms, and interactive 3D tools typically range from ₹75,000–₹2,50,000+. We quote fixed-price milestones so pricing stays predictable.',
+      'A focused website starts at $100 USD for the first 100 customers. You can apply a coupon with your inquiry, including 10% extra off. Custom web applications, SaaS platforms, and interactive 3D tools typically range from ₹75,000–₹2,50,000+. We quote fixed-price milestones so pricing stays predictable.',
   },
   {
     question: 'How long does delivery take?',
     answer:
-      'Focused marketing websites and portals often ship in 10–14 day MVP sprints. Custom applications typically take 2–4 weeks. Complex SaaS or WebGL experiences usually take 4–8 weeks, with working demos at each milestone.',
+      'Agreed work launches within 7 days. If that timeline is missed, the payment is returned in full. Scope is fixed before the clock starts, and you review a private staging environment before launch.',
   },
   {
     question: 'How are payments structured?',
@@ -37,4 +37,4 @@ export const faqs = [
 ]
 
 export const pricingSummary =
-  'Business websites and portals typically start from ₹25,000–₹50,000. Custom applications and interactive 3D tools typically range from ₹75,000–₹2,50,000+.'
+  'A focused website starts at $100 USD for the first 100 customers. Custom applications and interactive 3D tools typically range from ₹75,000–₹2,50,000+.'

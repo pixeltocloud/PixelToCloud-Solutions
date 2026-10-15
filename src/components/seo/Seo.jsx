@@ -82,7 +82,7 @@ export default function Seo({ title, description, path, image, noindex = false }
       areaServed: ['IN', 'US', 'GB', 'AE', 'CA', 'DE', 'FR'],
       founders: [
         { '@type': 'Person', name: 'Pankaj Gupta', jobTitle: 'Founder & Principal Systems Architect' },
-        { '@type': 'Person', name: 'Rusmeen', jobTitle: 'Co-Founder & Senior Software Developer' },
+        { '@type': 'Person', name: 'Rusmeen', jobTitle: 'Co-Founder & Full-Stack Engineer' },
       ],
     })
   }, [finalTitle, finalDescription, url, ogImage, noindex])

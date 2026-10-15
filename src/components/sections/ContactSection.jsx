@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import SectionHeading from '../ui/SectionHeading'
 import Button from '../ui/Button'
 import Reveal from '../ui/Reveal'
 import { contact } from '../../data/founders'
+import { coupons, openingOffer } from '../../data/offers'
 import './ContactSection.css'
 
 const projectTypes = [
@@ -17,8 +19,15 @@ const projectTypes = [
 ]
 
 export default function ContactSection({ compactHero = false }) {
+  const [searchParams] = useSearchParams()
+  const requested = searchParams.get('coupon')
   const [status, setStatus] = useState('idle')
   const [message, setMessage] = useState('')
+  const [couponId, setCouponId] = useState(coupons.some((item) => item.id === requested) ? requested : '')
+
+  useEffect(() => {
+    if (coupons.some((item) => item.id === requested)) setCouponId(requested)
+  }, [requested])
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -30,6 +39,8 @@ export default function ContactSection({ compactHero = false }) {
       form.reset()
       return
     }
+
+    const coupon = coupons.find((item) => item.id === couponId)
 
     setStatus('loading')
     setMessage('')
@@ -47,6 +58,7 @@ export default function ContactSection({ compactHero = false }) {
           phone: data.get('phone') || '',
           projectType: data.get('projectType'),
           message: data.get('details'),
+          coupon: coupon ? coupon.title : 'None',
           _subject: `PixelToCloud inquiry from ${data.get('name')}`,
           _template: 'table',
           _captcha: 'false',
@@ -56,7 +68,12 @@ export default function ContactSection({ compactHero = false }) {
       if (!response.ok) throw new Error('Submission failed')
 
       setStatus('success')
-      setMessage('Thanks — your inquiry was sent. We typically reply the same business day (IST).')
+      setMessage(
+        coupon
+          ? `Thanks — your inquiry was sent with “${coupon.title}” applied. We typically reply the same business day (IST).`
+          : 'Thanks — your inquiry was sent. We typically reply the same business day (IST).',
+      )
+      setCouponId('')
       form.reset()
     } catch {
       setStatus('error')
@@ -80,6 +97,43 @@ export default function ContactSection({ compactHero = false }) {
           <Reveal className="inquiry-wrap">
             <form className="inquiry-form" onSubmit={handleSubmit}>
               <p className="connect-panel-title">Project inquiry</p>
+              <p className="offer-line">
+                {openingOffer.line}
+                <sup>*</sup>
+              </p>
+              <p className="offer-note">* {openingOffer.note}</p>
+
+              <fieldset className="coupon-picker full">
+                <legend>Apply a coupon</legend>
+                {coupons.map((coupon) => (
+                  <label key={coupon.id} className={couponId === coupon.id ? 'is-on' : ''}>
+                    <input
+                      type="radio"
+                      name="coupon"
+                      value={coupon.id}
+                      checked={couponId === coupon.id}
+                      onChange={() => setCouponId(coupon.id)}
+                    />
+                    <span>
+                      <strong>{coupon.title}</strong>
+                      {coupon.detail}
+                    </span>
+                  </label>
+                ))}
+                <label className={couponId === '' ? 'is-on' : ''}>
+                  <input
+                    type="radio"
+                    name="coupon"
+                    value=""
+                    checked={couponId === ''}
+                    onChange={() => setCouponId('')}
+                  />
+                  <span>
+                    <strong>No coupon</strong>
+                    Send the brief at the starting price.
+                  </span>
+                </label>
+              </fieldset>
 
               <div className="hp-field" aria-hidden="true">
                 <label htmlFor="company_website">Company website</label>

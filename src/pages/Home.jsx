@@ -1,19 +1,25 @@
-import Hero from '../components/sections/Hero'
-import ClientMarquee from '../components/sections/ClientMarquee'
-import LiveWork from '../components/sections/LiveWork'
-import SolutionsGrid from '../components/sections/SolutionsGrid'
-import ContactSection from '../components/sections/ContactSection'
 import Seo from '../components/seo/Seo'
+import HeroCarousel from '../components/home/HeroCarousel'
+import HomeExpertise from '../components/home/HomeExpertise'
+import { ClientQuote, Close, Journey, SelectedWork, Why } from '../components/home/HomeStory'
+import { brand } from '../config/brand'
+import './Home.css'
 
 export default function Home() {
   return (
-    <div className="page-enter">
-      <Seo />
-      <Hero />
-      <ClientMarquee />
-      <LiveWork />
-      <SolutionsGrid />
-      <ContactSection />
+    <div className="home">
+      <Seo
+        title={`${brand.name} — Websites, software, and AI`}
+        description="Websites, custom software, and AI automation. You keep the source code."
+        path="/"
+      />
+      <HeroCarousel />
+      <SelectedWork />
+      <HomeExpertise />
+      <Journey />
+      <Why />
+      <ClientQuote />
+      <Close />
     </div>
   )
 }

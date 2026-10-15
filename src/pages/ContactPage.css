@@ -1,7 +1,139 @@
+.contact-page .page-ink-hero {
+  background:
+    radial-gradient(520px 280px at 82% 18%, rgba(79, 70, 229, 0.32), transparent 68%),
+    linear-gradient(180deg, #0b1224 0%, #070d18 100%);
+  color: #f8fafc;
+}
+
+.contact-page .page-ink-hero-glow {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.28), transparent 65%);
+}
+
+.contact-page .page-ink-hero-copy h1 {
+  color: #f8fafc;
+}
+
+.contact-page .page-ink-hero-copy p {
+  color: #c5d0e4;
+}
+
+.contact-page .page-ink-hero .btn.btn-primary {
+  background: #5b5cf6;
+  color: #fff;
+  border-color: transparent;
+}
+
+.contact-page .page-ink-hero .btn.btn-primary:hover {
+  background: #6d6ef8;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(91, 92, 246, 0.35);
+}
+
+.contact-page .page-ink-hero .btn.btn-secondary {
+  color: #f8fafc;
+  border-color: rgba(248, 250, 252, 0.35);
+  background: transparent;
+}
+
+.contact-page .page-ink-hero .btn.btn-secondary:hover {
+  color: #fff;
+  border-color: #fff;
+  background: transparent;
+}
+
+.contact-page .page-ink-hero-points li {
+  border-color: rgba(165, 180, 252, 0.28);
+  background: rgba(12, 20, 40, 0.55);
+}
+
+.contact-page .page-ink-hero-points strong {
+  color: #f8fafc;
+}
+
+.contact-page .page-ink-hero-points span {
+  color: #c5d0e4;
+}
+
 .contact-page .contact {
-  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  background: #f6f7fb;
 }
 
 .contact-page .contact .section-header {
   display: none;
+}
+
+.contact-page .inquiry-form {
+  border-color: #e1e6f2;
+  background: #fff;
+}
+
+.contact-page .connect-panel-title,
+.contact-page .inquiry-form span {
+  color: #121826;
+}
+
+.contact-page .inquiry-form .coupon-picker input {
+  width: 1rem;
+  min-width: 1rem;
+  min-height: 1rem;
+  padding: 0;
+  background: transparent;
+}
+
+.contact-page .inquiry-form input,
+.contact-page .inquiry-form select,
+.contact-page .inquiry-form textarea {
+  border-color: #e1e6f2;
+  background: #f6f7fb;
+  color: #121826;
+}
+
+.contact-page .inquiry-form input:focus,
+.contact-page .inquiry-form select:focus,
+.contact-page .inquiry-form textarea:focus {
+  border-color: #3730a3;
+  box-shadow: 0 0 0 3px rgba(55, 48, 163, 0.16);
+}
+
+.contact-page .trust-note,
+.contact-page .connect-mail {
+  color: #3c4a60;
+}
+
+.contact-page .faq-section {
+  background: #eef1f8;
+}
+
+.contact-page .section-title,
+.contact-page .faq-question {
+  color: #121826;
+}
+
+.contact-page .section-desc,
+.contact-page .faq-answer p {
+  color: #3c4a60;
+}
+
+.contact-page .faq-panel {
+  border-color: #e1e6f2;
+  background: #fff;
+}
+
+.contact-page .faq-item.is-open {
+  background: #f6f7fb;
+  border-color: #e1e6f2;
+}
+
+.contact-page .faq-chevron {
+  color: #3730a3;
+}
+
+.contact-page .btn-primary {
+  background: #5b5cf6;
+}
+
+.contact-page .btn-primary:hover {
+  background: #6d6ef8;
+  box-shadow: 0 10px 24px rgba(91, 92, 246, 0.35);
 }

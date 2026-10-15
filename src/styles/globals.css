@@ -46,6 +46,10 @@ body {
   padding-top: var(--header-h);
 }
 
+.site-main.is-quiet {
+  padding-top: 0;
+}
+
 .route-fallback {
   padding: 2rem 0;
   color: var(--text-muted);
@@ -110,6 +114,10 @@ textarea {
 
 .skip-link:focus {
   left: 12px;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--header-h) + 0.75rem);
 }
 
 .container {

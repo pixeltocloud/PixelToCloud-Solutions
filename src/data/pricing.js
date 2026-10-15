@@ -2,8 +2,8 @@ export const pricingTiers = [
   {
     id: 'starter',
     name: 'Starter website',
-    range: '₹25k–₹50k',
-    blurb: 'Marketing site or simple portal with inquiry flows and launch handover.',
+    range: 'From $100*',
+    blurb: 'Focused website for the first 100 customers, with inquiry flows and launch handover.',
     highlighted: false,
   },
   {

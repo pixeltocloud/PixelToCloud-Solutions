@@ -1,0 +1,29 @@
+.studio {
+  --ink: #121826;
+  --muted: #3c4a60;
+  --line: #e1e6f2;
+  --paper: #f6f7fb;
+  --mist: #eef1f8;
+  --night: #070d18;
+  --accent: #3730a3;
+  --accent-soft: rgba(55, 48, 163, 0.12);
+  --accent-strong: #312e81;
+  --cta: #5b5cf6;
+  --cta-hover: #3b82f6;
+  --text: #121826;
+  --text-secondary: #3c4a60;
+  --text-muted: #3c4a60;
+  --bg-primary: #f6f7fb;
+  --bg-secondary: #eef1f8;
+  --bg-ink: #070d18;
+  --text-on-ink: #f8fafc;
+  --text-on-ink-muted: #c5d0e4;
+  --border: #e1e6f2;
+  --border-ink: rgba(165, 180, 252, 0.28);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.studio .btn-primary:hover {
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+}
