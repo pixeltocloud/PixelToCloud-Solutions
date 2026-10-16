@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Reveal from '../ui/Reveal'
 import './ExpertiseHoneycomb.css'
 
 export const expertiseOfferings = [
@@ -19,19 +20,19 @@ export default function ExpertiseHoneycomb({
   return (
     <section className={`expertise-honeycomb ${className}`.trim()} aria-labelledby={titleId}>
       <div className="expertise-honeycomb-inner">
-        <header className="expertise-head">
+        <Reveal as="header" className="expertise-head">
           <p className="expertise-kicker">{kicker}</p>
           <h2 id={titleId}>{title}</h2>
-        </header>
+        </Reveal>
 
         <ul className="hex-board">
-          {expertiseOfferings.map((item) => (
-            <li key={item.label}>
+          {expertiseOfferings.map((item, index) => (
+            <Reveal key={item.label} as="li" delay={index * 50}>
               <Link className="hex" to={item.to}>
                 <strong>{item.label}</strong>
                 <span>{item.detail}</span>
               </Link>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>

@@ -1,10 +1,10 @@
 .site-footer {
-  border-top: 1px solid rgba(165, 180, 252, 0.28);
+  border-top: 1px solid rgba(56, 189, 248, 0.18);
   background:
-    radial-gradient(520px 180px at 12% 0%, rgba(91, 92, 246, 0.18), transparent 70%),
+    radial-gradient(520px 180px at 12% 0%, rgba(37, 99, 235, 0.22), transparent 70%),
     #070d18;
   color: #dbe4f0;
-  padding: 3rem 0 1.25rem;
+  padding: 2.5rem 0 1.25rem;
   margin-top: 0;
 }
 
@@ -17,19 +17,21 @@
 .footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.7rem;
   margin-bottom: 0.75rem;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: var(--logo-word, 1.2rem);
   font-weight: 750;
   letter-spacing: -0.03em;
   color: #f7f4ef;
 }
 
 .footer-brand img {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
+  width: var(--logo-mark, 44px);
+  height: var(--logo-mark, 44px);
+  border-radius: 10px;
+  object-fit: contain;
+  display: block;
 }
 
 .footer-desc {
@@ -58,10 +60,18 @@
 .footer-links a {
   color: #e2e8f4;
   font-size: 0.95rem;
+  min-height: var(--touch-min, 44px);
+  display: inline-flex;
+  align-items: center;
+  word-break: break-word;
 }
 
 .footer-links a:hover {
-  color: #c7d2fe;
+  color: #7dd3fc;
+}
+
+.footer-links a:active {
+  color: #bae6fd;
 }
 
 .footer-links {

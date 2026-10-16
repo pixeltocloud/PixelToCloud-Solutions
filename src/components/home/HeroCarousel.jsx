@@ -8,8 +8,6 @@ const phrases = [
   'AI that saves time.',
 ]
 
-const rail = ['Ideas', 'Design', 'Engineering', 'Growth']
-
 export default function HeroCarousel() {
   const [index, setIndex] = useState(0)
   const [animate, setAnimate] = useState(true)
@@ -43,12 +41,14 @@ export default function HeroCarousel() {
 
   return (
     <section className="home-hero" aria-labelledby="home-hero-title">
+      <div className="home-hero-glow" aria-hidden="true" />
+      <div className="home-hero-grid-lines" aria-hidden="true" />
       <div className="home-wrap home-hero-grid">
         <div className="home-hero-copy">
           <p className="home-eye">Built from ideas</p>
           <h1 id="home-hero-title">
-            <span>Big ideas deserve</span>
-            <span>better digital experiences.</span>
+            <span className="hero-line">Big ideas deserve</span>
+            <span className="hero-line hero-line-accent">better digital experiences.</span>
           </h1>
           {reduced ? (
             <p className="hero-stable">Websites that convert.</p>
@@ -67,23 +67,11 @@ export default function HeroCarousel() {
           <p className="home-lead">
             We design and build websites, software, and intelligent automation that help businesses work smarter and grow online.
           </p>
-          <div className="home-actions">
-            <Link className="home-btn home-btn-light" to="/contact">Let&apos;s Talk</Link>
+          <div className="home-actions home-actions--solo">
             <Link className="home-btn home-btn-ghost" to="/work">Explore Our Work</Link>
           </div>
         </div>
         <IdeaField />
-      </div>
-      <div className="hero-rail" aria-hidden="true">
-        <div className="hero-rail-track">
-          {[0, 1].map((copy) => (
-            <p key={copy}>
-              {rail.map((word) => (
-                <span key={`${copy}-${word}`}>{word}<i>→</i></span>
-              ))}
-            </p>
-          ))}
-        </div>
       </div>
     </section>
   )

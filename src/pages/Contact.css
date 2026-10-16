@@ -269,13 +269,46 @@
   font-size: 0.88rem;
 }
 
-.contact-channels a:hover strong {
-  color: #7dd3fc;
+.contact-channels a {
+  border-radius: 8px;
+  transition:
+    background 220ms var(--ease),
+    box-shadow 220ms var(--ease),
+    transform 220ms var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-channels a:hover {
+    background: rgba(56, 189, 248, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.28);
+  }
+  .contact-channels a:hover strong {
+    color: #7dd3fc;
+  }
+  .contact-channels a:hover em {
+    color: #bae6fd;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .contact-channels a:hover {
+    transform: translateX(3px);
+  }
+}
+
+.contact-channels a:active {
+  background: rgba(56, 189, 248, 0.12);
 }
 
 .contact-channels a:focus-visible {
   outline: 2px solid #38bdf8;
   outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-channels a:hover {
+    transform: none;
+  }
 }
 
 .contact-aside-note {

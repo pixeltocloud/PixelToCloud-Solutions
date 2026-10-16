@@ -21,7 +21,14 @@ function suppressMouseFocus(event) {
 function BrandMark() {
   return (
     <>
-      <img src="/pixeltocloud-logo.svg" alt="" width="32" height="32" decoding="async" className="nav-mark" />
+      <img
+        src="/logo-icon.svg"
+        alt=""
+        width="56"
+        height="56"
+        decoding="async"
+        className="nav-mark"
+      />
       <span className="nav-wordmark">PixelToCloud</span>
     </>
   )

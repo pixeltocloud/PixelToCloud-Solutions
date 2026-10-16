@@ -1,3 +1,4 @@
+import Reveal from '../ui/Reveal'
 import { clientSites } from '../../data/clientSites'
 import './WorkPortfolio.css'
 
@@ -13,41 +14,43 @@ function padIndex(n) {
   return String(n).padStart(2, '0')
 }
 
-function WorkProject({ site, index, total, variant = 'support' }) {
+function WorkProject({ site, index, total, variant = 'support', delay = 0 }) {
   return (
-    <a
-      className={`work-project work-project--${variant}`}
-      href={site.url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <div className="work-project-media">
-        <img
-          src={site.image}
-          width="1440"
-          height="900"
-          alt={`Homepage of ${site.name}`}
-          loading={index === 1 ? 'eager' : 'lazy'}
-          decoding="async"
-        />
-      </div>
-      <div className="work-project-body">
-        <div className="work-project-meta">
-          <span className="work-project-index" aria-label={`Project ${index} of ${total}`}>
-            {padIndex(index)}
-            <span aria-hidden="true"> / </span>
-            {padIndex(total)}
-          </span>
-          <span className="work-project-cat">{site.category}</span>
+    <Reveal className={`work-project-reveal work-project-reveal--${variant}`} delay={delay}>
+      <a
+        className={`work-project work-project--${variant}`}
+        href={site.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="work-project-media">
+          <img
+            src={site.image}
+            width="1440"
+            height="900"
+            alt={`Homepage of ${site.name}`}
+            loading={index === 1 ? 'eager' : 'lazy'}
+            decoding="async"
+          />
         </div>
-        <h3>{site.name}</h3>
-        <p>{site.description}</p>
-        <span className="work-project-go">
-          Explore website
-          <Arrow />
-        </span>
-      </div>
-    </a>
+        <div className="work-project-body">
+          <div className="work-project-meta">
+            <span className="work-project-index" aria-label={`Project ${index} of ${total}`}>
+              {padIndex(index)}
+              <span aria-hidden="true"> / </span>
+              {padIndex(total)}
+            </span>
+            <span className="work-project-cat">{site.category}</span>
+          </div>
+          <h3>{site.name}</h3>
+          <p>{site.description}</p>
+          <span className="work-project-go">
+            Explore website
+            <Arrow />
+          </span>
+        </div>
+      </a>
+    </Reveal>
   )
 }
 
@@ -57,7 +60,7 @@ export default function WorkPortfolio({ className = '' }) {
 
   return (
     <div className={`work-folio ${className}`.trim()}>
-      <WorkProject site={featured} index={1} total={total} variant="feature" />
+      <WorkProject site={featured} index={1} total={total} variant="feature" delay={40} />
       <div className="work-folio-grid">
         {rest.map((site, i) => {
           const isLastWide = rest.length % 2 === 1 && i === rest.length - 1
@@ -68,6 +71,7 @@ export default function WorkPortfolio({ className = '' }) {
               index={i + 2}
               total={total}
               variant={isLastWide ? 'wide' : 'support'}
+              delay={80 + i * 60}
             />
           )
         })}

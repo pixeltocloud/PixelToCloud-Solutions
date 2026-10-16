@@ -1,13 +1,13 @@
 export const clientSites = [
   {
-    id: 'akns-cctv-hub',
-    name: 'AKNS CCTV Hub',
-    category: 'Business & Security',
-    host: 'aknscctvhub.com',
-    url: 'https://aknscctvhub.com/',
-    image: '/image/work/akns-cctv.jpg',
+    id: 'dr-archit-joshi',
+    name: 'Dr. Archit Joshi',
+    category: 'Healthcare',
+    host: 'drarchitjoshi.com',
+    url: 'https://drarchitjoshi.com/',
+    image: '/image/work/dr-archit-joshi.jpg',
     description:
-      'A digital storefront for security and surveillance services, helping customers explore installation solutions and find a clear path to enquire.',
+      'A physiotherapy practice website that introduces available care, practice information, and convenient ways to connect with the clinic.',
   },
   {
     id: 'shridaa-arts',
@@ -50,13 +50,13 @@ export const clientSites = [
       'A specialist practice website for consultant radiation oncologist Dr. Neeraj Rathee, presenting clinical services, professional information, and a straightforward path to consultation.',
   },
   {
-    id: 'dr-archit-joshi',
-    name: 'Dr. Archit Joshi',
-    category: 'Healthcare',
-    host: 'drarchitjoshi.com',
-    url: 'https://drarchitjoshi.com/',
-    image: '/image/work/dr-archit-joshi.jpg',
+    id: 'akns-cctv-hub',
+    name: 'AKNS CCTV Hub',
+    category: 'Business & Security',
+    host: 'aknscctvhub.com',
+    url: 'https://aknscctvhub.com/',
+    image: '/image/work/akns-cctv.jpg',
     description:
-      'A physiotherapy practice website that introduces available care, practice information, and convenient ways to connect with the clinic.',
+      'A digital storefront for security and surveillance services, helping customers explore installation solutions and find a clear path to enquire.',
   },
 ]

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Reveal from '../ui/Reveal'
 import { contact } from '../../data/founders'
 import { testimonials } from '../../data/testimonials'
 import WorkPortfolio, { Arrow, padIndex } from '../work/WorkPortfolio'
@@ -53,7 +54,7 @@ export function SelectedWork() {
   return (
     <section className="home-sheet home-work" aria-labelledby="work-title">
       <div className="home-wrap home-work-wrap">
-        <header className="work-intro">
+        <Reveal className="work-intro">
           <div className="work-intro-copy">
             <p className="home-kicker">
               Selected work
@@ -90,11 +91,11 @@ export function SelectedWork() {
           <Link className="home-text-link work-intro-link" to="/work">
             All projects <Arrow />
           </Link>
-        </header>
+        </Reveal>
 
         <WorkPortfolio />
 
-        <div className="study-block">
+        <Reveal className="study-block" delay={80}>
           <div className="study-intro">
             <p className="home-kicker">Documented studies</p>
             <h3>Evidence from shipped client work</h3>
@@ -102,19 +103,21 @@ export function SelectedWork() {
           </div>
           <ul className="study-list">
             {studies.map((study) => (
-              <li key={study.to}>
-                <div>
+              <li key={study.to} className="study-card">
+                <div className="study-card-head">
                   <h4>{study.title}</h4>
+                  <Link className="home-text-link" to={study.to}>View case study <Arrow /></Link>
+                </div>
+                <div className="study-card-body">
                   <p><b>Problem</b> {study.problem}</p>
                   <p><b>Built</b> {study.built}</p>
                   <p><b>Outcome</b> {study.outcome}</p>
                   <p className="project-note">{study.note}</p>
                 </div>
-                <Link className="home-text-link" to={study.to}>View case study <Arrow /></Link>
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
         <p className="work-lab">
           Nebula3D is a browser tool from the lab, not a client engagement.
@@ -130,23 +133,23 @@ export function Journey() {
   return (
     <section className="home-sheet home-journey" aria-labelledby="journey-title">
       <div className="home-wrap">
-        <div className="home-head">
+        <Reveal className="home-head">
           <div>
             <p className="home-kicker">How an engagement runs</p>
             <h2 id="journey-title">From the first conversation to a solution that works.</h2>
           </div>
           <Link className="home-text-link" to="/process">See the process</Link>
-        </div>
+        </Reveal>
         <ol className="journey-line">
           {journey.map(([num, title, text], index) => (
-            <li key={num}>
+            <Reveal key={num} as="li" delay={index * 70}>
               <span className="journey-mark" aria-hidden="true">
                 <i>{num}</i>
                 {index < journey.length - 1 ? <b /> : null}
               </span>
               <h3>{title}</h3>
               <p>{text}</p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>
@@ -157,23 +160,25 @@ export function Journey() {
 export function Why() {
   return (
     <section className="home-sheet home-why" aria-labelledby="why-title">
-      <div className="home-wrap why-edit">
-        <div className="why-copy">
-          <p className="home-kicker">Why PixelToCloud</p>
-          <h2 id="why-title">Built around your business, not a vendor lock-in.</h2>
-          <p className="why-lead">The engagement is scoped with you. The code is yours when it ships.</p>
+      <div className="home-wrap">
+        <div className="why-panel why-edit">
+          <Reveal className="why-copy">
+            <p className="home-kicker">Why PixelToCloud</p>
+            <h2 id="why-title">Built around your business, not a vendor lock-in.</h2>
+            <p className="why-lead">The engagement is scoped with you. The code is yours when it ships.</p>
+          </Reveal>
+          <ol className="why-rows">
+            {why.map(([num, title, text], index) => (
+              <Reveal key={num} as="li" delay={index * 60}>
+                <span aria-hidden="true">{num}</span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
         </div>
-        <ol className="why-rows">
-          {why.map(([num, title, text]) => (
-            <li key={num}>
-              <span aria-hidden="true">{num}</span>
-              <div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
       </div>
     </section>
   )
@@ -182,7 +187,7 @@ export function Why() {
 export function ClientQuote() {
   return (
     <section className="home-sheet home-quote" aria-labelledby="quote-title">
-      <div className="home-wrap quote-edit">
+      <Reveal className="home-wrap quote-edit">
         <p className="quote-mark" aria-hidden="true">“</p>
         <blockquote>
           <h2 id="quote-title" className="sr-only">What a client said</h2>
@@ -193,7 +198,7 @@ export function ClientQuote() {
           </footer>
           <Link className="home-text-link" to="/work/easy-my-tax">Read the Easy My Tax case study <Arrow /></Link>
         </blockquote>
-      </div>
+      </Reveal>
     </section>
   )
 }
@@ -201,15 +206,18 @@ export function ClientQuote() {
 export function Close() {
   return (
     <section className="home-close" aria-labelledby="close-title">
-      <div className="home-wrap home-close-inner">
+      <Reveal className="home-wrap home-close-inner">
         <p className="home-eye">Next step</p>
         <h2 id="close-title">Have a challenge worth solving?</h2>
         <p>Let&apos;s explore what the right website, software, or automation could do for your business.</p>
         <div className="home-actions">
-          <a className="home-btn home-btn-light" href={contact.appointmentLink} target="_blank" rel="noreferrer">Book an intro call</a>
+          <a className="home-btn home-btn-light" href={contact.appointmentLink} target="_blank" rel="noreferrer">
+            Book an intro call
+            <span className="home-btn-arrow" aria-hidden="true">→</span>
+          </a>
           <a className="home-btn home-btn-ghost" href={contact.whatsappLink} target="_blank" rel="noreferrer">Talk to us on WhatsApp</a>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

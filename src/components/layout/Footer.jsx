@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div>
           <Link to="/" className="footer-brand" aria-label="PixelToCloud home">
-            <img src="/pixeltocloud-logo.svg" alt="" width="36" height="36" decoding="async" />
+            <img src="/logo-icon.svg" alt="" width="56" height="56" decoding="async" />
             <span>PixelToCloud</span>
           </Link>
           <p className="footer-desc">
