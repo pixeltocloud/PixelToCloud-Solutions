@@ -7,8 +7,9 @@ export const expertiseOfferings = [
   { label: 'Software', detail: 'Billing and CRM', to: '/services/web-applications' },
   { label: 'WhatsApp', detail: 'AI booking flows', to: '/services/ai-automation' },
   { label: 'Cloud', detail: 'Speed and security', to: '/services/cloud-devops' },
-  { label: 'Funnels', detail: 'Pages and ads', to: '/start-project' },
+  { label: 'Funnels', detail: 'Pages and ads', to: '/services/ecommerce' },
   { label: 'Documents', detail: 'Invoices and PDFs', to: '/services/ai-automation' },
+  { label: 'Digital marketing', detail: 'Ads & landing pages', to: '/services/digital-marketing' },
 ]
 
 export default function ExpertiseHoneycomb({

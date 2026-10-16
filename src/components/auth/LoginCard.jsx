@@ -96,7 +96,8 @@ export default function LoginCard({ redirectTo }) {
 
   return (
     <div className="login-card">
-      <h1>Sign in</h1>
+      <p className="ag-kicker">Sign in</p>
+      <h2>Welcome back</h2>
       <p className="auth-lead">Use Google, or a code sent to your phone. A new account is created the first time you continue.</p>
 
       <GoogleButton pending={pending === 'google'} disabled={Boolean(pending)} onClick={continueWithGoogle} />
@@ -115,8 +116,8 @@ export default function LoginCard({ redirectTo }) {
             }}
           />
           {error ? <p className="auth-error" role="alert">{error}</p> : null}
-          <button className="btn btn-primary auth-submit" type="submit" disabled={Boolean(pending)}>
-            {pending === 'send' ? 'Sending code...' : 'Continue'}
+          <button className="ag-btn ag-btn-solid auth-submit" type="submit" disabled={Boolean(pending)}>
+            {pending === 'send' ? 'Sending code…' : 'Continue'}
           </button>
         </form>
       ) : (
@@ -126,12 +127,12 @@ export default function LoginCard({ redirectTo }) {
             verifyCode()
           }}
         >
-          <h2>Enter the code</h2>
+          <h3 className="login-card-step">Enter the code</h3>
           <p className="auth-lead">Sent to {maskPhone(phone)}. It expires shortly, so enter it on this screen.</p>
           <OTPInput value={code} onChange={onCodeChange} disabled={pending === 'verify'} invalid={Boolean(error)} />
           {error ? <p className="auth-error" role="alert">{error}</p> : null}
-          <button className="btn btn-primary auth-submit" type="submit" disabled={Boolean(pending) || code.length !== 6}>
-            {pending === 'verify' ? 'Verifying...' : 'Verify code'}
+          <button className="ag-btn ag-btn-solid auth-submit" type="submit" disabled={Boolean(pending) || code.length !== 6}>
+            {pending === 'verify' ? 'Verifying…' : 'Verify code'}
           </button>
           <div className="auth-code-actions">
             {cooldown > 0 ? (

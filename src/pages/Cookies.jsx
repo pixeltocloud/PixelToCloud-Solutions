@@ -14,7 +14,7 @@ export default function Cookies() {
           <p className="ag-lead">Last updated: October 13, 2026.</p>
         </div>
       </section>
-      <section className="ag-sheet">
+      <section className="ag-sheet cream">
         <div className="ag-wrap ag-prose">
           <h2>What we store</h2>
           <ul>

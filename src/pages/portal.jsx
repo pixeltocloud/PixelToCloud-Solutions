@@ -7,7 +7,7 @@ function Empty({ title, body }) {
     <DashboardLayout title={`${title} | PixelToCloud`} description={body}>
       <h1>{title}</h1>
       <p className="dash-lead">{body}</p>
-      <Link className="btn btn-primary" to="/start-project">Start a project</Link>
+      <Link className="ag-btn ag-btn-solid" to="/start-project">Start a project</Link>
     </DashboardLayout>
   )
 }
@@ -52,7 +52,7 @@ export function Messages() {
           Note
           <textarea disabled placeholder="Messaging is not connected." />
         </label>
-        <button type="button" className="btn btn-primary" disabled>Send</button>
+        <button type="button" className="ag-btn ag-btn-solid" disabled>Send</button>
       </form>
     </DashboardLayout>
   )

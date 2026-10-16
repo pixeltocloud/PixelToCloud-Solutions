@@ -17,9 +17,9 @@ const links = [
 
 export default function DashboardLayout({ title, description, children }) {
   return (
-    <div className="studio dash">
+    <div className="ag dash">
       <Seo title={title} description={description} noindex />
-      <div className="container dash-shell">
+      <div className="ag-wrap dash-shell">
         <nav className="dash-nav" aria-label="Account">
           {links.map(([to, label]) => (
             <NavLink key={to} to={to} end={to === '/dashboard'}>

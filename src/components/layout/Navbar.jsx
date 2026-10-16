@@ -90,9 +90,27 @@ export default function Navbar() {
 
   const closeMenu = () => setOpen(false)
   /* Transparent nav over dark editorial heroes only — not light FAQ/insights/legal pages */
-  const isHome = ['/', '/services', '/work', '/about', '/process', '/industries', '/contact', '/labs', '/start-project'].includes(location.pathname)
+  const isHome = [
+    '/',
+    '/services',
+    '/work',
+    '/about',
+    '/process',
+    '/industries',
+    '/contact',
+    '/labs',
+    '/start-project',
+    '/login',
+    '/faq',
+    '/insights',
+    '/privacy',
+    '/terms',
+    '/cookies',
+  ].includes(location.pathname)
     || location.pathname.startsWith('/services/')
     || location.pathname.startsWith('/industries/')
+    || location.pathname.startsWith('/work/')
+    || location.pathname.startsWith('/insights/')
 
   return (
     <>
@@ -122,7 +140,13 @@ export default function Navbar() {
           </nav>
 
           <div className="nav-actions">
-            {user ? <UserMenu /> : null}
+            {user ? (
+              <UserMenu />
+            ) : (
+              <Link className="nav-cta nav-cta--ghost" to="/login">
+                Sign In
+              </Link>
+            )}
             <Link className="nav-cta" to="/contact">
               Let&apos;s Talk
             </Link>
@@ -168,6 +192,11 @@ export default function Navbar() {
           {user ? <UserMenu variant="drawer" onNavigate={closeMenu} /> : null}
         </nav>
         <div className="drawer-footer">
+          {!user ? (
+            <Link className="nav-cta nav-cta--ghost drawer-cta" to="/login" onClick={closeMenu}>
+              Sign In
+            </Link>
+          ) : null}
           <Link className="nav-cta drawer-cta" to="/contact" onClick={closeMenu}>
             Let&apos;s Talk
           </Link>

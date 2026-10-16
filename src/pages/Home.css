@@ -1128,7 +1128,34 @@
 .home-close h2 { max-width: 12em; color: #fff; }
 .home-close p { max-width: 34em; margin: 14px 0 0; color: #a7b4c7; font-size: 1.05rem; line-height: 1.55; }
 .home-close .home-actions { margin-top: 24px; }
-.home-close .home-btn { border-radius: 8px; }
+.home-close .home-btn {
+  border-radius: 8px;
+  transition:
+    background 220ms var(--ease),
+    border-color 220ms var(--ease),
+    color 220ms var(--ease),
+    transform 220ms var(--ease),
+    box-shadow 220ms var(--ease);
+}
+.home-close .home-btn-arrow {
+  transition: transform 220ms var(--ease);
+}
+.home-close .home-btn-light:active {
+  background: linear-gradient(180deg, #0284c7 0%, #1d4ed8 100%);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(1px) scale(0.985);
+}
+.home-close .home-btn-ghost:active {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: #38bdf8;
+  color: #bae6fd;
+  transform: translateY(1px) scale(0.985);
+}
+.home-close .home-btn:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
 
 .work-project {
   border-radius: 2px;
@@ -1166,7 +1193,8 @@
     box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.2), 0 12px 28px rgba(2, 8, 20, 0.2);
   }
 
-  .home-hero .home-btn-light:hover {
+  .home-hero .home-btn-light:hover,
+  .home-close .home-btn-light:hover {
     background: linear-gradient(180deg, #38bdf8 0%, #2563eb 100%);
     color: #fff;
     border-color: transparent;
@@ -1174,7 +1202,8 @@
       0 14px 32px rgba(37, 99, 235, 0.42),
       0 0 28px rgba(56, 189, 248, 0.32);
   }
-  .home-hero .home-btn-ghost:hover {
+  .home-hero .home-btn-ghost:hover,
+  .home-close .home-btn-ghost:hover {
     background: rgba(56, 189, 248, 0.14);
     border-color: #38bdf8;
     color: #7dd3fc;
@@ -1201,10 +1230,13 @@
   }
 
   .home-hero .home-btn-light:hover,
-  .home-hero .home-btn-ghost:hover {
+  .home-hero .home-btn-ghost:hover,
+  .home-close .home-btn-light:hover,
+  .home-close .home-btn-ghost:hover {
     transform: translateY(-2px);
   }
-  .home-hero .home-btn-light:hover .home-btn-arrow {
+  .home-hero .home-btn-light:hover .home-btn-arrow,
+  .home-close .home-btn-light:hover .home-btn-arrow {
     transform: translateX(5px);
   }
 }

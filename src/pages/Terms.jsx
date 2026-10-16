@@ -14,7 +14,7 @@ export default function Terms() {
           <p className="ag-lead">Last updated: September 13, 2026</p>
         </div>
       </section>
-      <section className="ag-sheet">
+      <section className="ag-sheet cream">
         <div className="ag-wrap ag-prose">
           <p>
             By using pixeltocloud.com you agree to these terms. If you do not agree, please do not use the site.

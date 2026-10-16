@@ -10,13 +10,20 @@ export default function InsightArticle() {
 
   if (!article) {
     return (
-      <section className="ag-sheet">
-        <div className="ag-wrap">
-          <Seo title={`Article not found | ${brand.name}`} noindex />
-          <h1 className="ag-ink">That note is not published.</h1>
-          <Link to="/insights">All notes</Link>
-        </div>
-      </section>
+      <div className="ag ag-page">
+        <Seo title={`Article not found | ${brand.name}`} noindex />
+        <section className="ag-hero">
+          <div className="ag-wrap ag-empty">
+            <p className="ag-eye">Insights</p>
+            <h1>That note is not published.</h1>
+            <p className="ag-lead">It may have moved, or the link is outdated.</p>
+            <div className="ag-actions">
+              <Link className="ag-btn ag-btn-light" to="/insights">All notes</Link>
+              <Link className="ag-btn ag-btn-ghost" to="/">Go home</Link>
+            </div>
+          </div>
+        </section>
+      </div>
     )
   }
 
@@ -39,7 +46,7 @@ export default function InsightArticle() {
           <p className="ag-lead">{article.summary}</p>
         </div>
       </section>
-      <article className="ag-sheet">
+      <article className="ag-sheet cream">
         <div className="ag-wrap ag-prose">
           <h2>On this page</h2>
           <ul>

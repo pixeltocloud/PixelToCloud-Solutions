@@ -109,6 +109,24 @@ export const servicePages = [
     engagement: 'Infrastructure work is scoped from an audit. It is separate from the 7-day website launch.',
     related: ['pixeltocloud-agency'],
   },
+  {
+    slug: 'digital-marketing',
+    title: 'Digital marketing',
+    lede: 'Landing pages, search and social campaigns, and clear attribution so ad spend has a place to go.',
+    problems: [
+      'Ads send traffic to a slow or unclear page.',
+      'Leads arrive, but nobody can tell which campaign produced them.',
+      'WhatsApp and form inquiries are not tracked as conversions.',
+    ],
+    deliverables: [
+      'Campaign landing pages that load on a phone and state the offer clearly.',
+      'Google Ads or Meta campaign structure with high-intent keywords and audiences.',
+      'GA4, Tag Manager, and conversion tracking for forms, calls, and WhatsApp.',
+      'A short CRO loop on headlines, CTAs, and offer framing after launch.',
+    ],
+    engagement: 'Marketing work is scoped separately from a website build. We measure inquiry volume, not vanity traffic.',
+    related: ['saini-handicrafts', 'harish-renova'],
+  },
 ]
 
 export const industries = [

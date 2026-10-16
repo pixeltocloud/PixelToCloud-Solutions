@@ -124,7 +124,7 @@ export function WorkFrame({ kind = 'vault' }) {
 
 export function frameKind(slug = '') {
   if (['harish-renova', 'healthcare', 'mobile-app-development', 'ai-automation', 'hospitality'].includes(slug)) return 'clinic'
-  if (['saini-handicrafts', 'ecommerce', 'web-development', 'retail-and-makers'].includes(slug)) return 'catalog'
+  if (['saini-handicrafts', 'ecommerce', 'web-development', 'retail-and-makers', 'digital-marketing'].includes(slug)) return 'catalog'
   return 'vault'
 }
 

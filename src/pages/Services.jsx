@@ -48,6 +48,14 @@ const serviceCards = [
     alt: 'Illustration of a conversion-focused landing page',
   },
   {
+    slug: 'digital-marketing',
+    tag: 'Marketing',
+    title: 'Digital marketing that ties campaigns to real inquiries',
+    text: 'Search and social campaigns, fast landing pages, and conversion tracking—so you know which spend produces conversations, not just clicks.',
+    image: '/image/home/lead-growth.svg',
+    alt: 'Illustration of digital marketing funnels and campaign performance',
+  },
+  {
     slug: 'mobile-app-development',
     tag: 'Mobile',
     title: 'Mobile apps when a phone product is the right surface',
@@ -82,16 +90,17 @@ export default function Services() {
       </section>
 
       <ExpertiseHoneycomb
+        className="expertise-honeycomb--page"
         kicker="Our expertise"
         title="The work we take on"
         titleId="services-expertise-title"
       />
 
-      <section className="ag-sheet alt services-cards-section" aria-labelledby="services-cards-title">
+      <section className="ag-sheet cream services-cards-section" aria-labelledby="services-cards-title">
         <div className="ag-wrap">
           <header className="services-cards-head">
             <p className="ag-kicker">Service detail</p>
-            <h2 id="services-cards-title">Six ways an engagement usually starts</h2>
+            <h2 id="services-cards-title">Seven ways an engagement usually starts</h2>
             <p className="ag-lead">
               Each card opens a full service page with scope, deliverables, and how we work together.
             </p>

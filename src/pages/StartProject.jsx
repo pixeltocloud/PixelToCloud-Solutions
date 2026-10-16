@@ -12,6 +12,7 @@ const needs = [
   'E-commerce',
   'AI and automation',
   'Cloud or DevOps',
+  'Digital marketing',
   'Other',
 ]
 
@@ -93,14 +94,14 @@ export default function StartProject() {
   return (
     <div className="ag ag-page">
       <Seo title={`Start a project | ${brand.name}`} description="A short brief for a website, application, or automation." path="/start-project" />
-      <section className="ag-hero">
+      <section className="ag-hero" aria-labelledby="start-project-title">
         <div className="ag-wrap">
           <p className="ag-eye">Project brief</p>
-          <h1>Start a project</h1>
+          <h1 id="start-project-title">Start a project</h1>
           <p className="ag-lead">Six short steps. Budget bands are estimates for the conversation, not a quote.</p>
         </div>
       </section>
-      <section className="ag-sheet">
+      <section className="ag-sheet cream">
         <div className="ag-wrap">
           <ol className="ag-progress">
             {steps.map((label, index) => (

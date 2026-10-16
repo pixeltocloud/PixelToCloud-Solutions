@@ -76,7 +76,7 @@ export default function DashboardProfile() {
         </fieldset>
         {error ? <p className="auth-error" role="alert">{error}</p> : null}
         {saved ? <p className="auth-ok" role="status">Changes saved.</p> : null}
-        <button className="btn btn-primary auth-submit" type="submit" disabled={pending}>
+        <button className="ag-btn ag-btn-solid auth-submit" type="submit" disabled={pending}>
           {pending ? 'Saving...' : 'Save changes'}
         </button>
       </form>

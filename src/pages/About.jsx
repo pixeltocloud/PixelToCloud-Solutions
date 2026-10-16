@@ -21,7 +21,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="ag-sheet">
+      <section className="ag-sheet cream">
         <div className="ag-wrap ag-split">
           <div className="ag-prose">
             <h2>How the studio works</h2>

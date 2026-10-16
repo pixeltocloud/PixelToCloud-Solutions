@@ -30,7 +30,7 @@ export default function DashboardSettings() {
         Phone and email come from Google or the phone code you used. Update your name, company, and country on your <Link to="/dashboard/profile">profile</Link>.
       </p>
       {error ? <p className="auth-error" role="alert">{error}</p> : null}
-      <button className="btn btn-primary" type="button" onClick={logout} disabled={pending}>
+      <button className="ag-btn ag-btn-solid" type="button" onClick={logout} disabled={pending}>
         {pending ? 'Signing out...' : 'Log out'}
       </button>
     </DashboardLayout>

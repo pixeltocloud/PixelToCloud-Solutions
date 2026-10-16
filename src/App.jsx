@@ -104,7 +104,7 @@ function RouteFallback() {
 
 function AppShell() {
   const location = useLocation()
-  const quiet = location.pathname === '/login' || location.pathname.startsWith('/auth/')
+  const quiet = location.pathname.startsWith('/auth/')
   const portal = location.pathname.startsWith('/dashboard') || location.pathname === '/account'
 
   return (

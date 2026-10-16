@@ -12,13 +12,20 @@ export default function WorkDetail() {
 
   if (!study) {
     return (
-      <section className="ag-sheet">
-        <div className="ag-wrap">
-          <Seo title={`Case study not found | ${brand.name}`} noindex />
-          <h1 className="ag-ink">Case study not found</h1>
-          <Link className="ag-btn ag-btn-line" to="/work">Back to work</Link>
-        </div>
-      </section>
+      <div className="ag ag-page">
+        <Seo title={`Case study not found | ${brand.name}`} noindex />
+        <section className="ag-hero">
+          <div className="ag-wrap ag-empty">
+            <p className="ag-eye">Work</p>
+            <h1>Case study not found</h1>
+            <p className="ag-lead">That project is not published, or the link is outdated.</p>
+            <div className="ag-actions">
+              <Link className="ag-btn ag-btn-light" to="/work">Back to work</Link>
+              <Link className="ag-btn ag-btn-ghost" to="/contact">Talk to us</Link>
+            </div>
+          </div>
+        </section>
+      </div>
     )
   }
 
@@ -48,7 +55,7 @@ export default function WorkDetail() {
           </dl>
         </div>
       </section>
-      <section className="ag-sheet">
+      <section className="ag-sheet cream">
         <div className="ag-wrap study-cover">
           <WorkFrame kind={frameKind(study.slug)} />
           <p className="study-note">Composed interface study for this project. It is not a screenshot of the live product.</p>

@@ -22,14 +22,18 @@ export default function Insights() {
   return (
     <div className="ag ag-page">
       <Seo title={`Insights | ${brand.name}`} description="Notes from the studio on delivery, handover, and automation." path="/insights" />
-      <section className="ag-hero-light">
+      <section className="ag-hero" aria-labelledby="insights-title">
         <div className="ag-wrap">
           <p className="ag-eye">Studio notes</p>
-          <h1 className="ag-ink">Insights from the work, not a content mill.</h1>
+          <h1 id="insights-title">Insights from the work, not a content mill.</h1>
           <p className="ag-lead">Short notes from the founders. There is no newsletter, because there is no subscription service connected.</p>
+          <div className="ag-actions">
+            <Link className="ag-btn ag-btn-light" to={brand.primaryHref}>{brand.primaryCta}</Link>
+            <Link className="ag-btn ag-btn-ghost" to="/work">Explore Our Work</Link>
+          </div>
         </div>
       </section>
-      <section className="ag-sheet">
+      <section className="ag-sheet cream">
         <div className="ag-wrap">
           <form className="ag-form" role="search" onSubmit={(event) => event.preventDefault()}>
             <label>

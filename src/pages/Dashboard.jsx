@@ -30,7 +30,7 @@ export default function Dashboard() {
           </li>
         ))}
       </ul>
-      <Link className="btn btn-primary" to="/start-project">Start a project</Link>
+      <Link className="ag-btn ag-btn-solid" to="/start-project">Start a project</Link>
     </DashboardLayout>
   )
 }

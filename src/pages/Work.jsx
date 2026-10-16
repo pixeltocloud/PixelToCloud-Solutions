@@ -43,7 +43,7 @@ export default function Work() {
         </div>
       </section>
 
-      <section className="ag-sheet">
+      <section className="ag-sheet cream">
         <div className="ag-wrap-wide">
           <WorkPortfolio />
         </div>

@@ -14,7 +14,7 @@ export default function Privacy() {
           <p className="ag-lead">Last updated: October 3, 2026</p>
         </div>
       </section>
-      <section className="ag-sheet">
+      <section className="ag-sheet cream">
         <div className="ag-wrap ag-prose">
           <p>
             PixelToCloud Solutions (“we”, “us”) operates pixeltocloud.com. This policy explains what information we collect

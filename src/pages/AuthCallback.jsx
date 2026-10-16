@@ -58,16 +58,30 @@ export default function AuthCallback() {
   }, [navigate])
 
   return (
-    <div className="container auth-callback" role="status">
+    <div className="ag ag-page">
       <Seo title="Signing in | PixelToCloud" noindex />
-      {error ? (
-        <>
-          <p className="auth-error" role="alert">{error}</p>
-          <Link to="/login">Back to sign in</Link>
-        </>
-      ) : (
-        'Signing in...'
-      )}
+      <section className="ag-quiet" aria-live="polite">
+        <div className="ag-wrap">
+          <div className="ag-quiet-card" role="status">
+            <p className="ag-kicker">Sign in</p>
+            {error ? (
+              <>
+                <h1>Sign-in could not finish</h1>
+                <p className="auth-error" role="alert">{error}</p>
+                <div className="ag-actions">
+                  <Link className="ag-btn ag-btn-solid" to="/login">Back to sign in</Link>
+                  <Link className="ag-btn ag-btn-line" to="/">Go home</Link>
+                </div>
+              </>
+            ) : (
+              <>
+                <h1>Signing you in…</h1>
+                <p>Finishing Google sign-in and opening your account.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

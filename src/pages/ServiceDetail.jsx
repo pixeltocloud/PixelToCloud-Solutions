@@ -12,13 +12,20 @@ export default function ServiceDetail() {
 
   if (!service) {
     return (
-      <section className="ag-sheet">
-        <div className="ag-wrap">
-          <Seo title={`Service not found | ${brand.name}`} noindex />
-          <h1 className="ag-ink">That service is not listed.</h1>
-          <Link className="ag-btn ag-btn-line" to="/services">All services</Link>
-        </div>
-      </section>
+      <div className="ag ag-page">
+        <Seo title={`Service not found | ${brand.name}`} noindex />
+        <section className="ag-hero">
+          <div className="ag-wrap ag-empty">
+            <p className="ag-eye">Services</p>
+            <h1>That service is not listed.</h1>
+            <p className="ag-lead">Browse the full services list, or tell us what you need.</p>
+            <div className="ag-actions">
+              <Link className="ag-btn ag-btn-light" to="/services">All services</Link>
+              <Link className="ag-btn ag-btn-ghost" to="/contact">Talk to us</Link>
+            </div>
+          </div>
+        </section>
+      </div>
     )
   }
 
@@ -36,12 +43,13 @@ export default function ServiceDetail() {
             <p className="ag-lead">{service.lede}</p>
             <div className="ag-actions">
               <Link className="ag-btn ag-btn-light" to={brand.primaryHref}>{brand.primaryCta}</Link>
+              <Link className="ag-btn ag-btn-ghost" to="/work">See the work</Link>
             </div>
           </div>
           <WorkFrame kind={frameKind(service.slug)} />
         </div>
       </section>
-      <section className="ag-sheet">
+      <section className="ag-sheet cream">
         <div className="ag-wrap ag-split">
           <div>
             <h2>Problems we are hired for</h2>
