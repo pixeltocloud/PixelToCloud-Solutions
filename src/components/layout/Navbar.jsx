@@ -2,13 +2,32 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 import UserMenu from '../auth/UserMenu'
+import { industries, servicePages } from '../../data/catalog'
 import './Navbar.css'
 
-const links = [
-  { to: '/services', label: 'Services', matchPrefix: true },
-  { to: '/work', label: 'Work', matchPrefix: true },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
+const serviceColumns = [
+  {
+    label: 'Build',
+    items: ['web-development', 'web-applications', 'mobile-app-development', 'ecommerce'],
+  },
+  {
+    label: 'Systems',
+    items: ['ai-automation', 'cloud-devops'],
+  },
+  {
+    label: 'Growth',
+    items: ['digital-marketing'],
+  },
+].map((column) => ({
+  ...column,
+  items: column.items.map((slug) => servicePages.find((item) => item.slug === slug)).filter(Boolean),
+}))
+
+const companyLinks = [
+  { to: '/about', title: 'About', text: 'The studio, the founders, and how the work is run.' },
+  { to: '/process', title: 'How we work', text: 'From the first conversation through handover.' },
+  { to: '/work', title: 'Work', text: 'Published sites and the studies we can document.' },
+  { to: '/contact', title: 'Contact', text: 'Write or book a call. Hours follow India time.' },
 ]
 
 function suppressMouseFocus(event) {
@@ -16,6 +35,59 @@ function suppressMouseFocus(event) {
   const node = event.target.closest('a, button, summary')
   if (!node || !event.currentTarget.contains(node)) return
   event.preventDefault()
+}
+
+function Caret() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  )
+}
+
+function DrawerGroup({ label, menuOpen, children }) {
+  const [expanded, setExpanded] = useState(false)
+
+  useEffect(() => {
+    if (!menuOpen) setExpanded(false)
+  }, [menuOpen])
+
+  return (
+    <div className={`drawer-group${expanded ? ' is-open' : ''}`}>
+      <button
+        type="button"
+        className="drawer-summary"
+        aria-expanded={expanded}
+        onClick={() => setExpanded((value) => !value)}
+      >
+        <span>{label}</span>
+        <span className="drawer-caret" aria-hidden="true">
+          <Caret />
+        </span>
+      </button>
+      <div className="drawer-sub">
+        <div className="drawer-sub-inner">{children}</div>
+      </div>
+    </div>
+  )
+}
+
+function MegaPanel({ id, open, label, onEnter, children }) {
+  return (
+    <div
+      id={id}
+      role="region"
+      aria-label={label}
+      className={`mega ${open ? 'is-open' : ''}`}
+      onMouseEnter={onEnter}
+      aria-hidden={open ? undefined : true}
+      inert={open ? undefined : true}
+    >
+      <div className="mega-shell">
+        <div className="mega-body">{children}</div>
+      </div>
+    </div>
+  )
 }
 
 function BrandMark() {
@@ -36,11 +108,13 @@ function BrandMark() {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [menu, setMenu] = useState(null)
   const [scrolled, setScrolled] = useState(false)
   const { user } = useAuth()
   const location = useLocation()
   const drawerRef = useRef(null)
   const toggleRef = useRef(null)
+  const closeTimer = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -58,13 +132,33 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false)
+    setMenu(null)
   }, [location.pathname])
+
+  useEffect(() => {
+    if (!menu) return undefined
+    const onKey = (event) => {
+      if (event.key === 'Escape') setMenu(null)
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [menu])
+
+  const holdMenu = (id) => {
+    window.clearTimeout(closeTimer.current)
+    setMenu(id)
+  }
+
+  const releaseMenu = () => {
+    window.clearTimeout(closeTimer.current)
+    closeTimer.current = window.setTimeout(() => setMenu(null), 140)
+  }
 
   useEffect(() => {
     if (!open) return undefined
     const drawer = drawerRef.current
-    const focusable = drawer?.querySelectorAll('a, button')
-    focusable?.[0]?.focus()
+    const focusableIn = () => [...(drawer?.querySelectorAll('a, button') ?? [])].filter((node) => !node.closest('.drawer-group:not(.is-open) .drawer-sub'))
+    drawer?.querySelector('.drawer-close')?.focus()
 
     const onKey = (event) => {
       if (event.key === 'Escape') {
@@ -72,7 +166,8 @@ export default function Navbar() {
         toggleRef.current?.focus()
         return
       }
-      if (event.key !== 'Tab' || !focusable?.length) return
+      const focusable = focusableIn()
+      if (event.key !== 'Tab' || !focusable.length) return
       const first = focusable[0]
       const last = focusable[focusable.length - 1]
       if (event.shiftKey && document.activeElement === first) {
@@ -118,8 +213,9 @@ export default function Navbar() {
         Skip to main content
       </a>
       <header
-        className={`navbar ${scrolled ? 'is-scrolled' : ''} ${isHome ? 'is-home' : ''}`}
+        className={`navbar ${scrolled ? 'is-scrolled' : ''} ${isHome ? 'is-home' : ''} ${menu ? 'is-menu-open' : ''}`}
         onMouseDown={suppressMouseFocus}
+        onMouseLeave={releaseMenu}
       >
         <div className="navbar-inner container">
           <Link to="/" className="nav-brand" aria-label="PixelToCloud home" onClick={closeMenu}>
@@ -127,28 +223,66 @@ export default function Navbar() {
           </Link>
 
           <nav className="nav-links" aria-label="Primary">
-            {links.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className={({ isActive }) => (isActive ? 'is-active' : undefined)}
-                end={!link.matchPrefix}
+            <NavLink to="/" end onMouseEnter={() => holdMenu(null)}>Home</NavLink>
+            <div
+              className={`nav-item ${menu === 'services' ? 'is-open' : ''}`}
+              onMouseEnter={() => holdMenu('services')}
+            >
+              <NavLink to="/services" className={({ isActive }) => (isActive ? 'is-active' : undefined)}>Services</NavLink>
+              <button
+                type="button"
+                className="nav-chevron"
+                aria-expanded={menu === 'services'}
+                aria-controls="mega-services"
+                aria-label={menu === 'services' ? 'Hide Services menu' : 'Show Services menu'}
+                onClick={() => setMenu((current) => (current === 'services' ? null : 'services'))}
               >
-                {link.label}
-              </NavLink>
-            ))}
+                <Caret />
+              </button>
+            </div>
+            <div
+              className={`nav-item ${menu === 'industries' ? 'is-open' : ''}`}
+              onMouseEnter={() => holdMenu('industries')}
+            >
+              <NavLink to="/industries" className={({ isActive }) => (isActive ? 'is-active' : undefined)}>Industries</NavLink>
+              <button
+                type="button"
+                className="nav-chevron"
+                aria-expanded={menu === 'industries'}
+                aria-controls="mega-industries"
+                aria-label={menu === 'industries' ? 'Hide Industries menu' : 'Show Industries menu'}
+                onClick={() => setMenu((current) => (current === 'industries' ? null : 'industries'))}
+              >
+                <Caret />
+              </button>
+            </div>
+            <div
+              className={`nav-item ${menu === 'company' ? 'is-open' : ''}`}
+              onMouseEnter={() => holdMenu('company')}
+            >
+              <NavLink to="/about" className={({ isActive }) => (isActive ? 'is-active' : undefined)}>Company</NavLink>
+              <button
+                type="button"
+                className="nav-chevron"
+                aria-expanded={menu === 'company'}
+                aria-controls="mega-company"
+                aria-label={menu === 'company' ? 'Hide Company menu' : 'Show Company menu'}
+                onClick={() => setMenu((current) => (current === 'company' ? null : 'company'))}
+              >
+                <Caret />
+              </button>
+            </div>
           </nav>
 
-          <div className="nav-actions">
-            {user ? (
-              <UserMenu />
-            ) : (
+          <div className="nav-actions" onMouseEnter={() => holdMenu(null)}>
+            {user ? <UserMenu /> : (
               <Link className="nav-cta nav-cta--ghost" to="/login">
                 Sign In
               </Link>
             )}
             <Link className="nav-cta" to="/contact">
-              Let&apos;s Talk
+              <span>Let&apos;s Talk</span>
+              <span className="nav-cta-arrow" aria-hidden="true">→</span>
             </Link>
             <button
               ref={toggleRef}
@@ -164,6 +298,77 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+
+        <MegaPanel id="mega-services" open={menu === 'services'} label="Services menu" onEnter={() => holdMenu('services')}>
+          <div className="mega-cols">
+            {serviceColumns.map((column) => (
+              <div key={column.label}>
+                <h3>{column.label}</h3>
+                <ul>
+                  {column.items.map((item) => (
+                    <li key={item.slug}>
+                      <Link to={`/services/${item.slug}`} onClick={() => setMenu(null)}>
+                        <strong>{item.title}</strong>
+                        <span>{item.lede}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <Link className="mega-all" to="/services" onClick={() => setMenu(null)}>All services →</Link>
+        </MegaPanel>
+
+        <MegaPanel id="mega-industries" open={menu === 'industries'} label="Industries menu" onEnter={() => holdMenu('industries')}>
+          <div className="mega-cols">
+            <div>
+              <h3>Practices</h3>
+              <ul>
+                {industries.slice(0, 4).map((item) => (
+                  <li key={item.slug}>
+                    <Link to={`/industries/${item.slug}`} onClick={() => setMenu(null)}>
+                      <strong>{item.title}</strong>
+                      <span>{item.lede}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3>More</h3>
+              <ul>
+                {industries.slice(4).map((item) => (
+                  <li key={item.slug}>
+                    <Link to={`/industries/${item.slug}`} onClick={() => setMenu(null)}>
+                      <strong>{item.title}</strong>
+                      <span>{item.lede}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <Link className="mega-all" to="/industries" onClick={() => setMenu(null)}>All industries →</Link>
+        </MegaPanel>
+
+        <MegaPanel id="mega-company" open={menu === 'company'} label="Company menu" onEnter={() => holdMenu('company')}>
+          <div className="mega-cols">
+            <div>
+              <h3>Studio</h3>
+              <ul>
+                {companyLinks.map((item) => (
+                  <li key={item.to}>
+                    <Link to={item.to} onClick={() => setMenu(null)}>
+                      <strong>{item.title}</strong>
+                      <span>{item.text}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </MegaPanel>
       </header>
 
       <div className={`mobile-overlay ${open ? 'is-open' : ''}`} onClick={closeMenu} />
@@ -180,15 +385,37 @@ export default function Navbar() {
             <BrandMark />
           </Link>
           <button type="button" className="drawer-close" onClick={closeMenu} aria-label="Close menu">
-            Close
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
           </button>
         </div>
         <nav className="drawer-links" aria-label="Mobile">
-          {links.map((link) => (
-            <NavLink key={link.to} to={link.to} onClick={closeMenu}>
-              {link.label}
-            </NavLink>
-          ))}
+          <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
+          <DrawerGroup label="Services" menuOpen={open}>
+            {serviceColumns.map((column) => (
+              <div key={column.label} className="drawer-cluster">
+                <p>{column.label}</p>
+                {column.items.map((item) => (
+                  <Link key={item.slug} to={`/services/${item.slug}`} onClick={closeMenu}>{item.title}</Link>
+                ))}
+              </div>
+            ))}
+            <Link className="drawer-all" to="/services" onClick={closeMenu}>All services</Link>
+          </DrawerGroup>
+          <DrawerGroup label="Industries" menuOpen={open}>
+            {industries.map((item) => (
+              <Link key={item.slug} to={`/industries/${item.slug}`} onClick={closeMenu}>{item.title}</Link>
+            ))}
+            <Link className="drawer-all" to="/industries" onClick={closeMenu}>All industries</Link>
+          </DrawerGroup>
+          <NavLink to="/work" onClick={closeMenu}>Work</NavLink>
+          <DrawerGroup label="Company" menuOpen={open}>
+            {companyLinks.filter((item) => item.to !== '/work').map((item) => (
+              <Link key={item.to} to={item.to} onClick={closeMenu}>{item.title}</Link>
+            ))}
+          </DrawerGroup>
           {user ? <UserMenu variant="drawer" onNavigate={closeMenu} /> : null}
         </nav>
         <div className="drawer-footer">
@@ -199,6 +426,7 @@ export default function Navbar() {
           ) : null}
           <Link className="nav-cta drawer-cta" to="/contact" onClick={closeMenu}>
             Let&apos;s Talk
+            <span className="nav-cta-arrow" aria-hidden="true">→</span>
           </Link>
         </div>
       </aside>

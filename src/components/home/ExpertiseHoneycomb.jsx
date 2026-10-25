@@ -4,12 +4,12 @@ import './ExpertiseHoneycomb.css'
 
 export const expertiseOfferings = [
   { label: 'Websites', detail: 'Sites and stores', to: '/services/web-development' },
-  { label: 'Software', detail: 'Billing and CRM', to: '/services/web-applications' },
-  { label: 'WhatsApp', detail: 'AI booking flows', to: '/services/ai-automation' },
-  { label: 'Cloud', detail: 'Speed and security', to: '/services/cloud-devops' },
-  { label: 'Funnels', detail: 'Pages and ads', to: '/services/ecommerce' },
-  { label: 'Documents', detail: 'Invoices and PDFs', to: '/services/ai-automation' },
-  { label: 'Digital marketing', detail: 'Ads & landing pages', to: '/services/digital-marketing' },
+  { label: 'Software', detail: 'Portals and tools', to: '/services/web-applications' },
+  { label: 'WhatsApp', detail: 'Booking, then a person', to: '/services/ai-automation' },
+  { label: 'Cloud', detail: 'Deploys you can undo', to: '/services/cloud-devops' },
+  { label: 'Commerce', detail: 'Catalogs and checkout', to: '/services/ecommerce' },
+  { label: 'Documents', detail: 'Invoices, then review', to: '/services/ai-automation' },
+  { label: 'Digital marketing', detail: 'Ads tied to inquiries', to: '/services/digital-marketing' },
 ]
 
 export default function ExpertiseHoneycomb({
@@ -24,6 +24,9 @@ export default function ExpertiseHoneycomb({
         <Reveal as="header" className="expertise-head">
           <p className="expertise-kicker">{kicker}</p>
           <h2 id={titleId}>{title}</h2>
+          <p className="expertise-lead">
+            Websites, software, commerce, and automation. Open a tile to see what that work includes and what you receive.
+          </p>
         </Reveal>
 
         <ul className="hex-board">

@@ -9,9 +9,9 @@ export const defaultSeo = {
 export const routeSeo = {
   '/': {
     path: '/',
-    title: 'PixelToCloud — Websites and software',
+    title: 'PixelToCloud — Websites, software, and AI',
     description:
-      'We build digital products that move businesses forward. A focused website can launch within 7 days. You keep the code.',
+      'Websites, custom software, and automation. Offices in Gurugram and Alwar. You keep the source code.',
   },
   '/serve': {
     path: '/serve',

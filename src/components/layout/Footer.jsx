@@ -33,8 +33,8 @@ export default function Footer() {
           <p className="footer-col-title">Connect</p>
           <div className="footer-links">
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            <a href={contact.whatsappLink} target="_blank" rel="noreferrer">WhatsApp</a>
-            <a href={contact.appointmentLink} target="_blank" rel="noreferrer">Book an intro call</a>
+            <a href={contact.whatsappLink} target="_blank" rel="noopener noreferrer">WhatsApp<span className="sr-only"> (opens in a new tab)</span></a>
+            <a href={contact.appointmentLink} target="_blank" rel="noopener noreferrer">Book an intro call<span className="sr-only"> (opens in a new tab)</span></a>
           </div>
         </div>
       </div>

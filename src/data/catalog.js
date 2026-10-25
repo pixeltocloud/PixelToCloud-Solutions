@@ -133,6 +133,7 @@ export const industries = [
   {
     slug: 'healthcare',
     title: 'Healthcare',
+    image: '/image/industries/healthcare.jpg',
     lede: 'Clinic sites where a person can request a visit and get a confirmation without a phone tag.',
     experience: 'Published work includes Harish Renova. Revital Physiocare is a client with a public quote and no separate case study.',
     challenges: ['Patients need a clear way to book.', 'Emergency and routine paths should not look the same.', 'The site has to stay fast on a phone.'],
@@ -142,6 +143,7 @@ export const industries = [
   {
     slug: 'professional-services',
     title: 'Professional services',
+    image: '/image/industries/professional-services.jpg',
     lede: 'Practices that handle client files, billing, and a public site. The sensitive work does not stay in an inbox.',
     experience: 'Easy My Tax is a published client portal for a chartered accountancy practice.',
     challenges: ['Client documents move through email.', 'Staff and clients need different access.', 'Deadlines pile up when the system is a spreadsheet.'],
@@ -151,6 +153,7 @@ export const industries = [
   {
     slug: 'retail-and-makers',
     title: 'Retail and makers',
+    image: '/image/industries/retail-and-makers.jpg',
     lede: 'A catalog that shows the work clearly and gives a buyer a way to inquire or check out.',
     experience: 'Saini Handicrafts is a published project.',
     challenges: ['Products look better in person than on the old site.', 'Overseas buyers need a clear next step.', 'The brand and the page disagree.'],
@@ -160,6 +163,7 @@ export const industries = [
   {
     slug: 'saas',
     title: 'SaaS and startups',
+    image: '/image/industries/saas.jpg',
     lede: 'An application with accounts, a dashboard, and a release you can undo.',
     experience: 'We have not published a venture-backed SaaS case study. The application service is how this work is scoped.',
     challenges: ['The product needs auth before it needs a marketing site.', 'The first version has to be small enough to ship.', 'Investors ask who owns the code.'],
@@ -169,6 +173,7 @@ export const industries = [
   {
     slug: 'real-estate',
     title: 'Real estate',
+    image: '/image/industries/real-estate.jpg',
     lede: 'Listing and inquiry sites. We have not published a real-estate case study.',
     experience: 'No published project in this industry. The notes below are typical problems, not a claim of specialization.',
     challenges: ['Listings go stale.', 'Inquiries land in a personal inbox.', 'The site is slow on the photos that matter.'],
@@ -178,6 +183,7 @@ export const industries = [
   {
     slug: 'education',
     title: 'Education',
+    image: '/image/industries/education.jpg',
     lede: 'Course, clinic, and enrollment sites. We have not published an education case study.',
     experience: 'No published project in this industry.',
     challenges: ['Enrollment is a form that nobody checks.', 'Schedules live in a PDF.', 'Parents and students see the same screen.'],
@@ -187,6 +193,7 @@ export const industries = [
   {
     slug: 'hospitality',
     title: 'Hospitality',
+    image: '/image/industries/hospitality.jpg',
     lede: 'Property and booking sites. We have not published a hospitality case study.',
     experience: 'No published project in this industry.',
     challenges: ['The booking path and the photos disagree.', 'Questions repeat on WhatsApp.', 'The site was built by a vendor who still holds the login.'],

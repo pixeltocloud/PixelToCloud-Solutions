@@ -19,7 +19,7 @@
 }
 
 .expertise-head {
-  max-width: 20em;
+  max-width: 36em;
   margin: 0 auto 40px;
 }
 
@@ -40,6 +40,15 @@
   letter-spacing: -0.04em;
   line-height: 1.05;
   color: var(--text);
+}
+
+.expertise-lead {
+  max-width: 34em;
+  margin: 14px auto 0;
+  color: var(--text-secondary);
+  font-size: 1.02rem;
+  font-weight: 450;
+  line-height: 1.55;
 }
 
 .hex-board {
@@ -113,7 +122,24 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .hex:hover { background: #172554; }
+  .hex:hover {
+    background:
+      radial-gradient(circle at 50% 28%, rgba(125, 211, 252, 0.38), transparent 58%),
+      linear-gradient(165deg, #1d4ed8 0%, #172554 55%, #0b1220 100%);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hex-board > li { animation: hex-float 5.8s ease-in-out infinite; }
+  .hex-board > li:nth-child(2) { animation-delay: -0.7s; }
+  .hex-board > li:nth-child(3) { animation-delay: -1.4s; }
+  .hex-board > li:nth-child(4) { animation-delay: -2.1s; }
+  .hex-board > li:nth-child(5) { animation-delay: -2.8s; }
+  .hex-board > li:nth-child(6) { animation-delay: -3.5s; }
+  .hex-board > li:nth-child(7) { animation-delay: -4.2s; }
+}
+@keyframes hex-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
 }
 
 .hex:focus-visible {
@@ -162,14 +188,21 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hex { transition: none; }
-  .hex:active { transform: none; }
+  .hex,
+  .hex-board > li { transition: none; animation: none; }
+  .hex:active,
+  .hex:hover { transform: none; }
 }
 
 [data-theme='dark'] .expertise-honeycomb { background: #121826; }
 [data-theme='dark'] .expertise-kicker { color: #38bdf8; }
 [data-theme='dark'] .expertise-head h2 { color: #f8fafc; }
+[data-theme='dark'] .expertise-lead { color: #a7b4c7; }
 [data-theme='dark'] .hex { background: #07111f; }
 @media (hover: hover) and (pointer: fine) {
-  [data-theme='dark'] .hex:hover { background: #0b1a36; }
+  [data-theme='dark'] .hex:hover {
+    background:
+      radial-gradient(circle at 50% 28%, rgba(125, 211, 252, 0.32), transparent 58%),
+      linear-gradient(165deg, #1e3a8a 0%, #0b1a36 70%);
+  }
 }

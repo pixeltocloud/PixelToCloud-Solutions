@@ -12,7 +12,7 @@ export default function Home() {
     <div className="home home--studio">
       <Seo
         title={`${brand.name} — Websites, software, and AI`}
-        description="Websites, custom software, and AI automation. You keep the source code."
+        description="Websites, custom software, and automation. Offices in Gurugram and Alwar. You keep the source code."
         path="/"
       />
       <ScrollProgress />

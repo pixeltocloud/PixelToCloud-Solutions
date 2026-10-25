@@ -106,11 +106,37 @@
   gap: 14px 16px;
 }
 
+.contact-required-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.field-mark {
+  color: #0369a1;
+  font-weight: 700;
+}
+
+.field-optional {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .contact-form label {
   display: grid;
   gap: 6px;
   font-weight: 650;
   font-size: 0.92rem;
+}
+
+.contact-submit-note a {
+  color: #0369a1;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
 }
 
 .contact-form input,

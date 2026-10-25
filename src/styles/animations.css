@@ -1,9 +1,10 @@
 .reveal {
+  --reveal-y: 36px;
   opacity: 0;
-  transform: translateY(var(--reveal-y, 14px));
+  transform: translateY(var(--reveal-y));
   transition:
-    opacity var(--motion-reveal, 560ms) var(--ease-out),
-    transform var(--motion-reveal, 560ms) var(--ease-out);
+    opacity 780ms var(--ease-out),
+    transform 780ms var(--ease-out);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
@@ -13,13 +14,13 @@
 }
 
 .page-enter {
-  animation: pageIn 560ms var(--ease-out) both;
+  animation: pageIn 720ms var(--ease-out) both;
 }
 
 @keyframes pageIn {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(32px);
   }
   to {
     opacity: 1;
@@ -199,8 +200,8 @@
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-12px);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(56, 189, 248, 0.35);
 }
 
 @media (prefers-reduced-motion: reduce) {

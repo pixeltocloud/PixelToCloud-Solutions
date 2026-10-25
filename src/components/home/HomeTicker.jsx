@@ -24,6 +24,7 @@ function TickerRow({ items }) {
 export default function HomeTicker() {
   return (
     <section className="home-ticker" aria-label="How we work">
+      <p className="sr-only">Build what&apos;s next. Develop. Automate. Scale. Design.</p>
       <div className="home-ticker-viewport" aria-hidden="true">
         <div className="home-ticker-roll">
           {ROLL.map((items, frameIndex) => (

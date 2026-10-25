@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Reveal from '../ui/Reveal'
+import { brand } from '../../config/brand'
 import { contact } from '../../data/founders'
 import { testimonials } from '../../data/testimonials'
 import WorkPortfolio, { Arrow, padIndex } from '../work/WorkPortfolio'
@@ -58,14 +59,6 @@ export function SelectedWork() {
           <div className="work-intro-copy">
             <p className="home-kicker">
               Selected work
-              <span className="work-intro-range" aria-hidden="true">
-                {' '}
-                /
-                {' '}
-                {padIndex(1)}
-                —
-                {padIndex(total)}
-              </span>
               <span className="sr-only">
                 , projects
                 {' '}
@@ -211,12 +204,20 @@ export function Close() {
         <h2 id="close-title">Have a challenge worth solving?</h2>
         <p>Let&apos;s explore what the right website, software, or automation could do for your business.</p>
         <div className="home-actions">
-          <a className="home-btn home-btn-light" href={contact.appointmentLink} target="_blank" rel="noreferrer">
-            Book an intro call
+          <Link className="home-btn home-btn-light" to={brand.primaryHref}>
+            {brand.primaryCta}
             <span className="home-btn-arrow" aria-hidden="true">→</span>
-          </a>
-          <a className="home-btn home-btn-ghost" href={contact.whatsappLink} target="_blank" rel="noreferrer">Talk to us on WhatsApp</a>
+          </Link>
+          <Link className="home-btn home-btn-ghost" to="/contact">Talk to us</Link>
         </div>
+        <p className="home-close-alt">
+          Or{' '}
+          <a href={contact.whatsappLink} target="_blank" rel="noopener noreferrer">
+            message us on WhatsApp
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          .
+        </p>
       </Reveal>
     </section>
   )

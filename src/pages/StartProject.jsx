@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Seo from '../components/seo/Seo'
 import { brand } from '../config/brand'
 import { contact } from '../data/founders'
@@ -17,6 +18,24 @@ const needs = [
 ]
 
 const steps = ['Need', 'Business', 'Scope', 'Budget', 'Contact', 'Review']
+
+const fieldLabels = {
+  need: 'What you need',
+  company: 'Company',
+  industry: 'Industry',
+  website: 'Website',
+  country: 'Country',
+  description: 'Project description',
+  goals: 'Key goals',
+  features: 'Required features',
+  integrations: 'Integrations',
+  budget: 'Budget band',
+  timeline: 'Timeline',
+  name: 'Name',
+  email: 'Business email',
+  phone: 'Phone',
+  method: 'Preferred contact',
+}
 
 const empty = {
   need: '',
@@ -41,6 +60,11 @@ export default function StartProject() {
   const [values, setValues] = useState(empty)
   const [error, setError] = useState('')
   const [status, setStatus] = useState('idle')
+  const errorRef = useRef(null)
+
+  useEffect(() => {
+    if (error) errorRef.current?.focus()
+  }, [error, step])
 
   function setField(key, value) {
     setValues((current) => ({ ...current, [key]: value }))
@@ -99,6 +123,7 @@ export default function StartProject() {
           <p className="ag-eye">Project brief</p>
           <h1 id="start-project-title">Start a project</h1>
           <p className="ag-lead">Six short steps. Budget bands are estimates for the conversation, not a quote.</p>
+          <p><Link className="ag-text-link" to="/contact">Prefer a shorter note? Use the contact form.</Link></p>
         </div>
       </section>
       <section className="ag-sheet cream">
@@ -186,14 +211,14 @@ export default function StartProject() {
               )}
               {step === 5 && (
                 <dl className="ag-specs">
-                  {Object.entries(values).filter(([, value]) => value).map(([key, value]) => (
-                    <div key={key}><dt>{key}</dt><dd>{value}</dd></div>
+                  {Object.entries(fieldLabels).filter(([key]) => values[key]).map(([key, label]) => (
+                    <div key={key}><dt>{label}</dt><dd>{values[key]}</dd></div>
                   ))}
                 </dl>
               )}
-              {error ? <p className="ag-error" role="alert">{error}</p> : null}
+              {error ? <p className="ag-error" role="alert" tabIndex={-1} ref={errorRef}>{error}</p> : null}
               <div className="ag-actions">
-                {step > 0 ? <button type="button" className="ag-btn ag-btn-line" onClick={() => setStep((current) => current - 1)}>Back</button> : null}
+                {step > 0 ? <button type="button" className="ag-btn ag-btn-line" onClick={() => { setError(''); setStep((current) => current - 1) }}>Back</button> : null}
                 {step < 5 ? <button type="button" className="ag-btn ag-btn-solid" onClick={next}>Continue</button> : (
                   <button type="button" className="ag-btn ag-btn-solid" onClick={submit} disabled={status === 'loading'}>
                     {status === 'loading' ? 'Sending…' : 'Submit brief'}

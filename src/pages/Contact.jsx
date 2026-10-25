@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Seo from '../components/seo/Seo'
 import { brand } from '../config/brand'
 import { contact } from '../data/founders'
@@ -16,6 +17,19 @@ const types = [
   'Cloud or DevOps',
   'Not sure yet',
 ]
+
+function RequiredMark() {
+  return (
+    <>
+      <span className="field-mark" aria-hidden="true"> *</span>
+      <span className="sr-only"> (required)</span>
+    </>
+  )
+}
+
+function OptionalMark() {
+  return <span className="field-optional">Optional</span>
+}
 
 function ContactVisual() {
   return (
@@ -139,38 +153,39 @@ export default function Contact() {
             </header>
 
             <form className="ag-form contact-form" onSubmit={onSubmit} noValidate={false}>
-              <label className="sr-only">
+              <p className="contact-required-note" id="inquiry-required-note">Fields marked with * are required.</p>
+              <label className="sr-only" aria-hidden="true">
                 Company website
                 <input name="company_website" tabIndex={-1} autoComplete="off" />
               </label>
 
               <div className="contact-form-grid">
                 <label>
-                  Name
-                  <input name="name" required autoComplete="name" />
+                  <span>Name<RequiredMark /></span>
+                  <input name="name" required autoComplete="name" aria-required="true" />
                 </label>
                 <label>
-                  Email
-                  <input name="email" type="email" required autoComplete="email" />
+                  <span>Email<RequiredMark /></span>
+                  <input name="email" type="email" required autoComplete="email" aria-required="true" />
                 </label>
                 <label>
-                  Phone
-                  <input name="phone" autoComplete="tel" />
+                  <span>Phone <OptionalMark /></span>
+                  <input name="phone" type="tel" inputMode="tel" autoComplete="tel" />
                 </label>
                 <label>
-                  Country or time zone
-                  <input name="country" required autoComplete="country-name" />
+                  <span>Country or time zone<RequiredMark /></span>
+                  <input name="country" required autoComplete="country-name" aria-required="true" />
                 </label>
                 <label>
-                  Project type
-                  <select name="projectType" required defaultValue="">
+                  <span>Project type<RequiredMark /></span>
+                  <select name="projectType" required defaultValue="" aria-required="true">
                     <option value="" disabled>Choose one</option>
                     {types.map((type) => <option key={type}>{type}</option>)}
                   </select>
                 </label>
                 <label>
-                  Budget range
-                  <select name="budget" required defaultValue="">
+                  <span>Budget range<RequiredMark /></span>
+                  <select name="budget" required defaultValue="" aria-required="true">
                     <option value="" disabled>Choose a band</option>
                     <option>Under $2,000</option>
                     <option>$2,000–$8,000</option>
@@ -180,8 +195,8 @@ export default function Contact() {
                   </select>
                 </label>
                 <label>
-                  Timeline
-                  <select name="timeline" required defaultValue="">
+                  <span>Timeline<RequiredMark /></span>
+                  <select name="timeline" required defaultValue="" aria-required="true">
                     <option value="" disabled>Choose one</option>
                     <option>Focused site, 7-day window</option>
                     <option>2–6 weeks</option>
@@ -190,7 +205,7 @@ export default function Contact() {
                   </select>
                 </label>
                 <label>
-                  Coupon
+                  <span>Coupon <OptionalMark /></span>
                   <select name="coupon" defaultValue="">
                     <option value="">None</option>
                     {coupons.map((coupon) => (
@@ -201,10 +216,11 @@ export default function Contact() {
               </div>
 
               <label className="contact-form-full">
-                Project description
+                <span>Project description<RequiredMark /></span>
                 <textarea
                   name="details"
                   required
+                  aria-required="true"
                   minLength={20}
                   rows={5}
                   placeholder="What does your business do, what problem are you trying to solve, and what would a successful outcome look like?"
@@ -217,6 +233,8 @@ export default function Contact() {
                 </button>
                 <p className="contact-submit-note">
                   No obligation. Your project details help us prepare a more useful first conversation.
+                  {' '}
+                  <Link to="/start-project">Prefer a step-by-step brief?</Link>
                 </p>
                 {message ? (
                   <p className={`contact-status is-${status}`} role="status" aria-live="polite">

@@ -1,0 +1,151 @@
+/* Site-wide motion. Color changes stay on when motion is reduced; travel does not. */
+
+@keyframes cta-glow {
+  0%, 100% { box-shadow: 0 10px 28px rgba(37, 99, 235, 0.28); }
+  50% { box-shadow: 0 16px 36px rgba(37, 99, 235, 0.48), 0 0 26px rgba(56, 189, 248, 0.4); }
+}
+
+@keyframes attention-ring {
+  0% { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.14); }
+}
+
+@keyframes link-in {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-btn-light,
+  .ag-btn-light,
+  .ag-btn-solid,
+  .navbar .nav-cta:not(.nav-cta--ghost) {
+    position: relative;
+    animation: cta-glow 2.6s ease-in-out infinite;
+  }
+
+  .home-btn-light::after,
+  .ag-btn-light::after,
+  .ag-btn-solid::after,
+  .navbar .nav-cta:not(.nav-cta--ghost)::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: inherit;
+    border: 1.5px solid rgba(56, 189, 248, 0.55);
+    pointer-events: none;
+    animation: attention-ring 2.4s ease-out infinite;
+  }
+
+  .footer-links a,
+  .nav-links a,
+  .nav-links button,
+  .home-text-link,
+  .ag-text-link {
+    transition: color 220ms var(--ease), translate 320ms var(--ease-out), gap 320ms var(--ease-out);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .svc-card:hover,
+  .cs-card:hover,
+  .why-card:hover,
+  .pillar-card:hover,
+  .process-step:hover,
+  .connect-card:hover,
+  .work-secondary-card:hover,
+  .trust-signal:hover,
+  .footer-links a:hover {
+    border-color: rgba(2, 132, 199, 0.45);
+    box-shadow:
+      0 18px 40px rgba(15, 23, 42, 0.14),
+      0 0 0 1px rgba(56, 189, 248, 0.35);
+  }
+
+  .footer-links a:hover,
+  .footer-legal a:hover { color: #7dd3fc; }
+
+  .nav-links a:hover,
+  .nav-links button:hover { color: #0369a1; }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .svc-card,
+  .cs-card,
+  .why-card,
+  .pillar-card,
+  .process-step,
+  .connect-card,
+  .work-secondary-card,
+  .trust-signal {
+    transition:
+      transform 420ms var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)),
+      box-shadow 420ms var(--ease-out),
+      border-color 280ms var(--ease),
+      background 280ms var(--ease);
+  }
+
+  .svc-card:hover,
+  .cs-card:hover,
+  .why-card:hover,
+  .pillar-card:hover,
+  .process-step:hover,
+  .connect-card:hover,
+  .work-secondary-card:hover,
+  .trust-signal:hover,
+  .hover-lift:hover {
+    transform: translateY(-12px);
+  }
+
+  .footer-links a:hover { translate: 8px 0; }
+
+  .home-text-link:hover,
+  .ag-text-link:hover { gap: 12px; }
+
+  .home-btn:hover,
+  .ag-btn:hover:not(:disabled) {
+    transform: translateY(-4px) scale(1.02);
+    animation: none;
+  }
+
+  .navbar .nav-cta:hover {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-btn-light,
+  .ag-btn-light,
+  .ag-btn-solid,
+  .navbar .nav-cta,
+  .hex-board > li,
+  .idea-node,
+  .home-hero-grid-lines {
+    animation: none !important;
+  }
+
+  .home-btn-light::after,
+  .ag-btn-light::after,
+  .ag-btn-solid::after,
+  .navbar .nav-cta::after {
+    content: none;
+  }
+
+  .svc-card:hover,
+  .cs-card:hover,
+  .why-card:hover,
+  .pillar-card:hover,
+  .process-step:hover,
+  .connect-card:hover,
+  .work-secondary-card:hover,
+  .trust-signal:hover,
+  .hover-lift:hover,
+  .footer-links a:hover,
+  .home-btn:hover,
+  .ag-btn:hover,
+  .navbar .nav-cta:hover,
+  .navbar .nav-cta:hover .nav-cta-arrow {
+    transform: none;
+    translate: none;
+  }
+}

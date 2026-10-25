@@ -13,6 +13,7 @@ import './styles/globals.css'
 import './styles/components.css'
 import './styles/animations.css'
 import './styles/agency.css'
+import './styles/motion.css'
 
 const Services = lazy(() => import('./pages/Services'))
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
@@ -48,17 +49,76 @@ const Messages = lazy(() => import('./pages/portal').then((mod) => ({ default: m
 const Files = lazy(() => import('./pages/portal').then((mod) => ({ default: mod.Files })))
 const ProjectDetail = lazy(() => import('./pages/portal').then((mod) => ({ default: mod.ProjectDetail })))
 
+function motionBehavior() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+}
+
 function scrollToHash(hash, attempt = 0) {
   const id = hash.replace('#', '')
   if (!id) return
   const el = document.getElementById(id)
   if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    el.scrollIntoView({ behavior: motionBehavior(), block: 'start' })
     return
   }
   if (attempt < 12) {
     window.setTimeout(() => scrollToHash(hash, attempt + 1), 50 + attempt * 25)
   }
+}
+
+function GlideScroll() {
+  useEffect(() => {
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)')
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (!fine.matches || reduce.matches) return undefined
+
+    let target = window.scrollY
+    let current = window.scrollY
+    let frame = 0
+    let driving = false
+
+    const limit = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight)
+
+    const tick = () => {
+      current += (target - current) * 0.18
+      if (Math.abs(target - current) < 0.5) current = target
+      driving = true
+      window.scrollTo(0, current)
+      driving = false
+      frame = current === target ? 0 : window.requestAnimationFrame(tick)
+    }
+
+    const onWheel = (event) => {
+      if (event.ctrlKey || event.defaultPrevented) return
+      if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return
+      if (document.body.style.overflow === 'hidden') return
+      let node = event.target
+      while (node && node !== document.body) {
+        const style = window.getComputedStyle(node)
+        if (/(auto|scroll)/.test(style.overflowY) && node.scrollHeight > node.clientHeight + 4) return
+        node = node.parentElement
+      }
+      event.preventDefault()
+      target = Math.min(limit(), Math.max(0, target + event.deltaY))
+      if (!frame) frame = window.requestAnimationFrame(tick)
+    }
+
+    const onScroll = () => {
+      if (driving) return
+      target = window.scrollY
+      current = window.scrollY
+    }
+
+    window.addEventListener('wheel', onWheel, { passive: false })
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('wheel', onWheel)
+      window.removeEventListener('scroll', onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
+  }, [])
+
+  return null
 }
 
 function SmoothAnchors() {
@@ -71,7 +131,7 @@ function SmoothAnchors() {
       const el = document.getElementById(hash.slice(1))
       if (!el) return
       event.preventDefault()
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      el.scrollIntoView({ behavior: motionBehavior(), block: 'start' })
       history.pushState(null, '', hash)
     }
     document.addEventListener('click', onClick)
@@ -111,11 +171,13 @@ function AppShell() {
     <div className="app-shell">
       <ScrollManager />
       <SmoothAnchors />
+      <GlideScroll />
       <Analytics />
       {quiet ? null : <Navbar />}
       {quiet || portal ? null : <OfferPopup />}
       <main id="main-content" className={`site-main${quiet ? ' is-quiet' : ''}`}>
         <Suspense fallback={<RouteFallback />}>
+          <div key={location.pathname} className="page-enter">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
@@ -154,6 +216,7 @@ function AppShell() {
             <Route path="/dashboard/settings" element={<RequireAuth><DashboardSettings /></RequireAuth>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </div>
         </Suspense>
       </main>
       {quiet || portal ? null : <Footer />}

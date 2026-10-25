@@ -4,7 +4,7 @@ import { CtaBand } from '../components/site/blocks'
 import { brand } from '../config/brand'
 import { founders, contact } from '../data/founders'
 import { whyUs } from '../data/services'
-import { industries } from '../data/catalog'
+import IndustrySlider from '../components/about/IndustrySlider'
 
 export default function About() {
   return (
@@ -35,16 +35,29 @@ export default function About() {
           </ul>
         </div>
       </section>
-      <section className="ag-sheet alt">
+      <section className="ag-sheet alt founder-sheet">
         <div className="ag-wrap">
           <h2>Founders</h2>
           <div className="portrait-grid">
             {founders.map((person) => (
-              <article key={person.name}>
-                <img src={person.image} alt={`${person.name}, ${person.role}`} width="640" height="800" />
-                <h3>{person.name}</h3>
-                <p>{person.role}. {person.experience}.</p>
-                <p>{person.bio}</p>
+              <article key={person.name} className="founder-card">
+                <div className="founder-card-media">
+                  <img
+                    src={person.image}
+                    alt={`${person.name}, ${person.role}`}
+                    width="960"
+                    height="640"
+                    style={{ objectPosition: person.frame }}
+                  />
+                </div>
+                <div className="founder-card-body">
+                  <div className="founder-card-meta">
+                    <span className="founder-card-role">{person.label}</span>
+                    <span className="founder-card-exp">{person.experience.replace(' Experience', '')}</span>
+                  </div>
+                  <h3>{person.name}</h3>
+                  <p>{person.role}. {person.bio}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -52,15 +65,7 @@ export default function About() {
       </section>
       <section className="ag-sheet">
         <div className="ag-wrap">
-          <h2>Industries</h2>
-          <p className="ag-lead">We name a specialty only where a project is published. The other pages describe the kind of work, not a track record.</p>
-          <ul className="ag-list">
-            {industries.map((item) => (
-              <li key={item.slug}>
-                <Link to={`/industries/${item.slug}`}><strong>{item.title}</strong><span>{item.experience}</span></Link>
-              </li>
-            ))}
-          </ul>
+          <IndustrySlider />
         </div>
       </section>
       <CtaBand />

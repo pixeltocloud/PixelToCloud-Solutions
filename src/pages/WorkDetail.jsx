@@ -51,7 +51,7 @@ export default function WorkDetail() {
             <div><dt>Industry</dt><dd>{study.industry}</dd></div>
             <div><dt>Services</dt><dd>{study.systemType}</dd></div>
             <div><dt>Timeline</dt><dd>{study.timeline}</dd></div>
-            <div><dt>Live</dt><dd>{study.liveUrl ? <a href={study.liveUrl}>Visit site</a> : 'Not public'}</dd></div>
+            <div><dt>Live</dt><dd>{study.liveUrl ? <a href={study.liveUrl} target="_blank" rel="noopener noreferrer">Visit site<span className="sr-only"> (opens in a new tab)</span></a> : 'Not public'}</dd></div>
           </dl>
         </div>
       </section>

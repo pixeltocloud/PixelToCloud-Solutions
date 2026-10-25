@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { brand } from '../../config/brand'
 
 const phrases = [
   'Websites that convert.',
@@ -43,6 +44,11 @@ export default function HeroCarousel() {
     <section className="home-hero" aria-labelledby="home-hero-title">
       <div className="home-hero-glow" aria-hidden="true" />
       <div className="home-hero-grid-lines" aria-hidden="true" />
+      <div className="hero-meteors" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
       <div className="home-wrap home-hero-grid">
         <div className="home-hero-copy">
           <p className="home-eye">Built from ideas</p>
@@ -51,23 +57,29 @@ export default function HeroCarousel() {
             <span className="hero-line hero-line-accent">better digital experiences.</span>
           </h1>
           {reduced ? (
-            <p className="hero-stable">Websites that convert.</p>
+            <p className="hero-stable">Websites, software, apps, and AI.</p>
           ) : (
-            <div className="hero-roll" aria-hidden="true">
-              <div className={`hero-roll-track ${animate ? 'is-animated' : ''}`} style={{ '--roll': index }}>
-                {[...phrases, phrases[0]].map((phrase, item) => (
-                  <span key={`${phrase}-${item}`}>{phrase}</span>
-                ))}
+            <>
+              <div className="hero-roll" aria-hidden="true">
+                <div className={`hero-roll-track ${animate ? 'is-animated' : ''}`} style={{ '--roll': index }}>
+                  {[...phrases, phrases[0]].map((phrase, item) => (
+                    <span key={`${phrase}-${item}`}>{phrase}</span>
+                  ))}
+                </div>
               </div>
-            </div>
+              <p className="sr-only">
+                Websites that convert. Software that scales. Apps people love. AI that saves time.
+              </p>
+            </>
           )}
-          <p className="sr-only">
-            Websites that convert. Software that scales. Apps people love. AI that saves time.
-          </p>
           <p className="home-lead">
             We design and build websites, software, and intelligent automation that help businesses work smarter and grow online.
           </p>
-          <div className="home-actions home-actions--solo">
+          <div className="home-actions">
+            <Link className="home-btn home-btn-light" to={brand.primaryHref}>
+              {brand.primaryCta}
+              <span className="home-btn-arrow" aria-hidden="true">→</span>
+            </Link>
             <Link className="home-btn home-btn-ghost" to="/work">Explore Our Work</Link>
           </div>
         </div>
@@ -80,6 +92,11 @@ export default function HeroCarousel() {
 function IdeaField() {
   return (
     <div className="idea-field" aria-hidden="true">
+      <div className="idea-orbit">
+        <span />
+        <span />
+        <span />
+      </div>
       <svg className="idea-map" viewBox="0 0 100 100" preserveAspectRatio="none">
         <path className="idea-link" d="M40 34 C 30 26, 22 20, 16 16" />
         <path className="idea-link" d="M62 34 C 72 28, 80 24, 84 20" />

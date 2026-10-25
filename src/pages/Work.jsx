@@ -15,12 +15,13 @@ export default function Work() {
         <div className="ag-wrap">
           <p className="ag-eye">
             Selected work
-            <span aria-hidden="true">
-              {' '}
-              /
+            <span className="sr-only">
+              , projects
               {' '}
               {padIndex(1)}
-              —
+              {' '}
+              through
+              {' '}
               {padIndex(total)}
             </span>
           </p>
