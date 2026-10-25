@@ -3,19 +3,8 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/seo/Seo'
 import { brand } from '../config/brand'
 import { contact } from '../data/founders'
+import { budgetBands, projectTypes, timelines } from '../data/inquiryOptions'
 import { submitInquiry } from '../lib/inquiry'
-
-const needs = [
-  'Business website',
-  'Website redesign',
-  'Web application or SaaS',
-  'Mobile application',
-  'E-commerce',
-  'AI and automation',
-  'Cloud or DevOps',
-  'Digital marketing',
-  'Other',
-]
 
 const steps = ['Need', 'Business', 'Scope', 'Budget', 'Contact', 'Review']
 
@@ -140,7 +129,7 @@ export default function StartProject() {
               {step === 0 && (
                 <fieldset className="ag-choices">
                   <legend>What do you need?</legend>
-                  {needs.map((need) => (
+                  {projectTypes.map((need) => (
                     <label key={need}>
                       <input type="radio" name="need" checked={values.need === need} onChange={() => setField('need', need)} />
                       {need}
@@ -176,20 +165,13 @@ export default function StartProject() {
                   <label>Budget band
                     <select value={values.budget} onChange={(event) => setField('budget', event.target.value)}>
                       <option value="">Choose one</option>
-                      <option>Under $2,000</option>
-                      <option>$2,000–$8,000</option>
-                      <option>$8,000–$25,000</option>
-                      <option>$25,000+</option>
-                      <option>Not sure yet</option>
+                      {budgetBands.map((band) => <option key={band}>{band}</option>)}
                     </select>
                   </label>
                   <label>Timeline
                     <select value={values.timeline} onChange={(event) => setField('timeline', event.target.value)}>
                       <option value="">Choose one</option>
-                      <option>Focused site, 7-day window</option>
-                      <option>2–6 weeks</option>
-                      <option>1–3 months</option>
-                      <option>Not sure yet</option>
+                      {timelines.map((item) => <option key={item}>{item}</option>)}
                     </select>
                   </label>
                   <p className="ag-kicker">These bands start the conversation. They are not a binding quote.</p>

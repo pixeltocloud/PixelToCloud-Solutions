@@ -1,10 +1,10 @@
 import { Link, useParams } from 'react-router-dom'
 import Seo from '../components/seo/Seo'
 import { CtaBand } from '../components/site/blocks'
-import { WorkFrame, frameKind } from '../components/site/Stage'
 import { brand } from '../config/brand'
 import { caseStudies, getCaseStudy } from '../data/caseStudies'
 import { lessons, workMeta } from '../data/catalog'
+import { studyPhoto } from '../data/media'
 
 export default function WorkDetail() {
   const { slug } = useParams()
@@ -29,8 +29,9 @@ export default function WorkDetail() {
     )
   }
 
-  const related = caseStudies.filter((item) => item.slug !== study.slug).slice(0, 3)
+  const related = caseStudies.filter((item) => item.slug !== study.slug && item.listed !== false).slice(0, 3)
   const meta = workMeta[study.slug]
+  const photo = studyPhoto(study.slug)
 
   return (
     <div className="ag ag-page">
@@ -56,10 +57,13 @@ export default function WorkDetail() {
         </div>
       </section>
       <section className="ag-sheet cream">
-        <div className="ag-wrap study-cover">
-          <WorkFrame kind={frameKind(study.slug)} />
-          <p className="study-note">Composed interface study for this project. It is not a screenshot of the live product.</p>
-        </div>
+        {photo ? (
+          <div className="ag-wrap study-cover">
+            <figure className="detail-photo">
+              <img src={photo.src} alt={photo.alt} width="1440" height="960" />
+            </figure>
+          </div>
+        ) : null}
         <div className="ag-wrap ag-split">
           <div className="ag-prose">
             <h2>The challenge</h2>

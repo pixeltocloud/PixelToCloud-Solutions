@@ -8,7 +8,7 @@ export const expertiseOfferings = [
   { label: 'WhatsApp', detail: 'Booking, then a person', to: '/services/ai-automation' },
   { label: 'Cloud', detail: 'Deploys you can undo', to: '/services/cloud-devops' },
   { label: 'Commerce', detail: 'Catalogs and checkout', to: '/services/ecommerce' },
-  { label: 'Documents', detail: 'Invoices, then review', to: '/services/ai-automation' },
+  { label: 'Mobile', detail: 'When a phone app is the product', to: '/services/mobile-app-development' },
   { label: 'Digital marketing', detail: 'Ads tied to inquiries', to: '/services/digital-marketing' },
 ]
 

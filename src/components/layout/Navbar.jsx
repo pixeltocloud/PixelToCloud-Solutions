@@ -25,8 +25,8 @@ const serviceColumns = [
 
 const companyLinks = [
   { to: '/about', title: 'About', text: 'The studio, the founders, and how the work is run.' },
-  { to: '/process', title: 'How we work', text: 'From the first conversation through handover.' },
-  { to: '/work', title: 'Work', text: 'Published sites and the studies we can document.' },
+  { to: '/work', title: 'Work', text: 'Published sites, the studies we can document, and how an engagement runs.' },
+  { to: '/faq', title: 'FAQ', text: 'Pricing, timelines, ownership, and working across countries.' },
   { to: '/contact', title: 'Contact', text: 'Write or book a call. Hours follow India time.' },
 ]
 
@@ -190,14 +190,11 @@ export default function Navbar() {
     '/services',
     '/work',
     '/about',
-    '/process',
     '/industries',
     '/contact',
-    '/labs',
     '/start-project',
     '/login',
     '/faq',
-    '/insights',
     '/privacy',
     '/terms',
     '/cookies',
@@ -205,7 +202,6 @@ export default function Navbar() {
     || location.pathname.startsWith('/services/')
     || location.pathname.startsWith('/industries/')
     || location.pathname.startsWith('/work/')
-    || location.pathname.startsWith('/insights/')
 
   return (
     <>

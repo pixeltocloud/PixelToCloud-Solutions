@@ -20,7 +20,7 @@ export default function FaqPage() {
         </div>
       </section>
       <section className="ag-sheet cream">
-        <div className="ag-wrap ag-prose">
+        <div className="ag-wrap">
           <FaqList groups={faqGroups} />
         </div>
       </section>

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import ExpertiseHoneycomb from '../components/home/ExpertiseHoneycomb'
 import Seo from '../components/seo/Seo'
 import { CtaBand } from '../components/site/blocks'
 import { brand } from '../config/brand'
-import { deliveryStages } from '../data/catalog'
+import { serviceMedia } from '../data/media'
+import '../components/work/WorkPortfolio.css'
 import './Services.css'
 
 const serviceCards = [
@@ -12,56 +12,56 @@ const serviceCards = [
     tag: 'Websites',
     title: 'Business websites that make the next step obvious',
     text: 'Marketing sites and storefronts that load on a phone, explain the offer clearly, and guide visitors to enquire, book, or buy.',
-    image: '/image/home/business-websites.svg',
-    alt: 'Illustration of a business website interface',
+    image: serviceMedia['web-development'].image,
+    alt: serviceMedia['web-development'].alt,
   },
   {
     slug: 'web-applications',
     tag: 'Software',
     title: 'Custom software for how your team already works',
     text: 'Portals, billing flows, and CRM-style tools shaped around real operations—not another seat-licensed product that almost fits.',
-    image: '/image/home/custom-software.svg',
-    alt: 'Illustration of a custom software dashboard',
+    image: serviceMedia['web-applications'].image,
+    alt: serviceMedia['web-applications'].alt,
   },
   {
     slug: 'ai-automation',
     tag: 'WhatsApp & AI',
     title: 'WhatsApp booking and support with a human handoff',
     text: 'Routine replies and booking flows first. When the answer is not standard, the conversation goes to a person on your team.',
-    image: '/image/home/whatsapp-ai.svg',
-    alt: 'Illustration of a WhatsApp booking conversation',
+    image: serviceMedia['ai-automation'].image,
+    alt: serviceMedia['ai-automation'].alt,
   },
   {
     slug: 'cloud-devops',
     tag: 'Cloud',
     title: 'Cloud delivery, speed, and a path to undo a release',
     text: 'Deploys you can reverse, monitoring that shows what slowed down, and credentials that stay with you after handover.',
-    image: '/image/home/cloud-devops.svg',
-    alt: 'Illustration of cloud deployment status cards',
+    image: serviceMedia['cloud-devops'].image,
+    alt: serviceMedia['cloud-devops'].alt,
   },
   {
     slug: 'ecommerce',
     tag: 'Growth',
     title: 'Landing pages and storefronts that turn attention into a conversation',
     text: 'Campaign pages, catalogs, and inquiry or checkout paths designed so ad spend and organic traffic have a clear place to go.',
-    image: '/image/home/lead-growth.svg',
-    alt: 'Illustration of a conversion-focused landing page',
+    image: serviceMedia.ecommerce.image,
+    alt: serviceMedia.ecommerce.alt,
   },
   {
     slug: 'digital-marketing',
     tag: 'Marketing',
     title: 'Digital marketing that ties campaigns to real inquiries',
     text: 'Search and social campaigns, fast landing pages, and conversion tracking—so you know which spend produces conversations, not just clicks.',
-    image: '/image/home/lead-growth.svg',
-    alt: 'Illustration of digital marketing funnels and campaign performance',
+    image: serviceMedia['digital-marketing'].image,
+    alt: serviceMedia['digital-marketing'].alt,
   },
   {
     slug: 'mobile-app-development',
     tag: 'Mobile',
     title: 'Mobile apps when a phone product is the right surface',
     text: 'iOS, Android, or cross-platform builds with a backend plan—scoped when a responsive website is not enough for the workflow.',
-    image: '/image/home/ai-docs.svg',
-    alt: 'Illustration of a product interface suited to mobile workflows',
+    image: serviceMedia['mobile-app-development'].image,
+    alt: serviceMedia['mobile-app-development'].alt,
   },
 ]
 
@@ -89,13 +89,6 @@ export default function Services() {
         </div>
       </section>
 
-      <ExpertiseHoneycomb
-        className="expertise-honeycomb--page"
-        kicker="Our expertise"
-        title="The work we take on"
-        titleId="services-expertise-title"
-      />
-
       <section className="ag-sheet cream services-cards-section" aria-labelledby="services-cards-title">
         <div className="ag-wrap">
           <header className="services-cards-head">
@@ -106,49 +99,33 @@ export default function Services() {
             </p>
           </header>
 
-          <div className="services-card-grid">
-            {serviceCards.map((card) => {
-              const href = card.to || `/services/${card.slug}`
-              return (
-                <article key={`${card.slug}-${card.tag}`} className="svc-media-card">
-                  <Link to={href} className="svc-media-card-link">
-                    <div className="svc-media-card-media">
-                      <img
-                        src={card.image}
-                        alt={card.alt}
-                        width="640"
-                        height="360"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <div className="svc-media-card-body">
-                      <p className="svc-media-card-tag">{card.tag}</p>
-                      <h3>{card.title}</h3>
-                      <p>{card.text}</p>
-                      <span className="ag-text-link">Explore service</span>
-                    </div>
-                  </Link>
-                </article>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="ag-sheet" aria-labelledby="services-delivery-title">
-        <div className="ag-wrap">
-          <p className="ag-kicker">Delivery</p>
-          <h2 id="services-delivery-title">How a project moves from brief to handover</h2>
-          <ol className="ag-steps">
-            {deliveryStages.map((stage, index) => (
-              <li key={stage.id}>
-                <b>0{index + 1}</b>
-                <h3>{stage.id}</h3>
-                <p>{stage.summary}</p>
-              </li>
+          <div className="work-folio services-folio">
+            {serviceCards.map((card) => (
+              <Link
+                key={`${card.slug}-${card.tag}`}
+                to={card.to || `/services/${card.slug}`}
+                className="work-project work-project--support"
+              >
+                <div className="work-project-media">
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    width="1440"
+                    height="960"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="work-project-body">
+                  <div className="work-project-meta">
+                    <span className="work-project-cat">{card.tag}</span>
+                  </div>
+                  <h3>{card.title}</h3>
+                  <p>{card.text}</p>
+                </div>
+              </Link>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 

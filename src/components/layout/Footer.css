@@ -4,7 +4,7 @@
     radial-gradient(520px 180px at 12% 0%, rgba(37, 99, 235, 0.22), transparent 70%),
     #070d18;
   color: #dbe4f0;
-  padding: 2.5rem 0 1.25rem;
+  padding: 2.5rem 0 calc(1.25rem + 96px + env(safe-area-inset-bottom));
   margin-top: 0;
 }
 

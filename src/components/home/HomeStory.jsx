@@ -1,50 +1,15 @@
 import { Link } from 'react-router-dom'
+import StageLine from '../site/StageLine'
 import Reveal from '../ui/Reveal'
-import { brand } from '../../config/brand'
-import { contact } from '../../data/founders'
 import { testimonials } from '../../data/testimonials'
 import WorkPortfolio, { Arrow, padIndex } from '../work/WorkPortfolio'
 import { clientSites } from '../../data/clientSites'
-
-const journey = [
-  ['01', 'Discover', 'Understand the business, the people using it, the constraints, and the outcome you need.'],
-  ['02', 'Plan and design', 'Define the solution, the experience, the architecture, and what is in scope.'],
-  ['03', 'Build and integrate', 'Develop the solution, connect the systems that are in scope, and check the workflows that matter.'],
-  ['04', 'Launch and improve', 'Deploy, verify, hand over the project, and note what is worth improving next.'],
-]
 
 const why = [
   ['01', 'Ownership', 'Repository, domain, and server credentials at handover. No seat license on our stack.'],
   ['02', 'Direct collaboration', 'You work with Pankaj Gupta and Rusmeen. A reply usually comes the same business day, India time.'],
   ['03', 'Practical delivery', 'A focused website, once the scope is fixed, can launch in 7 days. Applications use their own milestone plan.'],
   ['04', 'Transparent engagement', 'A typical split is 30% to start, 40% at staging, and 30% at handover. A focused launch includes 30 days of warranty.'],
-]
-
-const studies = [
-  {
-    title: 'Easy My Tax',
-    problem: 'Tax return review depended on multi-day email chains.',
-    built: 'A portal for GST and tax calculations, an encrypted document vault, return tracking, and billing.',
-    outcome: 'Documented outcome: review of client returns moved to same-day turnaround.',
-    note: 'Composed study preview, not a live screenshot.',
-    to: '/work/easy-my-tax',
-  },
-  {
-    title: 'Harish Renova',
-    problem: 'Patients needed a clear path to book a consultation on a clinical site.',
-    built: 'A clinical site with booking, WhatsApp confirmation, and emergency routing.',
-    outcome: 'Documented outcome: sub-second mobile loading, with a confirmed consultation requested in under a minute.',
-    note: 'Composed study preview, not a live screenshot.',
-    to: '/work/harish-renova',
-  },
-  {
-    title: 'Saini Handicrafts',
-    problem: 'Handmade work needed an editorial catalog that could reach overseas buyers.',
-    built: 'An editorial catalog with multi-currency pricing and commission inquiries.',
-    outcome: 'Commission inquiries from overseas jumped after launch.',
-    note: 'Composed study preview, not a live screenshot.',
-    to: '/work/saini-handicrafts',
-  },
 ]
 
 const quote = testimonials[0]
@@ -86,65 +51,13 @@ export function SelectedWork() {
           </Link>
         </Reveal>
 
-        <WorkPortfolio />
-
-        <Reveal className="study-block" delay={80}>
-          <div className="study-intro">
-            <p className="home-kicker">Documented studies</p>
-            <h3>Evidence from shipped client work</h3>
-            <p>These studies use composed interface previews. Outcomes below are only the ones already documented for each engagement.</p>
-          </div>
-          <ul className="study-list">
-            {studies.map((study) => (
-              <li key={study.to} className="study-card">
-                <div className="study-card-head">
-                  <h4>{study.title}</h4>
-                  <Link className="home-text-link" to={study.to}>View case study <Arrow /></Link>
-                </div>
-                <div className="study-card-body">
-                  <p><b>Problem</b> {study.problem}</p>
-                  <p><b>Built</b> {study.built}</p>
-                  <p><b>Outcome</b> {study.outcome}</p>
-                  <p className="project-note">{study.note}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+        <WorkPortfolio limit={3} />
 
         <p className="work-lab">
           Nebula3D is a browser tool from the lab, not a client engagement.
           {' '}
-          <Link to="/labs">See the lab</Link>
+          <Link to="/work/nebula-3d">See Nebula3D</Link>
         </p>
-      </div>
-    </section>
-  )
-}
-
-export function Journey() {
-  return (
-    <section className="home-sheet home-journey" aria-labelledby="journey-title">
-      <div className="home-wrap">
-        <Reveal className="home-head">
-          <div>
-            <p className="home-kicker">How an engagement runs</p>
-            <h2 id="journey-title">From the first conversation to a solution that works.</h2>
-          </div>
-          <Link className="home-text-link" to="/process">See the process</Link>
-        </Reveal>
-        <ol className="journey-line">
-          {journey.map(([num, title, text], index) => (
-            <Reveal key={num} as="li" delay={index * 70}>
-              <span className="journey-mark" aria-hidden="true">
-                <i>{num}</i>
-                {index < journey.length - 1 ? <b /> : null}
-              </span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </Reveal>
-          ))}
-        </ol>
       </div>
     </section>
   )
@@ -152,28 +65,13 @@ export function Journey() {
 
 export function Why() {
   return (
-    <section className="home-sheet home-why" aria-labelledby="why-title">
-      <div className="home-wrap">
-        <div className="why-panel why-edit">
-          <Reveal className="why-copy">
-            <p className="home-kicker">Why PixelToCloud</p>
-            <h2 id="why-title">Built around your business, not a vendor lock-in.</h2>
-            <p className="why-lead">The engagement is scoped with you. The code is yours when it ships.</p>
-          </Reveal>
-          <ol className="why-rows">
-            {why.map(([num, title, text], index) => (
-              <Reveal key={num} as="li" delay={index * 60}>
-                <span aria-hidden="true">{num}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </div>
-    </section>
+    <StageLine
+      kicker="Why PixelToCloud"
+      title="Built around your business, not a vendor lock-in."
+      titleId="why-title"
+      lead="The engagement is scoped with you. The code is yours when it ships."
+      steps={why.map(([, title, text]) => ({ title, text }))}
+    />
   )
 }
 
@@ -196,29 +94,3 @@ export function ClientQuote() {
   )
 }
 
-export function Close() {
-  return (
-    <section className="home-close" aria-labelledby="close-title">
-      <Reveal className="home-wrap home-close-inner">
-        <p className="home-eye">Next step</p>
-        <h2 id="close-title">Have a challenge worth solving?</h2>
-        <p>Let&apos;s explore what the right website, software, or automation could do for your business.</p>
-        <div className="home-actions">
-          <Link className="home-btn home-btn-light" to={brand.primaryHref}>
-            {brand.primaryCta}
-            <span className="home-btn-arrow" aria-hidden="true">→</span>
-          </Link>
-          <Link className="home-btn home-btn-ghost" to="/contact">Talk to us</Link>
-        </div>
-        <p className="home-close-alt">
-          Or{' '}
-          <a href={contact.whatsappLink} target="_blank" rel="noopener noreferrer">
-            message us on WhatsApp
-            <span className="sr-only"> (opens in a new tab)</span>
-          </a>
-          .
-        </p>
-      </Reveal>
-    </section>
-  )
-}

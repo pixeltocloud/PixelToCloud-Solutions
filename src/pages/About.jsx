@@ -1,10 +1,34 @@
 import { Link } from 'react-router-dom'
+import IndustrySlider from '../components/about/IndustrySlider'
 import Seo from '../components/seo/Seo'
 import { CtaBand } from '../components/site/blocks'
 import { brand } from '../config/brand'
 import { founders, contact } from '../data/founders'
-import { whyUs } from '../data/services'
-import IndustrySlider from '../components/about/IndustrySlider'
+
+const studioFlow = [
+  {
+    title: 'Conversation',
+    text: `You talk with Pankaj and Rusmeen. Offices in ${contact.location}. Calls follow India time, including for clients in the US and the UAE.`,
+    kind: 'people',
+  },
+  {
+    title: 'Scope',
+    text: 'Pankaj leads systems, security, and infrastructure. The scope is written down, and you approve it before the build starts.',
+    kind: 'scope',
+  },
+  {
+    title: 'Staging',
+    text: 'Rusmeen leads full-stack delivery. You review working software on a private link at each milestone.',
+    kind: 'shot',
+    image: '/image/work/shridaa-arts.jpg',
+    alt: 'Shridaa Arts, a client site shipped by the studio',
+  },
+  {
+    title: 'Handover',
+    text: 'You keep the repository, domain, and server credentials. A focused website launches in 7 days, or that payment is returned, with a 30-day warranty.',
+    kind: 'handover',
+  },
+]
 
 export default function About() {
   return (
@@ -21,18 +45,61 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="ag-sheet cream">
-        <div className="ag-wrap ag-split">
-          <div className="ag-prose">
-            <h2>How the studio works</h2>
-            <p>Pankaj leads systems, security, and infrastructure, with more than eight years in the field. Rusmeen leads full-stack delivery, with more than six years across cloud, DevOps, AI, React, and databases.</p>
-            <p>Offices in {contact.location}. We work with clients in India, the United States, the United Arab Emirates, and elsewhere. Calls are set against India time.</p>
-          </div>
-          <ul className="ag-list">
-            {whyUs.map((item) => (
-              <li key={item.title} className="ag-row"><strong>{item.title}</strong><span>{item.description}</span></li>
+      <section className="ag-sheet cream" aria-labelledby="studio-flow-title">
+        <div className="ag-wrap">
+          <header className="ag-section-head">
+            <h2 id="studio-flow-title">How the studio works</h2>
+            <p>Four stops, with the same two people on the work from the first call to the code in your name.</p>
+          </header>
+          <ol className="studio-flow">
+            {studioFlow.map((step, index) => (
+              <li key={step.title}>
+                <div className="studio-flow-media">
+                  {step.kind === 'people' ? (
+                    <div className="studio-flow-people">
+                      {founders.map((person) => (
+                        <img
+                          key={person.name}
+                          src={person.image}
+                          alt={person.name}
+                          width="480"
+                          height="640"
+                          style={{ objectPosition: person.frame }}
+                        />
+                      ))}
+                    </div>
+                  ) : null}
+                  {step.kind === 'shot' ? (
+                    <img src={step.image} alt={step.alt} width="960" height="640" />
+                  ) : null}
+                  {step.kind === 'scope' ? (
+                    <div className="studio-flow-board">
+                      <p>You approve</p>
+                      <ul>
+                        <li>Pages and data</li>
+                        <li>Milestone dates</li>
+                        <li>What stays out of scope</li>
+                      </ul>
+                    </div>
+                  ) : null}
+                  {step.kind === 'handover' ? (
+                    <div className="studio-flow-board">
+                      <p>You receive</p>
+                      <ul>
+                        <li>Repository</li>
+                        <li>Domain</li>
+                        <li>Server access</li>
+                      </ul>
+                    </div>
+                  ) : null}
+                </div>
+                <span className="studio-flow-mark">{index + 1}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
             ))}
-          </ul>
+          </ol>
+          <p className="studio-flow-more"><Link to="/work#engagement">See every stage of an engagement</Link></p>
         </div>
       </section>
       <section className="ag-sheet alt founder-sheet">
@@ -63,9 +130,9 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="ag-sheet">
+      <section className="ag-sheet" aria-labelledby="about-industries-title">
         <div className="ag-wrap">
-          <IndustrySlider />
+          <IndustrySlider titleId="about-industries-title" />
         </div>
       </section>
       <CtaBand />

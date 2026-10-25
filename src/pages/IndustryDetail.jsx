@@ -1,7 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import Seo from '../components/seo/Seo'
 import { CtaBand, FaqList } from '../components/site/blocks'
-import { WorkFrame, frameKind } from '../components/site/Stage'
 import { brand } from '../config/brand'
 import { getIndustry, servicePages, faqGroups } from '../data/catalog'
 import { caseStudies } from '../data/caseStudies'
@@ -30,7 +29,36 @@ export default function IndustryDetail() {
     )
   }
 
-  const related = industry.related.map((id) => caseStudies.find((item) => item.slug === id)).filter(Boolean)
+  const related = industry.related
+    .map((id) => caseStudies.find((item) => item.slug === id && item.listed !== false))
+    .filter(Boolean)
+  const sparse = ['saas', 'real-estate', 'education', 'hospitality'].includes(industry.slug)
+
+  if (sparse) {
+    return (
+      <div className="ag ag-page industries-page">
+        <Seo title={`${industry.title} | ${brand.name}`} description={industry.lede} path={`/industries/${industry.slug}`} />
+        <section className="ag-hero industries-hero" aria-labelledby="industry-title">
+          <div className="ag-wrap">
+            <p className="ag-crumbs">
+              <Link to="/industries">Industries</Link>
+              {' '}
+              <span aria-hidden="true">/</span>
+              {' '}
+              <span>{industry.title}</span>
+            </p>
+            <p className="ag-eye">Industry</p>
+            <h1 id="industry-title">{industry.title}</h1>
+            <p className="ag-lead">{industry.experience}</p>
+            <div className="ag-actions">
+              <Link className="ag-btn ag-btn-light" to={brand.primaryHref}>{brand.primaryCta}</Link>
+              <Link className="ag-btn ag-btn-ghost" to="/contact">Talk to us</Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    )
+  }
 
   return (
     <div className="ag ag-page industries-page">
@@ -54,7 +82,9 @@ export default function IndustryDetail() {
               <Link className="ag-btn ag-btn-ghost" to="/work">Explore Our Work</Link>
             </div>
           </div>
-          <WorkFrame kind={frameKind(industry.slug)} />
+          <figure className="detail-photo">
+            <img src={industry.image} alt={industry.title} width="1440" height="960" />
+          </figure>
         </div>
       </section>
 
@@ -111,7 +141,8 @@ export default function IndustryDetail() {
 
       <section className="ag-sheet cream">
         <div className="ag-wrap ag-prose">
-          <FaqList groups={faqGroups.filter((group) => group.id === 'international' || group.id === 'timelines')} />
+          <FaqList groups={faqGroups.filter((group) => group.id === 'international')} />
+          <p><Link to="/faq">More questions</Link></p>
         </div>
       </section>
 

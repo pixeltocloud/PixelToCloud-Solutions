@@ -1,1 +1,0 @@
-import{a as e,c as t}from"./index-CYbDSUdD.js";async function n(n){if(!(await fetch(t.formEndpoint,{method:`POST`,headers:{"Content-Type":`application/json`,Accept:`application/json`},body:JSON.stringify({...n,_subject:`${e.name} inquiry from ${n.name||`a visitor`}`,_template:`table`,_captcha:`false`})})).ok)throw Error(`Submission failed`)}export{n as t};

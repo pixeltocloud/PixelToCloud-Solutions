@@ -48,13 +48,14 @@ function WorkProject({ site, index, total, variant = 'support', delay = 0 }) {
   )
 }
 
-export default function WorkPortfolio({ className = '' }) {
+export default function WorkPortfolio({ className = '', limit }) {
+  const sites = typeof limit === 'number' ? clientSites.slice(0, limit) : clientSites
   const total = clientSites.length
 
   return (
     <div className={`work-folio ${className}`.trim()}>
       <div className="work-folio-grid">
-        {clientSites.map((site, i) => (
+        {sites.map((site, i) => (
           <WorkProject
             key={site.id}
             site={site}

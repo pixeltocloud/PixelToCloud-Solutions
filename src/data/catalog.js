@@ -202,78 +202,6 @@ export const industries = [
   },
 ]
 
-export const articles = [
-  {
-    slug: 'what-a-7-day-launch-includes',
-    title: 'What a 7-day launch includes',
-    date: '2026-10-03',
-    author: 'Pankaj Gupta and Rusmeen',
-    minutes: 4,
-    topic: 'Delivery',
-    summary: 'The 7-day promise covers a focused build with the scope written down first. It does not cover every application.',
-    sections: [
-      {
-        heading: 'The clock starts after the scope',
-        paragraphs: [
-          'A focused website can launch within 7 days when the pages, the offer, and the handover are agreed before build. If that date is missed, the payment for that build is returned.',
-          'A portal, a mobile app, or a multi-system integration is estimated in milestones. Those projects are not squeezed into the same promise.',
-        ],
-      },
-      {
-        heading: 'What you review',
-        paragraphs: [
-          'You see a private staging link before the public launch. The last step is the repository, the domain, and the server access, plus 30 days of warranty on the launched work.',
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'what-you-receive-at-handover',
-    title: 'What you receive at handover',
-    date: '2026-10-03',
-    author: 'Rusmeen',
-    minutes: 3,
-    topic: 'Ownership',
-    summary: 'Launch includes the code, the domain, and the server credentials. The site should not depend on us staying.',
-    sections: [
-      {
-        heading: 'Ownership is part of the delivery',
-        paragraphs: [
-          'You receive the Git repository, domain access, and server credentials. There is no seat fee to keep the site online.',
-          'Optional maintenance covers security updates, backups, and fixes after the warranty. It is a separate agreement.',
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'when-whatsapp-should-hand-off',
-    title: 'When a WhatsApp flow should hand off',
-    date: '2026-10-03',
-    author: 'Pankaj Gupta',
-    minutes: 4,
-    topic: 'Automation',
-    summary: 'An automated reply is useful for the question you can answer every time. Everything else goes to a person.',
-    sections: [
-      {
-        heading: 'Write the limit first',
-        paragraphs: [
-          'Booking confirmations, opening hours, and a link to a form are safe to automate. Medical, legal, or payment advice is not, unless a person reviews it.',
-          'Harish Renova uses WhatsApp as a confirmation path for visit requests. The automation does not replace the clinic.',
-        ],
-      },
-    ],
-  },
-]
-
-export const workFilters = [
-  { id: 'all', label: 'All' },
-  { id: 'website', label: 'Websites' },
-  { id: 'application', label: 'Web applications' },
-  { id: 'ecommerce', label: 'E-commerce' },
-  { id: 'mobile', label: 'Mobile' },
-  { id: 'ai', label: 'AI and automation' },
-]
-
 export const workMeta = {
   'pixeltocloud-agency': { category: 'website', badge: 'Our own site', line: 'This site, designed and run by the same team.' },
   'easy-my-tax': { category: 'application', badge: 'Client project', line: 'Clients file and share documents without an email chain.' },
@@ -392,21 +320,10 @@ export const faqGroups = [
   },
 ]
 
-export const techGroups = [
-  { title: 'Interfaces', items: ['React', 'Responsive CSS', 'Accessible markup'] },
-  { title: 'Applications', items: ['Node.js', 'PostgreSQL', 'Authentication and roles'] },
-  { title: 'Delivery', items: ['Linux and Docker', 'CI', 'Cloudflare', 'Backups'] },
-  { title: 'Automation', items: ['WhatsApp flows', 'Document extraction with a review step'] },
-]
-
 export function getService(slug) {
   return servicePages.find((item) => item.slug === slug)
 }
 
 export function getIndustry(slug) {
   return industries.find((item) => item.slug === slug)
-}
-
-export function getArticle(slug) {
-  return articles.find((item) => item.slug === slug)
 }

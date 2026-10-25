@@ -5,12 +5,6 @@ import '../../pages/Dashboard.css'
 
 const links = [
   ['/dashboard', 'Overview'],
-  ['/dashboard/projects', 'Projects'],
-  ['/dashboard/proposals', 'Proposals'],
-  ['/dashboard/invoices', 'Invoices'],
-  ['/dashboard/messages', 'Messages'],
-  ['/dashboard/files', 'Files'],
-  ['/dashboard/enquiries', 'Enquiries'],
   ['/dashboard/profile', 'Profile'],
   ['/dashboard/settings', 'Settings'],
 ]

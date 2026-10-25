@@ -13,12 +13,6 @@ export const routeSeo = {
     description:
       'Websites, custom software, and automation. Offices in Gurugram and Alwar. You keep the source code.',
   },
-  '/serve': {
-    path: '/serve',
-    title: 'Who we serve | PixelToCloud',
-    description:
-      'SaaS, commerce, property, fintech, healthcare, and cloud — a page for each kind of work PixelToCloud builds.',
-  },
   '/services': {
     path: '/services',
     title: 'Services — Websites, Apps, Growth & Automation | PixelToCloud',
@@ -46,12 +40,6 @@ export const routeSeo = {
     path: '/login',
     title: 'Sign in | PixelToCloud',
     description: 'Sign in with Google or a phone code.',
-  },
-  '/labs': {
-    path: '/labs',
-    title: 'Engineering Lab | PixelToCloud',
-    description:
-      'Capabilities we apply on client work—WebGL product viz, deploy patterns, performance budgets—linked to real cases and services.',
   },
   '/privacy': {
     path: '/privacy',

@@ -1,10 +1,10 @@
 import { Link, useParams } from 'react-router-dom'
 import Seo from '../components/seo/Seo'
 import { CtaBand, FaqList } from '../components/site/blocks'
-import { WorkFrame, frameKind } from '../components/site/Stage'
 import { brand } from '../config/brand'
-import { getService, faqGroups, workMeta } from '../data/catalog'
+import { getService, faqGroups } from '../data/catalog'
 import { caseStudies } from '../data/caseStudies'
+import { serviceMedia } from '../data/media'
 
 export default function ServiceDetail() {
   const { slug } = useParams()
@@ -29,7 +29,11 @@ export default function ServiceDetail() {
     )
   }
 
-  const related = service.related.map((id) => caseStudies.find((item) => item.slug === id)).filter(Boolean)
+  const related = service.related
+    .map((id) => caseStudies.find((item) => item.slug === id && item.listed !== false))
+    .filter(Boolean)
+  const photo = serviceMedia[service.slug]
+  const ownership = faqGroups.filter((group) => group.id === 'ownership')
 
   return (
     <div className="ag ag-page">
@@ -46,7 +50,11 @@ export default function ServiceDetail() {
               <Link className="ag-btn ag-btn-ghost" to="/work">See the work</Link>
             </div>
           </div>
-          <WorkFrame kind={frameKind(service.slug)} />
+          {photo ? (
+            <figure className="detail-photo">
+              <img src={photo.image} alt={photo.alt} width="1440" height="960" />
+            </figure>
+          ) : null}
         </div>
       </section>
       <section className="ag-sheet cream">
@@ -68,30 +76,23 @@ export default function ServiceDetail() {
         <section className="ag-sheet alt">
           <div className="ag-wrap">
             <h2>Related work</h2>
-            {related.map((study) => (
-              <article key={study.slug} className="show">
-                <WorkFrame kind={frameKind(study.slug)} />
-                <div>
-                  <p className="ag-kicker">{workMeta[study.slug]?.badge || 'Project'}</p>
-                  <h3>{study.shortTitle}</h3>
-                  <p>{study.timeline}</p>
-                  <Link className="ag-btn ag-btn-line" to={`/work/${study.slug}`} style={{ marginTop: 16 }}>Read the case study</Link>
-                </div>
-              </article>
-            ))}
+            <ul className="ag-list">
+              {related.map((study) => (
+                <li key={study.slug}>
+                  <Link to={`/work/${study.slug}`}>
+                    <strong>{study.shortTitle}</strong>
+                    <span>{study.timeline}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
-      ) : (
-        <section className="ag-sheet alt">
-          <div className="ag-wrap">
-            <h2>Related work</h2>
-            <p>No published case study in this service yet.</p>
-          </div>
-        </section>
-      )}
+      ) : null}
       <section className="ag-sheet">
         <div className="ag-wrap ag-prose">
-          <FaqList groups={faqGroups.filter((group) => ['timelines', 'ownership', 'maintenance'].includes(group.id))} />
+          <FaqList groups={ownership} />
+          <p><Link to="/faq">More questions</Link></p>
         </div>
       </section>
       <CtaBand />

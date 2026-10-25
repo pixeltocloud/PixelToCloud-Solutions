@@ -9,7 +9,7 @@ function cardsPerView() {
   return 3
 }
 
-export default function IndustrySlider() {
+export default function IndustrySlider({ titleId = 'industries-slider-title' }) {
   const [per, setPer] = useState(3)
   const [index, setIndex] = useState(0)
   const [animate, setAnimate] = useState(true)
@@ -81,7 +81,7 @@ export default function IndustrySlider() {
     <div className="industry-slider" style={{ '--per': per, '--i': index }}>
       <div className="industry-slider-head">
         <div>
-          <h2>Industries</h2>
+          <h2 id={titleId}>Industries</h2>
           <p>We name a specialty only where a project is published. The other pages describe the kind of work, not a track record.</p>
         </div>
       </div>

@@ -1,9 +1,9 @@
 import Seo from '../components/seo/Seo'
 import HeroCarousel from '../components/home/HeroCarousel'
-import HomeTicker from '../components/home/HomeTicker'
 import HomeExpertise from '../components/home/HomeExpertise'
 import ScrollProgress from '../components/home/ScrollProgress'
-import { ClientQuote, Close, Journey, SelectedWork, Why } from '../components/home/HomeStory'
+import { CtaBand } from '../components/site/blocks'
+import { ClientQuote, SelectedWork, Why } from '../components/home/HomeStory'
 import { brand } from '../config/brand'
 import './Home.css'
 
@@ -17,13 +17,11 @@ export default function Home() {
       />
       <ScrollProgress />
       <HeroCarousel />
-      <HomeTicker />
       <SelectedWork />
       <HomeExpertise />
-      <Journey />
       <Why />
       <ClientQuote />
-      <Close />
+      <CtaBand />
     </div>
   )
 }

@@ -7,109 +7,18 @@
   margin: 0;
 }
 
-.services-card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px 22px;
-}
-
-.svc-media-card {
-  min-width: 0;
-  border-top: 1px solid var(--border);
-  padding-top: 0;
-  background: transparent;
-}
-
-.svc-media-card-link {
-  display: grid;
-  gap: 16px;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
-}
-
-.svc-media-card-media {
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background: #0b1220;
-  aspect-ratio: 16 / 9;
-}
-
-.svc-media-card-media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s var(--ease);
-}
-
-.svc-media-card-body {
-  display: grid;
-  gap: 8px;
-  align-content: start;
-  padding: 0 2px 4px;
-  text-align: left;
-}
-
-.svc-media-card-tag {
-  margin: 0;
-  color: var(--accent-strong);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.svc-media-card h3 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  color: var(--text);
-}
-
-.svc-media-card-body > p:not(.svc-media-card-tag) {
-  margin: 0;
+.services-cards-head .ag-lead {
+  margin: 12px 0 0;
   color: var(--text-secondary);
-  font-size: 0.98rem;
   line-height: 1.5;
 }
 
-.svc-media-card .ag-text-link {
-  margin-top: 4px;
+.services-folio {
+  border-top: 0;
+  padding-top: 0;
 }
 
-.svc-media-card-link:hover .svc-media-card-media img {
-  transform: scale(1.03);
-}
-
-.svc-media-card-link:focus-visible {
-  outline: 2px solid var(--accent-cyan);
-  outline-offset: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .svc-media-card-media img { transition: none; }
-  .svc-media-card-link:hover .svc-media-card-media img { transform: none; }
-}
-
-@media (max-width: 1024px) {
-  .services-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .services-card-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
-
-[data-theme='dark'] .svc-media-card,
-[data-theme='dark'] .svc-media-card-media {
-  border-color: var(--border);
+.services-folio .work-project h3 {
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+  line-height: 1.18;
 }

@@ -176,7 +176,7 @@ const legacyStudies = [
     industry: '3D Spatial Software & WebGL Engineering',
     systemType: 'Interactive Browser 3D CAD & Model Visualizer',
     timeline: '4–8 weeks',
-    liveUrl: '/labs',
+    liveUrl: null,
     techStack: ['Three.js', 'WebGL', 'Custom shaders', 'PBR materials'],
     features: [
       '60 FPS browser rendering',
@@ -205,14 +205,9 @@ const legacyStudies = [
   },
 ]
 
-const hiddenLegacy = new Set(['harish-renova', 'saini-handicrafts', 'nebula-3d', 'easy-my-tax'])
-
 export const caseStudies = [
   ...portfolioStudies,
-  ...legacyStudies.map((study) => ({
-    ...study,
-    listed: !hiddenLegacy.has(study.slug),
-  })),
+  ...legacyStudies,
 ]
 
 export const trustClients = [
