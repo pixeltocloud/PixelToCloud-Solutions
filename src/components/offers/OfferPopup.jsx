@@ -86,7 +86,7 @@ export default function OfferPopup() {
                 <strong>{coupon.title}</strong>
                 <span>{coupon.detail}</span>
               </div>
-              <Link to={`/contact?coupon=${coupon.id}#start-project`} onClick={close}>
+              <Link to={`/contact?coupon=${coupon.id}#project-inquiry`} onClick={close}>
                 Apply
               </Link>
             </li>

@@ -1,4 +1,4 @@
-import { portfolioStudies } from './portfolioStudies'
+import { portfolioStudies } from './portfolioStudies.js'
 
 const legacyStudies = [
   {

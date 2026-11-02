@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import Seo from '../components/seo/Seo'
 import WhatsAppIcon from '../components/ui/WhatsAppIcon'
 import StageLine from '../components/site/StageLine'
@@ -24,8 +24,18 @@ function OptionalMark() {
 }
 
 export default function Contact() {
+  const [searchParams] = useSearchParams()
+  const requestedCoupon = searchParams.get('coupon') || ''
+  const validCoupon = coupons.some((c) => c.id === requestedCoupon) ? requestedCoupon : ''
+  const [selectedCoupon, setSelectedCoupon] = useState(validCoupon)
   const [status, setStatus] = useState('idle')
   const [message, setMessage] = useState('')
+
+  useEffect(() => {
+    if (validCoupon) {
+      setSelectedCoupon(validCoupon)
+    }
+  }, [validCoupon])
 
   async function onSubmit(event) {
     event.preventDefault()
@@ -149,7 +159,11 @@ export default function Contact() {
                 </label>
                 <label>
                   <span>Coupon <OptionalMark /></span>
-                  <select name="coupon" defaultValue="">
+                  <select
+                    name="coupon"
+                    value={selectedCoupon}
+                    onChange={(e) => setSelectedCoupon(e.target.value)}
+                  >
                     <option value="">None</option>
                     {coupons.map((coupon) => (
                       <option key={coupon.id} value={coupon.id}>{coupon.title}</option>
