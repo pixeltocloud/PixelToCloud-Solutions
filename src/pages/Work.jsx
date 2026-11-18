@@ -9,11 +9,11 @@ import './WorkPage.css'
 
 const studies = [
   {
-    title: 'Easy My Tax',
+    title: 'Easy My Taxes',
     problem: 'Tax return review depended on multi-day email chains.',
     built: 'A portal for GST and tax calculations, an encrypted document vault, return tracking, and billing.',
     outcome: 'Review of client returns moved to same-day turnaround.',
-    to: '/work/easy-my-tax',
+    to: '/work/easy-my-taxes',
   },
   {
     title: 'Harish Renova',

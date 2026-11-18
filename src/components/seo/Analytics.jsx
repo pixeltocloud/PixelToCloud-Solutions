@@ -7,7 +7,13 @@ export default function Analytics() {
   useEffect(() => {
     const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT
     if (!endpoint) return undefined
-    if (navigator.doNotTrack === '1' || localStorage.getItem('ptc-analytics') === 'off') return undefined
+    let optedOut = false
+    try {
+      optedOut = localStorage.getItem('ptc-analytics') === 'off'
+    } catch {
+      // storage can be blocked (private mode, strict privacy settings)
+    }
+    if (navigator.doNotTrack === '1' || optedOut) return undefined
 
     const payload = {
       path: location.pathname,

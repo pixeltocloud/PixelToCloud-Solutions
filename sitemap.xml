@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://pixeltocloud.com/</loc></url>
   <url><loc>https://pixeltocloud.com/services</loc></url>
+  <url><loc>https://pixeltocloud.com/work</loc></url>
+  <url><loc>https://pixeltocloud.com/about</loc></url>
+  <url><loc>https://pixeltocloud.com/contact</loc></url>
+  <url><loc>https://pixeltocloud.com/industries</loc></url>
+  <url><loc>https://pixeltocloud.com/privacy</loc></url>
+  <url><loc>https://pixeltocloud.com/terms</loc></url>
+  <url><loc>https://pixeltocloud.com/start-project</loc></url>
+  <url><loc>https://pixeltocloud.com/faq</loc></url>
+  <url><loc>https://pixeltocloud.com/cookies</loc></url>
   <url><loc>https://pixeltocloud.com/services/web-development</loc></url>
   <url><loc>https://pixeltocloud.com/services/web-applications</loc></url>
   <url><loc>https://pixeltocloud.com/services/mobile-app-development</loc></url>
@@ -9,14 +18,20 @@
   <url><loc>https://pixeltocloud.com/services/ecommerce</loc></url>
   <url><loc>https://pixeltocloud.com/services/cloud-devops</loc></url>
   <url><loc>https://pixeltocloud.com/services/digital-marketing</loc></url>
-  <url><loc>https://pixeltocloud.com/work</loc></url>
+  <url><loc>https://pixeltocloud.com/work/shridaa-arts</loc></url>
+  <url><loc>https://pixeltocloud.com/work/dr-archit-joshi</loc></url>
+  <url><loc>https://pixeltocloud.com/work/dr-janki-choudhary</loc></url>
+  <url><loc>https://pixeltocloud.com/work/dr-neeraj-rathee</loc></url>
+  <url><loc>https://pixeltocloud.com/work/easy-my-taxes</loc></url>
+  <url><loc>https://pixeltocloud.com/work/dtdc-tracker</loc></url>
+  <url><loc>https://pixeltocloud.com/work/committee-app</loc></url>
+  <url><loc>https://pixeltocloud.com/work/ajay-choudhary-chemistry</loc></url>
+  <url><loc>https://pixeltocloud.com/work/makhan-carpenter</loc></url>
+  <url><loc>https://pixeltocloud.com/work/akns-cctv</loc></url>
   <url><loc>https://pixeltocloud.com/work/pixeltocloud-agency</loc></url>
-  <url><loc>https://pixeltocloud.com/work/easy-my-tax</loc></url>
   <url><loc>https://pixeltocloud.com/work/harish-renova</loc></url>
   <url><loc>https://pixeltocloud.com/work/saini-handicrafts</loc></url>
   <url><loc>https://pixeltocloud.com/work/nebula-3d</loc></url>
-  <url><loc>https://pixeltocloud.com/about</loc></url>
-  <url><loc>https://pixeltocloud.com/industries</loc></url>
   <url><loc>https://pixeltocloud.com/industries/healthcare</loc></url>
   <url><loc>https://pixeltocloud.com/industries/professional-services</loc></url>
   <url><loc>https://pixeltocloud.com/industries/retail-and-makers</loc></url>
@@ -24,16 +39,5 @@
   <url><loc>https://pixeltocloud.com/industries/real-estate</loc></url>
   <url><loc>https://pixeltocloud.com/industries/education</loc></url>
   <url><loc>https://pixeltocloud.com/industries/hospitality</loc></url>
-  <url><loc>https://pixeltocloud.com/insights</loc></url>
-  <url><loc>https://pixeltocloud.com/insights/what-a-7-day-launch-includes</loc></url>
-  <url><loc>https://pixeltocloud.com/insights/what-you-receive-at-handover</loc></url>
-  <url><loc>https://pixeltocloud.com/insights/when-whatsapp-should-hand-off</loc></url>
-  <url><loc>https://pixeltocloud.com/contact</loc></url>
-  <url><loc>https://pixeltocloud.com/start-project</loc></url>
-  <url><loc>https://pixeltocloud.com/faq</loc></url>
-  <url><loc>https://pixeltocloud.com/labs</loc></url>
   <url><loc>https://pixeltocloud.com/connect</loc></url>
-  <url><loc>https://pixeltocloud.com/privacy</loc></url>
-  <url><loc>https://pixeltocloud.com/terms</loc></url>
-  <url><loc>https://pixeltocloud.com/cookies</loc></url>
 </urlset>

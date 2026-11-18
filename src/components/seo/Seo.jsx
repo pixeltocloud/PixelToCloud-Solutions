@@ -64,7 +64,7 @@ export default function Seo({ title, description, path, image, noindex = false }
       '@id': `${defaultSeo.siteUrl}/#organization`,
       name: 'PixelToCloud Solutions',
       url: defaultSeo.siteUrl,
-      logo: `${defaultSeo.siteUrl}/favicon.svg`,
+      logo: `${defaultSeo.siteUrl}/logo-pixeltocloud.svg`,
       image: ogImage,
       email: 'contact@pixeltocloud.com',
       telephone: ['+918219352124', '+918629008768', '+919928196424'],
@@ -88,7 +88,7 @@ export default function Seo({ title, description, path, image, noindex = false }
       ],
       priceRange: '$$',
       areaServed: ['IN', 'US', 'GB', 'AE', 'CA', 'DE', 'FR'],
-      founders: [
+      founder: [
         { '@type': 'Person', name: 'Pankaj Gupta', jobTitle: 'Founder & Principal Systems Architect' },
         { '@type': 'Person', name: 'Rusmeen', jobTitle: 'Co-Founder & Full-Stack Engineer' },
       ],

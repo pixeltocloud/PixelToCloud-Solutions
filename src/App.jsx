@@ -263,6 +263,7 @@ function AppShell() {
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/work" element={<Work />} />
+            <Route path="/work/easy-my-tax" element={<Navigate to="/work/easy-my-taxes" replace />} />
             <Route path="/work/:slug" element={<WorkDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/process" element={<Navigate to="/work#engagement" replace />} />

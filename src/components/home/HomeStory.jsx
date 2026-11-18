@@ -87,7 +87,7 @@ export function ClientQuote() {
             <strong>{quote.name}</strong>
             <span>{quote.role}</span>
           </footer>
-          <Link className="home-text-link" to="/work/easy-my-tax">Read the Easy My Tax case study <Arrow /></Link>
+          <Link className="home-text-link" to="/work/easy-my-taxes">Read the Easy My Taxes case study <Arrow /></Link>
         </blockquote>
       </Reveal>
     </section>

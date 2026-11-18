@@ -23,7 +23,7 @@ export const routeSeo = {
     path: '/work',
     title: 'Work & Case Studies | PixelToCloud Agency',
     description:
-      'Selected work including this website, Easy My Tax, Harish Renova, Saini Handicrafts, and WebGL experiments.',
+      'Selected work including this website, Easy My Taxes, Harish Renova, Saini Handicrafts, and WebGL experiments.',
   },
   '/about': {
     path: '/about',
@@ -33,8 +33,14 @@ export const routeSeo = {
   },
   '/contact': {
     path: '/contact',
-    title: 'Start a Project | PixelToCloud',
+    title: 'Contact | PixelToCloud',
     description: 'Tell us what you need. Same-day founder response. Fixed-scope milestones.',
+  },
+  '/industries': {
+    path: '/industries',
+    title: 'Industries | PixelToCloud',
+    description:
+      'Industries we have shipped for, and industries we will scope without claiming a specialty.',
   },
   '/login': {
     path: '/login',

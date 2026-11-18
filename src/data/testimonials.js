@@ -1,9 +1,9 @@
 export const testimonials = [
   {
     name: 'CA Pradeep Agarwal',
-    role: 'Founder, Easy My Tax',
+    role: 'Founder, Easy My Taxes',
     text: 'Automated tax calculators, GST modules, and secure client lockers—delivered with clean speed. Our clients notice the professionalism immediately.',
-    project: 'Easy My Tax',
+    project: 'Easy My Taxes',
   },
   {
     name: 'Dr. Neeraj Kumar Rathee',

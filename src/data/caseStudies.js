@@ -44,47 +44,6 @@ const legacyStudies = [
     },
   },
   {
-    slug: 'easy-my-tax',
-    title: 'Easy My Tax — High-Security Client Portal & Tax Calculation System',
-    shortTitle: 'Easy My Tax',
-    tag: 'Finance & CA Practice',
-    client: 'CA Pradeep Agarwal',
-    organization: 'Easy My Tax',
-    industry: 'Chartered Accountancy & FinTech',
-    systemType: 'Client Document Vault & Automated Tax Calculation Platform',
-    timeline: '3–4 weeks',
-    liveUrl: null,
-    techStack: ['React', 'Node.js', 'PostgreSQL', 'AES encryption', 'REST APIs'],
-    features: [
-      'Automated ITR & GST calculation engine',
-      'Encrypted client document vault',
-      'Filing progress tracking',
-      'Role-based access for staff and clients',
-    ],
-    challenge:
-      'Sensitive financial records, ITR filings, and GST audits were being handled through email attachments and spreadsheets—slowing work during filing deadlines and creating avoidable security risk.',
-    built:
-      'A dedicated portal with automated GST and tax calculations, encrypted document storage, return tracking, and billing workflows.',
-    outcome:
-      'Automated return calculations and structured file vaults transformed multi-day email chains into same-day review turnarounds for client returns.',
-    accent: '#0369a1',
-    coverImage: '/image/work/easy-my-tax.svg',
-    visual: { type: 'portal', primary: '#0369a1', secondary: '#047857' },
-    mockup: {
-      url: 'Practice site',
-      kpis: [
-        { value: 'Automated', label: 'ITR & GST Calculation Engine', color: '#0369a1' },
-        { value: 'Encrypted', label: 'Role-Based Client File Vault', color: '#047857' },
-      ],
-      footer: 'Filing Progress Pipeline · Ready for Final Review',
-    },
-    quote: {
-      text: 'PixelToCloud engineered our detailed CA servicing website with automated tax calculators, GST compliance modules, and secure client document lockers. Our clients love the clean speed and professionalism of Easy My Tax. Highly recommended!',
-      author: 'CA Pradeep Agarwal',
-      role: 'Founder, Easy My Tax',
-    },
-  },
-  {
     slug: 'harish-renova',
     title: 'Harish Renova & Revital — Clinical Scheduling & Patient Guidance Platforms',
     shortTitle: 'Harish Renova',
