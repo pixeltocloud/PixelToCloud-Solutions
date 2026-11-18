@@ -20,6 +20,7 @@ const included = [
   { title: 'Found on Google', text: 'Clear doctor and treatment pages, a complete Google Business Profile, and local search basics for searches like "dentist near me".' },
   { title: 'Quoted by AI assistants', text: 'Plain-language answers, FAQs and structured data that ChatGPT, Gemini and Google AI answers can read and cite.' },
   { title: 'Appointments without phone tag', text: 'An appointment request form with a WhatsApp confirmation, plus call and map buttons that work on any phone.' },
+  { title: 'AI automation', text: 'A WhatsApp assistant that answers common patient questions, books appointments and sends visit reminders automatically.' },
   { title: 'More reviews', text: 'A review-request QR card for the front desk and a short link to send after each visit.' },
   { title: 'Patient data handled with care', text: 'Consent checkbox and privacy notice on every form, ahead of India’s data protection rules.' },
   { title: 'Yours to keep', text: 'You own the domain and the code. Launch within 7 days or your money back.' },

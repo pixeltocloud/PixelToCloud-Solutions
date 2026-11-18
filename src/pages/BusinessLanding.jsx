@@ -33,7 +33,7 @@ export default function BusinessLanding({ slug }) {
           <h1 id="biz-title">{page.title}</h1>
           <p className="ag-lead">{page.lead}</p>
           <p className="biz-service">
-            We build websites, software and apps to fit each business’s needs, and do SEO so more customers find you on Google.
+            We build websites, software, apps and AI automation to fit each business’s needs, and do SEO so more customers find you on Google.
           </p>
           <div className="ag-actions">
             <a className="ag-btn ag-btn-light" href="#google-check">Get a free Google check</a>

@@ -4,7 +4,7 @@
 
 const sharedSteps = [
   { b: '1', h: 'Free Google check', p: 'We look at what customers see when they search for your business, what is missing, and what is costing you enquiries. You get a one-page report within one working day.' },
-  { b: '2', h: 'Agree the plan', p: 'We suggest what to build: a website, software, an app, SEO, or a mix. You pick what fits your budget, with a fixed price before we start.' },
+  { b: '2', h: 'Agree the plan', p: 'We suggest what to build: a website, software, an app, AI automation, SEO, or a mix. You pick what fits your budget, with a fixed price before we start.' },
   { b: '3', h: 'Launch and grow', p: 'Websites go live within 7 days or your money back. Software and apps follow an agreed timeline. You own the domain and the code.' },
 ]
 
@@ -29,6 +29,7 @@ export const businessPages = [
       { title: 'Party and catering enquiries', text: 'A simple form for birthdays, events and bulk orders, so those bigger orders reach you instead of a competitor.' },
       { title: 'More reviews', text: 'A QR card for the counter that takes happy customers straight to your Google review page.' },
       { title: 'Software if you need it', text: 'Billing, table orders, stock or a loyalty programme, built for how your kitchen actually works.' },
+      { title: 'AI automation', text: 'A WhatsApp bot that answers menu, timing and delivery questions, takes orders and confirms them, even when the kitchen is busy.' },
     ],
   },
   {
@@ -51,6 +52,7 @@ export const businessPages = [
       { title: 'Found when people search', text: 'A complete Google Business Profile and pages for searches like "GST registration in Alwar".' },
       { title: 'Enquiries that do not get lost', text: 'Every enquiry from the site arrives on your WhatsApp and email with the client’s details.' },
       { title: 'Your data stays yours', text: 'Client files are kept private, and you own the domain, the code and the data.' },
+      { title: 'AI automation', text: 'Automatic reminders, document checklists and status updates on WhatsApp, so clients stop calling to ask what is pending.' },
     ],
   },
   {
@@ -73,6 +75,7 @@ export const businessPages = [
       { title: 'Found by students', text: 'Local SEO and a complete Google listing for searches like "JEE coaching near me".' },
       { title: 'Fee and class reminders', text: 'Automatic WhatsApp reminders for fees, tests and holidays, sent from one simple dashboard.' },
       { title: 'Apps if you grow', text: 'Online tests, study material or a student app, built when you need them.' },
+      { title: 'AI automation', text: 'An AI assistant on WhatsApp that answers course and fee questions at any hour and books demo classes for you.' },
     ],
   },
   {
@@ -95,6 +98,7 @@ export const businessPages = [
       { title: 'Found during admission season', text: 'Local SEO and a complete Google listing for searches like "CBSE school near me".' },
       { title: 'Mandatory disclosures', text: 'A tidy page for the CBSE or board disclosure documents you are required to publish.' },
       { title: 'Software if you need it', text: 'Fee records, attendance or a parent app, built when you are ready.' },
+      { title: 'AI automation', text: 'Automatic replies to admission queries, fee reminders and notices on WhatsApp, so the office phone rings less.' },
     ],
   },
   {
@@ -117,6 +121,7 @@ export const businessPages = [
       { title: 'Weddings and events', text: 'A page and enquiry form for banquets, weddings and corporate stays.' },
       { title: 'More reviews', text: 'A QR card at check-out that takes guests straight to your Google review page.' },
       { title: 'Software if you need it', text: 'A simple booking calendar or front-desk software, built around how you run the property.' },
+      { title: 'AI automation', text: 'A WhatsApp assistant that answers room, price and availability questions and sends booking confirmations automatically.' },
     ],
   },
   {
@@ -139,6 +144,7 @@ export const businessPages = [
       { title: 'Billing and stock software', text: 'GST billing, stock and customer records in one simple system, so you know what is selling.' },
       { title: 'Repeat customers', text: 'WhatsApp messages for new arrivals and festival offers, sent only to customers who agreed.' },
       { title: 'Yours to keep', text: 'You own the domain, the code and your customer list.' },
+      { title: 'AI automation', text: 'A WhatsApp assistant that answers price and stock questions, shares your catalogue and follows up with interested customers.' },
     ],
   },
   {
@@ -161,6 +167,7 @@ export const businessPages = [
       { title: 'A simple lead tracker', text: 'See every enquiry, who called back, and who needs a site visit, in one place.' },
       { title: 'Found by buyers', text: 'Local SEO and a complete Google listing for searches like "flats in Alwar" or "interior designer near me".' },
       { title: 'Yours to keep', text: 'You own the domain, the code and your leads.' },
+      { title: 'AI automation', text: 'Instant AI replies to every property enquiry, with site-visit booking and automatic follow-ups so no lead goes cold.' },
     ],
   },
   {
@@ -183,6 +190,7 @@ export const businessPages = [
       { title: 'Dealer and customer portals', text: 'Let dealers place orders and check status themselves, without calling your office.' },
       { title: 'Automatic reports', text: 'Daily sales, stock and pending dispatch summaries sent to your WhatsApp or email.' },
       { title: 'Yours to keep', text: 'You own the code and the data. We can host it or hand it over.' },
+      { title: 'AI automation', text: 'Automatic order confirmations, dispatch updates and payment reminders for dealers and buyers, without manual calls.' },
     ],
   },
 ]
