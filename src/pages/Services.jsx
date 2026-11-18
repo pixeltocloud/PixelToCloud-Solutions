@@ -3,6 +3,7 @@ import Seo from '../components/seo/Seo'
 import { CtaBand } from '../components/site/blocks'
 import { brand } from '../config/brand'
 import { serviceMedia } from '../data/media'
+import PricingTable from '../components/pricing/PricingTable'
 import '../components/work/WorkPortfolio.css'
 import './Services.css'
 
@@ -126,6 +127,17 @@ export default function Services() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="ag-sheet" id="pricing" aria-labelledby="pricing-title">
+        <div className="ag-wrap">
+          <header className="ag-section-head">
+            <p className="ag-kicker">Website packages</p>
+            <h2 id="pricing-title">Fixed prices, launched in 7 days</h2>
+            <p>Scope is agreed before work starts. Custom software and apps are quoted separately as fixed milestones.</p>
+          </header>
+          <PricingTable />
         </div>
       </section>
 

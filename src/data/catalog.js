@@ -135,10 +135,10 @@ export const industries = [
     title: 'Healthcare',
     image: '/image/industries/healthcare.jpg',
     lede: 'Clinic sites where a person can request a visit and get a confirmation without a phone tag.',
-    experience: 'Published work includes Harish Renova. Revital Physiocare is a client with a public quote and no separate case study.',
+    experience: 'Live doctor sites include Dr. Archit Joshi (physiotherapy), Dr. Janki Choudhary, Dr. Neeraj Rathee and Dr. Geetanand Rao (oncology). Clinic packages are on the clinics page.',
     challenges: ['Patients need a clear way to book.', 'Emergency and routine paths should not look the same.', 'The site has to stay fast on a phone.'],
     solutions: ['Appointment and WhatsApp confirmation flows.', 'A page structure a clinic manager can explain.', 'Hosting with a rollback if a release looks wrong.'],
-    related: ['harish-renova'],
+    related: ['dr-neeraj-rathee', 'dr-geetanand-rao', 'dr-archit-joshi'],
   },
   {
     slug: 'professional-services',
@@ -244,7 +244,7 @@ export const faqGroups = [
     items: [
       {
         q: 'How much does a project cost?',
-        a: 'A focused website starts at $100 USD for the first 100 customers. Custom applications are quoted as fixed milestones, often from ₹75,000 upward, and are not the same offer. Budget bands on the project form are a starting point, not a quote.',
+        a: 'Website packages start at ₹9,999 in India and $299 for international clients, with three fixed tiers shown on the Services page. Custom applications are quoted as fixed milestones, often from ₹75,000 upward, and are not the same offer. Budget bands on the project form are a starting point, not a quote.',
       },
     ],
   },

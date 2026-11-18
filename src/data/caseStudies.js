@@ -174,6 +174,7 @@ export const trustClients = [
   'Dr. Archit Joshi',
   'Dr. Janki Choudhary',
   'Dr. Neeraj Rathee',
+  'Dr. Geetanand Rao',
   'Easy My Taxes',
   'AKNS CCTV Hub',
   'Makhan Carpenter',

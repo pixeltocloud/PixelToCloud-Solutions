@@ -1,6 +1,8 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { coupons, openingOffer } from '../../data/offers'
+import { startingPrice } from '../../data/pricing'
+import { useCurrency } from '../../lib/currency'
 import './OfferPopup.css'
 
 const seenKey = 'ptc-offer-seen'
@@ -10,15 +12,24 @@ export default function OfferPopup() {
   const noteId = useId()
   const dialogRef = useRef(null)
   const [open, setOpen] = useState(false)
+  const [currency] = useCurrency()
 
   useEffect(() => {
-    if (sessionStorage.getItem(seenKey)) return undefined
+    try {
+      if (sessionStorage.getItem(seenKey)) return undefined
+    } catch {
+      return undefined
+    }
     const timer = window.setTimeout(() => setOpen(true), 500)
     return () => window.clearTimeout(timer)
   }, [])
 
   function close() {
-    sessionStorage.setItem(seenKey, '1')
+    try {
+      sessionStorage.setItem(seenKey, '1')
+    } catch {
+      // storage blocked
+    }
     setOpen(false)
   }
 
@@ -75,7 +86,7 @@ export default function OfferPopup() {
         </button>
         <p className="offer-popup-kicker">Opening offer</p>
         <h2 id={titleId}>
-          {openingOffer.line}
+          {openingOffer.line(startingPrice(currency))}
           <sup>*</sup>
         </h2>
         <p id={noteId}>* {openingOffer.note}</p>

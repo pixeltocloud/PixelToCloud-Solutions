@@ -22,6 +22,7 @@ const Work = lazy(() => import('./pages/Work'))
 const WorkDetail = lazy(() => import('./pages/WorkDetail'))
 const About = lazy(() => import('./pages/About'))
 const Industries = lazy(() => import('./pages/Industries'))
+const Clinics = lazy(() => import('./pages/Clinics'))
 const IndustryDetail = lazy(() => import('./pages/IndustryDetail'))
 const Contact = lazy(() => import('./pages/Contact'))
 const StartProject = lazy(() => import('./pages/StartProject'))
@@ -267,6 +268,7 @@ function AppShell() {
             <Route path="/work/:slug" element={<WorkDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/process" element={<Navigate to="/work#engagement" replace />} />
+            <Route path="/clinics" element={<Clinics />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/industries/:slug" element={<IndustryDetail />} />
             <Route path="/insights/*" element={<Navigate to="/work#engagement" replace />} />

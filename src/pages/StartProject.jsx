@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/seo/Seo'
 import { brand } from '../config/brand'
 import { contact } from '../data/founders'
-import { budgetBands, projectTypes, timelines } from '../data/inquiryOptions'
+import { budgetBandsByCurrency, projectTypes, timelines } from '../data/inquiryOptions'
+import { useCurrency } from '../lib/currency'
 import { submitInquiry } from '../lib/inquiry'
 
 const steps = ['Need', 'Business', 'Scope', 'Budget', 'Contact', 'Review']
@@ -49,6 +50,7 @@ export default function StartProject() {
   const [values, setValues] = useState(empty)
   const [error, setError] = useState('')
   const [status, setStatus] = useState('idle')
+  const [currency] = useCurrency()
   const errorRef = useRef(null)
 
   useEffect(() => {
@@ -165,7 +167,7 @@ export default function StartProject() {
                   <label>Budget band
                     <select value={values.budget} onChange={(event) => setField('budget', event.target.value)}>
                       <option value="">Choose one</option>
-                      {budgetBands.map((band) => <option key={band}>{band}</option>)}
+                      {budgetBandsByCurrency[currency].map((band) => <option key={band}>{band}</option>)}
                     </select>
                   </label>
                   <label>Timeline

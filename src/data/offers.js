@@ -1,13 +1,13 @@
 export const openingOffer = {
-  line: 'The first 100 customers. Price starts at $100 USD',
-  note: 'Focused website for the first 100 customers. Scope is confirmed before work begins, and the 7-day launch promise still applies.',
+  line: (price) => `Websites from ${price}`,
+  note: 'Scope is confirmed before work begins. Launch within 7 days or your money back.',
 }
 
 export const coupons = [
   {
     id: 'extra10',
     title: 'Get 10% extra off',
-    detail: 'Taken off the starting price for the first 100 customers.',
+    detail: 'Taken off any website package.',
   },
   {
     id: 'week5',

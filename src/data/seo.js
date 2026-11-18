@@ -36,6 +36,12 @@ export const routeSeo = {
     title: 'Contact | PixelToCloud',
     description: 'Tell us what you need. Same-day founder response. Fixed-scope milestones.',
   },
+  '/clinics': {
+    path: '/clinics',
+    title: 'Websites for Clinics and Doctors | PixelToCloud',
+    description:
+      'Clinic websites that get doctors found on Google and in AI answers, with WhatsApp appointment requests. Launch in 7 days. Offices in Gurugram and Alwar.',
+  },
   '/industries': {
     path: '/industries',
     title: 'Industries | PixelToCloud',

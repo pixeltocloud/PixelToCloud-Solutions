@@ -23,6 +23,8 @@ export default function Footer() {
           <p className="footer-col-title">Explore</p>
           <div className="footer-links">
             <Link to="/services">Services</Link>
+            <Link to="/services#pricing">Pricing</Link>
+            <Link to="/clinics">For clinics</Link>
             <Link to="/work">Work</Link>
             <Link to="/about">About</Link>
             <Link to="/faq">FAQ</Link>

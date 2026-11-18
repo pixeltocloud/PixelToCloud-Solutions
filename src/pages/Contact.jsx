@@ -5,7 +5,8 @@ import WhatsAppIcon from '../components/ui/WhatsAppIcon'
 import StageLine from '../components/site/StageLine'
 import { brand } from '../config/brand'
 import { contact } from '../data/founders'
-import { budgetBands, projectTypes, timelines } from '../data/inquiryOptions'
+import { budgetBandsByCurrency, projectTypes, timelines } from '../data/inquiryOptions'
+import { useCurrency } from '../lib/currency'
 import { coupons } from '../data/offers'
 import { submitInquiry } from '../lib/inquiry'
 import './Contact.css'
@@ -29,6 +30,7 @@ export default function Contact() {
   const validCoupon = coupons.some((c) => c.id === requestedCoupon) ? requestedCoupon : ''
   const [selectedCoupon, setSelectedCoupon] = useState(validCoupon)
   const [status, setStatus] = useState('idle')
+  const [currency] = useCurrency()
   const [message, setMessage] = useState('')
 
   useEffect(() => {
@@ -147,7 +149,7 @@ export default function Contact() {
                   <span>Budget range<RequiredMark /></span>
                   <select name="budget" required defaultValue="" aria-required="true">
                     <option value="" disabled>Choose a band</option>
-                    {budgetBands.map((band) => <option key={band}>{band}</option>)}
+                    {budgetBandsByCurrency[currency].map((band) => <option key={band}>{band}</option>)}
                   </select>
                 </label>
                 <label>
