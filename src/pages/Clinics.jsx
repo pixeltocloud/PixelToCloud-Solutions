@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { submitInquiry } from '../lib/inquiry'
 import Seo from '../components/seo/Seo'
 import { CtaBand } from '../components/site/blocks'
 import PricingTable from '../components/pricing/PricingTable'
@@ -6,6 +8,7 @@ import { clientSites } from '../data/clientSites'
 import { contact } from '../data/founders'
 import { brand } from '../config/brand'
 import '../components/work/WorkPortfolio.css'
+import './Contact.css'
 import './Clinics.css'
 
 const doctorSites = clientSites.filter((site) => site.category === 'Healthcare')
@@ -29,6 +32,83 @@ const steps = [
   { b: '3', h: 'Launch in 7 days', p: 'Review the site on a private link, ask for changes, then go live.' },
 ]
 
+function GoogleCheckForm() {
+  const [status, setStatus] = useState('idle')
+  const [message, setMessage] = useState('')
+
+  async function onSubmit(event) {
+    event.preventDefault()
+    if (status === 'loading') return
+    const form = event.currentTarget
+    const data = new FormData(form)
+    if (data.get('company_website')) return
+    setStatus('loading')
+    setMessage('')
+    const clinic = String(data.get('clinic') || '').trim()
+    try {
+      await submitInquiry({
+        _subject: `Google check request: ${clinic}`,
+        requestType: 'Free Google check',
+        clinic,
+        city: data.get('city'),
+        name: data.get('name'),
+        phone: data.get('phone'),
+        email: data.get('email') || '',
+        consent: data.get('consent') ? 'Yes' : 'No',
+      })
+      setStatus('success')
+      setMessage('Thank you. Your clinic’s Google check will reach you within one working day, by email or WhatsApp.')
+      form.reset()
+    } catch {
+      setStatus('error')
+      setMessage(`The request could not be sent. Email ${contact.email} or message us on WhatsApp.`)
+    }
+  }
+
+  return (
+    <form className="ag-form contact-form" onSubmit={onSubmit}>
+      <label className="sr-only" aria-hidden="true">
+        Company website
+        <input name="company_website" tabIndex={-1} autoComplete="off" />
+      </label>
+      <div className="contact-form-grid">
+        <label>
+          <span>Clinic name</span>
+          <input name="clinic" required autoComplete="organization" placeholder="e.g. Sharma Dental Clinic" />
+        </label>
+        <label>
+          <span>City</span>
+          <input name="city" required autoComplete="address-level2" placeholder="e.g. Alwar" />
+        </label>
+        <label>
+          <span>Your name</span>
+          <input name="name" required autoComplete="name" />
+        </label>
+        <label>
+          <span>Phone or WhatsApp</span>
+          <input name="phone" type="tel" inputMode="tel" required autoComplete="tel" />
+        </label>
+        <label className="contact-form-full">
+          <span>Email (optional)</span>
+          <input name="email" type="email" autoComplete="email" />
+        </label>
+      </div>
+      <label className="clinics-consent">
+        <input type="checkbox" name="consent" required />
+        <span>You may contact me about this check by phone, WhatsApp or email.</span>
+      </label>
+      <div className="contact-form-actions">
+        <button className="ag-btn ag-btn-solid contact-submit" type="submit" disabled={status === 'loading'}>
+          {status === 'loading' ? 'Sending…' : 'Get my free Google check →'}
+        </button>
+        {message ? (
+          <p className={`contact-status is-${status}`} role="status" aria-live="polite">{message}</p>
+        ) : null}
+      </div>
+    </form>
+  )
+}
+
 export default function Clinics() {
   return (
     <div className="ag ag-page clinics-page">
@@ -47,12 +127,26 @@ export default function Clinics() {
             Dr. Archit Joshi and Dr. Neeraj Rathee appear at the top of Google and in ChatGPT and Gemini answers.
           </p>
           <div className="ag-actions">
-            <a className="ag-btn ag-btn-light" href={checkLink} target="_blank" rel="noopener noreferrer">
-              Get a free Google check
+            <a className="ag-btn ag-btn-light" href="#google-check">Get a free Google check</a>
+            <a className="ag-btn ag-btn-ghost" href={checkLink} target="_blank" rel="noopener noreferrer">
+              Ask on WhatsApp
               <span className="sr-only"> (opens WhatsApp in a new tab)</span>
             </a>
-            <a className="ag-btn ag-btn-ghost" href="#pricing">See packages</a>
           </div>
+        </div>
+      </section>
+
+      <section className="ag-sheet" id="google-check" aria-labelledby="clinics-check-title">
+        <div className="ag-wrap clinics-check">
+          <header className="ag-section-head">
+            <p className="ag-kicker">Free, no obligation</p>
+            <h2 id="clinics-check-title">See how patients find your clinic today</h2>
+            <p>
+              We check where your clinic appears on Google for searches like &quot;dentist in Alwar&quot;, your reviews against
+              nearby clinics, and what patients see when they search your name. You get a one-page report within one working day.
+            </p>
+          </header>
+          <GoogleCheckForm />
         </div>
       </section>
 

@@ -1,0 +1,1 @@
+import{g as e,s as t}from"./index-CBcj5fcG.js";async function n(n){if(!(await fetch(e.formEndpoint,{method:`POST`,headers:{"Content-Type":`application/json`,Accept:`application/json`},body:JSON.stringify({...n,_subject:n._subject||`${t.name} inquiry from ${n.name||`a visitor`}`,_template:`table`,_captcha:`false`})})).ok)throw Error(`Submission failed`)}export{n as t};

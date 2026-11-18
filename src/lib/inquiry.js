@@ -10,7 +10,7 @@ export async function submitInquiry(fields) {
     },
     body: JSON.stringify({
       ...fields,
-      _subject: `${brand.name} inquiry from ${fields.name || 'a visitor'}`,
+      _subject: fields._subject || `${brand.name} inquiry from ${fields.name || 'a visitor'}`,
       _template: 'table',
       _captcha: 'false',
     }),

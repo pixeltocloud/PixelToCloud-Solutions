@@ -36,3 +36,7 @@
 .clinics-more { margin: 20px 0 0; color: var(--text-secondary); }
 .clinics-more a { color: var(--accent-strong); font-weight: 650; }
 @media (prefers-reduced-motion: reduce) { .clinics-proof a { transition: none; } .clinics-proof a:hover { transform: none; } }
+
+.clinics-check .contact-form { max-width: 760px; }
+.contact-form .clinics-consent { display: flex; gap: 10px; align-items: flex-start; margin: 18px 0 6px; color: var(--text-secondary); font-size: 0.95rem; font-weight: 500; }
+.contact-form .clinics-consent input { width: 18px; height: 18px; min-height: 0; margin: 2px 0 0; padding: 0; flex: none; accent-color: var(--cta); }
