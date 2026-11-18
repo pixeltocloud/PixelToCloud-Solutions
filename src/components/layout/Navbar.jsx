@@ -16,7 +16,7 @@ const serviceColumns = [
   },
   {
     label: 'Growth',
-    items: ['digital-marketing'],
+    items: ['ai-marketing-automation', 'digital-marketing'],
   },
 ].map((column) => ({
   ...column,

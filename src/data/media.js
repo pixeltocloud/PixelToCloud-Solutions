@@ -19,6 +19,10 @@ export const serviceMedia = {
     image: '/image/services/storefront.jpg',
     alt: 'A phone showing a product photo beside a shopping bag and folded linen',
   },
+  'ai-marketing-automation': {
+    image: '/image/services/growthos-calendar.jpg',
+    alt: 'The GrowthOS calendar showing a post ready to publish and destinations for Instagram and Google Business Profile',
+  },
   'digital-marketing': {
     image: '/image/services/marketing.jpg',
     alt: 'A laptop and phone showing the same landing page beside a printed chart',

@@ -110,6 +110,24 @@ export const servicePages = [
     related: ['pixeltocloud-agency'],
   },
   {
+    slug: 'ai-marketing-automation',
+    title: 'AI marketing automation (GrowthOS)',
+    lede: 'Our own platform plans a month of posts from your goal, writes captions with AI, and puts every approved post on a calendar so nothing goes out late or unapproved.',
+    problems: [
+      'Posting happens when someone remembers, not on a plan.',
+      'Captions take longer to write than the photo took to shoot.',
+      'Posts go live before the owner has seen them, or not at all.',
+    ],
+    deliverables: [
+      'A dated content plan from your goal: what to post, when, and what photo or video to use.',
+      'AI-written captions in English or Hindi that your team edits before use.',
+      'An approval step for you or your team on every post before it can be scheduled.',
+      'A calendar for Instagram, Facebook, LinkedIn and Google Business Profile, with an on-time post pack ready to publish.',
+    ],
+    engagement: 'Early access: we run GrowthOS for you as a managed service while direct platform posting is being approved. AI costs are capped by a budget you agree in advance.',
+    related: [],
+  },
+  {
     slug: 'digital-marketing',
     title: 'Digital marketing',
     lede: 'Landing pages, search and social campaigns, and clear attribution so ad spend has a place to go.',

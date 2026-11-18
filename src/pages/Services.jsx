@@ -49,6 +49,14 @@ const serviceCards = [
     alt: serviceMedia.ecommerce.alt,
   },
   {
+    slug: 'ai-marketing-automation',
+    tag: 'AI marketing',
+    title: 'A month of posts planned, written and scheduled for you',
+    text: 'GrowthOS, our own platform, turns your goal into a posting plan, drafts captions with AI and keeps every approved post on a calendar. Early access, run as a managed service.',
+    image: serviceMedia['ai-marketing-automation'].image,
+    alt: serviceMedia['ai-marketing-automation'].alt,
+  },
+  {
     slug: 'digital-marketing',
     tag: 'Marketing',
     title: 'Digital marketing that ties campaigns to real inquiries',
@@ -71,7 +79,7 @@ export default function Services() {
     <div className="ag ag-page">
       <Seo
         title={`Services | ${brand.name}`}
-        description="Websites, applications, mobile, e-commerce, AI workflows, and cloud delivery."
+        description="Websites, applications, mobile, e-commerce, AI workflows, AI marketing automation, and cloud delivery."
         path="/services"
       />
 
