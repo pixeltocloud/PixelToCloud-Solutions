@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { submitInquiry } from '../lib/inquiry'
+import GoogleCheckForm from '../components/forms/GoogleCheckForm'
 import Seo from '../components/seo/Seo'
 import { CtaBand } from '../components/site/blocks'
 import PricingTable from '../components/pricing/PricingTable'
@@ -31,83 +30,6 @@ const steps = [
   { b: '2', h: 'Agree the scope', p: 'Pick a package. We list the pages, photos and details we need from you.' },
   { b: '3', h: 'Launch in 7 days', p: 'Review the site on a private link, ask for changes, then go live.' },
 ]
-
-function GoogleCheckForm() {
-  const [status, setStatus] = useState('idle')
-  const [message, setMessage] = useState('')
-
-  async function onSubmit(event) {
-    event.preventDefault()
-    if (status === 'loading') return
-    const form = event.currentTarget
-    const data = new FormData(form)
-    if (data.get('company_website')) return
-    setStatus('loading')
-    setMessage('')
-    const clinic = String(data.get('clinic') || '').trim()
-    try {
-      await submitInquiry({
-        _subject: `Google check request: ${clinic}`,
-        requestType: 'Free Google check',
-        clinic,
-        city: data.get('city'),
-        name: data.get('name'),
-        phone: data.get('phone'),
-        email: data.get('email') || '',
-        consent: data.get('consent') ? 'Yes' : 'No',
-      })
-      setStatus('success')
-      setMessage('Thank you. Your clinic’s Google check will reach you within one working day, by email or WhatsApp.')
-      form.reset()
-    } catch {
-      setStatus('error')
-      setMessage(`The request could not be sent. Email ${contact.email} or message us on WhatsApp.`)
-    }
-  }
-
-  return (
-    <form className="ag-form contact-form" onSubmit={onSubmit}>
-      <label className="sr-only" aria-hidden="true">
-        Company website
-        <input name="company_website" tabIndex={-1} autoComplete="off" />
-      </label>
-      <div className="contact-form-grid">
-        <label>
-          <span>Clinic name</span>
-          <input name="clinic" required autoComplete="organization" placeholder="e.g. Sharma Dental Clinic" />
-        </label>
-        <label>
-          <span>City</span>
-          <input name="city" required autoComplete="address-level2" placeholder="e.g. Alwar" />
-        </label>
-        <label>
-          <span>Your name</span>
-          <input name="name" required autoComplete="name" />
-        </label>
-        <label>
-          <span>Phone or WhatsApp</span>
-          <input name="phone" type="tel" inputMode="tel" required autoComplete="tel" />
-        </label>
-        <label className="contact-form-full">
-          <span>Email (optional)</span>
-          <input name="email" type="email" autoComplete="email" />
-        </label>
-      </div>
-      <label className="clinics-consent">
-        <input type="checkbox" name="consent" required />
-        <span>You may contact me about this check by phone, WhatsApp or email.</span>
-      </label>
-      <div className="contact-form-actions">
-        <button className="ag-btn ag-btn-solid contact-submit" type="submit" disabled={status === 'loading'}>
-          {status === 'loading' ? 'Sending…' : 'Get my free Google check →'}
-        </button>
-        {message ? (
-          <p className={`contact-status is-${status}`} role="status" aria-live="polite">{message}</p>
-        ) : null}
-      </div>
-    </form>
-  )
-}
 
 export default function Clinics() {
   return (
@@ -146,7 +68,7 @@ export default function Clinics() {
               nearby clinics, and what patients see when they search your name. You get a one-page report within one working day.
             </p>
           </header>
-          <GoogleCheckForm />
+          <GoogleCheckForm businessLabel="Clinic name" businessPlaceholder="e.g. Sharma Dental Clinic" businessType="Clinic" />
         </div>
       </section>
 

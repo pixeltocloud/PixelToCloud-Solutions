@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { servicePages, industries } from '../src/data/catalog.js'
 import { caseStudies } from '../src/data/caseStudies.js'
 import { routeSeo, defaultSeo } from '../src/data/seo.js'
+import { businessPages } from '../src/data/businessPages.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.resolve(__dirname, '..')
@@ -63,6 +64,11 @@ const additionalCore = [
 ]
 for (const r of additionalCore) {
   if (!routes.has(r.path)) routes.set(r.path, { title: r.title, description: r.description, sitemap: true })
+}
+
+// Landing pages for each kind of business (/restaurants, /ca-firms, ...)
+for (const page of businessPages) {
+  routes.set(`/${page.slug}`, { title: page.seoTitle, description: page.seoDescription, sitemap: true })
 }
 
 // 2. Services

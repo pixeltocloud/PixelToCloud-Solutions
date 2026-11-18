@@ -15,6 +15,7 @@ import './styles/components.css'
 import './styles/animations.css'
 import './styles/agency.css'
 import './styles/motion.css'
+import { businessPages } from './data/businessPages'
 
 const Services = lazy(() => import('./pages/Services'))
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
@@ -23,6 +24,7 @@ const WorkDetail = lazy(() => import('./pages/WorkDetail'))
 const About = lazy(() => import('./pages/About'))
 const Industries = lazy(() => import('./pages/Industries'))
 const Clinics = lazy(() => import('./pages/Clinics'))
+const BusinessLanding = lazy(() => import('./pages/BusinessLanding'))
 const IndustryDetail = lazy(() => import('./pages/IndustryDetail'))
 const Contact = lazy(() => import('./pages/Contact'))
 const StartProject = lazy(() => import('./pages/StartProject'))
@@ -269,6 +271,9 @@ function AppShell() {
             <Route path="/about" element={<About />} />
             <Route path="/process" element={<Navigate to="/work#engagement" replace />} />
             <Route path="/clinics" element={<Clinics />} />
+            {businessPages.map((page) => (
+              <Route key={page.slug} path={`/${page.slug}`} element={<BusinessLanding slug={page.slug} />} />
+            ))}
             <Route path="/industries" element={<Industries />} />
             <Route path="/industries/:slug" element={<IndustryDetail />} />
             <Route path="/insights/*" element={<Navigate to="/work#engagement" replace />} />

@@ -40,3 +40,9 @@
 .clinics-check .contact-form { max-width: 760px; }
 .contact-form .clinics-consent { display: flex; gap: 10px; align-items: flex-start; margin: 18px 0 6px; color: var(--text-secondary); font-size: 0.95rem; font-weight: 500; }
 .contact-form .clinics-consent input { width: 18px; height: 18px; min-height: 0; margin: 2px 0 0; padding: 0; flex: none; accent-color: var(--cta); }
+
+.biz-service { max-width: 62ch; margin: 14px 0 0; font-size: 1.05rem; font-weight: 600; opacity: 0.92; }
+.biz-others { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+.biz-others a { display: inline-block; padding: 10px 16px; border: 1px solid var(--border); border-radius: 999px; background: var(--bg-secondary); color: var(--text); font-weight: 600; text-decoration: none; }
+.biz-others a:hover { border-color: var(--accent); }
+.biz-others a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

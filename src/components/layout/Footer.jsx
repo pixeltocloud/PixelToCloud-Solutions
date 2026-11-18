@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { contact } from '../../data/founders'
+import { businessPages } from '../../data/businessPages'
 import { useTheme } from '../../context/useTheme'
 import './Footer.css'
 
@@ -24,11 +25,20 @@ export default function Footer() {
           <div className="footer-links">
             <Link to="/services">Services</Link>
             <Link to="/services#pricing">Pricing</Link>
-            <Link to="/clinics">For clinics</Link>
             <Link to="/work">Work</Link>
             <Link to="/about">About</Link>
             <Link to="/faq">FAQ</Link>
             <Link to="/contact">Contact</Link>
+          </div>
+        </div>
+
+        <div>
+          <p className="footer-col-title">Who we help</p>
+          <div className="footer-links">
+            <Link to="/clinics">Clinics & doctors</Link>
+            {businessPages.map((page) => (
+              <Link key={page.slug} to={`/${page.slug}`}>{page.navLabel}</Link>
+            ))}
           </div>
         </div>
 
