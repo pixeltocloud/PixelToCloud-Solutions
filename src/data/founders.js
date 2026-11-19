@@ -38,7 +38,9 @@ export const contact = {
     'https://wa.me/918219352124?text=Hi%20PixelToCloud,%20I%20visited%20pixeltocloud.com%20and%20would%20like%20to%20discuss%20a%20website%20project.',
   appointmentLink:
     'https://wa.me/918219352124?text=Hi%20PixelToCloud,%20I%20would%20like%20to%20request%20a%2015-minute%20intro%20call%20to%20discuss%20scope%20and%20timeline.',
-  formEndpoint: 'https://formsubmit.co/ajax/pixeltocloud@gmail.com',
+  // Web3Forms delivers website enquiries to pixeltocloud@gmail.com. The access key is public by design.
+  formEndpoint: 'https://api.web3forms.com/submit',
+  formAccessKey: 'e0f041cc-52ae-4663-a436-6cf5e0f3b413',
   phones: ['+918629008768', '+918219352124', '+919928196424'],
   siteUrl: 'https://pixeltocloud.com',
   connectUrl: 'https://pixeltocloud.com/connect',
