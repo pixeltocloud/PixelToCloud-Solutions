@@ -60,6 +60,8 @@ for (const [routePath, seo] of Object.entries(routeSeo)) {
 const additionalCore = [
   { path: '/start-project', title: 'Start a Project | PixelToCloud', description: 'Tell us about your project. Clear scope, fair pricing, and direct founder collaboration.' },
   { path: '/faq', title: 'Frequently Asked Questions | PixelToCloud', description: 'Answers about our process, 7-day website delivery, pricing, and project scope.' },
+  { path: '/pricing', title: 'Prices and packages | PixelToCloud', description: 'Website packages from ₹9,999, monthly plans for Google, social media, WhatsApp and website care, and starting prices for every service.' },
+  { path: '/celebrations', title: 'Wedding invitations, video invites and event websites | PixelToCloud', description: 'Digital wedding cards, video invitations, caricature invites, wedding websites, memory videos and festival greetings. Delivered on WhatsApp, from ₹499.' },
   { path: '/cookies', title: 'Cookie Policy | PixelToCloud', description: 'How cookies and local storage are used on pixeltocloud.com.' },
 ]
 for (const r of additionalCore) {

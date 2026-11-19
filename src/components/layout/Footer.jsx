@@ -1,67 +1,75 @@
 import { Link } from 'react-router-dom'
 import { contact } from '../../data/founders'
 import { businessPages } from '../../data/businessPages'
-import { useTheme } from '../../context/useTheme'
-import './Footer.css'
+import { serviceGroups } from '../../data/offerings'
+import { whatsappHref } from '../site/px'
+
+const popular = ['web-development', 'google-business-profile', 'whatsapp-automation', 'social-media-management', 'web-applications', 'branding']
+const services = serviceGroups.flatMap((group) => group.items).filter((item) => popular.includes(item.slug))
 
 export default function Footer() {
-  const { theme, toggleTheme } = useTheme()
   return (
-    <footer className="site-footer">
-      <div className="container footer-grid">
-        <div>
-          <Link to="/" className="footer-brand" aria-label="PixelToCloud home">
-            <img src="/logo-icon.svg" alt="" width="56" height="56" decoding="async" />
+    <footer className="px-footer">
+      <div className="px-wrap px-footer-grid">
+        <div className="px-footer-about">
+          <Link to="/" className="px-brand" aria-label="PixelToCloud home">
+            <img src="/logo-icon.svg" alt="" width="40" height="40" />
             <span>PixelToCloud</span>
           </Link>
-          <p className="footer-desc">
-            Websites, custom software, and automation, handed over with the code.
-            Offices in {contact.location}.
-          </p>
+          <p>PixelToCloud Solutions. Websites, software, WhatsApp automation, marketing and design for businesses in India and worldwide.</p>
+          <p>GSTIN 08CSRPA1400M1ZS</p>
         </div>
 
         <div>
-          <p className="footer-col-title">Explore</p>
-          <div className="footer-links">
-            <Link to="/services">Services</Link>
-            <Link to="/services#pricing">Pricing</Link>
-            <Link to="/work">Work</Link>
-            <Link to="/about">About</Link>
-            <Link to="/faq">FAQ</Link>
-            <Link to="/contact">Contact</Link>
-          </div>
-        </div>
-
-        <div>
-          <p className="footer-col-title">Who we help</p>
-          <div className="footer-links">
-            <Link to="/clinics">Clinics & doctors</Link>
-            {businessPages.map((page) => (
-              <Link key={page.slug} to={`/${page.slug}`}>{page.navLabel}</Link>
+          <h2>Services</h2>
+          <ul>
+            {services.map((item) => (
+              <li key={item.slug}><Link to={`/services/${item.slug}`}>{item.name}</Link></li>
             ))}
-          </div>
+            <li><Link to="/services">All services</Link></li>
+          </ul>
         </div>
 
         <div>
-          <p className="footer-col-title">Connect</p>
-          <div className="footer-links">
-            <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            <a href={contact.whatsappLink} target="_blank" rel="noopener noreferrer">WhatsApp<span className="sr-only"> (opens in a new tab)</span></a>
-            <a href={contact.appointmentLink} target="_blank" rel="noopener noreferrer">Book an intro call<span className="sr-only"> (opens in a new tab)</span></a>
-          </div>
+          <h2>Who we work with</h2>
+          <ul>
+            <li><Link to="/clinics">Clinics and doctors</Link></li>
+            {businessPages.map((page) => (
+              <li key={page.slug}><Link to={`/${page.slug}`}>{page.navLabel}</Link></li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2>Company</h2>
+          <ul>
+            <li><Link to="/pricing">Pricing</Link></li>
+            <li><Link to="/celebrations">Celebrations</Link></li>
+            <li><Link to="/work">Our work</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/faq">Questions</Link></li>
+            <li><Link to="/login">Client login</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href={whatsappHref('Hi PixelToCloud, I would like to discuss my requirement.')} target="_blank" rel="noopener noreferrer">WhatsApp +91 82193 52124</a></li>
+            <li><a href={`tel:${contact.whatsapp}`}>Call +91 82193 52124</a></li>
+            <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
+            <li>Ram Mandir, 30 Beegha, Shalimar, Alwar, Rajasthan 301001</li>
+          </ul>
         </div>
       </div>
 
-      <div className="container footer-bottom">
-        <div>© {new Date().getFullYear()} PixelToCloud Solutions. All rights reserved.</div>
-        <div className="footer-legal">
+      <div className="px-wrap px-footer-bottom">
+        <span>© {new Date().getFullYear()} PixelToCloud Solutions</span>
+        <nav aria-label="Legal">
           <Link to="/privacy">Privacy</Link>
           <Link to="/terms">Terms</Link>
           <Link to="/cookies">Cookies</Link>
-          <button type="button" className="footer-theme" onClick={toggleTheme}>
-            {theme === 'dark' ? 'Light theme' : 'Dark theme'}
-          </button>
-        </div>
+        </nav>
       </div>
     </footer>
   )

@@ -3,8 +3,7 @@ import { lazy, Suspense, useEffect } from 'react'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import OfferPopup from './components/offers/OfferPopup'
-import ConnectDock from './components/site/ConnectDock'
+import { WhatsAppIcon, whatsappHref } from './components/site/px'
 import RequireAuth from './components/auth/RequireAuth'
 import Seo from './components/seo/Seo'
 import Analytics from './components/seo/Analytics'
@@ -15,9 +14,12 @@ import './styles/components.css'
 import './styles/animations.css'
 import './styles/agency.css'
 import './styles/motion.css'
+import './styles/site.css'
 import { businessPages } from './data/businessPages'
 
 const Services = lazy(() => import('./pages/Services'))
+const Pricing = lazy(() => import('./pages/Pricing'))
+const Celebrations = lazy(() => import('./pages/Celebrations'))
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
 const Work = lazy(() => import('./pages/Work'))
 const WorkDetail = lazy(() => import('./pages/WorkDetail'))
@@ -74,133 +76,6 @@ function scrollToHash(hash, attempt = 0) {
   }
 }
 
-function GlideScroll() {
-  useEffect(() => {
-    const fine = window.matchMedia('(hover: hover) and (pointer: fine)')
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
-    if (!fine.matches || reduce.matches) return undefined
-
-    const root = document.documentElement
-    const previousBehavior = root.style.scrollBehavior
-    root.style.scrollBehavior = 'auto'
-
-    let target = window.scrollY
-    let current = window.scrollY
-    let frame = 0
-    let animating = false
-    let release = 0
-    let last = 0
-    let painted = Math.round(window.scrollY)
-    const lerp = 0.085
-
-    const limit = () => Math.max(0, root.scrollHeight - window.innerHeight)
-    const clamp = (value) => Math.min(limit(), Math.max(0, value))
-
-    const unlock = () => {
-      release = 0
-      animating = false
-      current = window.scrollY
-      target = current
-      painted = Math.round(current)
-    }
-
-    const tick = (now) => {
-      if (document.body.style.overflow === 'hidden') {
-        frame = 0
-        if (!release) release = window.requestAnimationFrame(unlock)
-        return
-      }
-      const dt = last ? Math.min(32, now - last) : 16.67
-      last = now
-      const ease = 1 - (1 - lerp) ** (dt / 16.67)
-      current += (target - current) * ease
-      if (Math.abs(target - current) < 0.5) current = target
-
-      const y = Math.round(current)
-      if (y !== painted) {
-        painted = y
-        window.scrollTo(0, y)
-      }
-
-      if (current === target) {
-        frame = 0
-        if (release) window.cancelAnimationFrame(release)
-        release = window.requestAnimationFrame(unlock)
-        return
-      }
-      frame = window.requestAnimationFrame(tick)
-    }
-
-    const start = () => {
-      animating = true
-      if (release) {
-        window.cancelAnimationFrame(release)
-        release = 0
-      }
-      if (frame) return
-      last = 0
-      frame = window.requestAnimationFrame(tick)
-    }
-
-    glideTo = (y, immediate = false) => {
-      target = clamp(y)
-      if (immediate) {
-        if (frame) window.cancelAnimationFrame(frame)
-        if (release) window.cancelAnimationFrame(release)
-        frame = 0
-        release = 0
-        current = target
-        painted = Math.round(current)
-        animating = true
-        window.scrollTo(0, painted)
-        animating = false
-        return
-      }
-      start()
-    }
-
-    const onWheel = (event) => {
-      if (event.ctrlKey || event.defaultPrevented) return
-      if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return
-      if (document.body.style.overflow === 'hidden') return
-      let node = event.target
-      while (node && node !== document.body) {
-        if (node instanceof Element && node.clientHeight < window.innerHeight - 8) {
-          const style = window.getComputedStyle(node)
-          if (/(auto|scroll)/.test(style.overflowY) && node.scrollHeight > node.clientHeight + 4) return
-        }
-        node = node.parentElement
-      }
-      event.preventDefault()
-      let delta = event.deltaY
-      if (event.deltaMode === 1) delta *= 16
-      else if (event.deltaMode === 2) delta *= window.innerHeight
-      target = clamp(target + delta)
-      start()
-    }
-
-    const onScroll = () => {
-      if (animating) return
-      target = window.scrollY
-      current = window.scrollY
-      painted = Math.round(current)
-    }
-
-    window.addEventListener('wheel', onWheel, { passive: false })
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      glideTo = null
-      root.style.scrollBehavior = previousBehavior
-      window.removeEventListener('wheel', onWheel)
-      window.removeEventListener('scroll', onScroll)
-      if (frame) window.cancelAnimationFrame(frame)
-      if (release) window.cancelAnimationFrame(release)
-    }
-  }, [])
-
-  return null
-}
-
 function SmoothAnchors() {
   useEffect(() => {
     const onClick = (event) => {
@@ -253,11 +128,11 @@ function AppShell() {
     <div className="app-shell">
       <ScrollManager />
       <SmoothAnchors />
-      <GlideScroll />
       <Analytics />
       {quiet ? null : <Navbar />}
-      {quiet || portal ? null : <OfferPopup />}
-      {quiet || portal ? null : <ConnectDock />}
+      {quiet || portal ? null : (
+        <a className="px-float" href={whatsappHref('Hi PixelToCloud, I would like to discuss my requirement.')} target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"><WhatsAppIcon /></a>
+      )}
       <main id="main-content" className={`site-main${quiet ? ' is-quiet' : ''}`}>
         <Suspense fallback={<RouteFallback />}>
           <div key={location.pathname} className="page-enter">
@@ -265,6 +140,8 @@ function AppShell() {
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/celebrations" element={<Celebrations />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/easy-my-tax" element={<Navigate to="/work/easy-my-taxes" replace />} />
             <Route path="/work/:slug" element={<WorkDetail />} />
