@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { submitInquiry } from '../../lib/inquiry'
+import FormSuccess from './FormSuccess'
 import { contact } from '../../data/founders'
 import '../../pages/Contact.css'
 import '../../pages/Clinics.css'
@@ -44,6 +45,17 @@ export default function GoogleCheckForm({
       setStatus('error')
       setMessage(`The request could not be sent. Email ${contact.email} or message us on WhatsApp.`)
     }
+  }
+
+  if (status === 'success') {
+    return (
+      <FormSuccess
+        title="Thank you. Your request has been sent."
+        text="Your free Google check will reach you within one working day, by email or WhatsApp."
+        onAgain={() => { setStatus('idle'); setMessage('') }}
+        againLabel="Request another check"
+      />
+    )
   }
 
   return (

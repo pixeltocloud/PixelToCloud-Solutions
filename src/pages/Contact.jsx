@@ -9,6 +9,7 @@ import { budgetBandsByCurrency, projectTypes, timelines } from '../data/inquiryO
 import { useCurrency } from '../lib/currency'
 import { coupons } from '../data/offers'
 import { submitInquiry } from '../lib/inquiry'
+import FormSuccess from '../components/forms/FormSuccess'
 import './Contact.css'
 
 function RequiredMark() {
@@ -114,6 +115,13 @@ export default function Contact() {
               <p>Share the essentials. We&apos;ll review your requirements and help you determine the right next step.</p>
             </header>
 
+            {status === 'success' ? (
+              <FormSuccess
+                title="Thank you. Your enquiry has been sent."
+                text="We have received your details and usually reply the same day, by email or WhatsApp. For anything urgent, message us on WhatsApp now."
+                onAgain={() => { setStatus('idle'); setMessage('') }}
+              />
+            ) : (
             <form className="ag-form contact-form" onSubmit={onSubmit} noValidate={false}>
               <p className="contact-required-note" id="inquiry-required-note">Fields marked with * are required.</p>
               <label className="sr-only" aria-hidden="true">
@@ -204,6 +212,7 @@ export default function Contact() {
                 ) : null}
               </div>
             </form>
+            )}
           </div>
 
           <aside className="contact-aside" aria-label="Direct contact options">

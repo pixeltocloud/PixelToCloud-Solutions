@@ -6,6 +6,7 @@ import { contact } from '../data/founders'
 import { budgetBandsByCurrency, projectTypes, timelines } from '../data/inquiryOptions'
 import { useCurrency } from '../lib/currency'
 import { submitInquiry } from '../lib/inquiry'
+import FormSuccess from '../components/forms/FormSuccess'
 
 const steps = ['Need', 'Business', 'Scope', 'Budget', 'Contact', 'Review']
 
@@ -125,7 +126,10 @@ export default function StartProject() {
             ))}
           </ol>
           {status === 'success' ? (
-            <p className="ag-status" role="status">Sent. We typically reply the same business day (IST). If you do not hear back, email {contact.email}.</p>
+            <FormSuccess
+              title="Thank you. Your project brief has been sent."
+              text={`We usually reply the same day with questions or a quote. If you do not hear back, email ${contact.email} or message us on WhatsApp.`}
+            />
           ) : (
             <form className="ag-form" onSubmit={(event) => event.preventDefault()}>
               {step === 0 && (
