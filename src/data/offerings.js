@@ -45,7 +45,7 @@ export const serviceGroups = [
     text: 'Everything your business needs to look the same everywhere.',
     items: [
       { slug: 'branding', name: 'Logo and brand design', line: 'Logo, visiting cards, letterhead, menus and brochures.', from: { INR: 2499, USD: 89 } },
-      { slug: 'video-production', name: 'Business videos and reels', line: 'Reels from ₹799 each. Intro and product videos with voice-over.', from: { INR: 799, USD: 29 }, unit: '/reel' },
+      { slug: 'video-production', name: 'Business videos and reels', line: 'Reels, intro videos and product videos with voice-over.', from: { INR: 799, USD: 29 }, unit: '/reel' },
       { slug: 'festival-designs', name: 'Festival and offer posters', line: 'Diwali, Holi, Eid and sale designs with your logo.', from: { INR: 999, USD: 39 } },
     ],
   },
