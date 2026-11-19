@@ -1,0 +1,53 @@
+# Tells Bing (and engines that use IndexNow, incl. Bing-powered ChatGPT search)
+# about every page in the sitemap, each time GitHub Pages publishes the site.
+# Google does not use IndexNow; the sitemap in Search Console covers Google.
+name: IndexNow ping
+
+on:
+  page_build:          # runs after each GitHub Pages publish
+  workflow_dispatch:   # can be run by hand from the Actions tab
+  schedule:
+    - cron: '17 3 * * 1'   # weekly safety run, Monday 08:47 IST
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HOST: pixeltocloud.com
+      KEY: c26151661ce788f0a400190c1f567513
+    steps:
+      - name: Wait for the new pages to go live
+        if: github.event_name == 'page_build'
+        run: sleep 90
+
+      - name: Check sitemap and key file are live
+        run: |
+          set -euo pipefail
+          curl -fsS "https://$HOST/sitemap.xml" -o sitemap.xml
+          grep -o '<loc>[^<]*' sitemap.xml | sed 's/<loc>//' > urls.txt
+          echo "Pages in sitemap: $(wc -l < urls.txt)"
+          test "$(wc -l < urls.txt)" -gt 0
+          curl -fsS "https://$HOST/$KEY.txt" | grep -q "$KEY"
+          echo "Key file OK"
+
+      - name: Send all URLs to IndexNow
+        run: |
+          set -euo pipefail
+          jq -n --arg host "$HOST" --arg key "$KEY" \
+            --arg loc "https://$HOST/$KEY.txt" \
+            --rawfile urls urls.txt \
+            '{host:$host, key:$key, keyLocation:$loc, urlList:($urls|split("\n")|map(select(length>0)))}' > body.json
+          code=$(curl -s -o resp.txt -w '%{http_code}' -X POST 'https://api.indexnow.org/indexnow' \
+            -H 'Content-Type: application/json; charset=utf-8' --data @body.json)
+          echo "IndexNow answered HTTP $code"; cat resp.txt || true
+          # 200 = accepted, 202 = accepted and key being checked
+          if [ "$code" != "200" ] && [ "$code" != "202" ]; then exit 1; fi
+          echo "## IndexNow: sent $(wc -l < urls.txt) URLs, HTTP $code" >> "$GITHUB_STEP_SUMMARY"
