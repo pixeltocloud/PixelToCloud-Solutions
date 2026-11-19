@@ -15,6 +15,7 @@ import './styles/animations.css'
 import './styles/agency.css'
 import './styles/motion.css'
 import './styles/site.css'
+import './styles/legacy-bridge.css'
 import { businessPages } from './data/businessPages'
 
 const Services = lazy(() => import('./pages/Services'))

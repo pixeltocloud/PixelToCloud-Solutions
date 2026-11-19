@@ -1,0 +1,281 @@
+/* Brings the older page templates (ag-*) into the 2026 design. Loaded after site.css. */
+
+.reveal,
+.reveal.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.ag-wrap {
+  width: 100%;
+  max-width: calc(var(--px-wrap) + var(--px-gutter) * 2);
+  padding: 0 var(--px-gutter);
+}
+
+/* Heroes: white paper, no glow, no dot grain. */
+.ag-hero,
+.ag-hero-light,
+.ag-hero-home {
+  margin-top: 0;
+  background: var(--px-paper);
+  color: var(--px-ink);
+  padding: clamp(40px, 6vw, 80px) 0 clamp(40px, 6vw, 72px);
+  border-bottom: 1px solid var(--px-line);
+}
+
+.ag-hero::before,
+.ag-hero::after {
+  display: none;
+}
+
+.ag h1,
+.ag-hero h1,
+.ag-sheet h1,
+.ag h1.ag-ink {
+  font-family: var(--px-serif);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  color: var(--px-ink);
+  max-width: 20ch;
+}
+
+.ag-hero .ag-lead,
+.ag-lead,
+.ag-sheet .ag-lead {
+  color: var(--px-ink-2);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.ag-hero .ag-crumbs,
+.ag-hero .ag-crumbs a,
+.ag-crumbs {
+  color: var(--px-ink-3);
+}
+
+.ag-crumbs a {
+  color: var(--px-indigo);
+}
+
+.ag-hero .ag-text-link {
+  color: var(--px-indigo);
+}
+
+/* Shouty all-caps labels become quiet sentence-case notes. */
+.ag-eye {
+  display: none;
+}
+
+.ag-kicker {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--px-indigo);
+}
+
+/* Sections */
+.ag-page,
+.ag-sheet,
+.ag-sheet.alt {
+  background: var(--px-paper);
+}
+
+.ag-sheet {
+  padding: var(--px-section) 0;
+}
+
+.ag-sheet.cream {
+  background: var(--px-mist);
+}
+
+.ag-sheet h2,
+.ag-section-head h2 {
+  font-family: var(--px-serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--px-ink);
+}
+
+.ag-section-head p {
+  color: var(--px-ink-2);
+}
+
+/* Buttons share the new set. */
+.ag-btn {
+  min-height: 48px;
+  padding: 0 1.4rem;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  font-family: var(--px-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.ag-btn-light,
+.ag-btn-solid {
+  background: var(--px-indigo) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.ag-btn-light:hover,
+.ag-btn-solid:hover:not(:disabled) {
+  background: var(--px-indigo-dark) !important;
+}
+
+.ag-btn-ghost,
+.ag-btn-line {
+  background: transparent !important;
+  color: var(--px-ink) !important;
+  border-color: var(--px-line) !important;
+}
+
+.ag-btn-ghost:hover,
+.ag-btn-line:hover {
+  border-color: var(--px-ink) !important;
+  background: transparent !important;
+}
+
+.ag-btn-whatsapp {
+  background: var(--px-leaf) !important;
+  color: #fff !important;
+}
+
+.ag-btn-whatsapp:hover {
+  background: var(--px-leaf-dark) !important;
+}
+
+.ag-note {
+  background: var(--px-marigold-wash);
+  border-left: 4px solid var(--px-marigold);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  color: var(--px-ink);
+}
+
+/* Forms */
+.ag-form input,
+.ag-form select,
+.ag-form textarea {
+  border: 1.5px solid var(--px-line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--px-ink);
+  font-family: var(--px-sans);
+  font-size: 1rem;
+}
+
+.ag-form input:focus,
+.ag-form select:focus,
+.ag-form textarea:focus {
+  border-color: var(--px-indigo);
+  outline: 3px solid var(--px-marigold-wash);
+}
+
+.ag-form label {
+  color: var(--px-ink);
+  font-weight: 500;
+}
+
+/* The old dark CTA band is no longer rendered, but keep it calm if anything still uses it. */
+.ag-close {
+  background: var(--px-ink);
+}
+
+.page-enter {
+  animation: none !important;
+}
+
+/* Former dark panels become light, readable panels. */
+.contact-aside,
+.delivery-rail {
+  background: var(--px-mist) !important;
+  color: var(--px-ink) !important;
+  border-color: var(--px-line) !important;
+}
+
+.contact-aside *,
+.delivery-rail * {
+  color: inherit !important;
+  border-color: var(--px-line) !important;
+}
+
+.contact-aside {
+  border-radius: var(--px-radius);
+}
+
+.contact-aside-lead,
+.delivery-rail-lead,
+.delivery-rail-steps p {
+  color: var(--px-ink-2) !important;
+}
+
+.contact-aside a:hover,
+.delivery-rail-link:hover {
+  color: var(--px-indigo) !important;
+}
+
+.delivery-rail-mark i,
+.studio-flow-mark {
+  background: var(--px-marigold) !important;
+  color: var(--px-ink) !important;
+  border-color: var(--px-marigold) !important;
+}
+
+.delivery-rail-steps > li {
+  border-left-color: var(--px-line) !important;
+}
+
+.studio-flow-board {
+  background: var(--px-marigold-wash) !important;
+  color: var(--px-ink) !important;
+}
+
+.studio-flow-board p,
+.studio-flow-board li {
+  color: var(--px-ink) !important;
+}
+
+.studio-flow-board li::before {
+  background: var(--px-marigold) !important;
+}
+
+.work-project-media,
+.work-project-media img,
+.industry-card-media {
+  background: var(--px-mist) !important;
+}
+
+.founder-card-media {
+  background: var(--px-mist) !important;
+}
+
+/* No tracked-out capitals on the older templates. */
+.ag-page *,
+.ag *,
+.page-enter * {
+  text-transform: none !important;
+}
+
+.ag-faq-label,
+.ag-kicker,
+.work-project-meta,
+.founder-card-label {
+  letter-spacing: 0 !important;
+}
+
+.contact-hero .ag-lead,
+.contact-hero h1 span {
+  color: var(--px-ink-2) !important;
+}
+
+.contact-hero h1 span {
+  color: var(--px-ink) !important;
+}
