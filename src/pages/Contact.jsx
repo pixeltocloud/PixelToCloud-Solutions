@@ -159,6 +159,7 @@ export default function Contact() {
                     {timelines.map((item) => <option key={item}>{item}</option>)}
                   </select>
                 </label>
+                {validCoupon ? (
                 <label>
                   <span>Coupon <OptionalMark /></span>
                   <select
@@ -172,6 +173,7 @@ export default function Contact() {
                     ))}
                   </select>
                 </label>
+                ) : null}
               </div>
 
               <label className="contact-form-full">

@@ -386,7 +386,7 @@ export const faqGroups = [
     items: [
       {
         q: 'How much does a project cost?',
-        a: 'Website packages start at ₹9,999 in India and $299 for international clients, with three fixed tiers shown on the Services page. Custom applications are quoted as fixed milestones, often from ₹75,000 upward, and are not the same offer. Budget bands on the project form are a starting point, not a quote.',
+        a: 'Website packages start at ₹9,999 in India and $299 for international clients. Monthly plans start at ₹1,499, custom software at ₹49,999 and mobile apps at ₹79,999. Every price is on the Pricing page, and you get a fixed written quote before work starts.',
       },
     ],
   },
