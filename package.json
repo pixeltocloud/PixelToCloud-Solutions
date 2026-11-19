@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/prebuild.mjs && vite",
-    "build": "node scripts/prebuild.mjs && vite build && node scripts/build-static-routes.mjs",
+    "build": "node scripts/prebuild.mjs && node scripts/build-llms.mjs && vite build && node scripts/build-static-routes.mjs && node scripts/prerender.mjs",
     "lint": "oxlint src",
     "preview": "vite preview --host 127.0.0.1 --port 4173",
     "deploy:pages": "npm run build"

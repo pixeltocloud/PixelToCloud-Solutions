@@ -6,6 +6,7 @@ import { testimonials } from '../data/testimonials'
 import { packages } from '../data/pricing'
 import { celebrationItems, needs, serviceGroups } from '../data/offerings'
 import SoftwareList from '../components/site/SoftwareList'
+import { findPlace } from '../data/places'
 import { ContactBand, CurrencyToggle, Price, WhatsAppIcon, whatsappHref } from '../components/site/px'
 
 const featuredWork = ['dr-archit-joshi', 'shridaa-arts', 'dr-janki-choudhary']
@@ -205,6 +206,22 @@ export default function Home() {
               <p className="px-invite-place">Shalimar Gardens, Alwar</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="px-section is-tight" aria-labelledby="where-title">
+        <div className="px-wrap">
+          <div className="px-head">
+            <h2 id="where-title">Where we work</h2>
+            <p>From our studio in Alwar we work with businesses in all 41 districts of Rajasthan, every Indian state, and abroad.</p>
+          </div>
+          <ul className="px-occasions px-near">
+            {['jaipur', 'jodhpur', 'udaipur', 'kota', 'ajmer', 'bikaner', 'alwar', 'bhilwara', 'sikar', 'delhi', 'haryana', 'maharashtra', 'gujarat', 'uae', 'usa', 'uk'].map((slug) => {
+              const place = findPlace(slug)
+              return <li key={slug}><Link to={`/locations/${slug}`}>{place.name}</Link></li>
+            })}
+            <li><Link to="/locations">All locations</Link></li>
+          </ul>
         </div>
       </section>
 

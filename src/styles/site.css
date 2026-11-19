@@ -1413,7 +1413,7 @@ h1, h2, h3, h4 {
 
 @media (min-width: 900px) {
   .px-footer-grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -1549,4 +1549,39 @@ h1, h2, h3, h4 {
   height: 7px;
   border-radius: 2px;
   background: var(--px-marigold);
+}
+
+.px-sector-cols h3 {
+  font-size: 1.1875rem;
+  margin: 0 0 8px;
+  padding-top: 14px;
+  border-top: 1.5px solid var(--px-ink);
+}
+
+.px-sector-cols p {
+  margin: 0 0 8px;
+  color: var(--px-ink-2);
+  line-height: 1.6;
+}
+
+.px-near a {
+  color: var(--px-ink);
+}
+
+.px-near li {
+  border-color: var(--px-line);
+  background: #fff;
+}
+
+.px-near a:hover {
+  color: var(--px-indigo);
+}
+
+.px-searches {
+  margin-top: 40px;
+}
+
+.px-searches h3 {
+  font-size: 1.125rem;
+  margin: 0 0 4px;
 }

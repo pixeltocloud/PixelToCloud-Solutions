@@ -9,8 +9,8 @@ export default function Industries() {
   return (
     <div className="ag ag-page industries-page">
       <Seo
-        title={`Industries | ${brand.name}`}
-        description="Industries we have shipped for, and industries we will scope without claiming a specialty."
+        title={`Industries we build for | ${brand.name}`}
+        description="Websites and software for healthcare, professional services, retail and makers, education, hospitality, real estate and startups."
         path="/industries"
       />
 

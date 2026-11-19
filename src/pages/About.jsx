@@ -33,7 +33,7 @@ const studioFlow = [
 export default function About() {
   return (
     <div className="ag ag-page">
-      <Seo title={`About | ${brand.name}`} description="Pankaj Gupta and Rusmeen build websites and software from Gurugram and Alwar." path="/about" />
+      <Seo title={`About PixelToCloud: web and software studio in Alwar, Rajasthan | ${brand.name}`} description="PixelToCloud Solutions is a GST-registered web and software studio in Alwar, Rajasthan, founded by Pankaj Gupta and Rusmeen, working with businesses across India and abroad." path="/about" />
       <section className="ag-hero">
         <div className="ag-wrap">
           <p className="ag-eye">About PixelToCloud</p>

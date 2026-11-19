@@ -108,7 +108,7 @@ export default function StartProject() {
 
   return (
     <div className="ag ag-page">
-      <Seo title={`Start a project | ${brand.name}`} description="A short brief for a website, application, or automation." path="/start-project" />
+      <Seo title={`Start a project: get a fixed quote | ${brand.name}`} description="Tell us about your website, software, app or marketing project in six short steps and get a fixed written quote from PixelToCloud." path="/start-project" />
       <section className="ag-hero" aria-labelledby="start-project-title">
         <div className="ag-wrap">
           <p className="ag-eye">Project brief</p>

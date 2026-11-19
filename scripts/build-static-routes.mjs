@@ -5,6 +5,7 @@ import { servicePages, industries } from '../src/data/catalog.js'
 import { caseStudies } from '../src/data/caseStudies.js'
 import { routeSeo, defaultSeo } from '../src/data/seo.js'
 import { businessPages } from '../src/data/businessPages.js'
+import { allPlaces } from '../src/data/places.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.resolve(__dirname, '..')
@@ -66,6 +67,13 @@ const additionalCore = [
 ]
 for (const r of additionalCore) {
   if (!routes.has(r.path)) routes.set(r.path, { title: r.title, description: r.description, sitemap: true })
+}
+
+// Location pages for every district, state and country we serve
+routes.set('/locations', { title: 'Locations: Rajasthan, all of India and abroad | PixelToCloud', description: 'Websites, software and marketing for businesses in all 41 districts of Rajasthan, every Indian state and abroad.', sitemap: true })
+for (const place of allPlaces) {
+  const t = place.type === 'country' ? `Website and software development company for ${place.name} businesses | PixelToCloud` : `Website design, software and digital marketing in ${place.name} | PixelToCloud`
+  routes.set(`/locations/${place.slug}`, { title: t, description: place.note, sitemap: true })
 }
 
 // Landing pages for each kind of business (/restaurants, /ca-firms, ...)
@@ -145,9 +153,10 @@ for (const [routePath, meta] of routes.entries()) {
 
 // Sitemap generated from the same route list so it can never drift from the real pages.
 const sitemapPaths = ['/', ...[...routes.entries()].filter(([, m]) => m.sitemap).map(([p]) => p), '/connect']
+const today = new Date().toISOString().slice(0, 10)
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapPaths.map((p) => `  <url><loc>${siteUrl}${p}</loc></url>`).join('\n')}
+${sitemapPaths.map((p) => `  <url><loc>${siteUrl}${p}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
 </urlset>
 `
 for (const dir of [rootDir, path.join(rootDir, 'public'), distDir]) {

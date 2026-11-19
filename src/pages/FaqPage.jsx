@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Seo from '../components/seo/Seo'
+import Seo, { faqSchema } from '../components/seo/Seo'
 import { FaqList, CtaBand } from '../components/site/blocks'
 import { brand } from '../config/brand'
 import { faqGroups } from '../data/catalog'
@@ -7,7 +7,12 @@ import { faqGroups } from '../data/catalog'
 export default function FaqPage() {
   return (
     <div className="ag ag-page">
-      <Seo title={`FAQ | ${brand.name}`} description="Services, pricing, timelines, ownership, and working across countries." path="/faq" />
+      <Seo
+        title={`Questions about prices, timelines and ownership | ${brand.name}`}
+        description="Answers about PixelToCloud services, prices, 7-day website delivery, payments, who owns the code, and working with clients outside India."
+        path="/faq"
+        schema={faqSchema(faqGroups.flatMap((group) => group.items))}
+      />
       <section className="ag-hero" aria-labelledby="faq-title">
         <div className="ag-wrap">
           <p className="ag-eye">FAQ</p>

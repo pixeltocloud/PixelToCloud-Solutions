@@ -35,7 +35,7 @@ const studies = [
 export default function Work() {
   return (
     <div className="ag ag-page work-page">
-      <Seo title={`Work | ${brand.name}`} description="Live client sites, plus the engagements we can describe in detail." path="/work" />
+      <Seo title={`Our work: websites and software we have built | ${brand.name}`} description="Live websites for doctors, CA firms, shops and teachers, plus software products like PharmaOS pharmacy billing, AccreditOS for colleges and GrowthOS marketing." path="/work" />
       <section className="ag-hero">
         <div className="ag-wrap">
           <p className="ag-eye">Work</p>

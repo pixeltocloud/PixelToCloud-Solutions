@@ -376,7 +376,7 @@ export const faqGroups = [
     items: [
       {
         q: 'What do you take on?',
-        a: 'Websites, web applications, e-commerce, AI and automation workflows, cloud and DevOps, and mobile applications. Mobile work is offered. We have not published a client app as a case study.',
+        a: 'Websites and online stores, custom software, mobile apps, WhatsApp automation and AI chatbots, SEO, Google Business Profile, social media, Google and Meta ads, logo and brand design, business videos, and digital invitations for weddings and events. We work with businesses across Rajasthan, all of India and abroad, fully online.',
       },
     ],
   },

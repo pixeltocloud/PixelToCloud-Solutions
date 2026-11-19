@@ -21,6 +21,8 @@ import { businessPages } from './data/businessPages'
 const Services = lazy(() => import('./pages/Services'))
 const Pricing = lazy(() => import('./pages/Pricing'))
 const Celebrations = lazy(() => import('./pages/Celebrations'))
+const Locations = lazy(() => import('./pages/Locations'))
+const Location = lazy(() => import('./pages/Location'))
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
 const Work = lazy(() => import('./pages/Work'))
 const WorkDetail = lazy(() => import('./pages/WorkDetail'))
@@ -143,6 +145,8 @@ function AppShell() {
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/celebrations" element={<Celebrations />} />
+            <Route path="/locations" element={<Locations />} />
+            <Route path="/locations/:slug" element={<Location />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/easy-my-tax" element={<Navigate to="/work/easy-my-taxes" replace />} />
             <Route path="/work/:slug" element={<WorkDetail />} />

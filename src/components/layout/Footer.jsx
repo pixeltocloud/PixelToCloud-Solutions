@@ -5,6 +5,7 @@ import { serviceGroups } from '../../data/offerings'
 import { whatsappHref } from '../site/px'
 
 const popular = ['web-development', 'google-business-profile', 'whatsapp-automation', 'social-media-management', 'web-applications', 'branding']
+const topPlaces = [['jaipur', 'Jaipur'], ['alwar', 'Alwar'], ['jodhpur', 'Jodhpur'], ['udaipur', 'Udaipur'], ['kota', 'Kota'], ['delhi', 'Delhi'], ['uae', 'Dubai and UAE'], ['usa', 'USA']]
 const services = serviceGroups.flatMap((group) => group.items).filter((item) => popular.includes(item.slug))
 
 export default function Footer() {
@@ -37,6 +38,16 @@ export default function Footer() {
             {businessPages.map((page) => (
               <li key={page.slug}><Link to={`/${page.slug}`}>{page.navLabel}</Link></li>
             ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2>Where we work</h2>
+          <ul>
+            {topPlaces.map(([slug, name]) => (
+              <li key={slug}><Link to={`/locations/${slug}`}>{name}</Link></li>
+            ))}
+            <li><Link to="/locations">All locations</Link></li>
           </ul>
         </div>
 

@@ -71,8 +71,8 @@ export default function Contact() {
   return (
     <div className="ag ag-page contact-page">
       <Seo
-        title={`Contact | ${brand.name}`}
-        description="Tell us what you are building. We help with websites, software, and automation."
+        title={`Contact PixelToCloud: WhatsApp, call or email | ${brand.name}`}
+        description="Contact PixelToCloud Solutions in Alwar, Rajasthan. WhatsApp or call +91 82193 52124, email contact@pixeltocloud.com. Free quote for websites, software, SEO and marketing."
         path="/contact"
       />
 

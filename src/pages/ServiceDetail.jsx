@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import Seo from '../components/seo/Seo'
+import Seo, { breadcrumb } from '../components/seo/Seo'
 import { brand } from '../config/brand'
 import { getService } from '../data/catalog'
 import { caseStudies } from '../data/caseStudies'
@@ -37,7 +37,44 @@ export default function ServiceDetail() {
 
   return (
     <>
-      <Seo title={`${service.title} | ${brand.name}`} description={service.lede} path={`/services/${service.slug}`} />
+      <Seo
+        title={`${service.title} in India and worldwide | ${brand.name}`}
+        description={service.lede}
+        path={`/services/${service.slug}`}
+        schema={[
+          {
+            '@type': 'Service',
+            '@id': `https://pixeltocloud.com/services/${service.slug}#service`,
+            name: service.title,
+            serviceType: name,
+            description: service.lede,
+            provider: { '@id': 'https://pixeltocloud.com/#organization' },
+            areaServed: ['India', 'Worldwide'],
+            ...(offering?.from
+              ? {
+                  offers: {
+                    '@type': 'Offer',
+                    priceCurrency: 'INR',
+                    price: offering.from.INR,
+                    priceSpecification: {
+                      '@type': 'UnitPriceSpecification',
+                      priceCurrency: 'INR',
+                      price: offering.from.INR,
+                      ...(offering.unit === '/month' ? { unitText: 'MONTH' } : {}),
+                    },
+                    availability: 'https://schema.org/InStock',
+                    url: `https://pixeltocloud.com/services/${service.slug}`,
+                  },
+                }
+              : {}),
+          },
+          breadcrumb([
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/services' },
+            { name: name, path: `/services/${service.slug}` },
+          ]),
+        ]}
+      />
       <section className="px-detail-hero">
         <div className="px-wrap px-detail-grid">
           <div>
