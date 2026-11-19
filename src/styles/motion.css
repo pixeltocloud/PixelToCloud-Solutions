@@ -149,3 +149,18 @@
     translate: none;
   }
 }
+
+.contact-submit,
+.ag-form .ag-btn {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Hotfix: the pulsing ring around buttons made pages wider than the screen on phones. */
+.home-btn-light::after,
+.ag-btn-light::after,
+.ag-btn-solid::after,
+.navbar .nav-cta::after {
+  content: none !important;
+}
