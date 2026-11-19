@@ -1,13 +1,14 @@
 # Tells Bing (and engines that use IndexNow, incl. Bing-powered ChatGPT search)
-# about every page in the sitemap, each time GitHub Pages publishes the site.
+# about every page in the sitemap, each time the site is pushed to main.
 # Google does not use IndexNow; the sitemap in Search Console covers Google.
 name: IndexNow ping
 
+# Triggered by pushes to main (the publishing branch). Scheduled and page_build
+# triggers only work from the repo's default branch, which is still the old "master".
 on:
-  page_build:          # runs after each GitHub Pages publish
+  push:
+    branches: [main]
   workflow_dispatch:   # can be run by hand from the Actions tab
-  schedule:
-    - cron: '17 3 * * 1'   # weekly safety run, Monday 08:47 IST
 
 permissions:
   contents: read
@@ -25,8 +26,8 @@ jobs:
       KEY: c26151661ce788f0a400190c1f567513
     steps:
       - name: Wait for the new pages to go live
-        if: github.event_name == 'page_build'
-        run: sleep 90
+        if: github.event_name == 'push'
+        run: sleep 180   # GitHub Pages usually publishes within 1-3 minutes
 
       - name: Check sitemap and key file are live
         run: |
