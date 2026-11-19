@@ -3,6 +3,7 @@ import Seo from '../components/seo/Seo'
 import { CtaBand } from '../components/site/blocks'
 import StageLine from '../components/site/StageLine'
 import WorkPortfolio from '../components/work/WorkPortfolio'
+import SoftwareList from '../components/site/SoftwareList'
 import { brand } from '../config/brand'
 import { deliveryStages } from '../data/catalog'
 import './WorkPage.css'
@@ -38,9 +39,9 @@ export default function Work() {
       <section className="ag-hero">
         <div className="ag-wrap">
           <p className="ag-eye">Work</p>
-          <h1>Sites we have shipped, and the studies we can document.</h1>
+          <h1>Websites and software we have built.</h1>
           <p className="ag-lead">
-            The grid is live client sites. The studies are the engagements we can describe from brief to outcome.
+            Live client websites first, then software products, then the projects we can describe from brief to result.
           </p>
           <div className="ag-actions">
             <Link className="ag-btn ag-btn-light" to={brand.primaryHref}>Discuss a similar project</Link>
@@ -52,6 +53,16 @@ export default function Work() {
       <section className="ag-sheet cream">
         <div className="ag-wrap-wide">
           <WorkPortfolio />
+        </div>
+      </section>
+
+      <section className="px-section" aria-labelledby="software-title">
+        <div className="px-wrap">
+          <div className="px-head">
+            <h2 id="software-title">Software we have built</h2>
+            <p>Business software and our own products. Some are private builds shown with sample data; we can show any of them on a call.</p>
+          </div>
+          <SoftwareList />
         </div>
       </section>
 

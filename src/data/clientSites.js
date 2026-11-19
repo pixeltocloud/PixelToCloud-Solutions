@@ -59,4 +59,14 @@ export const clientSites = [
     description:
       'A digital storefront for security and surveillance services, helping customers explore installation solutions and find a clear path to enquire.',
   },
+  {
+    id: 'ajay-choudhary-chemistry',
+    name: 'Ajay Choudhary Chemistry',
+    category: 'Education',
+    host: 'pankaj2816.github.io/ajay-choudhary-chemistry',
+    url: 'https://pankaj2816.github.io/ajay-choudhary-chemistry/',
+    image: '/image/work/ajay-choudhary-chemistry.jpg',
+    description:
+      'A teaching website for a chemistry educator, with subjects, a notice board, study materials and question papers for students and parents.',
+  },
 ]

@@ -58,6 +58,10 @@ const studyPhotos = {
     src: '/image/work/akns-cctv.jpg?v=3',
     alt: 'Homepage of AKNS CCTV Hub',
   },
+  'pharmaos': { src: '/image/work/pharmaos.jpg', alt: 'PharmaOS today screen with sales, money to collect and expiry watch' },
+  'accreditos': { src: '/image/work/accreditos.jpg', alt: 'AccreditOS overview for a sample college with evidence readiness and tasks' },
+  'growthos': { src: '/image/work/growthos.jpg', alt: 'GrowthOS calendar with an approved post ready to publish' },
+  'ajay-choudhary-chemistry': { src: '/image/work/ajay-choudhary-chemistry.jpg', alt: 'Home page of Ajay Choudhary chemistry classes' },
   'dr-geetanand-rao': {
     src: '/image/work/dr-geetanand-rao.jpg?v=3',
     alt: 'Homepage of Dr. Geetanand Rao',

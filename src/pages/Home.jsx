@@ -5,6 +5,7 @@ import { clientSites } from '../data/clientSites'
 import { testimonials } from '../data/testimonials'
 import { packages } from '../data/pricing'
 import { celebrationItems, needs, serviceGroups } from '../data/offerings'
+import SoftwareList from '../components/site/SoftwareList'
 import { ContactBand, CurrencyToggle, Price, WhatsAppIcon, whatsappHref } from '../components/site/px'
 
 const featuredWork = ['dr-archit-joshi', 'shridaa-arts', 'dr-janki-choudhary']
@@ -90,7 +91,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-section" aria-labelledby="services-title">
+      <section className="px-section" aria-labelledby="software-title">
+        <div className="px-wrap">
+          <div className="px-head-row">
+            <div className="px-head">
+              <h2 id="software-title">Software we have built</h2>
+              <p>Beyond websites: billing, records and marketing software that runs real work.</p>
+            </div>
+            <Link className="px-link" to="/work">See all our work</Link>
+          </div>
+          <SoftwareList />
+        </div>
+      </section>
+
+      <section className="px-section is-mist" aria-labelledby="services-title">
         <div className="px-wrap">
           <div className="px-head-row">
             <div className="px-head">
@@ -121,7 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-section is-mist" aria-labelledby="plans-title">
+      <section className="px-section" aria-labelledby="plans-title">
         <div className="px-wrap">
           <div className="px-head-row">
             <div className="px-head">
@@ -151,7 +165,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-section" aria-labelledby="steps-title">
+      <section className="px-section is-mist" aria-labelledby="steps-title">
         <div className="px-wrap">
           <div className="px-head">
             <h2 id="steps-title">How we work with you</h2>

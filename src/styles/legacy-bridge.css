@@ -279,3 +279,15 @@
 .contact-hero h1 span {
   color: var(--px-ink) !important;
 }
+
+/* Case study screenshots show the whole screen, not a cropped middle. */
+.detail-photo {
+  border: 1px solid var(--px-line);
+  border-radius: var(--px-radius);
+}
+
+.detail-photo img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}

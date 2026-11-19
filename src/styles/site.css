@@ -1518,3 +1518,35 @@ h1, h2, h3, h4 {
 .navbar .nav-cta {
   animation: none !important;
 }
+
+.px-software figcaption span {
+  display: block;
+  color: var(--px-ink-2);
+  font-weight: 500;
+}
+
+.px-software figcaption p {
+  margin: 10px 0 8px;
+  color: var(--px-ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.px-software figcaption em {
+  font-style: normal;
+  font-size: 0.875rem;
+  color: var(--px-ink-3);
+  padding-left: 14px;
+  position: relative;
+}
+
+.px-software figcaption em::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--px-marigold);
+}
