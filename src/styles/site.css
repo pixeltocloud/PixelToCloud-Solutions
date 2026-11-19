@@ -1485,3 +1485,36 @@ h1, h2, h3, h4 {
 .px-detail-price .px-price small {
   font-size: 0.9375rem;
 }
+
+.contact-submit,
+.ag-form .ag-btn {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+}
+
+:root {
+  --px-ink-3: #5a6178;
+}
+
+.px-celebrate-band h2 {
+  color: #fff;
+}
+
+.route-fallback {
+  min-height: 100vh;
+}
+
+/* Remove the old pulsing "attention" rings on buttons: distracting, and they pushed pages wider on phones. */
+.ag-btn-light::after,
+.ag-btn-solid::after,
+.navbar .nav-cta::after {
+  content: none !important;
+}
+
+.home-btn-light,
+.ag-btn-light,
+.ag-btn-solid,
+.navbar .nav-cta {
+  animation: none !important;
+}

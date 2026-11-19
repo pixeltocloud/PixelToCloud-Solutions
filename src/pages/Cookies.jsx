@@ -5,7 +5,7 @@ import { brand } from '../config/brand'
 export default function Cookies() {
   return (
     <article className="ag ag-page">
-      <Seo title={`Cookies | ${brand.name}`} description="How this site uses cookies and local storage." path="/cookies" />
+      <Seo title={`Cookies | ${brand.name}`} description="How pixeltocloud.com uses cookies and local storage, what each one does, and how to clear them in your browser." path="/cookies" />
       <section className="ag-hero-light">
         <div className="ag-wrap ag-prose">
           <p className="ag-eye">Legal</p>

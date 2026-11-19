@@ -77,7 +77,7 @@ export default function Home() {
               <figure key={site.id}>
                 <a href={site.url} target="_blank" rel="noopener noreferrer">
                   <div className="px-work-shot">
-                    <img src={site.image} alt={`Home page of ${site.name}`} loading="lazy" width="1280" height="800" />
+                    <img src={`/image/work/thumbs/${site.id}.webp`} alt={`Home page of ${site.name}`} loading="lazy" width="800" height="500" />
                   </div>
                   <figcaption>
                     <strong>{site.name}</strong>

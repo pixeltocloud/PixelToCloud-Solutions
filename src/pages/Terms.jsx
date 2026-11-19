@@ -5,7 +5,7 @@ import { brand } from '../config/brand'
 export default function Terms() {
   return (
     <article className="ag ag-page">
-      <Seo title={`Terms | ${brand.name}`} description="Terms of use for pixeltocloud.com." path="/terms" />
+      <Seo title={`Terms | ${brand.name}`} description="Terms of use for pixeltocloud.com and for website, software and design work ordered from PixelToCloud Solutions." path="/terms" />
       <section className="ag-hero-light">
         <div className="ag-wrap ag-prose">
           <p className="ag-eye">Legal</p>

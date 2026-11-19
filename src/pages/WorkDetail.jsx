@@ -35,7 +35,7 @@ export default function WorkDetail() {
 
   return (
     <div className="ag ag-page">
-      <Seo title={`${study.shortTitle} | ${brand.name}`} description={study.outcome} path={`/work/${study.slug}`} />
+      <Seo title={`${study.shortTitle} | ${brand.name}`} description={`${study.built} ${study.outcome}`} path={`/work/${study.slug}`} />
       <section className="ag-hero-light">
         <div className="ag-wrap">
           <nav className="ag-crumbs" aria-label="Breadcrumb">

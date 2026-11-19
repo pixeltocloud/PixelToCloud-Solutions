@@ -3,9 +3,7 @@ import { createContext, useEffect, useMemo, useState } from 'react'
 export const ThemeContext = createContext(null)
 
 function getInitialTheme() {
-  if (typeof window === 'undefined') return 'light'
-  const saved = localStorage.getItem('ptc-theme')
-  if (saved === 'dark') return 'dark'
+  // The 2026 design is light only. Older visitors may still have 'dark' saved.
   return 'light'
 }
 
@@ -16,7 +14,7 @@ export function ThemeProvider({ children }) {
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('ptc-theme', theme)
     const meta = document.querySelector('meta[name="theme-color"]')
-    if (meta) meta.setAttribute('content', theme === 'dark' ? '#0b1220' : '#f3f5f7')
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#0b1220' : '#ffffff')
   }, [theme])
 
   const value = useMemo(
