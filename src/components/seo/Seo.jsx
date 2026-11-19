@@ -100,6 +100,10 @@ const website = {
   inLanguage: 'en-IN',
 }
 
+// GitHub Pages serves every page at a folder address, so /pricing redirects to /pricing/.
+// Canonical and schema URLs must use the final address, with the trailing slash.
+export const slashed = (p) => (p === '/' || /\.[a-z0-9]+$/i.test(p) || p.includes('#') ? p : p.replace(/\/?$/, '/'))
+
 export function breadcrumb(items) {
   return {
     '@type': 'BreadcrumbList',
@@ -107,7 +111,7 @@ export function breadcrumb(items) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${site}${item.path}`,
+      item: `${site}${slashed(item.path)}`,
     })),
   }
 }
@@ -129,7 +133,7 @@ export default function Seo({ title, description, path, image, noindex = false, 
   const finalTitle = title || matched.title || defaultSeo.title
   const finalDescription = description || matched.description || defaultSeo.description
   const finalPath = path || matched.path || location.pathname
-  const url = `${site}${finalPath === '/' ? '/' : finalPath}`
+  const url = `${site}${slashed(finalPath.split('?')[0])}`
   const ogImage = image || defaultSeo.image
   const extra = schema ? (Array.isArray(schema) ? schema : [schema]) : []
   const schemaKey = JSON.stringify(extra)

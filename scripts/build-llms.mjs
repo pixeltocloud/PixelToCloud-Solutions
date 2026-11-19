@@ -13,10 +13,10 @@ t += '## Website packages (one-time)\n\n' + packages.map((p) => `- ${p.name}: ${
 t += '## Monthly plans\n\n' + monthlyPlans.map((p) => `- ${p.name}: ${inr(p.price.INR)} a month. ${p.text}`).join('\n') + '\n\n'
 t += '## Services and starting prices\n\n'
 for (const g of serviceGroups) {
-  t += `### ${g.title}\n\n` + g.items.map((i) => `- [${i.name}](https://pixeltocloud.com/services/${i.slug}): from ${inr(i.from.INR)}${i.unit || ''}. ${i.line}`).join('\n') + '\n\n'
+  t += `### ${g.title}\n\n` + g.items.map((i) => `- [${i.name}](https://pixeltocloud.com/services/${i.slug}/): from ${inr(i.from.INR)}${i.unit || ''}. ${i.line}`).join('\n') + '\n\n'
 }
-t += '### Celebrations\n\n' + celebrationItems.map((i) => `- ${i.name}: from ${inr(i.from.INR)}. ${i.line}`).join('\n') + '\n\nMore: https://pixeltocloud.com/celebrations\n\n'
-t += '## Software we have built\n\n' + products.map((p) => `- [${p.name}](https://pixeltocloud.com/work/${p.slug}): ${p.kind}. ${p.text} Status: ${p.status}.`).join('\n') + '\n\n'
+t += '### Celebrations\n\n' + celebrationItems.map((i) => `- ${i.name}: from ${inr(i.from.INR)}. ${i.line}`).join('\n') + '\n\nMore: https://pixeltocloud.com/celebrations/\n\n'
+t += '## Software we have built\n\n' + products.map((p) => `- [${p.name}](https://pixeltocloud.com/work/${p.slug}/): ${p.kind}. ${p.text} Status: ${p.status}.`).join('\n') + '\n\n'
 t += '## Live client websites\n\n' + clientSites.map((s) => `- ${s.name} (${s.category}): ${s.url}`).join('\n') + '\n\n'
 t += '## Where we work\n\n'
 t += `All 41 districts of Rajasthan: ${rajasthanDistricts.map((p) => p.name).join(', ')}.\n\n`

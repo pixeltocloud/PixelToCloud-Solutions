@@ -103,6 +103,9 @@ for (const ind of industries) {
 
 // 5. Legacy routes that the app redirects client-side. Served with HTTP 200 so old links work,
 //    but marked noindex with a canonical pointing at the destination, and kept out of the sitemap.
+// Pages live at folder addresses on GitHub Pages (/pricing redirects to /pricing/), so URLs carry the slash.
+const slashed = (p) => (p === '/' || /\.[a-z0-9]+$/i.test(p) ? p : p.replace(/\/?$/, '/'))
+
 const redirectRoutes = [
   { path: '/process', to: '/work#engagement' },
   { path: '/labs', to: '/work/nebula-3d' },
@@ -116,7 +119,7 @@ for (const r of redirectRoutes) {
   routes.set(r.path, {
     title: defaultSeo.title,
     description: defaultSeo.description,
-    canonical: `${siteUrl}${r.to.split('#')[0]}`,
+    canonical: `${siteUrl}${slashed(r.to.split('#')[0])}`,
     noindex: true,
     sitemap: false,
   })
@@ -128,7 +131,7 @@ for (const [routePath, meta] of routes.entries()) {
   const targetDir = path.join(rootDir, routePath.replace(/^\//, ''))
   fs.mkdirSync(targetDir, { recursive: true })
 
-  const canonicalUrl = meta.canonical || `${siteUrl}${routePath}`
+  const canonicalUrl = meta.canonical || `${siteUrl}${slashed(routePath)}`
   const rawTitle = meta.title.includes('PixelToCloud') ? meta.title : `${meta.title} | PixelToCloud`
   const pageTitle = escapeAttr(rawTitle)
   const pageDesc = escapeAttr(meta.description)
@@ -156,7 +159,7 @@ const sitemapPaths = ['/', ...[...routes.entries()].filter(([, m]) => m.sitemap)
 const today = new Date().toISOString().slice(0, 10)
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapPaths.map((p) => `  <url><loc>${siteUrl}${p}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
+${sitemapPaths.map((p) => `  <url><loc>${siteUrl}${slashed(p)}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
 </urlset>
 `
 for (const dir of [rootDir, path.join(rootDir, 'public'), distDir]) {
