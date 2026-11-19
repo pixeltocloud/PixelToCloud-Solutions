@@ -33,7 +33,7 @@ export const serviceGroups = [
     title: 'WhatsApp, AI and software',
     text: 'Stop doing the same work by hand. Let software reply, remind and keep records.',
     items: [
-      { slug: 'whatsapp-automation', name: 'WhatsApp automation', line: 'Instant replies, bookings, reminders and broadcasts.', from: { INR: 4999, USD: 199 } },
+      { slug: 'whatsapp-automation', name: 'WhatsApp automation', line: 'Instant replies, bookings, reminders and broadcasts.', from: { INR: 2999, USD: 99 } },
       { slug: 'ai-automation', name: 'AI chatbots and assistants', line: 'Answer common questions and collect leads, day and night.', from: { INR: 14999, USD: 499 } },
       { slug: 'web-applications', name: 'Custom software', line: 'Billing, bookings, stock, fees or a client portal, built for you.', from: { INR: 49999, USD: 1499 } },
       { slug: 'mobile-app-development', name: 'Mobile apps', line: 'Android and iPhone apps when a website is not enough.', from: { INR: 79999, USD: 2499 } },
@@ -44,8 +44,8 @@ export const serviceGroups = [
     title: 'Design and video',
     text: 'Everything your business needs to look the same everywhere.',
     items: [
-      { slug: 'branding', name: 'Logo and brand design', line: 'Logo, visiting cards, letterhead, menus and brochures.', from: { INR: 2999, USD: 99 } },
-      { slug: 'video-production', name: 'Business videos and reels', line: 'Intro videos, product videos and reels with voice-over.', from: { INR: 3999, USD: 149 } },
+      { slug: 'branding', name: 'Logo and brand design', line: 'Logo, visiting cards, letterhead, menus and brochures.', from: { INR: 2499, USD: 89 } },
+      { slug: 'video-production', name: 'Business videos and reels', line: 'Reels from ₹799 each. Intro and product videos with voice-over.', from: { INR: 799, USD: 29 }, unit: '/reel' },
       { slug: 'festival-designs', name: 'Festival and offer posters', line: 'Diwali, Holi, Eid and sale designs with your logo.', from: { INR: 999, USD: 39 } },
     ],
   },
@@ -64,7 +64,7 @@ export const celebrationItems = [
     name: 'Video invitations',
     line: 'A 30 to 60 second invite with your photos, music and event details.',
     includes: ['Photos or illustrated couple', 'Music of your choice', 'Event schedule and venue map', 'Delivered in 3 days'],
-    from: { INR: 1499, USD: 49 },
+    from: { INR: 999, USD: 39 },
   },
   {
     id: 'caricature-invites',
@@ -123,8 +123,8 @@ export const monthlyPlans = [
   {
     id: 'whatsapp',
     name: 'WhatsApp assistant',
-    price: { INR: 999, USD: 39 },
-    text: 'Running cost for your WhatsApp bot after setup: replies, reminders and monthly tuning.',
+    price: { INR: 1999, USD: 49 },
+    text: 'Running cost for your WhatsApp bot after setup: hosting, replies, reminders and monthly tuning. WhatsApp’s own message charges are billed at cost.',
     note: 'Setup from ₹14,999 or $499.',
   },
 ]
