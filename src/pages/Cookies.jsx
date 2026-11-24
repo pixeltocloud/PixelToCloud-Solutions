@@ -21,7 +21,10 @@ export default function Cookies() {
             <li>A session flag so the opening offer is not shown again in the same visit.</li>
             <li>An authentication session, if you sign in, kept by the account provider in the browser.</li>
             <li>A theme preference, if you switch light and dark.</li>
-            <li>Analytics only when the analytics setting is enabled for the deployment.</li>
+            <li>
+              Google Analytics cookies (names starting with _ga), which count visits and show which pages are read. They
+              do not identify you by name, and we do not use them for advertising.
+            </li>
           </ul>
           <h2>What we do not do</h2>
           <p>We do not sell browsing data. We do not run an advertising cookie network from this site.</p>
