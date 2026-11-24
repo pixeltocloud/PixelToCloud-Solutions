@@ -11,7 +11,7 @@ export default function Privacy() {
           <p className="ag-eye">Legal</p>
           <h1 className="ag-ink">Privacy Policy</h1>
           <LegalNotice />
-          <p className="ag-lead">Last updated: October 3, 2026</p>
+          <p className="ag-lead">Last updated: November 24, 2026</p>
         </div>
       </section>
       <section className="ag-sheet cream">
@@ -47,8 +47,10 @@ export default function Privacy() {
           </p>
           <h2>Cookies & analytics</h2>
           <p>
-            We may use privacy-respecting analytics that does not sell personal data. You can request that we disable
-            analytics for your visit by contacting us. Theme preference may be stored in localStorage on your device.
+            We use Google Analytics to understand how many people visit and which pages they read. It sets cookies and
+            sends Google your approximate location, device and browser details, and the pages you view; we do not sell
+            this data or use it for advertising. Analytics is skipped if your browser sends Do Not Track, and you can
+            block it with Google&apos;s opt-out add-on or by blocking cookies. Theme preference may be stored in localStorage on your device.
             Sign-in keeps a session in the browser so you stay signed in.
           </p>
           <h2>Data retention</h2>
