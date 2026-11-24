@@ -23,7 +23,7 @@ export const routeSeo = {
     path: '/work',
     title: 'Work & Case Studies | PixelToCloud Agency',
     description:
-      'Selected work including this website, Easy My Taxes, Harish Renova, Saini Handicrafts, and WebGL experiments.',
+      'Selected work including this website, RegisterBizTax, Harish Renova, Saini Handicrafts, and WebGL experiments.',
   },
   '/about': {
     path: '/about',

@@ -109,7 +109,8 @@ const slashed = (p) => (p === '/' || /\.[a-z0-9]+$/i.test(p) ? p : p.replace(/\/
 const redirectRoutes = [
   { path: '/process', to: '/work#engagement' },
   { path: '/labs', to: '/work/nebula-3d' },
-  { path: '/work/easy-my-tax', to: '/work/easy-my-taxes' },
+  { path: '/work/easy-my-tax', to: '/work/registerbiztax' },
+  { path: '/work/easy-my-taxes', to: '/work/registerbiztax' },
   { path: '/insights', to: '/work#engagement' },
   { path: '/insights/what-a-7-day-launch-includes', to: '/work#engagement' },
   { path: '/insights/what-you-receive-at-handover', to: '/work#engagement' },

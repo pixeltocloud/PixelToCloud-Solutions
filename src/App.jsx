@@ -148,7 +148,8 @@ function AppShell() {
             <Route path="/locations" element={<Locations />} />
             <Route path="/locations/:slug" element={<Location />} />
             <Route path="/work" element={<Work />} />
-            <Route path="/work/easy-my-tax" element={<Navigate to="/work/easy-my-taxes" replace />} />
+            <Route path="/work/easy-my-tax" element={<Navigate to="/work/registerbiztax" replace />} />
+            <Route path="/work/easy-my-taxes" element={<Navigate to="/work/registerbiztax" replace />} />
             <Route path="/work/:slug" element={<WorkDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/process" element={<Navigate to="/work#engagement" replace />} />

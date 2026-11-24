@@ -25,7 +25,7 @@ export const LEGACY_REDIRECTS = {
   'services/interactive-3d-spatial.html': '/work/nebula-3d/',
   'services/user-experience-design.html': '/services/web-development/',
   'work/apex-cloud.html': '/work/',
-  'work/easy-my-tax.html': '/work/easy-my-taxes/',
+  'work/easy-my-tax.html': '/work/registerbiztax/',
   'work/harish-renova.html': '/work/harish-renova/',
   'work/nebula-3d.html': '/work/nebula-3d/',
   'work/nexure-saas.html': '/work/',

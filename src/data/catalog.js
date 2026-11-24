@@ -35,7 +35,7 @@ export const servicePages = [
       'Maintenance after launch, scoped separately from the build.',
     ],
     engagement: 'Applications are quoted as milestones. They are not covered by the 7-day website promise.',
-    related: ['easy-my-taxes'],
+    related: ['registerbiztax'],
   },
   {
     slug: 'mobile-app-development',
@@ -287,10 +287,10 @@ export const industries = [
     title: 'Professional services',
     image: '/image/industries/professional-services.jpg',
     lede: 'Practices that handle client files, billing, and a public site. The sensitive work does not stay in an inbox.',
-    experience: 'Easy My Taxes is a published client portal for a chartered accountancy practice.',
+    experience: 'RegisterBizTax is a published client portal for a chartered accountancy practice.',
     challenges: ['Client documents move through email.', 'Staff and clients need different access.', 'Deadlines pile up when the system is a spreadsheet.'],
     solutions: ['A portal with roles.', 'Calculations and tracking where the practice needs them.', 'Ownership of the repository and the server.'],
-    related: ['easy-my-taxes'],
+    related: ['registerbiztax'],
   },
   {
     slug: 'retail-and-makers',
@@ -310,7 +310,7 @@ export const industries = [
     experience: 'We have not published a venture-backed SaaS case study. The application service is how this work is scoped.',
     challenges: ['The product needs auth before it needs a marketing site.', 'The first version has to be small enough to ship.', 'Investors ask who owns the code.'],
     solutions: ['A fixed first milestone.', 'Authentication, roles, and an API boundary.', 'Repository handover. No seat license on our framework.'],
-    related: ['easy-my-taxes'],
+    related: ['registerbiztax'],
   },
   {
     slug: 'real-estate',
@@ -346,7 +346,7 @@ export const industries = [
 
 export const workMeta = {
   'pixeltocloud-agency': { category: 'website', badge: 'Our own site', line: 'This site, designed and run by the same team.' },
-  'easy-my-taxes': { category: 'application', badge: 'Client project', line: 'Clients file and share documents without an email chain.' },
+  'registerbiztax': { category: 'application', badge: 'Client project', line: 'Clients file and share documents without an email chain.' },
   'harish-renova': { category: 'website', badge: 'Client project', line: 'Patients request a visit and get a WhatsApp confirmation.' },
   'saini-handicrafts': { category: 'ecommerce', badge: 'Client project', line: 'Handmade work, shown clearly, with a way to inquire.' },
   'nebula-3d': { category: 'application', badge: 'Lab project, not a client engagement', line: 'A browser tool from the lab. Not a client engagement.' },
@@ -354,7 +354,7 @@ export const workMeta = {
 
 export const lessons = {
   'pixeltocloud-agency': 'The agency site has to be something we can hand to a client as proof, including the code.',
-  'easy-my-taxes': 'Client files for a practice should not live in an email thread.',
+  'registerbiztax': 'Client files for a practice should not live in an email thread.',
   'harish-renova': 'A clinic page is doing its job when a visit request ends in a confirmation.',
   'saini-handicrafts': 'The product and the inquiry path have to look like the same brand.',
   'nebula-3d': 'A browser tool is a lab exercise until a client project uses it. This one is not a client engagement.',

@@ -175,7 +175,7 @@ export const trustClients = [
   'Dr. Janki Choudhary',
   'Dr. Neeraj Rathee',
   'Dr. Geetanand Rao',
-  'Easy My Taxes',
+  'RegisterBizTax',
   'AKNS CCTV Hub',
   'Makhan Carpenter',
 ]

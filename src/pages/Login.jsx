@@ -27,7 +27,7 @@ export default function Login() {
             <ul className="login-notes" aria-label="Why sign in">
               <li>Launch within 7 days, or the payment is returned.</li>
               <li>Offices in Gurugram and Alwar.</li>
-              <li>Easy My Taxes · Harish Renova · Saini Handicrafts · Revital Physiocare</li>
+              <li>RegisterBizTax · Harish Renova · Saini Handicrafts · Revital Physiocare</li>
             </ul>
             <p className="login-home-link">
               <Link to="/">← Back to {brand.name}</Link>
